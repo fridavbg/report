@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Report
+{% endblock %}
+
+{% block content %}
+	<nav class="nav-bar nav-bar-color" id="nav-bar">
+		<ul class="kmom x-margin-top">
+			<div class="dropdown">
+				<button class="dropbtn">
+					Kurs moment
+				</button>
+				<div class="dropdown-content">
+					<a href="#kmom01">Kmom01</a>
+					<a href="#kmom02">Kmom02</a>
+					<a href="#kmom03">Kmom03</a>
+					<a href="#kmom04">Kmom04</a>
+					<a href="#kmom05">Kmom05</a>
+					<a href="#kmom06">Kmom06</a>
+					<a href="#kmom07">Kmom07 - 10</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</nav>
+<article>
+	<div class="site-wrap">
+		<section>
+			<h2 id="kmom01">Kmom01</h2>
+			{{ include('report/kmom01.md') }}
+		</section>
+		<section>
+			<h2 id="kmom02">Kmom02</h2>
+			{{ include('report/kmom02.md')}}
+		</section>
+		<section>
+			<h2 id="kmom03">Kmom03</h2>
+			{{ include('report/kmom03.md')}}
+		</section>
+		<section>
+			<h2 id="kmom04">Kmom04</h2>
+			{{ include('report/kmom04.md')}}
+		</section>
+		<section>
+			<h2 id="kmom05">Kmom05</h2>
+			{{ include('report/kmom05.md')}}
+		</section>
+		<section>
+			<h2 id="kmom06">Kmom06</h2>
+			{{ include('report/kmom06.md')}}
+		</section>
+		<section>
+			<h2 id="kmom07">Kmom07 - 10</h2>
+			{{ include('report/kmom07.md')}}
+		</section>
+	</article>
+{% endblock %}

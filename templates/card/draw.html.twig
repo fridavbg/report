@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h2>CardHand</h2>
+    <div class="card-container">
+      {% for card in cardHand %}
+        <ul class="card">
+          {% if card.getSuite() == 'H'%}
+            <li class="red-suit">♥</li>
+          {% elseif card.getSuite() == 'S'%}
+            <li class="black-suit">♠</li>
+          {% elseif card.getSuite() == 'C'%}
+            <li class="black-suit">♣</li>
+          {% else %}
+            <li class="red-suit">♦</li>
+          {% endif %}
+          <li>{{ card.getValue() }}</li>
+        </ul>
+      {% endfor %}
+    </div>
+    <h3>Cards left in deck:
+      {{ deck | length }}
+    </h3>
+    <h3>You have
+      {{ cardHand | length }}
+    </h3>
+    {% if deck | length > 0 %}
+      <form action="draw">
+        <fieldset>
+          <p class="btn-container">
+            <input type="submit" name="draw" value="Draw another card" class="btn">
+          </p>
+        </fieldset>
+      </form>
+    {% else %}
+      <form action="shuffle">
+        <fieldset>
+          <p class="btn-container">
+            {{ include('flash-message.html.twig') }}
+            <input type="submit" name="shuffle" value="Shuffle new deck" class="btn">
+          {% endif %}
+        </p>
+      </fieldset>
+    </form>
+
+    {# <code class="code">
+      <h2>TEST BOX</h2>
+      {{dump(cardHand)}}
+      {{dump(deck)}}
+    </code> #}
+
+    <div class="btn-container">
+      <a href="{{path("card-home")}}" class="btn">
+        Go back
+      </a>
+    </div>
+
+  </div>
+{% endblock %}

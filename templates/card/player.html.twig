@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h2>Card Hand</h2>
+    {% if sessionCardHand | length > 0 %}
+      <div class="card-container">
+        {% for card in sessionCardHand %}
+          <ul class="card">
+            {% if card.getSuite() == 'H'%}
+              <li class="red-suit">♥</li>
+            {% elseif card.getSuite() == 'S'%}
+              <li class="black-suit">♠</li>
+            {% elseif card.getSuite() == 'C'%}
+              <li class="black-suit">♣</li>
+            {% else %}
+              <li class="red-suit">♦</li>
+            {% endif %}
+            <li>{{ card.getValue() }}</li>
+          </ul>
+        {% endfor %}
+      </div>
+      <h3>Cards left in deck:
+        {{ sessionLeftOverDeck | length }}
+      </h3>
+    {% endif %}
+    <form method="post">
+      <fieldset>
+        <p class="btn-container">
+		<input type="number" id="numOfCards" name="numOfCards" value="1" min="1" max="{{ sessionLeftOverDeck | length }}">
+          <input type="submit" name="player" value="Create a player" class="btn">
+          <input type="submit" name="draw" value="Draw multiple cards" class="btn">
+        </p>
+      </fieldset>
+    </form>
+
+    <code class="code">
+      {{ include('flash-message.html.twig') }}
+      <h2>TEST BOX</h2>
+      {{dump(cardsNumToBeDrawn)}}
+      {{dump(sessionCardHand)}}
+      {{dump(sessionLeftOverDeck)}}
+    </code>
+
+    <div class="btn-container">
+      <a href="{{path("card-home")}}"
+	  class="btn">Go back</a>
+    </div>
+
+  </div>
+{% endblock %}

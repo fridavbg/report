@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Search
+{% endblock %}
+
+{% block content %}
+
+  <div class="site-wrap">
+    <h1>FORM PAGE</h1>
+    <form>
+      <p>
+        <label>Search:
+          <input type="search" name="search" value="{{ search }}">
+        </label>
+      </p>
+    </form>
+  </div>
+
+{% endblock %}

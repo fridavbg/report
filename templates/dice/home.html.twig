@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h1>{{ title }}</h1>
+
+    <p>The dice is rolled once.</p>
+
+    <p>Dice value =
+      {{ die_value }}
+      and its string representation is
+      {{ die_as_string }}</p>
+
+    <p>
+      <a href="{{ link_to_roll }}" class="standard-link">Roll the dice five times</a></p>
+  </div>
+{% endblock %}

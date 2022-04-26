@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %}Welcome!{% endblock %}
+    </title>
+    {# <link rel="icon" href="favicon.ico"> #}
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset("css/style.css")}}"/>
+  </head>
+  <body>
+    <div>
+      <header>
+        <h1>MVC DV1609</h1>
+      </header>
+      <nav class="nav-bar" id="nav-bar">
+        <ul>
+          <li>
+            <a href="{{url("home")}}">Home</a>
+          </li>
+          <li>
+            <a href="{{path("about")}}">About</a>
+          </li>
+          <li>
+            <a href="{{path("report")}}">Report</a>
+          </li>
+          <li class="dropdown">
+              <button class="dropbtn">
+              Form 
+              </button>
+              <div class="dropdown-content">
+                <a href="{{path("form-search")}}">Search</a>
+                <a href="{{path("form-login")}}">Log In</a>
+                <a href="{{path("form-session")}}">Session</a>
+              </div>
+          </li>
+          <li>
+            <a href="{{path("dice-home")}}">Dice</a>
+          </li>
+          <li>
+            <a href="{{path("card-home")}}">Card</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+      <div class="arrow-container">
+        <svg class="arrows">
+          <path class="a1" d="M0 0 L30 32 L60 0"></path>
+          <path class="a2" d="M0 20 L30 52 L60 20"></path>
+          <path class="a3" d="M0 40 L30 72 L60 40"></path>
+        </svg>
+      </div>
+
+      {% block content %}
+        Default content
+      {% endblock %}
+
+      <div class="sitefooter">
+        <p>Skapad utav Frida i BTHs MVC kurs</p>
+      </div>
+
+      <script src="../public/js/main.js">
+        {
+          # NOT WORKING !!!#
+        }
+      </script>
+    </body>
+  </html>
