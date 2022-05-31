@@ -30,35 +30,37 @@
       {{ cardHand | length }}
     </h3>
     {% if cards | length > 0 %}
-      <form action="draw">
+      <form action="drawMultiple" method="POST">
         <fieldset>
-          <p class="btn-container">
-            <input type="submit" name="draw" value="Draw another card" class="btn">
-          </p>
+          <div class="btn-container">
+            <input type="number" id="cards" name="cards" min="1" max="{{ cards | length }}">
+            <input type="submit" name="drawMultiple" value="Draw any number of cards" class="btn"/>
+          </fieldset>
+        </form>
+      {% else %}
+        <form action="/card/deck/shuffle" method="POST">
+          <fieldset>
+            <div class="btn-container">
+              {{ include('flash-message.html.twig') }}
+              <input type="submit" name="shuffle" value="Shuffle new deck" class="btn">
+            {% endif %}
+          </div>
         </fieldset>
       </form>
-    {% else %}
-      <form action="shuffle" method="POST">
-        <fieldset>
-          <p class="btn-container">
-            <input type="submit" name="shuffle" value="Shuffle new deck" class="btn">
-          {% endif %}
-        </p>
-      </fieldset>
-    </form>
 
-      {#
+    
       <code class="code">
         <h2>TEST BOX</h2>
-        {{dump(cardHand)}}
         {{dump(cards)}}
+        {{dump(cardHand)}}
       </code>
-     #}
+    
 
-    <div class="btn-container">
-      <a href="{{path("card-home")}}" class="btn">
-        Go back
-      </a>
+      <div class="btn-container">
+        <a href="{{path("card-home")}}" class="btn">
+          Go back
+        </a>
+      </div>
+
     </div>
-  </div>
-{% endblock %}
+  {% endblock %}

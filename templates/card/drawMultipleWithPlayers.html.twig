@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h2>Choose amount of players and amount of cards</h2>
+    <div class="card-container">
+      {% for card in cardHand %}
+        <ul class="card">
+          {% if card.getSuite() == 'H'%}
+            <li class="red-suit">♥</li>
+          {% elseif card.getSuite() == 'S'%}
+            <li class="black-suit">♠</li>
+          {% elseif card.getSuite() == 'C'%}
+            <li class="black-suit">♣</li>
+          {% else %}
+            <li class="red-suit">♦</li>
+          {% endif %}
+          <li>{{ card.getValue() }}</li>
+        </ul>
+      {% endfor %}
+    </div>
+    <h3>Cards left in deck:
+      {{ cards | length }}
+    </h3>
+    <h3>You have
+      {{ cardHand | length }}
+    </h3>
+    {% if cards | length > 0 %}
+      <form action="deal" method="POST">
+        <fieldset>
+          <div class="btn-container">
+          <legend>Players:</legend>
+            <input type="number" id="players" name="players" min="1" max="7">
+            <legend>Cards:</legend>
+              <input type="number" id="cards" name="cards" min="1" max="{{ cards | length }}">
+              <input type="submit" name="deal" value="Start the game" class="btn"/>
+              </div>
+            </fieldset>
+          </form>
+        {% else %}
+          <form action="startGame" method="POST">
+            <fieldset>
+              <div class="btn-container">
+                <input type="submit" name="shuffle" value="Shuffle new deck" class="btn">
+              {% endif %}
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="btn-container">
+          <a href="{{path("card-home")}}" class="btn">
+            Go back
+          </a>
+        </div>
+
+      </div>
+    {% endblock %}

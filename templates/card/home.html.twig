@@ -6,10 +6,13 @@
   <div class="site-wrap">
     <h1>{{ title }}</h1>
     <p class="btn-container">
-        <a href="{{path("card-deck")}}" class="btn">Deck</a>
-        <a href="{{path("card-shuffle")}}" class="btn">Shuffle</a>
-        <a href="{{path("card-draw")}}" class="btn">Draw cards</a>
-        <a href="#" class="btn">Cardgame with players</a>
+      <a href="{{path("card-deck")}}" class="btn">Deck</a>
+      <a href="{{path("card-shuffle")}}" class="btn">Shuffle</a>
+      <a href="{{path("card-draw")}}" class="btn">Draw a card</a>
+      <a href="{{path('card-draw-multiple', {'numOfCards': 1})}}" class="btn">Draw cards</a>
+      <a href="{{path('deal', {'numOfCards': 1, 'numOfPlayers': 1})}}" class="btn">Cardgame with players</a>
+      <a href="{{path("card-deck2")}}" class="btn">Joker Deck</a>
+      <a href="{{path("api-deck")}}" class="btn">API Deck</a>
     </p>
   </div>
 {% endblock %}

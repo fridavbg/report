@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h1>{{ title }}</h1>
+    <div class="card-container">
+      <pre class="code">
+        {{ jsonDeck }}
+      </pre>
+    </div>
+    <div class="btn-container">
+      <a href="{{path("card-home")}}" class="btn">Go back</a>
+    </div>
+  </div>
+{% endblock %}

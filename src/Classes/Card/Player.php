@@ -4,52 +4,24 @@ namespace App\Classes\Card;
 
 class Player
 {
-    public function __construct()
+    /**
+     * Rules of the Game
+     * Track num of players
+     */
+    public function __construct($numOfPlayers, $numOfCards)
     {
-        $this->cardHand = array();
-        // $this->playerNum = 0;
-
-        // $this->playerNum++;
+        $this->cards = $numOfCards;
+        $this->players = $numOfPlayers;
+        $this->startGame();
+        $this->cardHand = new Deck();
     }
 
-    // /**
-    //  * Show player number
-    //  * @return arrays
-    //  */
-    // public function getPlayerNum()
-    // {
-    //     return $this->playerNum;
-    // }
-
-    /**
-     * Show cardHand
-     * @return arrays
-     */
-    public function getCardHand()
+    public function startGame()
     {
-        return $this->cardHand;
-    }
-
-    /**
-     * cardHand Var Setter
-     * @param array $cards
-     */
-    public function setCardHand($cards)
-    {
-        $this->cardHand = $cards;
-    }
-
-    /**
-     * draw N numbers of cards from currentDeck
-     * @param int
-     * @param array
-     */
-    public function drawCardsFromDeck($numberOfCards, $deck) {
-
-        $drawnCards = $deck->drawCards($numberOfCards);
-        $currentCardHand = $this->getCardHand();
-        $updatedHand = array_merge($currentCardHand, $drawnCards);
-
-        $this->setCardHand($updatedHand);
+        for ($i = 0; $i < $this->players; $i++) { 
+                // set cardHand - Deck.getCards($numOfCards)
+                // size players x cardsInCardHand < 52
+        // shuffle deck if needed 
+        }
     }
 }

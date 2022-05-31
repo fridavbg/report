@@ -28,7 +28,9 @@ body {
 }
 
 .code {
+    background-color: black;
     margin: 12px;
+    width: 400px;
 }
 
 /* HEADER */

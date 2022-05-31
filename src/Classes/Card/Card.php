@@ -44,7 +44,7 @@ class Card
     }
 
     /**
-     * Shows value as a string
+     * Shows card value
      * @return string
      */
     public function __toString(): string
@@ -59,5 +59,15 @@ class Card
     public function getSuite()
     {
         return $this->suit;
+    }
+
+    /**
+     * Show card as a object
+     * @return string
+     */
+    public function getCardObj()
+    {
+        $cardObj = ["suit" => $this->suit,"value" => $this->value];
+        return $cardObj;
     }
 }
