@@ -389,6 +389,25 @@ legend {
     padding-bottom: 3px;
 }
 
+/* Player */
+.player-container {
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-gap: 12px;
+    justify-content: center;
+    padding-bottom: 12px;
+}
+
+.cardHand {
+    display: grid;
+    grid-template-columns: 180px auto auto auto auto auto;
+}
+
+.player-title {
+    margin-right: 1em;
+}
+
+
 /* FOOTER */
 .sitefooter {
     background-image: var(--gradient-green);
