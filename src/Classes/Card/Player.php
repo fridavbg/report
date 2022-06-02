@@ -12,16 +12,25 @@ class Player
     {
         $this->cards = $numOfCards;
         $this->players = $numOfPlayers;
-        $this->startGame();
-        $this->cardHand = new Deck();
+        $this->deck = new Deck();
+        $this->playersWithCardHands = array();
+        $this->amountOfDrawnCards = $numOfCards * $numOfPlayers;
     }
 
     public function startGame()
     {
-        for ($i = 0; $i < $this->players; $i++) { 
-                // set cardHand - Deck.getCards($numOfCards)
-                
-                // size players x cardsInCardHand < 52
+        $cardHands = [];
+        for ($i = 0; $i < $this->players; $i++) {
+            // Shuffle Deck
+            $this->deck->shuffleDeck();
+            // Draw Cards to card Hand
+            $drawnCards = $this->deck->getCards($this->cards);
+            if ($i < 1) {
+                array_push($cardHands, $drawnCards);
+            } else if ($i >= 1) {
+                array_push($cardHands, array_splice($drawnCards, $this->cards * $i));
+            }
         }
+        return $cardHands;
     }
 }

@@ -120,13 +120,12 @@ class CardController extends AbstractController
         $numOfPlayers = $request->request->get('players');
         $numOfCards = $request->request->get('cards');
 
-        $game = new Player($numOfPlayers, $numOfCards);
+        $players = new Player($numOfPlayers, $numOfCards);
 
         $data = [
             'title' => 'Draw multiple card with players',
-            'cardHand' => $session->get('leftOverDeck')->getCards(intval($numOfCards)),
             'cards' => $session->get('leftOverDeck')->getDeck(),
-            'game' => $game
+            'players' => $players->startGame()
         ];
         return $this->render('card/drawMultipleWithPlayers.html.twig', $data);
     }
