@@ -20,8 +20,8 @@ class Player
     {
         for ($i = 0; $i < $this->players; $i++) { 
                 // set cardHand - Deck.getCards($numOfCards)
+                
                 // size players x cardsInCardHand < 52
-        // shuffle deck if needed 
         }
     }
 }

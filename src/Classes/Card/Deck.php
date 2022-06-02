@@ -120,7 +120,7 @@ class Deck
     }
 
     /**
-     * Return deck as a json Structure
+     * Return each card as a Object
      */
     public function getJson()
     {
@@ -130,6 +130,6 @@ class Deck
             array_push($jsonDeck, $card->getCardObj());
         }
 
-        return json_encode(($jsonDeck), JSON_PRETTY_PRINT);
+        return json_encode($jsonDeck, JSON_PRETTY_PRINT);
     }
 }

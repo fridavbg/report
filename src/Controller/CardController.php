@@ -4,9 +4,7 @@ namespace App\Controller;
 
 use App\Classes\Card\Deck;
 use App\Classes\Card\Deck2;
-use App\Classes\Card\GameManager;
 use App\Classes\Card\Player;
-// use App\Classes\Card\GameManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -150,21 +148,5 @@ class CardController extends AbstractController
             'deck' => $deck->getDeck()
         ];
         return $this->render('card/deck2.html.twig', $data);
-    }
-
-    /**
-     * @Route("/card/api/deck", name="api-deck")
-     * Return deck as a JSON Structure
-     */
-    public function apiDeck(): Response
-    {
-        $deck = new Deck();
-        $jsonDeck = $deck->getJson();
-
-        $data = [
-            'title' => 'Json Deck',
-            'jsonDeck' => $jsonDeck
-        ];
-        return $this->render('card/jsonDeck.html.twig', $data);
     }
 }
