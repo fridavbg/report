@@ -400,7 +400,8 @@ legend {
 
 .cardHand {
     display: grid;
-    grid-template-columns: 180px auto auto auto auto auto;
+    grid-template-columns: 180px auto auto auto auto auto auto auto;
+    grid-gap: 0.5em;
 }
 
 .player-title {
