@@ -78,6 +78,7 @@ class CardController extends AbstractController
             'title' => 'Draw a card',
             'cardHand' => $session->get('leftOverDeck')->getCards(1),
             'cards' => $session->get('leftOverDeck')->getDeck(),
+
         ];
         return $this->render('card/draw.html.twig', $data);
     }
@@ -124,8 +125,8 @@ class CardController extends AbstractController
 
         $data = [
             'title' => 'Draw multiple card with players',
-            'cards' => $session->get('leftOverDeck')->getDeck(),
-            'players' => $session->get('players')->startGame()
+            'players' => $session->get('players')->startGame(),
+            'deck' => $session->get('players')->deck->getDeck()
         ];
         return $this->render('card/drawMultipleWithPlayers.html.twig', $data);
     }

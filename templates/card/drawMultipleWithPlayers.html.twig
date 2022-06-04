@@ -31,36 +31,28 @@
       {% endfor %}
     </div>
     <h3>Cards left in deck:
-      {{ cards | length }}
+      {{ deck | length }}
     </h3>
-    {% if cards | length > 0 %}
+    {% if players | length == 0 %}
       <form action="deal" method="POST">
         <fieldset>
           <div class="btn-container">
             <legend>Players:</legend>
             <input type="number" id="players" name="players" min="1" max="7">
             <legend>Cards:</legend>
-            <input type="number" id="cards" name="cards" min="1" max="{{ cards | length }}">
+            <input type="number" id="cards" name="cards" min="1" max="{{ deck | length }}">
             <input type="submit" name="deal" value="Start the game" class="btn"/>
           </div>
         </fieldset>
       </form>
-    {% else %}
-      <form action="startGame" method="POST">
-        <fieldset>
-          <div class="btn-container">
-            <input type="submit" name="shuffle" value="Shuffle new deck" class="btn">
-          {% endif %}
-        </div>
-      </fieldset>
-    </form>
+    {% endif %}
 
     {#
       <code class="code">
         <h2>TEST BOX</h2>
-        {{dump(players)}}
+        {{dump(deck)}}
       </code>
-   #}
+      #}
 
     <div class="btn-container">
       <a href="{{path("card-home")}}" class="btn">
