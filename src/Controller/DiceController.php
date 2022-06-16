@@ -21,6 +21,7 @@ class DiceController extends AbstractController
             'title' => 'Dice',
             'die_value' => $die->roll(),
             'die_as_string' => $die->getAsString(),
+            'link_to_roll' => $this->generateUrl('dice-roll', ['numRolls' => 5,]),
         ];
         return $this->render('dice/home.html.twig', $data);
     }

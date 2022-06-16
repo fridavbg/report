@@ -106,31 +106,60 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal", methods={"GET","POST"})
+     * @Route("/card/deck/deal", name="deal-form", methods={"GET"})
+     * Display Form to choose N players and M cards
+     */
+
+    public function dealForm(
+        SessionInterface $session,
+    ): Response {
+
+        $data = [
+            'title' => 'Draw multiple card with players'
+        ];
+        return $this->render('card/drawMultipleWithPlayersForm.html.twig', $data);
+    }
+
+    /**
+    * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal", methods={"GET"})
      * Display N cardsHands with N Cards 
      * display leftOverDeck length
      */
 
     public function deal(
-        Request $request,
         SessionInterface $session,
-        String $numOfCards,
-        String $numOfPlayers,
     ): Response {
 
-        $numOfPlayers = $request->request->get('players');
-        $numOfCards = $request->request->get('cards');
-
-        $session->set("players", new Player($numOfPlayers, $numOfCards));
-
         $data = [
-            'title' => 'Draw multiple card with players',
+            'title' => 'Players and cardhands',
             'players' => $session->get('players')->startGame(),
-            'deck' => $session->get('players')->deck->getDeck()
+            'cards' => $session->get('players')->deck->getDeck(),
         ];
         return $this->render('card/drawMultipleWithPlayers.html.twig', $data);
     }
 
+
+    /**
+     * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal-process", methods={"POST"})
+     * Display N cardsHands with N Cards 
+     * display leftOverDeck length
+     */
+
+    public function dealProcess(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+    
+        $numOfPlayers = $request->request->get('numOfPlayers');
+        $numOfCards = $request->request->get('numOfCards');
+        // dd($numOfCards);
+        $session->set("players", new Player($numOfPlayers, $numOfCards));
+        
+        $data = [
+            'title' => 'Draw multiple card with players',
+        ];
+        return $this->redirect('/card/deck/deal/'.$numOfPlayers.'/'.$numOfCards);
+    }
 
     /**
      * @Route("/card/deck2", name="card-deck2")

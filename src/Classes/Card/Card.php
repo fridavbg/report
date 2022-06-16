@@ -60,14 +60,4 @@ class Card
     {
         return $this->suit;
     }
-
-    /**
-     * Show card as a object
-     * @return string
-     */
-    public function getCardObj()
-    {
-        $cardObj = ["suit" => $this->suit,"value" => $this->value];
-        return $cardObj;
-    }
 }

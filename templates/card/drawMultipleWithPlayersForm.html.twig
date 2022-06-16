@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+
+    <form action="/card/deck/deal/numOfPlayers/numOfCards" method="post">
+      <fieldset>
+        <div class="btn-container">
+          <legend>Players:</legend>
+          <input type="number" id="numOfPlayers" name="numOfPlayers" min="1" max="7">
+          <legend>Cards:</legend>
+          <input type="number" id="numOfCards" name="numOfCards" min="1" max="52">
+          <input type="submit" name="deal-process" value="Start the game" class="btn"/>
+        </div>
+      </fieldset>
+    </form>
+
+    {#
+     <code class="code">
+      <h2>TEST BOX</h2>
+      {{dump(players)}}
+      {{dump(cardNum)}}
+    </code>
+      #}
+
+    <div class="btn-container">
+      <a href="{{path("card-home")}}" class="btn">
+        Go back
+      </a>
+    </div>
+
+  </div>
+{% endblock %}

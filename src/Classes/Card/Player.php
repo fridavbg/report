@@ -15,7 +15,7 @@ class Player
         $this->players = $numOfPlayers;
         $this->deck = new Deck();
         $this->playersWithCardHands = array();
-        $this->amountOfDrawnCards = $numOfCards * $numOfPlayers;
+        $this->amountOfDrawnCards = intval($numOfCards) * intval($numOfPlayers);
     }
 
     public function startGame()
@@ -32,7 +32,6 @@ class Player
             } else if ($i >= 1) {
                 array_push($cardHands, array_splice($drawnCards, $this->cards * $i));
             }
-            // Update deck 
         }
         return $cardHands;
     }

@@ -86,7 +86,7 @@ class Deck
 
     /**
      * Shuffle deck of cards
-     * @return array
+     * @return bool|array
      */
     public function shuffleDeck()
     {
@@ -117,19 +117,5 @@ class Deck
         $this->setCardHand($updatedDeck);
         $this->setDeck($this->cards);
         return $this->getCardHand();
-    }
-
-    /**
-     * Return each card as a Object
-     */
-    public function getJson()
-    {
-        $jsonDeck = [];
-        $deckCards = $this->getDeck();
-        foreach($deckCards as $card) {
-            array_push($jsonDeck, $card->getCardObj());
-        }
-
-        return json_encode($jsonDeck, JSON_PRETTY_PRINT);
     }
 }

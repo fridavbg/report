@@ -6,52 +6,44 @@
 
 {% block content %}
   <div class="site-wrap">
-    <h2>Choose amount of players and amount of cards</h2>
-    <div class="player-container">
-      {% for cardHand in players %}
-        <div class="cardHand">
-          <h2 class="player-title">Player
-            {{loop.index}}
-          </h2>
-          {% for card in cardHand %}
-            <ul class="card">
-              {% if card.getSuite() == 'H'%}
-                <li class="red-suit">♥</li>
-              {% elseif card.getSuite() == 'S'%}
-                <li class="black-suit">♠</li>
-              {% elseif card.getSuite() == 'C'%}
-                <li class="black-suit">♣</li>
-              {% else %}
-                <li class="red-suit">♦</li>
-              {% endif %}
-              <li>{{ card.getValue() }}</li>
-            </ul>
-          {% endfor %}
-        </div>
-      {% endfor %}
-    </div>
-    <h3>Cards left in deck:
-      {{ deck | length }}
-    </h3>
-    {% if players | length == 0 %}
-      <form action="deal" method="POST">
-        <fieldset>
-          <div class="btn-container">
-            <legend>Players:</legend>
-            <input type="number" id="players" name="players" min="1" max="7">
-            <legend>Cards:</legend>
-            <input type="number" id="cards" name="cards" min="1" max="{{ deck | length }}">
-            <input type="submit" name="deal" value="Start the game" class="btn"/>
+    {% if players is defined %}
+      <h2>Choose amount of players and amount of cards</h2>
+      <div class="player-container">
+        {% for cardHand in players %}
+          <div class="cardHand">
+            <h2 class="player-title">Player
+              {{loop.index}}
+            </h2>
+            {% for card in cardHand %}
+              <ul class="card">
+                {% if card.getSuite() == 'H'%}
+                  <li class="red-suit">♥</li>
+                {% elseif card.getSuite() == 'S'%}
+                  <li class="black-suit">♠</li>
+                {% elseif card.getSuite() == 'C'%}
+                  <li class="black-suit">♣</li>
+                {% else %}
+                  <li class="red-suit">♦</li>
+                {% endif %}
+                <li>{{ card.getValue() }}</li>
+              </ul>
+            {% endfor %}
           </div>
-        </fieldset>
-      </form>
+        {% endfor %}
+      </div>
+      <h3>Cards left in deck:
+        {{ cards | length }}
+      </h3>
+    {% else %}
+      <p>No numbers was chosen
+      </p>
     {% endif %}
 
     {#
-      <code class="code">
-        <h2>TEST BOX</h2>
-        {{dump(deck)}}
-      </code>
+        <code class="code">
+      <h2>TEST BOX</h2>
+      {{dump(link_to_game)}}
+    </code>
       #}
 
     <div class="btn-container">
