@@ -84,7 +84,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/drawMultiple/{numOfCards}", name="card-draw-multiple", methods={"GET","POST"})
+     * @Route("/card/deck/draw/{numOfCards}", name="card-draw-multiple", methods={"GET","POST"})
      * Pull N cards and display leftOverDeck length
      * 
      */
