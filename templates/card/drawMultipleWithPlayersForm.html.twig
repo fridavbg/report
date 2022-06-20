@@ -7,10 +7,13 @@
 {% block content %}
   <div class="site-wrap">
 
-    <form action="/card/deck/deal/numOfPlayers/numOfCards" method="post">
+    <form action="{{ path('deal', {
+      numOfPlayers: numOfPlayers,
+      numOfCards: numOfCards
+      })}}" method="post">
       <fieldset>
         <div class="btn-container">
-          <legend>Players:</legend>
+          <legend>Players test:</legend>
           <input type="number" id="numOfPlayers" name="numOfPlayers" min="1" max="7">
           <legend>Cards:</legend>
           <input type="number" id="numOfCards" name="numOfCards" min="1" max="52">

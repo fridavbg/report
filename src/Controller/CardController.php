@@ -115,7 +115,9 @@ class CardController extends AbstractController
     ): Response {
 
         $data = [
-            'title' => 'Draw multiple card with players'
+            'title' => 'Draw multiple card with players',
+            'numOfPlayers' => 0,
+            'numOfCards' => 0
         ];
         return $this->render('card/drawMultipleWithPlayersForm.html.twig', $data);
     }
@@ -158,7 +160,10 @@ class CardController extends AbstractController
         $data = [
             'title' => 'Draw multiple card with players',
         ];
-        return $this->redirect('/card/deck/deal/'.$numOfPlayers.'/'.$numOfCards);
+        return $this->redirectToRoute('deal-process', [
+            'numOfPlayers' => $numOfPlayers,
+            'numOfCards' => $numOfCards
+        ]);
     }
 
     /**
