@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h2>How many cards do you want?</h2>
+      <form action="{{path('draw-multiple', {
+        numOfCards : numOfCards
+      })}}" method="post">
+        <fieldset>
+          <div class="btn-container">
+            <input type="number" id="cards" name="cards" min="1" max="52">
+            <input type="submit" name="draw-process" value="Draw any number of cards" class="btn"/>
+          </fieldset>
+        </form>
+
+      <div class="btn-container">
+        <a href="{{path("card-home")}}" class="btn">
+          Go back
+        </a>
+      </div>
+
+    </div>
+  {% endblock %}
