@@ -84,7 +84,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/draw/{numOfCards}", name="draw-form", methods={"GET"})
+     * @Route("/card/deck/draw/form/", name="draw-form", methods={"GET"})
      * Display Form to choose N players and M cards
      */
 
@@ -131,7 +131,7 @@ class CardController extends AbstractController
         $numOfCards = $request->request->get('cards');
 
         $session->get('leftOverDeck')->getCards(intval($numOfCards));
-
+        
         return $this->redirectToRoute('draw-multiple', ['numOfCards' => $numOfCards]);
     }
 
