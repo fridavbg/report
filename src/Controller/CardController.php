@@ -99,7 +99,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/draw/{numOfCards}", name="card-draw-multiple", methods={"GET")
+     * @Route("/card/deck/draw/{numOfCards}", name="draw-multiple", methods={"GET"})
      * Display cardhand with N cards
      * Display leftOverDeck length
      * 
@@ -118,7 +118,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/draw/{numOfCards}", name="card-draw-multiple-process", methods={"POST")
+     * @Route("/card/deck/draw/{numOfCards}", name="draw-process", methods={"POST"})
      * Take user input of  N cards
      * Update leftOverDeck length
      */
@@ -132,7 +132,7 @@ class CardController extends AbstractController
 
         $session->get('leftOverDeck')->getCards(intval($numOfCards));
 
-        return $this->redirectToRoute('card-draw-multiple', ['numOfCards' => $numOfCards]);
+        return $this->redirectToRoute('draw-multiple', ['numOfCards' => $numOfCards]);
     }
 
     /**
