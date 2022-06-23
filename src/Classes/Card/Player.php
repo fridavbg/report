@@ -8,7 +8,7 @@ class Player
      * Rules of the Game
      * Track num of players
      */
-    
+
     public function __construct($numOfPlayers, $numOfCards)
     {
         $this->cards = $numOfCards;
@@ -29,7 +29,7 @@ class Player
             $updateDeck = $this->deck->getDeck();
             if ($i < 1) {
                 array_push($cardHands, $drawnCards);
-            } else if ($i >= 1) {
+            } elseif ($i >= 1) {
                 array_push($cardHands, array_splice($drawnCards, $this->cards * $i));
             }
         }

@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class JsonCardController extends AbstractController
+class CardJsonController extends AbstractController
 {
     /**
      * @Route("/card/api/deck", name="api-deck")

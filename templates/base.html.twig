@@ -35,8 +35,15 @@
                 <a href="{{path("form-session")}}">Session</a>
               </div>
           </li>
-          <li>
-            <a href="{{path("dice-home")}}">Dice</a>
+              <li class="dropdown">
+              <button class="dropbtn">
+              Dice
+              </button>
+              <div class="dropdown-content">
+                <a href="{{path("dice-home")}}">Dice</a>
+                <a href="{{path("dice-graphic-home")}}">Graphic Dice</a>
+                <a href="{{path("dice-hand-home")}}">Dice Hand</a>
+              </div>
           </li>
           <li>
             <a href="{{path("card-home")}}">Card</a>

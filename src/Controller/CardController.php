@@ -51,10 +51,9 @@ class CardController extends AbstractController
     public function shuffle(
         SessionInterface $session
     ): Response {
-
         $deck = new Deck();
         $session->set("leftOverDeck", $deck);
-        $session->set("cardHand",  $deck->getCardHand());
+        $session->set("cardHand", $deck->getCardHand());
 
         $data = [
             'title' => 'Shuffled Deck',
@@ -73,7 +72,6 @@ class CardController extends AbstractController
     public function drawOne(
         SessionInterface $session
     ): Response {
-
         $data = [
             'title' => 'Draw a card',
             'cardHand' => $session->get('leftOverDeck')->getCards(1),
@@ -90,7 +88,6 @@ class CardController extends AbstractController
 
     public function drawMultipleForm(): Response
     {
-
         $data = [
             'title' => 'Draw multiple card with players',
             'numOfCards' => 0
@@ -102,13 +99,12 @@ class CardController extends AbstractController
      * @Route("/card/deck/draw/{numOfCards}", name="draw-multiple", methods={"GET"})
      * Display cardhand with N cards
      * Display leftOverDeck length
-     * 
+     *
      */
 
     public function drawMultiple(
         SessionInterface $session,
     ): Response {
-
         $data = [
             'title' => 'Draw multiple card',
             'cardHand' => $session->get('leftOverDeck')->getCardHand(),
@@ -127,11 +123,10 @@ class CardController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-
         $numOfCards = $request->request->get('cards');
 
         $session->get('leftOverDeck')->getCards(intval($numOfCards));
-        
+
         return $this->redirectToRoute('draw-multiple', ['numOfCards' => $numOfCards]);
     }
 
@@ -143,7 +138,6 @@ class CardController extends AbstractController
     public function dealForm(
         SessionInterface $session,
     ): Response {
-
         $data = [
             'title' => 'Draw multiple card with players',
             'numOfPlayers' => 0,
@@ -154,14 +148,13 @@ class CardController extends AbstractController
 
     /**
      * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal", methods={"GET"})
-     * Display N cardsHands with N Cards 
+     * Display N cardsHands with N Cards
      * display leftOverDeck length
      */
 
     public function deal(
         SessionInterface $session,
     ): Response {
-
         $data = [
             'title' => 'Players and cardhands',
             'players' => $session->get('players')->startGame(),
@@ -173,7 +166,7 @@ class CardController extends AbstractController
 
     /**
      * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal-process", methods={"POST"})
-     * Display N cardsHands with N Cards 
+     * Display N cardsHands with N Cards
      * display leftOverDeck length
      */
 
@@ -181,7 +174,6 @@ class CardController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-
         $numOfPlayers = $request->request->get('numOfPlayers');
         $numOfCards = $request->request->get('numOfCards');
         // dd($numOfCards);
