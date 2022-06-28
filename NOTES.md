@@ -8,7 +8,8 @@ tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
 
 # Code Sniffer
 
-## Run the tools like this.
+## cs checks code - bf corrects code
+
 ```
 tools/php-codesniffer/vendor/bin/phpcs -h
 tools/php-codesniffer/vendor/bin/phpcbf -h

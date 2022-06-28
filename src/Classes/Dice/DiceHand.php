@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Classes\Dice;
+
 use App\Classes\Dice\Dice;
 
 class DiceHand

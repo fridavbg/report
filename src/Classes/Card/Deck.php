@@ -126,7 +126,7 @@ class Deck
     {
         $jsonDeck = [];
         $deckCards = $this->getDeck();
-        foreach($deckCards as $card) {
+        foreach ($deckCards as $card) {
             array_push($jsonDeck, $card->getCardObj());
         }
 

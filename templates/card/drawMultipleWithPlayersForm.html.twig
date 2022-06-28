@@ -6,14 +6,12 @@
 
 {% block content %}
   <div class="site-wrap">
+    <h2>Choose amount of players and amount of cards</h2>
 
-    <form action="{{ path('deal', {
-      numOfPlayers: numOfPlayers,
-      numOfCards: numOfCards
-      })}}" method="post">
+    <form action="/card/deck/deal/numOfPlayers/numOfCards" method="post">
       <fieldset>
         <div class="btn-container">
-          <legend>Players test:</legend>
+          <legend>Players:</legend>
           <input type="number" id="numOfPlayers" name="numOfPlayers" min="1" max="7">
           <legend>Cards:</legend>
           <input type="number" id="numOfCards" name="numOfCards" min="1" max="52">

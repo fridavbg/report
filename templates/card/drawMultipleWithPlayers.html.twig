@@ -7,7 +7,6 @@
 {% block content %}
   <div class="site-wrap">
     {% if players is defined %}
-      <h2>Choose amount of players and amount of cards</h2>
       <div class="player-container">
         {% for cardHand in players %}
           <div class="cardHand">
@@ -40,9 +39,9 @@
     {% endif %}
 
     {#
-        <code class="code">
+      <code class="code">
       <h2>TEST BOX</h2>
-      {{dump(link_to_game)}}
+      {{dump(players)}}
     </code>
       #}
 

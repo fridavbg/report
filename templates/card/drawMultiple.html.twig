@@ -34,7 +34,7 @@
         <fieldset>
           <div class="btn-container">
             <input type="number" id="cards" name="cards" min="1" max="{{ cards | length }}">
-            <input type="submit" name="draw-process" value="Draw any number of cards" class="btn"/>
+            <input type="submit" name="drawMultiple" value="Draw any number of cards" class="btn"/>
           </fieldset>
         </form>
       {% else %}
@@ -48,15 +48,14 @@
         </fieldset>
       </form>
 
-    
-    {#
+      {#      
       <code class="code">
         <h2>TEST BOX</h2>
         {{dump(cards)}}
         {{dump(cardHand)}}
       </code>
-    #}
-    
+      #}
+
       <div class="btn-container">
         <a href="{{path("card-home")}}" class="btn">
           Go back

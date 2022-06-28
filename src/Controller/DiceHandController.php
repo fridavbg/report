@@ -2,10 +2,8 @@
 
 namespace App\Controller;
 
-
 use App\Classes\Dice\DiceHand;
 use App\Classes\Dice\Dice;
-use App\Classes\Dice\DiceGraphic;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,8 +45,8 @@ class DiceHandController extends AbstractController
         if ($roll) {
             $hand->roll();
         } elseif ($add) {
-            // $hand->add(new Dice());
-            $hand->add(new DiceGraphic());
+            $hand->add(new Dice());
+        //$hand->add(new \App\Dice\DiceGraphic());
         } elseif ($clear) {
             $hand = new DiceHand();
         }
