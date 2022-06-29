@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ title }}
+{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h1>{{ title }}</h1>
+    <h2>Rules of the game</h2>
+      <p>Players draws a card, and card is displayed. Player can choose to stop or draw a new card</p>
+      <p>If players gets over 21, the bank wins</p>
+      <p>When player stops its the banks turn</p>
+      <p>The bank is not aware of the players cardHand</p>
+      <p>Bank draws cards until it stops or has reached over 21</p>
+      <p>The bank wins if the points are equal or has more then the player</p>
+      <p>The player wins if the bank gets over 21</p>
+      <p>Then a new round can be started</p>
+    <div class="btn-container">
+        <a href="{{path("game-plan")}}" class="btn">
+          Start Game
+        </a>
+      </div>
+  </div>
+{% endblock %}
