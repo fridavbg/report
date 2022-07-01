@@ -6,6 +6,8 @@ use App\Classes\Card\Deck;
 use App\Classes\Card\Card;
 use App\Classes\Game\CardHandManager;
 use App\Classes\Game\GameManager;
+use App\Classes\Game\Blackjack;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,9 +24,8 @@ class GameController extends AbstractController
         $session->start();
         $session->clear();
 
-        if (!$session->get("deck")) {
-            $session->set("deck", new Deck());
-            $session->set("cardHand", [new Deck()]);
+        if (!$session->get("blackjack")) {
+            $session->set("blackjack", new Blackjack());
         };
 
         $data = [
@@ -51,9 +52,11 @@ class GameController extends AbstractController
      */
     public function plan(SessionInterface $session): Response
     {
+        $game = $session->get('blackjack');
 
         $data = [
-            'title' => 'Start Black jack',
+            'title' => 'Black jack',
+            'blackjack' => $game
         ];
         return $this->render('game/plan.html.twig', $data);
     }
@@ -63,15 +66,10 @@ class GameController extends AbstractController
      */
     public function test(SessionInterface $session): Response
     {
-        $deck = new Deck();
-        $game = new CardHandManager();
-        $twentyOne = new GameManager();
+        $game = $session->get('blackjack');
         $data = [
             'title' => 'TEST Black jack',
-            'cards' => $deck->getDeck(),
-            'calculatedCardHand' => $game->calculateCardHand($deck->getCards(4)),
-            'cardHand' => $deck->getCardHand(),
-            'twentyOne' => $twentyOne->isTwentyOne([new Card('H', '3'), new Card('H', '10'), new Card('C', '8')])
+            'blackjack' => $game->dealer->getPlayer(),
         ];
         return $this->render('game/test.html.twig', $data);
     }

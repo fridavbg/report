@@ -4,14 +4,17 @@
 {% endblock %}
 
 {% block content %}
- {# #}
-  <div class="site-wrap">
-    <h1>{{ title }}</h1>
-    <div class="site-wrap">
+  {# 
+   <div class="site-wrap">
       <h2>ScoreBoard</h2>
       <h3>Player: 0</h3>
       <h3>Dealer: 0</h3>
     </div>
+ #}
+  <div class="site-wrap">
+    <h1>{{ title }}</h1>
+
+    {#
     <form action="draw">
       <fieldset>
         <h2>Player</h2>
@@ -27,8 +30,10 @@
         </fieldset>
       {% endif %}
     </form>
+#}
 
-    <form action="draw">
+    {#
+     <form action="draw">
       <fieldset>
         <h2>Dealer</h2>
         <h3>Cardhand total: 0</h3>
@@ -43,14 +48,13 @@
         </fieldset>
       {% endif %}
     </form>
+  #}
   </div>
 
   {# #}
   <code class="code">
     <h2>TEST BOX</h2>
-    {{dump(cardHand)}}
-    {{dump(calculatedCardHand)}}
-    {{dump(twentyOne)}}
+    {{dump(blackjack)}}
   </code>
 
   <div class="btn-container">

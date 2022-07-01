@@ -7,13 +7,17 @@ use App\Classes\Game\PlayerActions;
 class Player implements PlayerActions
 {
 
-    protected $typeOfPlayer;
+    protected $type;
     protected $currentHand;
     protected $currentScore;
     protected $totalWins;
 
     public function __construct(string $type = 'player')
     {
+        if ($type !== 'player' && $type !== 'dealer') {
+            throw new \Exception('Invalid player type.');
+        }
+
         $this->type = $type;
         $this->currentHand = [];
         $this->currentScore = 0;
@@ -21,8 +25,8 @@ class Player implements PlayerActions
     }
 
     /**
-     * A winner is determined and this method will either increment the player's or the dealer's total
-     * score by one.
+     * Increment the player's or the dealer's total
+     * score by one, depending who is closest to 21
      * @access public
      * @return void
      */
@@ -31,10 +35,9 @@ class Player implements PlayerActions
         $this->totalWins++;
     }
 
-
     /**
-     * Called whenever a new game has started.  The player and the dealer essentially hand over their
-     * previously-played hand and their card score; naturally, is zero.
+     * Reset current cardHand and score
+     * to start a new round
      * @access public
      * @return void
      */
@@ -42,5 +45,16 @@ class Player implements PlayerActions
     {
         $this->currentHand = [];
         $this->currentScore = 0;
+    }
+
+    /**
+     * Once the player stands, the dealer will draw
+     * Check for active player
+     * @access public
+     * @return string $type Player or dealer
+     */
+    public function getPlayer()
+    {
+        return $this->type;
     }
 }
