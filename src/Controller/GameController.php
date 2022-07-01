@@ -22,8 +22,8 @@ class GameController extends AbstractController
         $session->start();
         $session->clear();
 
-        if (!$session->get("leftOverDeck")) {
-            $session->set("leftOverDeck", new Deck());
+        if (!$session->get("deck")) {
+            $session->set("deck", new Deck());
             $session->set("cardHand", [new Deck()]);
         };
 
@@ -51,16 +51,28 @@ class GameController extends AbstractController
      */
     public function plan(SessionInterface $session): Response
     {
+
+        $data = [
+            'title' => 'Start Black jack',
+        ];
+        return $this->render('game/plan.html.twig', $data);
+    }
+
+    /**
+     * @Route("/game/test", name="game-test")
+     */
+    public function test(SessionInterface $session): Response
+    {
         $deck = new Deck();
         $game = new CardHandManager();
         $twentyOne = new GameManager();
         $data = [
-            'title' => 'Start Black jack',
+            'title' => 'TEST Black jack',
             'cards' => $deck->getDeck(),
             'calculatedCardHand' => $game->calculateCardHand($deck->getCards(4)),
             'cardHand' => $deck->getCardHand(),
             'twentyOne' => $twentyOne->isTwentyOne([new Card('H', '3'), new Card('H', '10'), new Card('C', '8')])
         ];
-        return $this->render('game/plan.html.twig', $data);
+        return $this->render('game/test.html.twig', $data);
     }
 }

@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Classes\Card\Deck;
 use App\Classes\Card\Deck2;
-use App\Classes\Card\Player;
+use App\Classes\Card\Players;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -146,7 +146,7 @@ class CardController extends AbstractController
         $numOfPlayers = $request->request->get('numOfPlayers');
         $numOfCards = $request->request->get('numOfCards');
         // dd($numOfCards);
-        $session->set("players", new Player($numOfPlayers, $numOfCards));
+        $session->set("players", new Players($numOfPlayers, $numOfCards));
 
         return $this->redirect('/card/deck/deal/'.$numOfPlayers.'/'.$numOfCards);
     }

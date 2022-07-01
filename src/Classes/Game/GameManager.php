@@ -17,6 +17,10 @@ class GameManager
         $this->calculatedCardhand = $this->cardHandManager;
     }
 
+    /**
+     * Check if cardHand is TwentyOne
+     * @return string
+     */
     public function isTwentyOne($cardHand) {
         if($this->calculatedCardhand->calculateCardHand($cardHand) == 21 ) {
             return true;

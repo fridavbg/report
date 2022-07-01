@@ -2,11 +2,11 @@
 
 namespace App\Classes\Card;
 
-class Player
+class Players
 {
     /**
-     * Rules of the Game
      * Track num of players
+     * Create players with n cards in a cardHand
      */
 
     public function __construct($numOfPlayers, $numOfCards)

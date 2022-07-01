@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Classes\Card;
-
 class Deck
 {
     /**
@@ -18,20 +17,11 @@ class Deck
     {
         $this->cardHand = array();
         $this->cards = array();
-        $suits = array('H', 'C', 'D', 'S');
-        $values = array(
+        $this->suits = array('H', 'C', 'D', 'S');
+        $this->values = array(
             'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
         );
-
-        /**
-         * Loop through to create Deck of cards
-         */
-        foreach ($suits as $suit) {
-            foreach ($values as $value) {
-                $card = new Card($suit, $value);
-                array_push($this->cards, $card);
-            }
-        }
+        $this->createDeck();
     }
 
     /**
