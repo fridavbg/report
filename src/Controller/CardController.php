@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Classes\Card\Deck;
 use App\Classes\Card\Deck2;
-use App\Classes\Card\Players;
+use App\Classes\Game\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -53,12 +53,10 @@ class CardController extends AbstractController
     ): Response {
         $deck = new Deck();
         $session->set("leftOverDeck", $deck);
-        $session->set("cardHand", $deck->getCardHand());
 
         $data = [
             'title' => 'Shuffled Deck',
             'deck' => $deck->shuffleDeck(),
-            'cardHand' => $deck->getCardHand(),
         ];
 
         return $this->render('card/deck.html.twig', $data);
@@ -107,8 +105,8 @@ class CardController extends AbstractController
      * Display Form to choose N players and M cards
      */
 
-    public function dealForm(
-    ): Response {
+    public function dealForm(): Response
+    {
         $data = [
             'title' => 'Draw multiple card with players'
         ];
@@ -116,7 +114,7 @@ class CardController extends AbstractController
     }
 
     /**
-    * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal", methods={"GET"})
+     * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal", methods={"GET"})
      * Display N cardsHands with N Cards
      * display leftOverDeck length
      */
@@ -126,8 +124,8 @@ class CardController extends AbstractController
     ): Response {
         $data = [
             'title' => 'Players and cardhands',
-            'players' => $session->get('players')->startGame(),
-            'cards' => $session->get('players')->deck->getDeck(),
+            'players' => $session->get('players'),
+            'cards' => $session->get('leftOverDeck')->getDeck(),
         ];
         return $this->render('card/drawMultipleWithPlayers.html.twig', $data);
     }
@@ -145,10 +143,18 @@ class CardController extends AbstractController
     ): Response {
         $numOfPlayers = $request->request->get('numOfPlayers');
         $numOfCards = $request->request->get('numOfCards');
-        // dd($numOfCards);
-        $session->set("players", new Players($numOfPlayers, $numOfCards));
+        $deck = $session->get('leftOverDeck');
+        $players = [];
 
-        return $this->redirect('/card/deck/deal/'.$numOfPlayers.'/'.$numOfCards);
+        for ($i = 0; $i < $numOfPlayers; $i++) {
+            $player = new Player();
+            $player->setCurrentCardHand($deck->getCards($numOfCards));
+            array_push($players, $player);
+        }
+
+        $session->set("players", $players);
+
+        return $this->redirect('/card/deck/deal/' . $numOfPlayers . '/' . $numOfCards);
     }
 
     /**
