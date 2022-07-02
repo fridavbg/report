@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-class CardHandManager
+
+class CardHandCalculator
 {
     /**
      * Calculate points of cardHand

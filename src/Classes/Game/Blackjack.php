@@ -2,6 +2,8 @@
 
 namespace App\Classes\Game;
 
+use App\Classes\Card\Deck;
+
 class Blackjack
 {
     public $blackjack = 21;
@@ -10,10 +12,11 @@ class Blackjack
     {
         $this->player = new Player();
         $this->dealer = new Player('dealer');
+        $this->deck = new Deck();
     }
 
     /**
-     * Reset player scores and shuffle deck
+     * Reset player scores for a new round
      * @static
      * @access public
      * @return void

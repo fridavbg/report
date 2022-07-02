@@ -80,13 +80,13 @@ class Deck
      */
     public function shuffleDeck()
     {
-        $deckCards = $this->getDeck();
+        $cards = $this->getDeck();
 
-        if (shuffle($deckCards)) {
-            $this->setDeck($deckCards);
-            return $deckCards;
+        if (shuffle($cards)) {
+            $this->setDeck($cards);
+            return $cards;
         }
-        return shuffle($deckCards);
+        return shuffle($cards);
     }
 
     /**

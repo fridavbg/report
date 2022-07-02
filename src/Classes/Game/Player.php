@@ -3,6 +3,7 @@
 namespace App\Classes\Game;
 
 use App\Classes\Game\PlayerActions;
+use App\Classes\Card\Deck;
 
 class Player implements PlayerActions
 {
@@ -14,14 +15,51 @@ class Player implements PlayerActions
 
     public function __construct(string $type = 'player')
     {
-        if ($type !== 'player' && $type !== 'dealer') {
-            throw new \Exception('Invalid player type.');
-        }
-
         $this->type = $type;
         $this->currentHand = [];
         $this->currentScore = 0;
         $this->totalWins = 0;
+    }
+
+    /**
+     * Player cardHand getter
+     * @access public
+     * @return array
+     */
+    public function getCurrentCardHand()
+    {
+        return $this->currentHand;
+    }
+
+    /**
+     * cardHand Var Setter
+     * @param array $deck
+     */
+    public function setCurrentCardHand($cards)
+    {
+        $this->currentHand = $cards;
+    }
+
+    /**
+     * Player draws one card from current Deck.
+     * Why is cardHands not separate for player and dealer ????
+     * @return list
+     */
+    public function draw($deck)
+    {
+        $drawnCard = $deck->getCards(1);
+        $this->setCurrentCardHand($drawnCard);
+        return $this->getCurrentCardHand();
+    }
+
+    /**
+     * Switch type (player)
+     * @access public
+     * @return void
+     */
+    public function stop()
+    {
+        return 'next players turn';
     }
 
     /**
@@ -36,6 +74,15 @@ class Player implements PlayerActions
     }
 
     /**
+     * TotalWins getter
+     * @access public
+     * @return integer
+     */
+    public function getTotalWins()
+    {
+        return $this->totalWins;
+    }
+    /**
      * Reset current cardHand and score
      * to start a new round
      * @access public
@@ -48,8 +95,7 @@ class Player implements PlayerActions
     }
 
     /**
-     * Once the player stands, the dealer will draw
-     * Check for active player
+     * Check for player type
      * @access public
      * @return string $type Player or dealer
      */

@@ -7,7 +7,7 @@ use App\Classes\Card\Card;
 use App\Classes\Game\CardHandManager;
 use App\Classes\Game\GameManager;
 use App\Classes\Game\Blackjack;
-
+use App\Classes\Game\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -56,7 +56,11 @@ class GameController extends AbstractController
 
         $data = [
             'title' => 'Black jack',
-            'blackjack' => $game
+            'blackjack' => $game,
+            'dealer' => $game->dealer->getPlayer(),
+            'player'  => $game->player->getPlayer(),
+            'dealerWins' => $game->dealer->getTotalWins(),
+            'playerWins' => $game->player->getTotalWins(),
         ];
         return $this->render('game/plan.html.twig', $data);
     }
@@ -69,7 +73,10 @@ class GameController extends AbstractController
         $game = $session->get('blackjack');
         $data = [
             'title' => 'TEST Black jack',
-            'blackjack' => $game->dealer->getPlayer(),
+            // SAME HANDS . . .
+            'playerHand' => $game->player->draw($game->deck),
+            'dealerHand' => $game->dealer->draw($game->deck),
+            'deck' => $game->deck->getDeck(),
         ];
         return $this->render('game/test.html.twig', $data);
     }
