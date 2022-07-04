@@ -91,9 +91,9 @@ class Deck
     }
 
     /**
-     * Grab N numbers of random cards from deck & update leftOverDeck
+     * Grab N numbers of random cards from deck & update cardHand & leftOverDeck
+     * @param $leftOverDeck array
      * @param $numberOfCards int
-     * @return cardHand array
      */
 
     public function getCards($numberOfCards)
@@ -103,16 +103,12 @@ class Deck
         for ($i = 0; $i < $numberOfCards; $i++) {
             array_push($drawnCards, array_shift($this->cards));
         }
-        // remove cardHand from deck
         $currentCardHand = $this->getCardHand();
         $updatedDeck = array_merge($currentCardHand, $drawnCards);
         $this->setCardHand($updatedDeck);
-        return $this->getCardHand();
         $this->setDeck($this->cards);
-
-        return $drawnCards;
+        return $this->getCardHand();
     }
-
 
     /**
      * Grab N numbers of random cards from deck & update player cardHand
