@@ -197,7 +197,7 @@ class CardController extends AbstractController
         }
         $session->set("players", $players);
 
-        return $this->redirect('/card/deck/deal/' . $numOfPlayers . '/' . $numOfCards);
+        return $this->redirectToRoute('deal', ['numOfPlayers' => $numOfPlayers,'numOfCards' => $numOfCards]);
     }
 
     /**
