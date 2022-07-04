@@ -4,25 +4,31 @@
 {% endblock %}
 
 {% block content %}
-   <div class="site-wrap">
-      <h2>ScoreBoard</h2>
-      <h3>{{player}}: {{dealerWins}}</h3>
-      <h3>{{dealer}}: {{playerWins}}</h3>
-    </div>
+  <div class="site-wrap">
+    <h2>ScoreBoard</h2>
+    <h3>{{player}}:
+      {{dealerWins}}</h3>
+    <h3>{{dealer}}:
+      {{playerWins}}</h3>
+  </div>
 
   <div class="site-wrap">
     <h1>{{ title }}</h1>
 
-    {# #}
-    <form action="draw">
+    {#
+    ERROR MESSAGE 
+    The requested resource /game/game/plan.html.twig was not found on this server.
+  Where is the extra /game comming from ?? 
+     #}
+    <form action="{{path('game-plan')}}" method="post">
       <fieldset>
         <h2>{{player}}</h2>
-        <h3>Cardhand total: 0</h3>
+        <h3>Player Cardhand total: 0</h3>
         <p class="btn-container">
           {% if cards | length <= 52 %}
-            <input type="submit" name="game-draw" value="Draw a card" class="btn">
+            <input id="player" type="submit" name="player" value="Draw a card" class="btn">
           </p>
-        {% elseif cardHand | length >= 1 %}
+        {% elseif playerHand | length >= 1 %}
           <p>
             <input type="submit" value="Stop" class="standard-link">
           </p>
@@ -30,35 +36,34 @@
       {% endif %}
     </form>
 
-
-    {#
-     <form action="draw">
+    {#  #}
+    <form action="{{path('game-plan')}}" method="post">
       <fieldset>
         <h2>Dealer</h2>
         <h3>Cardhand total: 0</h3>
         <p class="btn-container">
           {% if cards | length <= 52 %}
-            <input type="submit" name="game-draw" value="Draw a card" class="btn">
+              <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
           </p>
-        {% elseif cardHand | length >= 1 %}
-          <p>
-            <input type="submit" value="Stop" class="standard-link">
-          </p>
-        </fieldset>
-      {% endif %}
-    </form>
-  #}
-  </div>
+        </p>
+      {% elseif dealerHand | length >= 1 %}
+        <p>
+          <input type="submit" value="Stop" class="standard-link">
+        </p>
+      </fieldset>
+    {% endif %}
+  </form>
+</div>
 
-  {# #}
-  <code class="code">
-    <h2>TEST BOX</h2>
-    {{dump(blackjack)}}
-  </code>
+{# #}
+<code class="code">
+  <h2>TEST BOX</h2>
+  {{dump(playerHand)}}
+</code>
 
-  <div class="btn-container">
-    <a href="{{path("game-home")}}" class="btn">
-      Go back to game rules
-    </a>
-  </div>
+<div class="btn-container">
+  <a href="{{path("game-home")}}" class="btn">
+    Go back to game rules
+  </a>
+</div>
 {% endblock %}

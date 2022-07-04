@@ -42,14 +42,17 @@ class Player implements PlayerActions
 
     /**
      * Player draws one card from current Deck.
-     * Why is cardHands not separate for player and dealer ????
-     * @return list
+     * @return void
      */
     public function draw($deck)
     {
+        $newCardHand = array();
+        $currentCardHand = $this->getCurrentCardHand();
         $drawnCard = $deck->getCards(1);
-        $this->setCurrentCardHand($drawnCard);
-        return $this->getCurrentCardHand();
+        array_push($newCardHand, $drawnCard);
+        $updatedCardHand = array_merge($newCardHand, $currentCardHand);
+        $this->setCurrentCardHand($updatedCardHand);
+        // dd($this->getCurrentCardHand());
     }
 
     /**

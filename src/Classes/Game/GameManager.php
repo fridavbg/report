@@ -2,10 +2,10 @@
 
 namespace App\Classes\Game;
 
-use App\Classes\Game\CardHandManager;
+use App\Classes\Game\CardHandCalculator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Componenat\Routing\Annotation\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 class GameManager
@@ -13,7 +13,7 @@ class GameManager
 
     public function __construct()
     {
-        $this->cardHandManager = new CardHandManager();
+        $this->cardHandManager = new CardHandCalculator();
         $this->calculatedCardhand = $this->cardHandManager;
     }
 

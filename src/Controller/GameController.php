@@ -12,6 +12,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class GameController extends AbstractController
 {
@@ -48,7 +50,8 @@ class GameController extends AbstractController
 
 
     /**
-     * @Route("/gamePlan", name="game-plan")
+     * @Route("/game/plan", name="game-plan", methods={"GET"})
+     * Page to start the game
      */
     public function plan(SessionInterface $session): Response
     {
@@ -61,8 +64,39 @@ class GameController extends AbstractController
             'player'  => $game->player->getPlayer(),
             'dealerWins' => $game->dealer->getTotalWins(),
             'playerWins' => $game->player->getTotalWins(),
+            'playerHand' => $game->player->getCurrentCardHand(),
+            'dealerHand' => $game->dealer->getCurrentCardHand(),
+            'cards' => $game->deck->getDeck()
         ];
         return $this->render('game/plan.html.twig', $data);
+    }
+
+    /**
+     * @Route("/game/plan", name="draw-process", methods={"POST"})
+     */
+    public function draw(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+
+        // ERROR MESSAGE 
+        // The requested resource /game/game/plan.html.twig was not found on this server.
+        // Where is the extra /game comming from ?? 
+
+        // Indicate if it's the players or the dealers turn
+
+        $player = $request->request->all();
+        $game = $session->get('blackjack');
+
+        $game->player->draw($game->deck);
+
+        $game->dealer->draw($game->deck);
+
+        // TEST if one card gets added to each cardHand
+        // dd($game);
+        //dd($player);
+
+        return $this->redirect('game/plan.html.twig');
     }
 
     /**
@@ -73,7 +107,6 @@ class GameController extends AbstractController
         $game = $session->get('blackjack');
         $data = [
             'title' => 'TEST Black jack',
-            // SAME HANDS . . .
             'playerHand' => $game->player->draw($game->deck),
             'dealerHand' => $game->dealer->draw($game->deck),
             'deck' => $game->deck->getDeck(),
