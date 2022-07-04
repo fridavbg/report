@@ -95,7 +95,7 @@ class GameController extends AbstractController
         // dd($game);
         //dd($player);
 
-        return $this->redirect('/game/plan');
+        return $this->redirectToRoute('game-plan');
     }
 
     /**
