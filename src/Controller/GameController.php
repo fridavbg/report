@@ -81,11 +81,8 @@ class GameController extends AbstractController
         SessionInterface $session
     ): Response {
 
-        // ERROR MESSAGE 
-        // The requested resource /game/game/plan.html.twig was not found on this server.
-        // Where is the extra /game coming from ?? 
-
         // Indicate if it's the players or the dealers turn
+        // Grab info from Buttons
         $player = $request->request->all();
         
         $game = $session->get('blackjack');
