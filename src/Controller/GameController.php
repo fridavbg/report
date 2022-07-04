@@ -51,7 +51,8 @@ class GameController extends AbstractController
 
     /**
      * @Route("/game/plan", name="game-plan", methods={"GET"})
-     * Page to start the game
+     * Page to play the game
+     * Renders player & dealer information 
      */
     public function plan(SessionInterface $session): Response
     {
@@ -73,6 +74,7 @@ class GameController extends AbstractController
 
     /**
      * @Route("/game/plan", name="draw-process", methods={"POST"})
+     * Draws a card to a players CardHand
      */
     public function draw(
         Request $request,
@@ -81,22 +83,22 @@ class GameController extends AbstractController
 
         // ERROR MESSAGE 
         // The requested resource /game/game/plan.html.twig was not found on this server.
-        // Where is the extra /game comming from ?? 
+        // Where is the extra /game coming from ?? 
 
         // Indicate if it's the players or the dealers turn
-
         $player = $request->request->all();
+        
         $game = $session->get('blackjack');
 
         $game->player->draw($game->deck);
 
         $game->dealer->draw($game->deck);
 
-        // TEST if one card gets added to each cardHand
+        // TEST if one card gets added to each cardHand 
         // dd($game);
         //dd($player);
 
-        return $this->redirect('game/plan.html.twig');
+        return $this->redirect('/game/plan');
     }
 
     /**

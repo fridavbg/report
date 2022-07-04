@@ -5,6 +5,9 @@
 
 {% block content %}
   <div class="site-wrap">
+    <h2>Cards in deck:</h2>
+    <h3>
+      {{ cards | length }}</h3>
     <h2>ScoreBoard</h2>
     <h3>{{player}}:
       {{dealerWins}}</h3>
@@ -18,9 +21,10 @@
     {#
     ERROR MESSAGE 
     The requested resource /game/game/plan.html.twig was not found on this server.
-  Where is the extra /game comming from ?? 
+    Where is the extra /game coming from ?? 
+    action not working ??
      #}
-    <form action="{{path('game-plan')}}" method="post">
+    <form action="{{path("draw-process")}}" method="post">
       <fieldset>
         <h2>{{player}}</h2>
         <h3>Player Cardhand total: 0</h3>
@@ -39,11 +43,11 @@
     {#  #}
     <form action="{{path('game-plan')}}" method="post">
       <fieldset>
-        <h2>Dealer</h2>
+        <h2>{{dealer}}</h2>
         <h3>Cardhand total: 0</h3>
         <p class="btn-container">
           {% if cards | length <= 52 %}
-              <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+            <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
           </p>
         </p>
       {% elseif dealerHand | length >= 1 %}
@@ -59,6 +63,7 @@
 <code class="code">
   <h2>TEST BOX</h2>
   {{dump(playerHand)}}
+  {{dump(dealerHand)}}
 </code>
 
 <div class="btn-container">
