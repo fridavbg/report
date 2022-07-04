@@ -48,7 +48,7 @@ class Player implements PlayerActions
     {
         $newCardHand = array();
         $currentCardHand = $this->getCurrentCardHand();
-        $drawnCard = $deck->getCards(1);
+        $drawnCard = $deck->getCardForPlayer(1);
         array_push($newCardHand, $drawnCard);
         $updatedCardHand = array_merge($newCardHand, $currentCardHand);
         $this->setCurrentCardHand($updatedCardHand);
