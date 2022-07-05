@@ -18,108 +18,93 @@
   <div class="site-wrap">
     <h1>{{ title }}</h1>
 
-    <form 
-     {#
-    action="{{path("draw-process")}}" 
+    {#
+    action="{{path("draw-process")}}"
      #}
-    action="{{path("draw-process")}}" 
-    method="post"
-    >
-      <fieldset>
-        <h2>{{player}}</h2>
-        <h3>Player Cardhand total: 0</h3>
-        {% if playerHand | length == 0 %}
-          <div class="btn-container">
-            <input id="player" type="submit" name="player" value="Draw a card" class="btn">
-          </div>
-        {% else %}
-          <div class="card-container">
-            {% for key, cards in playerHand %}
-              {% for key, card in cards %}
-                <ul class="card">
-                  {% if card.getSuite() == 'H'%}
-                    <li class="red-suit">♥</li>
-                  {% elseif card.getSuite() == 'S'%}
-                    <li class="black-suit">♠</li>
-                  {% elseif card.getSuite() == 'C'%}
-                    <li class="black-suit">♣</li>
-                  {% else %}
-                    <li class="red-suit">♦</li>
-                  {% endif %}
-                  <li>{{ card.getValue() }}</li>
-                </ul>
-              {% endfor %}
-            {% endfor %}
-          </div>
-        </fieldset>
-      {% endif %}
 
-      <div class="btn-container">
-        <input id="player" type="submit" name="player" value="Draw a card" class="btn">
-        <input type="submit" value="Stop" class="standard-link">
-      </div>
+    <form action="{{path(" draw-process")}}"="draw-process")}}"" method="post" class="player-form">
+      <h2>{{player}}</h2>
+      <h3>Player Cardhand total: 0</h3>
+      {% if playerHand | length > 0 %}
+        <div class="btn-container">
+          <input id="player" type="submit" name="player" value="Draw a card" class="btn">
+          <input type="submit" value="Stop" class="standard-link">
+        </div>
+        <div class="card-container">
+          {% for key, cards in playerHand %}
+            {% for key, card in cards %}
+              <ul class="card">
+                {% if card.getSuite() == 'H'%}
+                  <li class="red-suit">♥</li>
+                {% elseif card.getSuite() == 'S'%}
+                  <li class="black-suit">♠</li>
+                {% elseif card.getSuite() == 'C'%}
+                  <li class="black-suit">♣</li>
+                {% else %}
+                  <li class="red-suit">♦</li>
+                {% endif %}
+                <li>{{ card.getValue() }}</li>
+              </ul>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="btn-container">
+          <input id="player" type="submit" name="player" value="Draw a card" class="btn">
+        </div>
+      {% endif %}
     </form>
 
-    {#  #}
-    <form 
-     {#
-    action="{{path("draw-process")}}" 
+    {#
+    action="{{path("draw-process")}}"
      #}
-    action="{{path("draw-process")}}" 
-    method="post"
-    >
-      <fieldset>
-        <h2>{{dealer}}</h2>
-        <h3>Dealer Cardhand total: 0</h3>
-        {% if dealerHand | length == 0 %}
-          <div class="btn-container">
-            <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
-          </div>
-        {% else %}
-          <div class="card-container">
-            {% for key, cards in dealerHand %}
-              {% for key, card in cards %}
-                <ul class="card">
-                  {% if card.getSuite() == 'H'%}
-                    <li class="red-suit">♥</li>
-                  {% elseif card.getSuite() == 'S'%}
-                    <li class="black-suit">♠</li>
-                  {% elseif card.getSuite() == 'C'%}
-                    <li class="black-suit">♣</li>
-                  {% else %}
-                    <li class="red-suit">♦</li>
-                  {% endif %}
-                  <li>{{ card.getValue() }}</li>
-                </ul>
-              {% endfor %}
+    <form action="{{path(" draw-process")}}"="draw-process")}}"" method="post" class="dealer-form">
+      <h2>{{dealer}}</h2>
+      <h3>Dealer Cardhand total: 0</h3>
+      {% if dealerHand | length > 0 %}
+        <div class="btn-container">
+          <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+          <input type="submit" value="Stop" class="standard-link">
+        </div>
+        <div class="card-container">
+          {% for key, cards in dealerHand %}
+            {% for key, card in cards %}
+              <ul class="card">
+                {% if card.getSuite() == 'H'%}
+                  <li class="red-suit">♥</li>
+                {% elseif card.getSuite() == 'S'%}
+                  <li class="black-suit">♠</li>
+                {% elseif card.getSuite() == 'C'%}
+                  <li class="black-suit">♣</li>
+                {% else %}
+                  <li class="red-suit">♦</li>
+                {% endif %}
+                <li>{{ card.getValue() }}</li>
+              </ul>
             {% endfor %}
-          </div>
-        </fieldset>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="btn-container">
+          <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+        </div>
       {% endif %}
-
-      <div class="btn-container">
-        <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
-        <input type="submit" value="Stop" class="standard-link">
-      </div>
     </form>
-</div>
+  </div>
 
-{#
-  <code class="code">
-  <h2>TEST BOX</h2>
-  {{dump(playerHand)}}
-  {{dump(dealerHand)}}
-</code>
+  {#
+    <code class="code">
+    <h2>TEST BOX</h2>
+    {{dump(playerHand)}}
+    {{dump(dealerHand)}}
+  </code>
  #}
-
-{#
+  {#
 href="{{path("game-home")}}"
 #}
-<div class="btn-container">
-  <a 
-    href="{{path("game-home")}}" 
-    class="btn">
+  <div class="btn-container">
+    <a href="{{path(" game-home")}}"="game-home")}}"" class="btn">
       Go back to game rules
-  </a>
-</div>
+    </a>
+  </div>
 {% endblock %}

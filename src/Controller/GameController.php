@@ -83,12 +83,13 @@ class GameController extends AbstractController
 
         // Indicate if it's the players or the dealers turn
         // Grab info from Buttons
-        $player = $request->request->all();
-        
+        $player = $request->request->get('player');
+
         $game = $session->get('blackjack');
 
-        $game->player->draw($game->deck);
-
+        if ($player) {
+            $game->player->draw($game->deck);
+        }
         $game->dealer->draw($game->deck);
 
         // TEST if one card gets added to each cardHand 
