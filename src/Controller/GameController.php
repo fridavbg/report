@@ -82,19 +82,15 @@ class GameController extends AbstractController
     ): Response {
 
         // Indicate if it's the players or the dealers turn
-        // Grab info from Buttons
         $player = $request->request->get('player');
-
+        $dealer = $request->request->get('dealer');
         $game = $session->get('blackjack');
 
         if ($player) {
             $game->player->draw($game->deck);
-        }
-        $game->dealer->draw($game->deck);
-
-        // TEST if one card gets added to each cardHand 
-        // dd($game);
-        //dd($player);
+        } elseif ($dealer) {
+            $game->dealer->draw($game->deck);
+        };
 
         return $this->redirectToRoute('game-plan');
     }

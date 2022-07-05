@@ -22,7 +22,7 @@
     action="{{path("draw-process")}}"
      #}
 
-    <form action="{{path(" draw-process")}}"="draw-process")}}"" method="post" class="player-form">
+    <form action="{{path("draw-process")}}" method="post" class="player-form">
       <h2>{{player}}</h2>
       <h3>Player Cardhand total: 0</h3>
       {% if playerHand | length > 0 %}
@@ -58,7 +58,7 @@
     {#
     action="{{path("draw-process")}}"
      #}
-    <form action="{{path(" draw-process")}}"="draw-process")}}"" method="post" class="dealer-form">
+    <form action="{{path("draw-process")}}" method="post" class="dealer-form">
       <h2>{{dealer}}</h2>
       <h3>Dealer Cardhand total: 0</h3>
       {% if dealerHand | length > 0 %}
@@ -103,7 +103,7 @@
 href="{{path("game-home")}}"
 #}
   <div class="btn-container">
-    <a href="{{path(" game-home")}}"="game-home")}}"" class="btn">
+    <a href="{{path("game-home")}}" class="btn">
       Go back to game rules
     </a>
   </div>
