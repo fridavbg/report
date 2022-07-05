@@ -103,11 +103,10 @@ class Deck
         for ($i = 0; $i < $numberOfCards; $i++) {
             array_push($drawnCards, array_shift($this->cards));
         }
-        dd($drawnCards);
+        $this->setDeck($this->cards);
         $currentCardHand = $this->getCardHand();
         $updatedDeck = array_merge($currentCardHand, $drawnCards);
         $this->setCardHand($updatedDeck);
-        $this->setDeck($this->cards);
         return $this->getCardHand();
     }
 

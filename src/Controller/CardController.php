@@ -188,12 +188,14 @@ class CardController extends AbstractController
         $players = [];
         for ($i = 0; $i < $numOfPlayers; $i++) {
             $player = new Player();
-            $cardHand = [];
-            $drawnCards = $deck->getCardForPlayer($numOfCards);
-            $player->setCurrentCardHand($drawnCards);
-
+            $drawnCards = $deck->getCards($numOfCards);
+            if ($i == 0) {
+                $player->setCurrentCardHand($drawnCards);
+            } else {
+                $drawnCards = array_splice($drawnCards, $numOfCards * $i);
+                $player->setCurrentCardHand($drawnCards);
+            }
             array_push($players, $player);
-        
         }
         $session->set("players", $players);
 
