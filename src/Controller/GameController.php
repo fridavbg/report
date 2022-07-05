@@ -7,6 +7,7 @@ use App\Classes\Card\Card;
 use App\Classes\Game\CardHandManager;
 use App\Classes\Game\GameManager;
 use App\Classes\Game\Blackjack;
+use App\Classes\Game\CardHandCalculator;
 use App\Classes\Game\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -57,6 +58,7 @@ class GameController extends AbstractController
     public function plan(SessionInterface $session): Response
     {
         $game = $session->get('blackjack');
+        $cardHandCalculator = new CardHandCalculator();
 
         $data = [
             'title' => 'Black jack',
@@ -67,7 +69,9 @@ class GameController extends AbstractController
             'playerWins' => $game->player->getTotalWins(),
             'playerHand' => $game->player->getCurrentCardHand(),
             'dealerHand' => $game->dealer->getCurrentCardHand(),
-            'cards' => $game->deck->getDeck()
+            'cards' => $game->deck->getDeck(),
+            'playerPoints' => $cardHandCalculator->calculateCardHand($game->player->getCurrentCardHand()),
+            'dealerPoints' => $cardHandCalculator->calculateCardHand($game->dealer->getCurrentCardHand())
         ];
         return $this->render('game/plan.html.twig', $data);
     }
@@ -101,11 +105,12 @@ class GameController extends AbstractController
     public function test(SessionInterface $session): Response
     {
         $game = $session->get('blackjack');
+        
         $data = [
-            'title' => 'TEST Black jack',
-            'playerHand' => $game->player->draw($game->deck),
-            'dealerHand' => $game->dealer->draw($game->deck),
-            'deck' => $game->deck->getDeck(),
+            'title' => 'Black jack TEST',
+            'deck' => $game->deck
+            // 'playerPoints' => $playerPoints,
+
         ];
         return $this->render('game/test.html.twig', $data);
     }

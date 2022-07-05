@@ -24,15 +24,14 @@
 
     <form action="{{path("draw-process")}}" method="post" class="player-form">
       <h2>{{player}}</h2>
-      <h3>Player Cardhand total: 0</h3>
+      <h3>Player Cardhand total: {{playerPoints}}</h3>
       {% if playerHand | length > 0 %}
         <div class="btn-container">
           <input id="player" type="submit" name="player" value="Draw a card" class="btn">
           <input type="submit" value="Stop" class="standard-link">
         </div>
         <div class="card-container">
-          {% for key, cards in playerHand %}
-            {% for key, card in cards %}
+          {% for key, card in playerHand %}
               <ul class="card">
                 {% if card.getSuite() == 'H'%}
                   <li class="red-suit">♥</li>
@@ -45,7 +44,6 @@
                 {% endif %}
                 <li>{{ card.getValue() }}</li>
               </ul>
-            {% endfor %}
           {% endfor %}
         </div>
       {% else %}
@@ -60,15 +58,14 @@
      #}
     <form action="{{path("draw-process")}}" method="post" class="dealer-form">
       <h2>{{dealer}}</h2>
-      <h3>Dealer Cardhand total: 0</h3>
+      <h3>Dealer Cardhand total: {{dealerPoints}}</h3>
       {% if dealerHand | length > 0 %}
         <div class="btn-container">
           <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
           <input type="submit" value="Stop" class="standard-link">
         </div>
         <div class="card-container">
-          {% for key, cards in dealerHand %}
-            {% for key, card in cards %}
+          {% for key, card in dealerHand %}
               <ul class="card">
                 {% if card.getSuite() == 'H'%}
                   <li class="red-suit">♥</li>
@@ -81,7 +78,6 @@
                 {% endif %}
                 <li>{{ card.getValue() }}</li>
               </ul>
-            {% endfor %}
           {% endfor %}
         </div>
       {% else %}
@@ -92,19 +88,24 @@
     </form>
   </div>
 
-  {#
+  {#  #}
     <code class="code">
     <h2>TEST BOX</h2>
     {{dump(playerHand)}}
+    {{dump(playerPoints)}}
     {{dump(dealerHand)}}
+    {{dump(dealerPoints)}}
   </code>
- #}
+
   {#
 href="{{path("game-home")}}"
 #}
   <div class="btn-container">
     <a href="{{path("game-home")}}" class="btn">
       Go back to game rules
+    </a>
+      <a href="{{path("game-test")}}" class="btn">
+      Test
     </a>
   </div>
 {% endblock %}
