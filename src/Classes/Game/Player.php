@@ -13,7 +13,7 @@ class Player implements PlayerActions
     protected $currentScore;
     protected $totalWins;
 
-    public function __construct(string $type = 'player')
+    public function __construct(string $type = 'Player')
     {
         $this->type = $type;
         $this->currentHand = [];
@@ -118,7 +118,12 @@ class Player implements PlayerActions
      */
     public function stop()
     {
-        dd($this->type);
+        if($this->type === 'Player'){
+            dd('Dealers turn');
+            $this->setPlayer('Dealer');
+        } elseif($this->type === 'Dealer'){
+            dd('Who won?');
+        };
     }
 
     /**

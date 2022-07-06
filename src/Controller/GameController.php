@@ -100,11 +100,10 @@ class GameController extends AbstractController
             $game->dealer->draw($game->deck);
             $game->dealer->calculateCardHand();
         } elseif ($playerStand) {
-            $game->player->setPlayer('dealer');
             $game->player->stop();
-            // dd($playerStand);
         } elseif ($dealerStand) {
-            $game->dealer->stop();
+            $game->blackjack();
+            $game->reset();
         };
 
         return $this->redirectToRoute('game-plan');

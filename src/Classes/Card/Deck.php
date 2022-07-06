@@ -111,7 +111,7 @@ class Deck
     }
 
     /**
-     * Grab N numbers of random cards from deck & update player cardHand
+     * Grab one random card from deck & update a players cardHand
      * @param $numberOfCards int
      * @return cardHand array
      */
