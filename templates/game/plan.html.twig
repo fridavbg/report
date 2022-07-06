@@ -28,7 +28,7 @@
       {% if playerHand | length > 0 %}
         <div class="btn-container">
           <input id="player" type="submit" name="player" value="Draw a card" class="btn">
-          <input type="submit" value="Stop" class="standard-link">
+          <input type="submit" name="player-stop" value="Player Stop" class="standard-link">
         </div>
         <div class="card-container">
           {% for key, card in playerHand %}
@@ -62,7 +62,7 @@
       {% if dealerHand | length > 0 %}
         <div class="btn-container">
           <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
-          <input type="submit" value="Stop" class="standard-link">
+          <input type="submit" name="dealer-stop" value="Dealer Stop" class="standard-link">
         </div>
         <div class="card-container">
           {% for key, card in dealerHand %}

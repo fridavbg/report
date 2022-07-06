@@ -41,6 +41,63 @@ class Player implements PlayerActions
     }
 
     /**
+     * Calculate points of currentCardHand
+     * @param array $card
+     */
+    public function calculateCardHand()
+    {
+        $cardHand = $this->getCurrentCardHand();
+        $points = 0;
+        for ($i = 0; $i < count($cardHand); $i++) {
+            $cardValue = $cardHand[$i]->getValue();
+            if (in_array($cardValue, ['A', 'J', 'Q', 'K'])) {
+                $points += 11;
+            } else {
+                $points += $cardValue;
+            }
+        }
+        $this->setCurrentScore($points);
+    }
+
+    /**
+     * Getter for player type
+     * @access public
+     * @return string $type Player or dealer
+     */
+    public function getPlayer()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set player type
+     * @access public
+     */
+    public function setPlayer($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Check for player type
+     * @access public
+     * @return string $type Player or dealer
+     */
+    public function getCurrentScore()
+    {
+        return $this->currentScore;
+    }
+
+    /**
+     * Set player type
+     * @access public
+     */
+    public function setCurrentScore($score)
+    {
+        $this->currentScore = $score;
+    }
+
+    /**
      * Player draws one card from current Deck.
      * @return void
      */
@@ -55,13 +112,13 @@ class Player implements PlayerActions
     }
 
     /**
-     * Switch type (player)
+     * Switch from player to dealer
      * @access public
      * @return void
      */
     public function stop()
     {
-        return 'next players turn';
+        dd($this->type);
     }
 
     /**
@@ -94,15 +151,5 @@ class Player implements PlayerActions
     {
         $this->currentHand = [];
         $this->currentScore = 0;
-    }
-
-    /**
-     * Check for player type
-     * @access public
-     * @return string $type Player or dealer
-     */
-    public function getPlayer()
-    {
-        return $this->type;
     }
 }

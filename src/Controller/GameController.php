@@ -58,7 +58,6 @@ class GameController extends AbstractController
     public function plan(SessionInterface $session): Response
     {
         $game = $session->get('blackjack');
-        $cardHandCalculator = new CardHandCalculator();
 
         $data = [
             'title' => 'Black jack',
@@ -70,8 +69,8 @@ class GameController extends AbstractController
             'playerHand' => $game->player->getCurrentCardHand(),
             'dealerHand' => $game->dealer->getCurrentCardHand(),
             'cards' => $game->deck->getDeck(),
-            'playerPoints' => $cardHandCalculator->calculateCardHand($game->player->getCurrentCardHand()),
-            'dealerPoints' => $cardHandCalculator->calculateCardHand($game->dealer->getCurrentCardHand())
+            'playerPoints' => $game->player->getCurrentScore(),
+            'dealerPoints' => $game->dealer->getCurrentScore()
         ];
         return $this->render('game/plan.html.twig', $data);
     }
@@ -80,20 +79,32 @@ class GameController extends AbstractController
      * @Route("/game/plan", name="draw-process", methods={"POST"})
      * Draws a card to a players CardHand
      */
-    public function draw(
+    public function handleButtons(
         Request $request,
         SessionInterface $session
     ): Response {
 
-        // Indicate if it's the players or the dealers turn
-        $player = $request->request->get('player');
-        $dealer = $request->request->get('dealer');
+        // BUTTONS
+        $playerDraw = $request->request->get('player');
+        $playerStand = $request->request->get('player-stop');
+        $dealerDraw = $request->request->get('dealer');
+        $dealerStand = $request->request->get('dealer-stop');
+
         $game = $session->get('blackjack');
 
-        if ($player) {
+        // Button Actions
+        if ($playerDraw) {
             $game->player->draw($game->deck);
-        } elseif ($dealer) {
+            $game->player->calculateCardHand();
+        } elseif ($dealerDraw) {
             $game->dealer->draw($game->deck);
+            $game->dealer->calculateCardHand();
+        } elseif ($playerStand) {
+            $game->player->setPlayer('dealer');
+            $game->player->stop();
+            // dd($playerStand);
+        } elseif ($dealerStand) {
+            $game->dealer->stop();
         };
 
         return $this->redirectToRoute('game-plan');
@@ -105,7 +116,7 @@ class GameController extends AbstractController
     public function test(SessionInterface $session): Response
     {
         $game = $session->get('blackjack');
-        
+
         $data = [
             'title' => 'Black jack TEST',
             'deck' => $game->deck
