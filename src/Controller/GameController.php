@@ -65,7 +65,7 @@ class GameController extends AbstractController
             'blackjack' => $game,
             'dealer' => $dealer->type,
             'player'  => $player->type,
-            'dealerWins' => $player->getTotalWins(),
+            'dealerWins' => $dealer->getTotalWins(),
             'playerWins' => $player->getTotalWins(),
             'playerHand' => $player->getCurrentCardHand(),
             'dealerHand' => $dealer->getCurrentCardHand(),

@@ -5,6 +5,7 @@ namespace App\Classes\Game;
 use App\Classes\Card\Deck;
 
 use App\Classes\Game\PlayerRepository;
+
 class Blackjack
 {
     public function __construct()
@@ -44,12 +45,11 @@ class Blackjack
         $playerPoints = $player->getCurrentScore();
         $dealerPoints = $dealer->getCurrentScore();
 
-        
-        // if ($playerPoints >= $dealerPoints || $dealerPoints == 21) {
-        //     $dealer->win();
-        // } else {
-        //     $player->win();
-        // }
+        if ($playerPoints >= $dealerPoints || $dealerPoints == 21) {
+            $dealer->win();
+        } else {
+            $player->win();
+        }
         $this->reset();
     }
 }

@@ -128,7 +128,7 @@ class Player implements PlayerActions
      */
     public function stop()
     {
-        if($this->type === 'Player'){
+        if ($this->type === 'Player') {
             $this->playerActive = false;
         };
     }
