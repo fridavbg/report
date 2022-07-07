@@ -28,8 +28,10 @@
         <h3>Cardhand points:
           {{playerPoints}}</h3>
         {% if playerHand | length > 0 %}
-          <div class="btn-container">
-            <input id="player" type="submit" name="player" value="Draw a card" class="btn">
+           <div class="btn-container">
+            {% if playerPoints < 21 %}
+                <input id="player" type="submit" name="player" value="Draw A card" class="btn">
+            {% endif %}
             <input type="submit" name="player-stop" value="Stop" class="standard-link">
           </div>
           <div class="card-container">
@@ -81,7 +83,9 @@
           {{dealerPoints}}</h3>
         {% if dealerHand | length > 0 %}
           <div class="btn-container">
+           {% if dealerPoints < 21 %}
             <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+            {% endif %}
             <input type="submit" name="dealer-stop" value="Stop" class="standard-link">
           </div>
           <div class="card-container">
@@ -109,11 +113,12 @@
     </div>
   {% endif %}
 
-  {# 
-       <code class="code">
+    <code class="code">
       <h2>TEST BOX</h2>
-      {{dump(playerActive)}}
+      {{dump(playerWins)}}
+      {{dump(dealerWins)}}
     </code>
+  {# 
    #}
 
   {#
