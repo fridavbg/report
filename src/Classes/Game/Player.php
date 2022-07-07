@@ -3,15 +3,15 @@
 namespace App\Classes\Game;
 
 use App\Classes\Game\PlayerActions;
-use App\Classes\Card\Deck;
 
 class Player implements PlayerActions
 {
 
-    protected $type;
+    public $type;
     protected $currentHand;
     protected $currentScore;
     protected $totalWins;
+    protected $isActive;
 
     public function __construct(string $type = 'Player')
     {
@@ -19,6 +19,7 @@ class Player implements PlayerActions
         $this->currentHand = [];
         $this->currentScore = 0;
         $this->totalWins = 0;
+        $this->playerActive = true;
     }
 
     /**
@@ -79,6 +80,15 @@ class Player implements PlayerActions
     }
 
     /**
+     * Deactivate player
+     * @access public
+     */
+    public function activate()
+    {
+        $this->playerActive = true;
+    }
+
+    /**
      * Check for player type
      * @access public
      * @return string $type Player or dealer
@@ -119,10 +129,7 @@ class Player implements PlayerActions
     public function stop()
     {
         if($this->type === 'Player'){
-            dd('Dealers turn');
-            $this->setPlayer('Dealer');
-        } elseif($this->type === 'Dealer'){
-            dd('Who won?');
+            $this->playerActive = false;
         };
     }
 

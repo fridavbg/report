@@ -4,12 +4,14 @@ namespace App\Classes\Game;
 
 use App\Classes\Card\Deck;
 
+use App\Classes\Game\PlayerRepository;
 class Blackjack
 {
     public function __construct()
     {
-        $this->player = new Player();
-        $this->dealer = new Player('Dealer');
+        $this->players = new PlayerRepository();
+        $this->players->createPlayer('Player');
+        $this->players->createPlayer('Dealer');
         $this->deck = new Deck();
     }
 
@@ -21,8 +23,11 @@ class Blackjack
      */
     public function reset()
     {
-        $this->player->clearCurrentHand();
-        $this->dealer->clearCurrentHand();
+        $player = $this->players->findByType('Player');
+        $dealer = $this->players->findByType('Dealer');
+        $player->clearCurrentHand();
+        $player->activate();
+        $dealer->clearCurrentHand();
         $this->deck = new Deck();
     }
 
@@ -34,13 +39,16 @@ class Blackjack
      */
     public function blackJack()
     {
-        $playerPoints = $this->player->getCurrentScore();
-        $dealerPoints = $this->dealer->getCurrentScore();
+        $player = $this->players->findByType('Player');
+        $dealer = $this->players->findByType('Dealer');
+        $playerPoints = $player->getCurrentScore();
+        $dealerPoints = $dealer->getCurrentScore();
 
         if ($playerPoints >= $dealerPoints || $dealerPoints == 21) {
-            $this->dealer->win();
+            $dealer->win();
         } else {
-            $this->player->win();
+            $player->win();
         }
+        $this->reset();
     }
 }

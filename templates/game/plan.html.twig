@@ -14,91 +14,105 @@
 
   <div class="site-wrap">
     <h1>{{ title }}</h1>
-
-    {#
+    {% if playerActive == true %}
+      {#
     PLAYER
     action="{{path("draw-process")}}"
      #}
 
-    <h2>Cards in deck:</h2>
-    <h3>
-      {{ cards | length }}</h3>
-    <form action="{{path("draw-process")}}" method="post" class="player-form">
+      <h2>Cards in deck:</h2>
+      <h3>
+        {{ cards | length }}</h3>
+      <form action="{{path("draw-process")}}" method="post" class="player-form">
+        <h2>{{player}}</h2>
+        <h3>Cardhand points:
+          {{playerPoints}}</h3>
+        {% if playerHand | length > 0 %}
+          <div class="btn-container">
+            <input id="player" type="submit" name="player" value="Draw a card" class="btn">
+            <input type="submit" name="player-stop" value="Stop" class="standard-link">
+          </div>
+          <div class="card-container">
+            {% for key, card in playerHand %}
+              <ul class="card">
+                {% if card.getSuite() == 'H'%}
+                  <li class="red-suit">♥</li>
+                {% elseif card.getSuite() == 'S'%}
+                  <li class="black-suit">♠</li>
+                {% elseif card.getSuite() == 'C'%}
+                  <li class="black-suit">♣</li>
+                {% else %}
+                  <li class="red-suit">♦</li>
+                {% endif %}
+                <li>{{ card.getValue() }}</li>
+              </ul>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="btn-container">
+            <input id="player" type="submit" name="player" value="Draw a card" class="btn">
+          </div>
+        {% endif %}
+      </form>
+
+    {% elseif playerActive == false %}
       <h2>{{player}}</h2>
       <h3>Cardhand points:
         {{playerPoints}}</h3>
-      {% if playerHand | length > 0 %}
-        <div class="btn-container">
-          <input id="player" type="submit" name="player" value="Draw a card" class="btn">
-          <input type="submit" name="player-stop" value="Stop" class="standard-link">
-        </div>
-        <div class="card-container">
-          {% for key, card in playerHand %}
-            <ul class="card">
-              {% if card.getSuite() == 'H'%}
-                <li class="red-suit">♥</li>
-              {% elseif card.getSuite() == 'S'%}
-                <li class="black-suit">♠</li>
-              {% elseif card.getSuite() == 'C'%}
-                <li class="black-suit">♣</li>
-              {% else %}
-                <li class="red-suit">♦</li>
-              {% endif %}
-              <li>{{ card.getValue() }}</li>
-            </ul>
-          {% endfor %}
-        </div>
-      {% else %}
-        <div class="btn-container">
-          <input id="player" type="submit" name="player" value="Draw a card" class="btn">
-        </div>
-      {% endif %}
-    </form>
-
-    {#
-    DEALER
-    action="{{path("draw-process")}}"
-     #}
-    <form action="{{path("draw-process")}}" method="post" class="dealer-form">
-      <h2>{{dealer}}</h2>
-      <h3>Cardhand points:
-        {{dealerPoints}}</h3>
-      {% if dealerHand | length > 0 %}
-        <div class="btn-container">
-          <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
-          <input type="submit" name="dealer-stop" value="Stop" class="standard-link">
-        </div>
-        <div class="card-container">
-          {% for key, card in dealerHand %}
-            <ul class="card">
-              {% if card.getSuite() == 'H'%}
-                <li class="red-suit">♥</li>
-              {% elseif card.getSuite() == 'S'%}
-                <li class="black-suit">♠</li>
-              {% elseif card.getSuite() == 'C'%}
-                <li class="black-suit">♣</li>
-              {% else %}
-                <li class="red-suit">♦</li>
-              {% endif %}
-              <li>{{ card.getValue() }}</li>
-            </ul>
-          {% endfor %}
-        </div>
-      {% else %}
-        <div class="btn-container">
-          <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
-        </div>
-      {% endif %}
-    </form>
-  </div>
+      <div class="card-container">
+        {% for key, card in playerHand %}
+          <ul class="card">
+            {% if card.getSuite() == 'H'%}
+              <li class="red-suit">♥</li>
+            {% elseif card.getSuite() == 'S'%}
+              <li class="black-suit">♠</li>
+            {% elseif card.getSuite() == 'C'%}
+              <li class="black-suit">♣</li>
+            {% else %}
+              <li class="red-suit">♦</li>
+            {% endif %}
+            <li>{{ card.getValue() }}</li>
+          </ul>
+        {% endfor %}
+      </div>
+      <form action="{{path("draw-process")}}" method="post" class="dealer-form">
+        <h2>{{dealer}}</h2>
+        <h3>Cardhand points:
+          {{dealerPoints}}</h3>
+        {% if dealerHand | length > 0 %}
+          <div class="btn-container">
+            <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+            <input type="submit" name="dealer-stop" value="Stop" class="standard-link">
+          </div>
+          <div class="card-container">
+            {% for key, card in dealerHand %}
+              <ul class="card">
+                {% if card.getSuite() == 'H'%}
+                  <li class="red-suit">♥</li>
+                {% elseif card.getSuite() == 'S'%}
+                  <li class="black-suit">♠</li>
+                {% elseif card.getSuite() == 'C'%}
+                  <li class="black-suit">♣</li>
+                {% else %}
+                  <li class="red-suit">♦</li>
+                {% endif %}
+                <li>{{ card.getValue() }}</li>
+              </ul>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="btn-container">
+            <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+          </div>
+        {% endif %}
+      </form>
+    </div>
+  {% endif %}
 
   {# 
-    <code class="code">
+       <code class="code">
       <h2>TEST BOX</h2>
-      {{dump(playerHand)}}
-      {{dump(playerPoints)}}
-      {{dump(dealerHand)}}
-      {{dump(dealerPoints)}}
+      {{dump(playerActive)}}
     </code>
    #}
 
