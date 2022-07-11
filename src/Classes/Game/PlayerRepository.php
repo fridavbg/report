@@ -7,10 +7,10 @@ use App\Classes\Game\Player;
 class PlayerRepository
 {
     /**
-     * @var array<object, Player> $players
+     * @var array<Player> $players
      */
 
-    private array $players = array();
+    protected array $players = array();
 
     public function createPlayer($type)
     {
@@ -19,6 +19,7 @@ class PlayerRepository
 
     /**
      * @param string $type
+     * @return Player
      */
     public function findByType(string $type) : Player
     {

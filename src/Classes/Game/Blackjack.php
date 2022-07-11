@@ -7,14 +7,14 @@ use App\Classes\Game\PlayerRepository;
 
 class Blackjack
 {
-    protected array $players;
+    protected $playerRepo;
     protected Deck $deck;
     
     public function __construct()
     {
-        $this->players = new PlayerRepository();
-        $this->players->createPlayer('Player');
-        $this->players->createPlayer('Dealer');
+        $this->playerRepo = new PlayerRepository();
+        $this->playerRepo->createPlayer('Player');
+        $this->playerRepo->createPlayer('Dealer');
         $this->deck = new Deck();
     }
 
@@ -26,8 +26,8 @@ class Blackjack
      */
     public function reset()
     {
-        $player = $this->players->findByType('Player');
-        $dealer = $this->players->findByType('Dealer');
+        $player = $this->playerRepo->findByType('Player');
+        $dealer = $this->playerRepo->findByType('Dealer');
         $player->clearCurrentHand();
         $player->activate();
         $dealer->clearCurrentHand();
@@ -42,8 +42,8 @@ class Blackjack
      */
     public function blackJack()
     {
-        $player = $this->players->findByType('Player');
-        $dealer = $this->players->findByType('Dealer');
+        $player = $this->playerRepo->findByType('Player');
+        $dealer = $this->playerRepo->findByType('Dealer');
         $playerPoints = $player->getCurrentScore();
         $dealerPoints = $dealer->getCurrentScore();
 

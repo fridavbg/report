@@ -35,7 +35,7 @@ class Player implements PlayerActions
 
     /**
      * cardHand Var Setter
-     * @param array $deck
+     * @param array $cards
      */
     public function setCurrentCardHand($cards)
     {
@@ -44,7 +44,6 @@ class Player implements PlayerActions
 
     /**
      * Calculate points of currentCardHand
-     * @param array $card
      */
     public function calculateCardHand()
     {

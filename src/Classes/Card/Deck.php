@@ -55,7 +55,7 @@ class Deck
 
     /**
      * Deck Var Setter
-     * @param mixed $deck
+     * @param array $cards
      */
     public function setDeck($cards)
     {
@@ -64,9 +64,9 @@ class Deck
 
     /**
      * Show cardHand
-     * @return arrays
+     * @return array
      */
-    public function getCardHand()
+    public function getCardHand(): array
     {
         return $this->cardHand;
     }
@@ -118,7 +118,7 @@ class Deck
     /**
      * Grab one random card from deck & update a players cardHand
      * @param $numberOfCards int
-     * @return cardHand array
+     * @return Card
      */
 
     public function getCardForPlayer($numberOfCards)
