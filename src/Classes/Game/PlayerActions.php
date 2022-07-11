@@ -17,7 +17,7 @@ interface PlayerActions
 
     /**
      * Player does not want to draw more cards. A winner is chosen.
-     * @return string
+     * @return void
      */
     public function stop();
 }

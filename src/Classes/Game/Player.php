@@ -89,9 +89,9 @@ class Player implements PlayerActions
     }
 
     /**
-     * Check for player type
+     * Check for cardHand score
      * @access public
-     * @return string $type Player or dealer
+     * @return int 
      */
     public function getCurrentScore()
     {
