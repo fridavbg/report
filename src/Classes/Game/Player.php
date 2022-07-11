@@ -49,13 +49,13 @@ class Player implements PlayerActions
     {
         $cardHand = $this->getCurrentCardHand();
         $points = 0;
-        for ($i = 0; $i < count($cardHand); $i++) {
+        $numOfCards = count($cardHand);
+        for ($i = 0; $i < $numOfCards; $i++) {
             $cardValue = $cardHand[$i]->getValue();
             if (in_array($cardValue, ['A', 'J', 'Q', 'K'])) {
                 $points += 11;
-            } else {
-                $points += $cardValue;
             }
+            $points += intval($cardValue);
         }
         $this->setCurrentScore($points);
     }

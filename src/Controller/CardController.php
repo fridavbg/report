@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Classes\Card\Deck;
-use App\Classes\Card\Deck2;
 use App\Classes\Game\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -140,10 +139,8 @@ class CardController extends AbstractController
      * Display Form to choose N players and M cards
      */
 
-    public function dealForm(
-        SessionInterface $session,
-    ): Response {
-
+    public function dealForm()
+    {
         $data = [
             'title' => 'Draw multiple card with players',
             'numOfPlayers' => 0,
@@ -191,32 +188,13 @@ class CardController extends AbstractController
             $drawnCards = $deck->getCards($numOfCards);
             if ($i == 0) {
                 $player->setCurrentCardHand($drawnCards);
-            } else {
-                $drawnCards = array_splice($drawnCards, $numOfCards * $i);
-                $player->setCurrentCardHand($drawnCards);
             }
+            $drawnCards = array_splice($drawnCards, $numOfCards * $i);
+            $player->setCurrentCardHand($drawnCards);
             array_push($players, $player);
         }
         $session->set("players", $players);
 
-        return $this->redirectToRoute('deal', ['numOfPlayers' => $numOfPlayers,'numOfCards' => $numOfCards]);
-    }
-
-    /**
-     * @Route("/card/deck2", name="card-deck2")
-     * create card/deck2 which is a deck with two jokers.
-     * Display deck the same as card/deck. Tips try inheritance.
-     * Try to recreate Deck ex DeckWith2Jokers extends Deck.
-     */
-    public function deckWithJokers(): Response
-    {
-        $deck = new Deck2();
-        $deck->jokers();
-
-        $data = [
-            'title' => 'Deck with Jokers',
-            'deck' => $deck->getDeck()
-        ];
-        return $this->render('card/deck2.html.twig', $data);
+        return $this->redirectToRoute('deal', ['numOfPlayers' => $numOfPlayers, 'numOfCards' => $numOfCards]);
     }
 }

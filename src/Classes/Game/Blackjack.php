@@ -47,9 +47,8 @@ class Blackjack
 
         if ($playerPoints >= $dealerPoints || $dealerPoints == 21) {
             $dealer->win();
-        } else {
-            $player->win();
         }
+        $player->win();
         $this->reset();
     }
 }
