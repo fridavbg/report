@@ -3,20 +3,24 @@
 namespace App\Classes\Card;
 
 use App\Classes\Card\Card;
+
 class Deck
 {
     /**
-     * @property array<object, Card> $cards
-     * 
-     * @property array<object, Card> $cardHand 
-     * 
-     * @property array<string> $suits
-     * @property array<string> $values
+     * @var array<Card> $cards 
      */
-    
-    protected array $cards; 
+    protected array $cards;
+    /**
+     * @var array<Card> $cardHand
+     */
     protected array $cardHand;
+    /**
+     * @var array<string> $suits
+     */
     protected array $suits;
+    /**
+     * @var array<string> $values
+     */
     protected array $values;
 
     /**
@@ -140,7 +144,7 @@ class Deck
     /**
      * Return each card as a Object
      */
-    public function getJson() : string
+    public function getJson(): string
     {
         $jsonDeck = [];
         $deckCards = $this->getDeck();

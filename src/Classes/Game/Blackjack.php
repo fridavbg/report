@@ -3,6 +3,7 @@
 namespace App\Classes\Game;
 
 use App\Classes\Card\Deck;
+use App\Classes\Card\Card;
 use App\Classes\Game\PlayerRepository;
 
 class Blackjack
@@ -28,7 +29,7 @@ class Blackjack
     }
     /**
      * Getter for active deck
-     * @return array<array<Card>>
+     * @return array<Card>
      */
     public function getCurrentDeck(): array
     {

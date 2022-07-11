@@ -6,13 +6,12 @@ use App\Classes\Game\PlayerActions;
 use App\Classes\Card\Deck;
 use App\Classes\Card\Card;
 
-
-/**
- * @property array<array, Card> $currentHand
- */
 class Player implements PlayerActions
 {
     public string $type;
+    /**
+     * @var array<Card> $currentHand
+     */
     protected array $currentHand;
     protected int $currentScore;
     protected int $totalWins;
