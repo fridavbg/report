@@ -3,11 +3,13 @@
 namespace App\Classes\Game;
 
 use App\Classes\Card\Deck;
-
 use App\Classes\Game\PlayerRepository;
 
 class Blackjack
 {
+    protected array $players;
+    protected Deck $deck;
+    
     public function __construct()
     {
         $this->players = new PlayerRepository();

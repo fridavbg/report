@@ -2,13 +2,8 @@
 
 namespace App\Controller;
 
-use App\Classes\Card\Deck;
-use App\Classes\Card\Card;
-use App\Classes\Game\CardHandManager;
-use App\Classes\Game\GameManager;
 use App\Classes\Game\Blackjack;
-use App\Classes\Game\CardHandCalculator;
-use App\Classes\Game\Player;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;

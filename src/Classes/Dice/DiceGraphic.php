@@ -4,7 +4,11 @@ namespace App\Classes\Dice;
 
 class DiceGraphic extends Dice
 {
-    private $representation = [
+    /**
+     * @param array<string, representation> $representation
+     */
+
+    private array $representation = [
         '⚀',
         '⚁',
         '⚂',

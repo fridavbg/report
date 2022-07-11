@@ -3,15 +3,16 @@
 namespace App\Classes\Game;
 
 use App\Classes\Game\PlayerActions;
+use App\Classes\Card\Deck;
 
 class Player implements PlayerActions
 {
 
-    public $type;
-    protected $currentHand;
-    protected $currentScore;
-    protected $totalWins;
-    protected $isActive;
+    public string $type;
+    protected array $currentHand;
+    protected int $currentScore;
+    protected int $totalWins;
+    protected bool $playerActive;
 
     public function __construct(string $type = 'Player')
     {
@@ -111,7 +112,7 @@ class Player implements PlayerActions
      * Player draws one card from current Deck.
      * @return void
      */
-    public function draw($deck)
+    public function draw(Deck $deck): void
     {
         $newCardHand = array();
         $currentCardHand = $this->getCurrentCardHand();

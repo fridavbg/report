@@ -4,10 +4,14 @@ namespace App\Classes\Card;
 
 class Card
 {
-    protected $suit;
-    protected $value;
+    /**
+     * @var string $suit
+     * @var string $value
+     */
+    protected string $suit;
+    protected string $value;
 
-    public function __construct($suit, $value)
+    public function __construct(string $suit, string $value)
     {
         $this->suit = $suit;
         $this->value = $value;
@@ -42,7 +46,7 @@ class Card
 
     /**
      * Show card as a object
-     * @return string
+     * @return array<string, string>.
      */
     public function getCardObj()
     {

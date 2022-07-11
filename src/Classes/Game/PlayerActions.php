@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Classes\Game;
-
+use App\Classes\Card\Deck;
 /**
  * Player functionality
  */
@@ -13,7 +13,7 @@ interface PlayerActions
      * @param $deck
      * @return void
      */
-    public function draw($deck);
+    public function draw(Deck $deck) : void;
 
     /**
      * Player does not want to draw more cards. A winner is chosen.

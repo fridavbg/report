@@ -5,11 +5,16 @@ namespace App\Classes\Card;
 class Deck
 {
     /**
-     * @var array representing full deck of cards with Jokers
-     * @var array representing deck excluding player cards picked
+     * @var array<string, Card> $cards representing full deck of cards
+     * @var array<string, Card> $cardHand representing cardHand for a player
+     * @var array<string, String> $suits representing full deck of cards
+     * @var array<string, String> $values representing value of a card
      */
-    protected $cards; // DECK
-    protected $cardHand; // CARDS DRAWN
+    
+    protected array $cards; 
+    protected array $cardHand;
+    protected array $suits;
+    protected array $values;
 
     /**
      * Create a deck of 52 cards
@@ -68,7 +73,7 @@ class Deck
 
     /**
      * cardHand Var Setter
-     * @param array $deck
+     * @param array $cards
      */
     public function setCardHand($cards)
     {
@@ -131,7 +136,7 @@ class Deck
     /**
      * Return each card as a Object
      */
-    public function getJson()
+    public function getJson() : string
     {
         $jsonDeck = [];
         $deckCards = $this->getDeck();

@@ -6,20 +6,28 @@ use App\Classes\Game\Player;
 
 class PlayerRepository
 {
+    /**
+     * @var array<object, Player> $players
+     */
 
-    private $players = array();
+    private array $players = array();
 
     public function createPlayer($type)
     {
         $this->players[] = new Player($type);
     }
 
-    public function findByType($type)
+    /**
+     * @param string $type
+     */
+    public function findByType(string $type) : Player
     {
+        $currentPlayer = ""; 
         foreach ($this->players as $player) {
             if ($player->type == $type) {
-                return $player;
+                $currentPlayer = $player;
             }
         }
+        return $currentPlayer;
     }
 }
