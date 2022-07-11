@@ -8,7 +8,7 @@ use App\Classes\Card\Card;
 
 
 /**
- * @property array<array> $currentHand
+ * @property array<array, Card> $currentHand
  */
 class Player implements PlayerActions
 {
