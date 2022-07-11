@@ -22,15 +22,15 @@
 
       <h2>Cards in deck:</h2>
       <h3>
-        {{ cards | length }}</h3>
+        {{ cardsLeftInDeck | length }}</h3>
       <form action="{{path("draw-process")}}" method="post" class="player-form">
         <h2>{{player}}</h2>
         <h3>Cardhand points:
           {{playerPoints}}</h3>
         {% if playerHand | length > 0 %}
-           <div class="btn-container">
+          <div class="btn-container">
             {% if playerPoints < 21 %}
-                <input id="player" type="submit" name="player" value="Draw A card" class="btn">
+              <input id="player" type="submit" name="player" value="Draw A card" class="btn">
             {% endif %}
             <input type="submit" name="player-stop" value="Stop" class="standard-link">
           </div>
@@ -83,8 +83,8 @@
           {{dealerPoints}}</h3>
         {% if dealerHand | length > 0 %}
           <div class="btn-container">
-           {% if dealerPoints < 21 %}
-            <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+            {% if dealerPoints < 21 %}
+              <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
             {% endif %}
             <input type="submit" name="dealer-stop" value="Stop" class="standard-link">
           </div>
@@ -113,13 +113,11 @@
     </div>
   {% endif %}
 
-
   {# 
-    <code class="code">
-      <h2>TEST BOX</h2>
-      {{dump(playerWins)}}
-      {{dump(dealerWins)}}
-    </code>
+  <code class="code">
+    <h2>TEST BOX</h2>
+    {{dump(cards)}}
+  </code>
    #}
 
   {#

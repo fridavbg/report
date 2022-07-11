@@ -4,10 +4,14 @@ namespace App\Classes\Game;
 
 use App\Classes\Game\PlayerActions;
 use App\Classes\Card\Deck;
+use App\Classes\Card\Card;
 
+
+/**
+ * @property array<array> $currentHand
+ */
 class Player implements PlayerActions
 {
-
     public string $type;
     protected array $currentHand;
     protected int $currentScore;
@@ -26,18 +30,18 @@ class Player implements PlayerActions
     /**
      * Player cardHand getter
      * @access public
-     * @return array
+     * @return array<object>
      */
-    public function getCurrentCardHand()
+    public function getCurrentCardHand(): array
     {
         return $this->currentHand;
     }
 
     /**
      * cardHand Var Setter
-     * @param array $cards
+     * @param array<object> $cards
      */
-    public function setCurrentCardHand($cards)
+    public function setCurrentCardHand($cards): void
     {
         $this->currentHand = $cards;
     }
@@ -45,7 +49,7 @@ class Player implements PlayerActions
     /**
      * Calculate points of currentCardHand
      */
-    public function calculateCardHand()
+    public function calculateCardHand(): void
     {
         $cardHand = $this->getCurrentCardHand();
         $points = 0;
@@ -73,17 +77,28 @@ class Player implements PlayerActions
     /**
      * Set player type
      * @access public
+     * @param string $type
      */
-    public function setPlayer($type)
+    public function setPlayer($type): void
     {
         $this->type = $type;
+    }
+
+    /**
+     * Check if player is active
+     * @access public
+     * @return bool
+     */
+    public function isActive()
+    {
+        return $this->playerActive;
     }
 
     /**
      * Deactivate player
      * @access public
      */
-    public function activate()
+    public function activate(): void
     {
         $this->playerActive = true;
     }
@@ -101,8 +116,9 @@ class Player implements PlayerActions
     /**
      * Set player type
      * @access public
+     * @param int $score
      */
-    public function setCurrentScore($score)
+    public function setCurrentScore($score): void
     {
         $this->currentScore = $score;
     }

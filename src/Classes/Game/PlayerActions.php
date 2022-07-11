@@ -10,7 +10,7 @@ interface PlayerActions
 {
     /**
      * Player draws one card from the top of the deck
-     * @param $deck
+     * @param Deck $deck
      * @return void
      */
     public function draw(Deck $deck) : void;

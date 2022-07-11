@@ -137,6 +137,7 @@ class CardController extends AbstractController
     /**
      * @Route("/card/deck/deal", name="deal-form", methods={"GET"})
      * Display Form to choose N players and M cards
+     * @return mixed
      */
 
     public function dealForm()

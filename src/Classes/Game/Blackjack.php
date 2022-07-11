@@ -7,15 +7,41 @@ use App\Classes\Game\PlayerRepository;
 
 class Blackjack
 {
-    protected $playerRepo;
+    protected PlayerRepository $playerRepo;
     protected Deck $deck;
-    
+
     public function __construct()
     {
         $this->playerRepo = new PlayerRepository();
         $this->playerRepo->createPlayer('Player');
         $this->playerRepo->createPlayer('Dealer');
         $this->deck = new Deck();
+    }
+
+    /**
+     * Getter for Deck Object
+     * @return Deck
+     */
+    public function getDeck(): Deck
+    {
+        return $this->deck;
+    }
+    /**
+     * Getter for active deck
+     * @return array<array<Card>>
+     */
+    public function getCurrentDeck(): array
+    {
+        return $this->deck->getDeck();
+    }
+
+    /**
+     * Getter for players
+     * @return object
+     */
+    public function getPlayerRepo(): object
+    {
+        return $this->playerRepo;
     }
 
     /**

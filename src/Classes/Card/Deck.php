@@ -2,13 +2,16 @@
 
 namespace App\Classes\Card;
 
+use App\Classes\Card\Card;
 class Deck
 {
     /**
-     * @var array<string, Card> $cards representing full deck of cards
-     * @var array<string, Card> $cardHand representing cardHand for a player
-     * @var array<string, String> $suits representing full deck of cards
-     * @var array<string, String> $values representing value of a card
+     * @property array<object, Card> $cards
+     * 
+     * @property array<object, Card> $cardHand 
+     * 
+     * @property array<string> $suits
+     * @property array<string> $values
      */
     
     protected array $cards; 
@@ -32,8 +35,9 @@ class Deck
 
     /**
      * Loop through to create Deck of cards
+     * @return array<Card>
      */
-    public function createDeck()
+    public function createDeck(): array
     {
         foreach ($this->suits as $suit) {
             foreach ($this->values as $value) {
@@ -46,25 +50,25 @@ class Deck
 
     /**
      * Show Deck of cards
-     * @return array
+     * @return array<Card>
      */
-    public function getDeck()
+    public function getDeck(): array
     {
         return $this->cards;
     }
 
     /**
      * Deck Var Setter
-     * @param array $cards
+     * @param array<Card> $cards
      */
-    public function setDeck($cards)
+    public function setDeck(array $cards): void
     {
         $this->cards = $cards;
     }
 
     /**
      * Show cardHand
-     * @return array
+     * @return array<Card>
      */
     public function getCardHand(): array
     {
@@ -73,16 +77,16 @@ class Deck
 
     /**
      * cardHand Var Setter
-     * @param array $cards
+     * @param array<Card> $cards
      */
-    public function setCardHand($cards)
+    public function setCardHand(array $cards): void
     {
         $this->cardHand = $cards;
     }
 
     /**
      * Shuffle deck of cards
-     * @return bool|array
+     * @return bool|array<object>
      */
     public function shuffleDeck()
     {
@@ -97,11 +101,11 @@ class Deck
 
     /**
      * Grab N numbers of random cards from deck & update cardHand & leftOverDeck
-     * @param $leftOverDeck array
-     * @param $numberOfCards int
+     * @param int $numberOfCards
+     * @return array<object>
      */
 
-    public function getCards($numberOfCards)
+    public function getCards(int $numberOfCards)
     {
         $drawnCards = [];
         shuffle($this->cards);
@@ -121,7 +125,7 @@ class Deck
      * @return Card
      */
 
-    public function getCardForPlayer($numberOfCards)
+    public function getCardForPlayer(int $numberOfCards): Card
     {
         $drawnCards = [];
         shuffle($this->cards);

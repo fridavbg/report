@@ -53,8 +53,8 @@ class GameController extends AbstractController
     public function plan(SessionInterface $session): Response
     {
         $game = $session->get('blackjack');
-        $player = $game->players->findByType('Player');
-        $dealer = $game->players->findByType('Dealer');
+        $player = $game->getPlayerRepo()->findByType('Player');
+        $dealer = $game->getPlayerRepo()->findByType('Dealer');
         $data = [
             'title' => 'Black jack',
             'blackjack' => $game,
@@ -64,10 +64,10 @@ class GameController extends AbstractController
             'playerWins' => $player->getTotalWins(),
             'playerHand' => $player->getCurrentCardHand(),
             'dealerHand' => $dealer->getCurrentCardHand(),
-            'cards' => $game->deck->getDeck(),
+            'cardsLeftInDeck' => $game->getCurrentDeck(),
             'playerPoints' => $player->getCurrentScore(),
             'dealerPoints' => $dealer->getCurrentScore(),
-            'playerActive' => $player->playerActive
+            'playerActive' => $player->isActive()
         ];
         return $this->render('game/plan.html.twig', $data);
     }
@@ -88,18 +88,17 @@ class GameController extends AbstractController
         $dealerStand = $request->request->get('dealer-stop');
 
         $game = $session->get('blackjack');
-        $player = $game->players->findByType('Player');
-        $dealer = $game->players->findByType('Dealer');
+        $player = $game->getPlayerRepo()->findByType('Player');
+        $dealer = $game->getPlayerRepo()->findByType('Dealer');
 
         // Button Actions
         if ($playerDraw) {
-            $player->draw($game->deck);
+            $player->draw($game->getDeck());
             $player->calculateCardHand();
         } elseif ($dealerDraw) {
-            $dealer->draw($game->deck);
+            $dealer->draw($game->getDeck());
             $dealer->calculateCardHand();
         } elseif ($playerStand) {
-            /// MAKE IT THE DEALERS TURN ???
             $player->stop();
         } elseif ($dealerStand) {
             $game->blackjack();

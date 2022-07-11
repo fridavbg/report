@@ -12,18 +12,22 @@ class PlayerRepository
 
     protected array $players = array();
 
-    public function createPlayer($type)
+    /**
+     * Create an instance of the Player class
+     * @param string $type
+     */
+    public function createPlayer($type): void
     {
         $this->players[] = new Player($type);
     }
 
     /**
      * @param string $type
-     * @return Player
+     * @return object $currentPlayer
      */
-    public function findByType(string $type) : Player
+    public function findByType(string $type): object
     {
-        $currentPlayer = ""; 
+        $currentPlayer = "";
         foreach ($this->players as $player) {
             if ($player->type == $type) {
                 $currentPlayer = $player;
