@@ -190,7 +190,7 @@ class CardController extends AbstractController
             if ($i == 0) {
                 $player->setCurrentCardHand($drawnCards);
             }
-            $drawnCards = array_splice($drawnCards, $numOfCards * $i);
+            $drawnCards = array_splice($drawnCards, intval($numOfCards) * $i);
             $player->setCurrentCardHand($drawnCards);
             array_push($players, $player);
         }

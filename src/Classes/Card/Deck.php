@@ -11,7 +11,7 @@ class Deck
      */
     protected array $cards;
     /**
-     * @var array<Card> $cardHand
+     * @var array<Card>|array<null> $cardHand
      */
     protected array $cardHand;
     /**
@@ -72,7 +72,7 @@ class Deck
 
     /**
      * Show cardHand
-     * @return array<Card>
+     * @return array<Card>|array<null>
      */
     public function getCardHand(): array
     {
@@ -81,7 +81,7 @@ class Deck
 
     /**
      * cardHand Var Setter
-     * @param array<Card> $cards
+     * @param array<Card>|array<null> $cards
      */
     public function setCardHand(array $cards): void
     {
@@ -106,7 +106,7 @@ class Deck
     /**
      * Grab N numbers of random cards from deck & update cardHand & leftOverDeck
      * @param int $numberOfCards
-     * @return array<object>
+     * @return array<object>|array<null>
      */
 
     public function getCards(int $numberOfCards)
@@ -126,10 +126,10 @@ class Deck
     /**
      * Grab one random card from deck & update a players cardHand
      * @param $numberOfCards int
-     * @return Card
+     * @return Card|null
      */
 
-    public function getCardForPlayer(int $numberOfCards): Card
+    public function getCardForPlayer(int $numberOfCards)
     {
         $drawnCards = [];
         shuffle($this->cards);
@@ -144,7 +144,7 @@ class Deck
     /**
      * Return each card as a Object
      */
-    public function getJson(): string
+    public function getJson(): string|bool
     {
         $jsonDeck = [];
         $deckCards = $this->getDeck();

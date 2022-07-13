@@ -23,16 +23,16 @@ class PlayerRepository
 
     /**
      * @param string $type
-     * @return object $currentPlayer
+     * @return Player $currentPlayer
      */
-    public function findByType(string $type): object
+    public function findByType(string $type)
     {
-        $currentPlayer = "";
+        $activePlayer = new Player();
         foreach ($this->players as $player) {
             if ($player->type == $type) {
-                $currentPlayer = $player;
+                $activePlayer = $player;
             }
         }
-        return $currentPlayer;
+        return $activePlayer;
     }
 }

@@ -10,7 +10,7 @@ class Player implements PlayerActions
 {
     public string $type;
     /**
-     * @var array<Card> $currentHand
+     * @var array<object>|array<null> $currentHand
      */
     protected array $currentHand;
     protected int $currentScore;
@@ -29,7 +29,7 @@ class Player implements PlayerActions
     /**
      * Player cardHand getter
      * @access public
-     * @return array<object>
+     * @return array<object>|array<null>
      */
     public function getCurrentCardHand(): array
     {
@@ -38,9 +38,9 @@ class Player implements PlayerActions
 
     /**
      * cardHand Var Setter
-     * @param array<object> $cards
+     * @param array<object>|array<null> $cards
      */
-    public function setCurrentCardHand($cards): void
+    public function setCurrentCardHand(array $cards): void
     {
         $this->currentHand = $cards;
     }
@@ -54,7 +54,11 @@ class Player implements PlayerActions
         $points = 0;
         $numOfCards = count($cardHand);
         for ($i = 0; $i < $numOfCards; $i++) {
+            if($cardHand[$i] !== null) {
             $cardValue = $cardHand[$i]->getValue();
+            } else {
+                dd('No card value found');
+            }
             if (in_array($cardValue, ['A', 'J', 'Q', 'K'])) {
                 $points += 11;
             }
@@ -94,7 +98,7 @@ class Player implements PlayerActions
     }
 
     /**
-     * Deactivate player
+     * Activate player
      * @access public
      */
     public function activate(): void
