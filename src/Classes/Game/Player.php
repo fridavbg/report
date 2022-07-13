@@ -29,9 +29,9 @@ class Player implements PlayerActions
     /**
      * Player cardHand getter
      * @access public
-     * @return array<object>|array<null>
+     * @return array<mixed>
      */
-    public function getCurrentCardHand(): array
+    public function getCurrentCardHand()
     {
         return $this->currentHand;
     }
@@ -56,7 +56,7 @@ class Player implements PlayerActions
         for ($i = 0; $i < $numOfCards; $i++) {
             //   57     Cannot call method getValue() on object|null. ???
             $cardValue = $cardHand[$i]->getValue();
-            dd($cardHand[$i]);
+           // dd($cardHand[$i]);
             if (in_array($cardValue, ['A', 'J', 'Q', 'K'])) {
                 $points += 11;
             }
