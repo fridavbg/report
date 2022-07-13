@@ -54,11 +54,9 @@ class Player implements PlayerActions
         $points = 0;
         $numOfCards = count($cardHand);
         for ($i = 0; $i < $numOfCards; $i++) {
-            if($cardHand[$i] !== null) {
+            //   57     Cannot call method getValue() on object|null. ???
             $cardValue = $cardHand[$i]->getValue();
-            } else {
-                dd('No card value found');
-            }
+            dd($cardHand[$i]);
             if (in_array($cardValue, ['A', 'J', 'Q', 'K'])) {
                 $points += 11;
             }
@@ -109,7 +107,7 @@ class Player implements PlayerActions
     /**
      * Check for cardHand score
      * @access public
-     * @return int 
+     * @return int
      */
     public function getCurrentScore()
     {

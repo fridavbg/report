@@ -7,7 +7,7 @@ use App\Classes\Card\Card;
 class Deck
 {
     /**
-     * @var array<Card> $cards 
+     * @var array<Card> $cards
      */
     protected array $cards;
     /**

@@ -18,7 +18,7 @@ interface PlayerActions
     public function draw(Deck $deck): void;
 
     /**
-     * Player does not want to draw more cards. 
+     * Player does not want to draw more cards.
      * @return void
      */
     public function stop();

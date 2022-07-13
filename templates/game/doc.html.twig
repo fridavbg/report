@@ -8,11 +8,25 @@
     <h1>{{ title }}</h1>
 
     <h3>Flow chart</h3>
-    <img src="{{asset('img/flowchart.png')}}" alt="Flow chart over Black jack" class="img"/>
-    <div class="btn-container">
-      <a href="{{path("game-home")}}" class="btn">
-        Go back to game rules
-      </a>
-    </div>
+    <img src="{{asset('img/flowchart.png')}}" alt="Flow chart over Black jack game" class="img"/>
+    <h3>Pseudo Code</h3>
+    <img src="{{asset('img/pseudoCode.png')}}" alt="Pseudo code for Black jack game" style="width: 700px;"/>
+    <h2>Klasser</h2>
+    <p>
+      Visar lite i min pseudokod att jag kommer att använda fyra olika klasser:
+        <li>Card - som representerar varje individuellt kort.</li>
+        <li>
+          Deck - som representerar 52 olika kort ur en kortlek.
+        </li>
+        <li>Player interface - representerar all den funktionalitet som varje spelare kommer att ha.</li>
+        <li>
+          Player - representerar antingen spelaren eller dealer.
+        </li>
+    </p>
+  </div>
+  <div class="btn-container">
+    <a href="{{path("game-home")}}" class="btn">
+      Go back to game rules
+    </a>
   </div>
 {% endblock %}
