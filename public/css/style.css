@@ -299,6 +299,10 @@ p {
 
 /* FORM */
 
+form {
+    padding: 1em;
+}
+
 .errorMsg {
     border: solid red 2px;
     font-family: Title;
@@ -329,7 +333,7 @@ legend {
 .btn-container {
     display: flex;
     justify-content: space-around;
-    margin-top: 1em;
+    margin: 1em;
 }
 
 .btn {
@@ -360,6 +364,7 @@ legend {
     grid-gap: 12px;
     justify-content: center;
     padding-bottom: 12px;
+    margin-bottom: 0.5em;
 }
 
 .card {

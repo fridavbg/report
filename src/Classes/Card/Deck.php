@@ -2,14 +2,26 @@
 
 namespace App\Classes\Card;
 
+use App\Classes\Card\Card;
+
 class Deck
 {
     /**
-     * @var array representing full deck of cards with Jokers
-     * @var array representing deck excluding player cards picked
+     * @var array<Card> $cards 
      */
-    protected $cards; // DECK
-    protected $cardHand; // CARDS DRAWN
+    protected array $cards;
+    /**
+     * @var array<Card>|array<null> $cardHand
+     */
+    protected array $cardHand;
+    /**
+     * @var array<string> $suits
+     */
+    protected array $suits;
+    /**
+     * @var array<string> $values
+     */
+    protected array $values;
 
     /**
      * Create a deck of 52 cards
@@ -18,26 +30,18 @@ class Deck
     {
         $this->cardHand = array();
         $this->cards = array();
-        $suits = array('H', 'C', 'D', 'S');
-        $values = array(
+        $this->suits = array('H', 'C', 'D', 'S');
+        $this->values = array(
             'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
         );
-
-        /**
-         * Loop through to create Deck of cards
-         */
-        foreach ($suits as $suit) {
-            foreach ($values as $value) {
-                $card = new Card($suit, $value);
-                array_push($this->cards, $card);
-            }
-        }
+        $this->createDeck();
     }
 
     /**
      * Loop through to create Deck of cards
+     * @return array<Card>
      */
-    public function createDeck()
+    public function createDeck(): array
     {
         foreach ($this->suits as $suit) {
             foreach ($this->values as $value) {
@@ -50,86 +54,103 @@ class Deck
 
     /**
      * Show Deck of cards
-     * @return array
+     * @return array<Card>
      */
-    public function getDeck()
+    public function getDeck(): array
     {
         return $this->cards;
     }
 
     /**
      * Deck Var Setter
-     * @param mixed $deck
+     * @param array<Card> $cards
      */
-    public function setDeck($cards)
+    public function setDeck(array $cards): void
     {
         $this->cards = $cards;
     }
 
     /**
      * Show cardHand
-     * @return arrays
+     * @return array<Card>|array<null>
      */
-    public function getCardHand()
+    public function getCardHand(): array
     {
         return $this->cardHand;
     }
 
     /**
      * cardHand Var Setter
-     * @param array $deck
+     * @param array<Card>|array<null> $cards
      */
-    public function setCardHand($cards)
+    public function setCardHand(array $cards): void
     {
         $this->cardHand = $cards;
     }
 
     /**
      * Shuffle deck of cards
-     * @return bool|array
+     * @return bool|array<object>
      */
     public function shuffleDeck()
     {
-        $deckCards = $this->getDeck();
+        $cards = $this->getDeck();
 
-        if (shuffle($deckCards)) {
-            $this->setDeck($deckCards);
-            return $deckCards;
+        if (shuffle($cards)) {
+            $this->setDeck($cards);
+            return $cards;
         }
-        return shuffle($deckCards);
+        return shuffle($cards);
     }
 
     /**
      * Grab N numbers of random cards from deck & update cardHand & leftOverDeck
-     * @param $leftOverDeck array
-     * @param $numberOfCards int
+     * @param int $numberOfCards
+     * @return array<object>|array<null>
      */
 
-    public function getCards($numberOfCards)
+    public function getCards(int $numberOfCards)
     {
         $drawnCards = [];
         shuffle($this->cards);
         for ($i = 0; $i < $numberOfCards; $i++) {
             array_push($drawnCards, array_shift($this->cards));
         }
+        $this->setDeck($this->cards);
         $currentCardHand = $this->getCardHand();
         $updatedDeck = array_merge($currentCardHand, $drawnCards);
         $this->setCardHand($updatedDeck);
-        $this->setDeck($this->cards);
         return $this->getCardHand();
     }
 
     /**
+     * Grab one random card from deck & update a players cardHand
+     * @param $numberOfCards int
+     * @return Card|null
+     */
+
+    public function getCardForPlayer(int $numberOfCards)
+    {
+        $drawnCards = [];
+        shuffle($this->cards);
+        for ($i = 0; $i < $numberOfCards; $i++) {
+            array_push($drawnCards, array_shift($this->cards));
+        }
+        $this->setDeck($this->cards);
+        return $drawnCards[0];
+    }
+
+
+    /**
      * Return each card as a Object
      */
-    public function getJson()
+    public function getJson(): string|bool
     {
         $jsonDeck = [];
         $deckCards = $this->getDeck();
         foreach ($deckCards as $card) {
             array_push($jsonDeck, $card->getCardObj());
         }
-
         return json_encode($jsonDeck, JSON_PRETTY_PRINT);
     }
 }

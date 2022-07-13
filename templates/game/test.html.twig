@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ title }}
+{% endblock %}
+
+{% block content %}
+
+  {# #}
+  <code class="code">
+    <h2>TEST BOX</h2>
+    {{dump(blackjack)}}
+    {{dump(dealer)}}
+    {{dump(player)}}
+    {{dump(dealerWins)}}
+    {{dump(playerWins)}}
+    {{dump(dealerPoints)}}
+    {{dump(playerPoints)}}
+  </code>
+
+  <div class="btn-container">
+    <a href="{{path("game-home")}}" class="btn">
+      Go back to game rules
+    </a>
+  </div>
+{% endblock %}

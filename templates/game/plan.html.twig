@@ -5,53 +5,124 @@
 
 {% block content %}
   <div class="site-wrap">
-    <h1>{{ title }}</h1>
-    <div class="site-wrap">
-      <h2>ScoreBoard</h2>
-      <h3>Player: 0</h3>
-      <h3>Dealer: 0</h3>
-    </div>
-    <form action="draw">
-      <fieldset>
-        <h2>Player</h2>
-        <h3>Cardhand total: 0</h3>
-        <p class="btn-container">
-          {% if cards | length <= 52 %}
-            <input type="submit" name="game-draw" value="Draw a card" class="btn">
-          </p>
-        {% elseif cardHand | length >= 1 %}
-          <p>
-            <input type="submit" value="Stop" class="standard-link">
-          </p>
-        </fieldset>
-      {% endif %}
-    </form>
-
-    <form action="draw">
-      <fieldset>
-        <h2>Dealer</h2>
-        <h3>Cardhand total: 0</h3>
-        <p class="btn-container">
-          {% if cards | length <= 52 %}
-            <input type="submit" name="game-draw" value="Draw a card" class="btn">
-          </p>
-        {% elseif cardHand | length >= 1 %}
-          <p>
-            <input type="submit" value="Stop" class="standard-link">
-          </p>
-        </fieldset>
-      {% endif %}
-    </form>
+    <h2>ScoreBoard</h2>
+    <h3>{{player}}:
+      {{playerWins}}</h3>
+    <h3>{{dealer}}:
+      {{dealerWins}}</h3>
   </div>
 
-  {# #}
+  <div class="site-wrap">
+    <h1>{{ title }}</h1>
+    {% if playerActive == true %}
+      {#
+    PLAYER
+    action="{{path("draw-process")}}"
+     #}
+
+      <h2>Cards in deck:</h2>
+      <h3>
+        {{ cardsLeftInDeck | length }}</h3>
+      <form action="{{path("draw-process")}}" method="post" class="player-form">
+        <h2>{{player}}</h2>
+        <h3>Cardhand points:
+          {{playerPoints}}</h3>
+        {% if playerHand | length > 0 %}
+          <div class="btn-container">
+            {% if playerPoints < 21 %}
+              <input id="player" type="submit" name="player" value="Draw A card" class="btn">
+            {% endif %}
+            <input type="submit" name="player-stop" value="Stop" class="standard-link">
+          </div>
+          <div class="card-container">
+            {% for key, card in playerHand %}
+              <ul class="card">
+                {% if card.getSuite() == 'H'%}
+                  <li class="red-suit">♥</li>
+                {% elseif card.getSuite() == 'S'%}
+                  <li class="black-suit">♠</li>
+                {% elseif card.getSuite() == 'C'%}
+                  <li class="black-suit">♣</li>
+                {% else %}
+                  <li class="red-suit">♦</li>
+                {% endif %}
+                <li>{{ card.getValue() }}</li>
+              </ul>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="btn-container">
+            <input id="player" type="submit" name="player" value="Draw a card" class="btn">
+          </div>
+        {% endif %}
+      </form>
+
+    {% elseif playerActive == false %}
+      <h2>{{player}}</h2>
+      <h3>Cardhand points:
+        {{playerPoints}}</h3>
+      <div class="card-container">
+        {% for key, card in playerHand %}
+          <ul class="card">
+            {% if card.getSuite() == 'H'%}
+              <li class="red-suit">♥</li>
+            {% elseif card.getSuite() == 'S'%}
+              <li class="black-suit">♠</li>
+            {% elseif card.getSuite() == 'C'%}
+              <li class="black-suit">♣</li>
+            {% else %}
+              <li class="red-suit">♦</li>
+            {% endif %}
+            <li>{{ card.getValue() }}</li>
+          </ul>
+        {% endfor %}
+      </div>
+      <form action="{{path("draw-process")}}" method="post" class="dealer-form">
+        <h2>{{dealer}}</h2>
+        <h3>Cardhand points:
+          {{dealerPoints}}</h3>
+        {% if dealerHand | length > 0 %}
+          <div class="btn-container">
+            {% if dealerPoints < 21 %}
+              <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+            {% endif %}
+            <input type="submit" name="dealer-stop" value="Stop" class="standard-link">
+          </div>
+          <div class="card-container">
+            {% for key, card in dealerHand %}
+              <ul class="card">
+                {% if card.getSuite() == 'H'%}
+                  <li class="red-suit">♥</li>
+                {% elseif card.getSuite() == 'S'%}
+                  <li class="black-suit">♠</li>
+                {% elseif card.getSuite() == 'C'%}
+                  <li class="black-suit">♣</li>
+                {% else %}
+                  <li class="red-suit">♦</li>
+                {% endif %}
+                <li>{{ card.getValue() }}</li>
+              </ul>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="btn-container">
+            <input id="dealer" type="submit" name="dealer" value="Draw a card" class="btn">
+          </div>
+        {% endif %}
+      </form>
+    </div>
+  {% endif %}
+
+  {# 
   <code class="code">
     <h2>TEST BOX</h2>
-    {{dump(cardHand)}}
-    {{dump(calculatedCardHand)}}
-    {{dump(twentyOne)}}
+    {{dump(cards)}}
   </code>
+   #}
 
+  {#
+href="{{path("game-home")}}"
+#}
   <div class="btn-container">
     <a href="{{path("game-home")}}" class="btn">
       Go back to game rules
