@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Classes\Card\Deck;
-use App\Classes\Game\Player;
+use App\Classes\Card\Deck2;
+use App\Classes\Card\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,9 +51,10 @@ class CardController extends AbstractController
     public function shuffle(
         SessionInterface $session
     ): Response {
+
         $deck = new Deck();
         $session->set("leftOverDeck", $deck);
-        $session->set("cardHand", $deck->getCardHand());
+        $session->set("cardHand",  $deck->getCardHand());
 
         $data = [
             'title' => 'Shuffled Deck',
@@ -68,9 +70,10 @@ class CardController extends AbstractController
      * Pull one card and display leftOverDeck length
      */
 
-    public function drawOne(
+    public function draw(
         SessionInterface $session
     ): Response {
+
         $data = [
             'title' => 'Draw a card',
             'cardHand' => $session->get('leftOverDeck')->getCards(1),
@@ -81,92 +84,64 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/draw/form/", name="draw-form", methods={"GET"})
-     * Display Form to choose N players and M cards
-     */
-
-    public function drawMultipleForm(): Response
-    {
-        $data = [
-            'title' => 'Draw multiple card with players',
-            'numOfCards' => 0
-        ];
-        return $this->render('card/drawMultipleForm.html.twig', $data);
-    }
-
-    /**
-     * @Route("/card/deck/draw/{numOfCards}", name="draw-multiple", methods={"GET"})
-     * Display cardhand with N cards
-     * Display leftOverDeck length
-     *
+     * @Route("/card/deck/drawMultiple/{numOfCards}", name="card-draw-multiple", methods={"GET","POST"})
+     * Pull N cards and display leftOverDeck length
+     * 
      */
 
     public function drawMultiple(
+        Request $request,
         SessionInterface $session,
+        String $numOfCards
     ): Response {
+
+        $numOfCards = $request->request->get('cards');
+
         $data = [
             'title' => 'Draw multiple card',
-            'cardHand' => $session->get('leftOverDeck')->getCardHand(),
+            'cardHand' => $session->get('leftOverDeck')->getCards(intval($numOfCards)),
             'cards' => $session->get('leftOverDeck')->getDeck(),
         ];
         return $this->render('card/drawMultiple.html.twig', $data);
     }
 
     /**
-     * @Route("/card/deck/draw/{numOfCards}", name="draw-multiple-process", methods={"POST"})
-     * Take user input of  N cards
-     * Update leftOverDeck length
-     */
-
-    public function drawMultipleProcess(
-        Request $request,
-        SessionInterface $session
-    ): Response {
-        $numOfCards = $request->request->get('cards');
-
-        $session->get('leftOverDeck')->getCards(intval($numOfCards));
-
-        return $this->redirectToRoute('draw-multiple', ['numOfCards' => $numOfCards]);
-    }
-
-    /**
      * @Route("/card/deck/deal", name="deal-form", methods={"GET"})
      * Display Form to choose N players and M cards
-     * @return mixed
      */
 
-    public function dealForm()
-    {
+    public function dealForm(
+        SessionInterface $session,
+    ): Response {
+
         $data = [
-            'title' => 'Draw multiple card with players',
-            'numOfPlayers' => 0,
-            'numOfCards' => 0
+            'title' => 'Draw multiple card with players'
         ];
         return $this->render('card/drawMultipleWithPlayersForm.html.twig', $data);
     }
 
     /**
-     * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal", methods={"GET"})
-     * Display N cardsHands with N Cards
+    * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal", methods={"GET"})
+     * Display N cardsHands with N Cards 
      * display leftOverDeck length
      */
 
     public function deal(
         SessionInterface $session,
     ): Response {
-        $players = $session->get('players');
-        // dd($players);
+
         $data = [
             'title' => 'Players and cardhands',
-            'players' => $players,
-            'cards' => $session->get('leftOverDeck')->getDeck(),
+            'players' => $session->get('players')->startGame(),
+            'cards' => $session->get('players')->deck->getDeck(),
         ];
         return $this->render('card/drawMultipleWithPlayers.html.twig', $data);
     }
 
+
     /**
      * @Route("/card/deck/deal/{numOfPlayers}/{numOfCards}", name="deal-process", methods={"POST"})
-     * Display N cardsHands with N Cards
+     * Display N cardsHands with N Cards 
      * display leftOverDeck length
      */
 
@@ -174,22 +149,33 @@ class CardController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
+    
         $numOfPlayers = $request->request->get('numOfPlayers');
         $numOfCards = $request->request->get('numOfCards');
-        $deck = $session->get('leftOverDeck');
-        $players = [];
-        for ($i = 0; $i < $numOfPlayers; $i++) {
-            $player = new Player();
-            $drawnCards = $deck->getCards($numOfCards);
-            if ($i == 0) {
-                $player->setCurrentCardHand($drawnCards);
-            }
-            $drawnCards = array_splice($drawnCards, intval($numOfCards) * $i);
-            $player->setCurrentCardHand($drawnCards);
-            array_push($players, $player);
-        }
-        $session->set("players", $players);
+        // dd($numOfCards);
+        $session->set("players", new Player($numOfPlayers, $numOfCards));
+        
+        $data = [
+            'title' => 'Draw multiple card with players',
+        ];
+        return $this->redirect('/card/deck/deal/'.$numOfPlayers.'/'.$numOfCards);
+    }
 
-        return $this->redirectToRoute('deal', ['numOfPlayers' => $numOfPlayers, 'numOfCards' => $numOfCards]);
+    /**
+     * @Route("/card/deck2", name="card-deck2")
+     * create card/deck2 which is a deck with two jokers.
+     * Display deck the same as card/deck. Tips try inheritance.
+     * Try to recreate Deck ex DeckWith2Jokers extends Deck.
+     */
+    public function deckWithJokers(): Response
+    {
+        $deck = new Deck2();
+        $deck->jokers();
+
+        $data = [
+            'title' => 'Deck with Jokers',
+            'deck' => $deck->getDeck()
+        ];
+        return $this->render('card/deck2.html.twig', $data);
     }
 }

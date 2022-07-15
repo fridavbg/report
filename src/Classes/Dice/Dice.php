@@ -4,7 +4,7 @@ namespace App\Classes\Dice;
 
 class Dice
 {
-    protected int $value;
+    protected $value;
 
     public function __construct()
     {

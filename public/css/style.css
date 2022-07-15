@@ -297,11 +297,7 @@ p {
     border-radius: 12px;
 }
 
-/* FORM */
-
-form {
-    padding: 1em;
-}
+/* FORN */
 
 .errorMsg {
     border: solid red 2px;
@@ -333,7 +329,6 @@ legend {
 .btn-container {
     display: flex;
     justify-content: space-around;
-    margin: 1em;
 }
 
 .btn {
@@ -364,7 +359,6 @@ legend {
     grid-gap: 12px;
     justify-content: center;
     padding-bottom: 12px;
-    margin-bottom: 0.5em;
 }
 
 .card {

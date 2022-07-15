@@ -6,11 +6,8 @@
 
 {% block content %}
   <div class="site-wrap">
-    <h2>Choose amount of players and amount of cards</h2>
-    <form action="{{path('deal-process', {
-        numOfPlayers : numOfPlayers,
-        numOfCards : numOfCards
-      })}}" method="post">
+
+    <form action="/card/deck/deal/numOfPlayers/numOfCards" method="post">
       <fieldset>
         <div class="btn-container">
           <legend>Players:</legend>
@@ -23,7 +20,7 @@
     </form>
 
     {#
-    <code class="code">
+     <code class="code">
       <h2>TEST BOX</h2>
       {{dump(players)}}
       {{dump(cardNum)}}

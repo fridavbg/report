@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Classes\Dice\DiceGraphic;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +14,7 @@ class DiceGraphicController extends AbstractController
      */
     public function home(): Response
     {
-        $die = new DiceGraphic();
+        $die = new \App\Dice\DiceGraphic();
         $data = [
             'title' => 'Dice with graphic representation',
             'die_value' => $die->roll(),
@@ -30,7 +29,7 @@ class DiceGraphicController extends AbstractController
      */
     public function roll(int $numRolls): Response
     {
-        $die = new DiceGraphic();
+        $die = new \App\Dice\DiceGraphic();
 
         $rolls = [];
         for ($i = 1; $i <= $numRolls; $i++) {
