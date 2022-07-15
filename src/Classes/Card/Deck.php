@@ -98,9 +98,8 @@ class Deck
 
         if (shuffle($cards)) {
             $this->setDeck($cards);
-            return $cards;
         }
-        return shuffle($cards);
+        return $cards;
     }
 
     /**
