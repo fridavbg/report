@@ -4,32 +4,15 @@ namespace App\Classes\Card;
 
 class Card
 {
-    protected $suit;
-    protected $value;
+    /**
+     * @var string $suit
+     * @var string $value
+     */
+    protected string $suit;
+    protected string $value;
 
-    public function __construct($suit, $value)
+    public function __construct(string $suit, string $value)
     {
-        $suits = array(
-            'H' => 'Hearts',
-            'C' => 'Clubs',
-            'D' => 'Diamonds',
-            'S' => 'Spades'
-        );
-        $values = array(
-            'A' => 'Ace',
-            '2' => 'Two',
-            '3' => 'Three',
-            '4' => 'Four',
-            '5' => 'Five',
-            '6' => 'Six',
-            '7' => 'Seven',
-            '8' => 'Eight',
-            '9' => 'Nine',
-            '10' => 'Ten',
-            'J' => 'Knight',
-            'Q' => 'Queen',
-            'K' => 'King',
-        );
         $this->suit = $suit;
         $this->value = $value;
     }
@@ -59,5 +42,15 @@ class Card
     public function getSuite()
     {
         return $this->suit;
+    }
+
+    /**
+     * Show card as a object
+     * @return array<string, string>.
+     */
+    public function getCardObj()
+    {
+        $cardObj = ["suit" => $this->suit,"value" => $this->value];
+        return $cardObj;
     }
 }

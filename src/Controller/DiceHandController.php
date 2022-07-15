@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Classes\Dice\DiceHand;
+use App\Classes\Dice\Dice;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,7 +36,7 @@ class DiceHandController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-        $hand = $session->get("dicehand") ?? new \App\Dice\DiceHand();
+        $hand = $session->get("dicehand") ?? new DiceHand();
 
         $roll  = $request->request->get('roll');
         $add  = $request->request->get('add');
@@ -43,10 +45,10 @@ class DiceHandController extends AbstractController
         if ($roll) {
             $hand->roll();
         } elseif ($add) {
-            $hand->add(new \App\Dice\Dice());
+            $hand->add(new Dice());
         //$hand->add(new \App\Dice\DiceGraphic());
         } elseif ($clear) {
-            $hand = new \App\Dice\DiceHand();
+            $hand = new DiceHand();
         }
 
         $session->set("dicehand", $hand);

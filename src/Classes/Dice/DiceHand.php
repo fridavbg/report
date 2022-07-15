@@ -2,11 +2,14 @@
 
 namespace App\Classes\Dice;
 
-use App\Dice\Dice;
+use App\Classes\Dice\Dice;
 
 class DiceHand
 {
-    private $hand = [];
+    /**
+     * @var array<Dice> $hand
+     */
+    private array $hand = [];
 
     public function add(Dice $die): void
     {
