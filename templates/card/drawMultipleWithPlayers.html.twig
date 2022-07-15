@@ -7,14 +7,13 @@
 {% block content %}
   <div class="site-wrap">
     {% if players is defined %}
-      <h2>Choose amount of players and amount of cards</h2>
       <div class="player-container">
-        {% for cardHand in players %}
+        {% for player in players %}
           <div class="cardHand">
             <h2 class="player-title">Player
               {{loop.index}}
             </h2>
-            {% for card in cardHand %}
+            {% for card in player.getCurrentCardHand() %}
               <ul class="card">
                 {% if card.getSuite() == 'H'%}
                   <li class="red-suit">♥</li>
@@ -35,16 +34,15 @@
         {{ cards | length }}
       </h3>
     {% else %}
-      <p>No numbers was chosen
-      </p>
+      <p>No numbers was chosen</p>
     {% endif %}
 
-    {#
-        <code class="code">
+    {#  
+    <code class="code">
       <h2>TEST BOX</h2>
-      {{dump(link_to_game)}}
+      {{dump(players)}}
     </code>
-      #}
+     #}
 
     <div class="btn-container">
       <a href="{{path("card-home")}}" class="btn">
