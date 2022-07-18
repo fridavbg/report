@@ -13,6 +13,7 @@
             <h2 class="player-title">Player
               {{loop.index}}
             </h2>
+
             {% for card in player.getCurrentCardHand() %}
               <ul class="card">
                 {% if card.getSuite() == 'H'%}
@@ -27,8 +28,10 @@
                 <li>{{ card.getValue() }}</li>
               </ul>
             {% endfor %}
+
           </div>
         {% endfor %}
+
       </div>
       <h3>Cards left in deck:
         {{ cards | length }}
