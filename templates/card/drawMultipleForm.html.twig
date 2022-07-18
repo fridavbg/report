@@ -7,15 +7,17 @@
 {% block content %}
   <div class="site-wrap">
     <h2>How many cards do you want?</h2>
-      <form action="{{path('draw-multiple-process', {
+    <form action="{{path('draw-multiple-process', {
         numOfCards : numOfCards
       })}}" method="post">
-        <fieldset>
-          <div class="btn-container">
-            <input type="number" id="cards" name="cards" min="1" max="52">
-            <input type="submit" name="draw-process" value="Draw any number of cards" class="btn"/>
-          </fieldset>
-        </form>
+      <fieldset>
+        <div class="btn-container">
+          <input type="number" id="cards" name="cards" min="1" max="52">
+          <input type="submit" name="draw-process" value="Draw any number of cards" class="btn"/>
+        </fieldset>
+      </form>
+
+      {{ include('form/flash-message.html.twig') }}
 
       <div class="btn-container">
         <a href="{{path("card-home")}}" class="btn">

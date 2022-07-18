@@ -123,10 +123,13 @@ class CardController extends AbstractController
         SessionInterface $session
     ): Response {
         $numOfCards = $request->request->get('cards');
-
-        $session->get('leftOverDeck')->getCards(intval($numOfCards));
-
-        return $this->redirectToRoute('draw-multiple', ['numOfCards' => $numOfCards]);
+        $type = 'notice';
+        if ($numOfCards) {
+            $session->get('leftOverDeck')->getCards(intval($numOfCards));
+            return $this->redirectToRoute('draw-multiple', ['numOfCards' => $numOfCards]);
+        }
+        $this->addFlash($type, "Please enter a number");
+        return $this->redirectToRoute('draw-form');
     }
 
     /**
@@ -177,6 +180,12 @@ class CardController extends AbstractController
         $numOfPlayers = $request->request->get('numOfPlayers');
         $numOfCards = $request->request->get('numOfCards');
         $deck = $session->get('leftOverDeck');
+        $type = 'notice';
+
+        if (!$numOfPlayers || !$numOfCards) {
+            $this->addFlash($type, "Please enter how many players and how many cards");
+            return $this->redirectToRoute('deal-form');
+        }
         $players = [];
         for ($i = 0; $i < $numOfPlayers; $i++) {
             $player = new Player();
