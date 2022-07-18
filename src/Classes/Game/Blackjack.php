@@ -74,10 +74,21 @@ class Blackjack
         $playerPoints = $player->getCurrentScore();
         $dealerPoints = $dealer->getCurrentScore();
 
-        if ($playerPoints >= $dealerPoints || $dealerPoints == 21) {
+        if ($playerPoints < 21 || $dealerPoints < 21) {
+            if ($playerPoints > $dealerPoints) {
+                $player->win();
+            } 
             $dealer->win();
         }
-        $player->win();
+        elseif ($dealerPoints === 21) {
+            $dealer->win();
+        } elseif ($playerPoints == 21) {
+            $player->win();
+        } elseif ($playerPoints > $dealerPoints) {
+            $dealer->win();
+        } elseif ($dealerPoints > $playerPoints) {
+            $player->win();
+        }
         $this->reset();
     }
 }
