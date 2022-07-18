@@ -171,4 +171,25 @@ class BlackjackTest extends TestCase
         $playerWins = $player->getTotalWins();
         $this->assertEquals(1, $playerWins);
     }
+
+
+    /**
+     * Construct object and verify that if dealer more points than the player, the player wins
+     */
+    public function testBlackjackEqualScoreOver21()
+    {
+        $blackjack = new Blackjack();
+        $this->assertInstanceOf("\App\Classes\Game\Blackjack", $blackjack);
+
+        $playerRepo = $blackjack->getPlayerRepo();
+        $player = $playerRepo->findByType('Player');
+        $dealer = $playerRepo->findByType('Dealer');
+
+        $player->setCurrentScore(22);
+        $dealer->setCurrentScore(22);
+        $blackjack->blackJack();
+
+        $dealerWins = $dealer->getTotalWins();
+        $this->assertEquals(1, $dealerWins);
+    }
 }

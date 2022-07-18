@@ -183,8 +183,8 @@ class CardController extends AbstractController
         $type = 'notice';
 
         if (!$numOfPlayers || !$numOfCards) {
-            $this->addFlash($type, "Please enter how many players and how many cards");
-            return $this->redirectToRoute('deal-form');
+            $this->addFlash($type, "Please enter how many players and how many cards you want");
+            return $this->redirectToRoute('deal-form', ['numOfPlayers' => 0, 'numOfCards' => 0]);
         }
         $players = [];
         for ($i = 0; $i < $numOfPlayers; $i++) {

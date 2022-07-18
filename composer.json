@@ -112,7 +112,9 @@
             "@phpstan"
         ],
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
-        "report": "php -S localhost:8889 -t build/coverage"
+        "report": "php -S localhost:8889 -t build/coverage",
+        "phpdoc": "tools/phpdoc/phpdoc",
+        "doc" : "tools/phpdoc/phpdoc -d ./src -t ./docs/api"
     },
     "conflict": {
         "symfony/symfony": "*"
