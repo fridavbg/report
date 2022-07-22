@@ -297,7 +297,7 @@ p {
     border-radius: 12px;
 }
 
-/* FORN */
+/* FORM */
 
 .errorMsg {
     border: solid red 2px;
@@ -389,7 +389,7 @@ legend {
     padding-bottom: 3px;
 }
 
-/* Player */
+/* PLAYER */
 .player-container {
     display: grid;
     grid-template-rows: 100px 100px;
@@ -407,6 +407,10 @@ legend {
 .player-title {
     margin-right: 1em;
 }
+
+
+/*LIBRARY*/
+
 
 
 /* FOOTER */

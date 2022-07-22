@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block content %}
+<div class="site-wrap">
+    <h1>{{ title }}</h1>
+    <a href="{{path('create_book')}}">Add a book</a>
+</div>
+{% endblock %}
