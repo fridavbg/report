@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h1>Library</h1>
+    {% for book in books %}
+
+      <div class="book-container">
+        <p class="title">
+          {{ book.title }}</p>
+        <p class="author">Author:
+          {{ book.author }}</p>
+        <p class="isbn">ISBN:
+          {{ book.isbn }}</p>
+        <p class="description">Description:
+          {{ book.description }}</p>
+        <image class="book-image" image="image" alt="{{ book.title }}" src="{{book.image}}"/>
+        <div class="btns">
+          <a class="btn" href="#">View</a>
+          <a class="btn" href="#">Edit</a>
+          <a class="btn" href="#">Delete</a>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+  <a class="btn" href="{{path("app_library")}}">Go Back</a>
+  {#
+  <code>
+    <h2>TEST BOX</h2>
+    {{dump(books)}}
+  </code>
+ #}
+{% endblock %}

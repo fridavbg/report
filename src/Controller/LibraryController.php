@@ -34,7 +34,7 @@ class LibraryController extends AbstractController
             'books' => $books
         ];
 
-        return $this->render('library/read.html.twig', $data);
+        return $this->render('library/readAll.html.twig', $data);
     }
 
     /**
