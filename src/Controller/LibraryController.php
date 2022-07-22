@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Book;
 use App\Repository\BookRepository;
@@ -37,7 +38,7 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/create", name="create_book_form")
+     * @Route("/library/create/form", name="create_book_form")
      */
     public function createBookForm(): Response
     {
@@ -48,8 +49,39 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/create", name="create_book_process")
      */
-    public function createBookProcess(): Response
+    public function createBookProcess(Request $request,
+    ManagerRegistry $doctrine): Response
     {
-        return $this->redirectToRoute('');
+        $entityManager = $doctrine->getManager();
+
+        $title = $request->request->get('title');
+        $author = $request->request->get('author');
+        $isbn = $request->request->get('isbn');
+        $description = $request->request->get('description');
+        $image = $request->request->get('image');
+
+        $book = new Book();
+        $book->setTitle($title);
+        $book->setAuthor($author);
+        $book->setISBN($isbn);
+        $book->setDescription($description);
+        $book->setImage($image);
+
+        $entityManager->persist($book);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('library_show_all');
+    }
+
+    /**
+     * @Route("/library/test", name="test")
+     */
+    public function test(): Response
+    {
+        $data = [
+            'title' => 'Library',
+        ];
+        return $this->render('library/test.html.twig', $data);
+        // return $this->redirectToRoute('library_show_all', $data);
     }
 }

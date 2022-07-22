@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h1>TEST</h1>
+
+    <code>
+      <h2>TEST BOX</h2>
+      {{dump(title)}}
+      {{dump(author)}}
+      {{dump(isbn)}}
+      {{dump(description)}}
+      {{dump(image)}}
+    </code>
+  </div>
+{% endblock %}
