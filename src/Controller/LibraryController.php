@@ -38,6 +38,22 @@ class LibraryController extends AbstractController
     }
 
     /**
+     * @Route("/library/show/{id}", name="book_by_id")
+     */
+    public function showBookById(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+        $book = $bookRepository
+            ->find($id);
+        $data = [
+            'book' => $book
+        ];
+
+        return $this->render('library/readOne.html.twig', $data);
+    }
+
+    /**
      * @Route("/library/create/form", name="create_book_form")
      */
     public function createBookForm(): Response
@@ -49,9 +65,10 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/create", name="create_book_process")
      */
-    public function createBookProcess(Request $request,
-    ManagerRegistry $doctrine): Response
-    {
+    public function createBookProcess(
+        Request $request,
+        ManagerRegistry $doctrine
+    ): Response {
         $entityManager = $doctrine->getManager();
 
         $title = $request->request->get('title');
@@ -71,17 +88,5 @@ class LibraryController extends AbstractController
         $entityManager->flush();
 
         return $this->redirectToRoute('library_show_all');
-    }
-
-    /**
-     * @Route("/library/test", name="test")
-     */
-    public function test(): Response
-    {
-        $data = [
-            'title' => 'Library',
-        ];
-        return $this->render('library/test.html.twig', $data);
-        // return $this->redirectToRoute('library_show_all', $data);
     }
 }
