@@ -91,6 +91,55 @@ class LibraryController extends AbstractController
     }
 
     /**
+     * @Route("/library/update/form/{id}", name="update_book_form")
+     */
+    public function updateBookForm(
+        BookRepository $bookRepository,
+        int $id
+    ): Response
+    {
+        $book = $bookRepository
+            ->find($id);
+        $data = [
+            'book' => $book
+        ];
+        return $this->render('library/editForm.html.twig', $data);
+    }
+
+    /**
+     * @Route("/library/update/{id}", name="book_update_process")
+     */
+    public function updateBookProcess(
+        Request $request,
+        ManagerRegistry $doctrine,
+        int $id,
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Book::class)->find($id);
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for id ' . $id
+            );
+        }
+        $title = $request->request->get('title');
+        $author = $request->request->get('author');
+        $isbn = $request->request->get('isbn');
+        $description = $request->request->get('description');
+        $image = $request->request->get('image');
+
+        $book->setTitle($title);
+        $book->setAuthor($author);
+        $book->setISBN($isbn);
+        $book->setDescription($description);
+        $book->setImage($image);
+        
+        $entityManager->flush();
+
+        return $this->redirectToRoute('library_show_all');
+    }
+
+    /**
      * @Route("/library/delete/{id}", name="book_delete_by_id")
      */
     public function deleteBookById(
