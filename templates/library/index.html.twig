@@ -3,8 +3,14 @@
 {% block title %}Library{% endblock %}
 
 {% block content %}
-<div class="site-wrap">
+  <div class="site-wrap">
     <h1>{{ title }}</h1>
-    <a href="{{path('create_book')}}">Add a book</a>
-</div>
+    <div class="btn-container">
+      <a href="{{path('library_show_all')}}"
+      class="btn">See all books</a>
+      <br/>
+      <a href="{{path('create_book_form')}}" 
+      class="btn">Add a book</a>
+    </div>
+  </div>
 {% endblock %}

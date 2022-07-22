@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Book;
+use App\Repository\BookRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 class LibraryController extends AbstractController
@@ -20,24 +21,35 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/book/create", name="create_book")
+     * @Route("/library/show", name="library_show_all")
      */
-    public function createbook(
-        ManagerRegistry $doctrine
+    public function showAllBooks(
+        BookRepository $bookRepository
     ): Response {
-        $entityManager = $doctrine->getManager();
+        $books = $bookRepository
+            ->findAll();
 
-        $book = new Book();
-        $book->setTitle('test');
-        $book->setAuthor('test testson');
+        $data = [
+            'books' => $books
+        ];
 
-        // tell Doctrine you want to (eventually) save the book
-        // (no queries yet)
-        $entityManager->persist($book);
+        return $this->render('library/read.html.twig', $data);
+    }
 
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
+    /**
+     * @Route("/library/create", name="create_book_form")
+     */
+    public function createBookForm(): Response
+    {
 
-        return $this->render('library/create.html.twig');
+        return $this->render('library/createForm.html.twig');
+    }
+
+    /**
+     * @Route("/library/create", name="create_book_process")
+     */
+    public function createBookProcess(): Response
+    {
+        return $this->redirectToRoute('');
     }
 }
