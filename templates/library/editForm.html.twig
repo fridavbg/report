@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block content %}
+  <div class="site-wrap">
+    <h1>Edit a book</h1>
+
+    <form action="{{path('create_book_process')}}" method="post">
+      <fieldset>
+
+        <legend>Title:</legend>
+        <input type="text" id="title" name="title">
+        <legend>Author:</legend>
+        <input type="text" id="author" name="author">
+        <legend>ISBN:</legend>
+        <input type="text" id="isbn" name="isbn">
+        <legend>Description:</legend>
+        <input type="text" id="description" name="description">
+        <legend>Image:</legend>
+        <input type="file" accept="image/*" id="image" name="image">
+        <br/>
+        <br/>
+        <input type="submit" name="create_book" value="Add book" class="btn"/>
+
+      </fieldset>
+    </form>
+  </div>
+{% endblock %}
