@@ -94,7 +94,7 @@ class LibraryController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    dd($e);
+                    // dd($e);
                 }
                 // updates the 'imageFilename' property to store the image file name
                 // instead of its contents
@@ -187,6 +187,7 @@ class LibraryController extends AbstractController
                     );
                 } catch (FileException $e) {
                     // ... handle exception if something happens during file upload
+                   // dd($e);
                 }
                 // updates the 'imageFilename' property to store the image file name
                 // instead of its contents

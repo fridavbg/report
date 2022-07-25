@@ -420,7 +420,17 @@ label {
 
 
 /*LIBRARY*/
-
+.books-container {
+    border-style: groove;
+    box-shadow: 15px 10px #000;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    display: grid;
+    grid-template-areas: 
+    'image left footer'
+    'image left right'
+}
 .book-container {
     border-style: groove;
     box-shadow: 15px 10px #000;
