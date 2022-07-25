@@ -11,14 +11,14 @@ use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
-class AddBookFormType extends AbstractType
+class BookFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('title')
             ->add('author')
-            ->add('ISBN')
+            ->add('isbn')
             ->add('description')
             ->add('image', FileType::class, [
                 'label' => 'Book image',

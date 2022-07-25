@@ -16,12 +16,20 @@
             {{ book.author }}
           </p>
           <p class="isbn">
-            ISBN:
-            {{ book.isbn }}
+            {% if book.isbn %}
+              ISBN:
+              {{ book.isbn }}
+            {% else %}
+              No ISBN found
+            {% endif %}
           </p>
           <p class="description">
-            Description:
-            {{ book.description }}
+            {% if book.description %}
+              Description:
+              {{ book.description }}
+            {% else %}
+              No description found
+            {% endif %}
           </p>
           <img class="book-image" src="{{asset('img/books/')}}/{{book.image}}" alt="{{ book.title }}"/>
           <div class="btns">

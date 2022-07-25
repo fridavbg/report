@@ -5,23 +5,15 @@
 {% block content %}
   <div class="site-wrap">
     <h1>Edit a book</h1>
-
-    <form action="{{path('book_update_process', {id: book.id})}}" method="post">
-      <fieldset>
-        <legend>Title:</legend>
-        <input type="text" id="title" name="title" value={{book.title}}>
-        <legend>Author:</legend>
-        <input type="text" id="author" name="author" value={{book.author}}>
-        <legend>ISBN:</legend>
-        <input type="text" id="isbn" name="isbn" value={{book.isbn}}>
-        <legend>Description:</legend>
-        <input type="text" id="description" name="description" value={{book.description}}>
-        <legend>Image:</legend>
-        <input type="file" accept="image/*" id="image" name="image">
-        <br/>
-        <br/>
-        <input type="submit" name="update_book" value="Edit book" class="btn"/>
-      </fieldset>
-    </form>
+    {{ form_start(form, {'method': 'PUT'}) }}
+    <fieldset>
+      {{ form_row(form.title) }}
+      {{ form_row(form.author) }}
+      {{ form_row(form.isbn) }}
+      {{ form_row(form.description) }}
+      {{ form_row(form.image) }}
+      {{ form_row(form.save) }}
+    </fieldset>
+    {{ form_end(form) }}
   </div>
 {% endblock %}
