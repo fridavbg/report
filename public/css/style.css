@@ -449,8 +449,8 @@ legend {
     border-style: groove;
     box-shadow: 15px 10px #000;
     margin: .5em;
-    width: 500px;
-    height: 750px;
+    width: 250px;
+    height: 300px;
     border-radius: 1em;
 }
 
@@ -468,6 +468,7 @@ legend {
     position: relative;
     z-index: 1;
     margin-bottom: 1em;
+    margin-top: 3em;
 }
 
 .sitefooter p {
