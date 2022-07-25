@@ -299,6 +299,15 @@ p {
 
 /* FORM */
 
+form {
+    padding: 20px;
+}
+
+input, textarea {
+    margin: 1em;
+    width: 100%
+}
+
 .errorMsg {
     border: solid red 2px;
     font-family: Title;
@@ -317,12 +326,12 @@ p {
     box-shadow: 0 5px 0 rgb(8, 8, 236);
 }
 
-legend {
+label {
     text-decoration: underline;
     font-size: 20px;
     color: var(--light-grey);
     letter-spacing: 0.1em;
-    margin-top: 1em;
+    margin: 1em;
     font-family: Title;
 }
 

@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 
 class BookFormType extends AbstractType
@@ -19,7 +20,9 @@ class BookFormType extends AbstractType
             ->add('title')
             ->add('author')
             ->add('isbn')
-            ->add('description')
+            ->add('description', TextareaType::class, array(
+                'attr' => array('cols' => '8', 'rows' => '5'),
+            ))
             ->add('image', FileType::class, [
                 'label' => 'Book image',
                 'mapped' => false,
