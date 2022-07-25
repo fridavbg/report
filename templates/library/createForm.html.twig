@@ -22,8 +22,12 @@
         <br/>
         <br/>
         <input type="submit" name="create_book" value="Add book" class="btn"/>
-
       </fieldset>
     </form>
+    <h1>Add a book with an Image</h1>
+    {{ form_start(form) }}
+    {# ... #}
+    {{ form_row(form.image) }}
+    {{ form_end(form) }}
   </div>
 {% endblock %}

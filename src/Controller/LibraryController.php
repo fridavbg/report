@@ -7,8 +7,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Book;
+use App\Form\AddBookFormType;
 use App\Repository\BookRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+
 
 class LibraryController extends AbstractController
 {
@@ -56,10 +60,62 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/create/form", name="create_book_form")
      */
-    public function createBookForm(): Response
-    {
+    public function createBookForm(
+        Request $request,
+        SluggerInterface $slugger,
+        ManagerRegistry $doctrine
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $book = new Book();
 
-        return $this->render('library/createForm.html.twig');
+        $addBookForm = $this->createForm(AddBookFormType::class, $book);
+        $addBookForm->handleRequest($request);
+
+        if ($addBookForm->isSubmitted() && $addBookForm->isValid()) {
+            /** @var UploadedFile $image */
+            $title = $addBookForm->get('title')->getData();
+            $author = $addBookForm->get('author')->getData();
+            $isbn = $addBookForm->get('ISBN')->getData();
+            $description = $addBookForm->get('description')->getData();
+            $imageFile = $addBookForm->get('image')->getData();
+
+            // this condition is needed because the 'image' field is not required
+            // so the image file must be processed only when a file is uploaded
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $imageFile->move(
+                        $this->getParameter('image_directory'),
+                        $newFilename
+                    );
+                   } catch (FileException $e) {
+                    dd($e);
+                }
+                // updates the 'imageFilename' property to store the image file name
+                // instead of its contents
+                $book->setImage($newFilename);
+            }
+
+            // ... persist the $book variable or any other work
+            $book->setTitle($title);
+            $book->setAuthor($author);
+            $book->setISBN($isbn);
+            $book->setDescription($description);
+
+            $entityManager->persist($book);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('library_show_all');
+        }
+        $data = [
+            'form' => $addBookForm->createView()
+        ];
+        return $this->render('library/createForm.html.twig', $data);
     }
 
     /**
@@ -96,13 +152,13 @@ class LibraryController extends AbstractController
     public function updateBookForm(
         BookRepository $bookRepository,
         int $id
-    ): Response
-    {
+    ): Response {
         $book = $bookRepository
             ->find($id);
         $data = [
             'book' => $book
         ];
+
         return $this->render('library/editForm.html.twig', $data);
     }
 
@@ -133,7 +189,7 @@ class LibraryController extends AbstractController
         $book->setISBN($isbn);
         $book->setDescription($description);
         $book->setImage($image);
-        
+
         $entityManager->flush();
 
         return $this->redirectToRoute('library_show_all');
