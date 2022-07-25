@@ -7,7 +7,7 @@
     <h1>Library</h1>
     {% if books %}
       {% for book in books %}
-        <div class="book-container">
+        <div>
           <p class="title">
             {{ book.title }}
           </p>
@@ -15,23 +15,7 @@
             Author:
             {{ book.author }}
           </p>
-          <p class="isbn">
-            {% if book.isbn %}
-              ISBN:
-              {{ book.isbn }}
-            {% else %}
-              No ISBN found
-            {% endif %}
-          </p>
-          <p class="description">
-            {% if book.description %}
-              Description:
-              {{ book.description }}
-            {% else %}
-              No description found
-            {% endif %}
-          </p>
-          <img class="book-image" src="{{asset('img/books/')}}/{{book.image}}" alt="{{ book.title }}"/>
+          <img class="book-image" src="{{asset('img/books/')}}{{book.image}}" alt="{{ book.title }}"/>
           <div class="btns">
             <a class="btn" href="{{path('book_by_id', {id: book.id})}}">View</a>
             <a class="btn" href="{{path('update_book_form', {id:book.id})}}">Edit id
