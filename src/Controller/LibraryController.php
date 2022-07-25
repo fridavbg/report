@@ -179,14 +179,14 @@ class LibraryController extends AbstractController
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
 
-                // Move the file to the directory where brochures are stored
+                // Move the file to the directory where images are stored
                 try {
                     $imageFile->move(
                         $this->getParameter('image_directory'),
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    dd($e);
+                    // ... handle exception if something happens during file upload
                 }
                 // updates the 'imageFilename' property to store the image file name
                 // instead of its contents
