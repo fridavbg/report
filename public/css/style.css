@@ -241,6 +241,23 @@ nav ul li a:hover {
     padding: 1em;
 }
 
+.report-link {
+    font-family: Font;
+    font-size: medium;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 12px;
+    color: var(--light-text);
+    box-shadow: var(--accent) 0px 20px 30px -10px;
+    background-color: var(--accent);
+}
+
+.report-link:hover {
+    background-color: var(--dark-bkg);
+    border-radius: 12px;
+}
+
 /* TYPOGRAPHY */
 @font-face {
     font-family: Title;
