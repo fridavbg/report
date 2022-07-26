@@ -5,13 +5,36 @@
 {% block content %}
   <div class="site-wrap">
     <h1>Add a book</h1>
-    {{ form_start(form, {'method': 'POST'}) }}
+
+    <form action="{{path('create_book_process')}}" method="post">
+      <fieldset>
+        <legend>Title:</legend>
+        <input type="text" id="title" name="title" placeholder="Title" required="required">
+        <legend>Author:</legend>
+        <input type="text" id="author" name="author" placeholder="Author" required="required">
+        <legend>ISBN:</legend>
+        <input type="text" id="isbn" name="isbn" placeholder="XXXXX-XX-XX-X">
+        <legend>Description:</legend>
+        <input type="text" id="description" name="description" placeholder="Book description">
+        <legend>Image URL:</legend>
+        <input id="image" name="image" type="url" pattern="https?://.+" oninvalid="this.setCustomValidity('Please match the requested format')">
+        <br/>
+        <br/>
+        <input type="submit" name="create_book" value="Add book" class="btn"/>
+      </fieldset>
+    </form>
+
+    {#
+    Symfony form that uploads a file - wont work on Student Server - no writing access :(
+      <h1>Add a book</h1>
+      {{ form_start(form, {'method': 'POST'}) }}
       {{ form_row(form.title) }}
       {{ form_row(form.author) }}
       {{ form_row(form.isbn) }}
       {{ form_row(form.description) }}
       {{ form_row(form.image) }}
       {{ form_row(form.save,{ 'attr' : { 'class' : 'btn' }}) }}
-    {{ form_end(form) }}
+      {{ form_end(form) }}
+    #}
   </div>
 {% endblock %}
