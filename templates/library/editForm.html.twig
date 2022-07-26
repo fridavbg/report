@@ -5,6 +5,25 @@
 {% block content %}
   <div class="site-wrap">
     <h1>Edit a book</h1>
+    <form action="{{path('book_update_process', {id: book.id})}}" method="post">
+        <legend>Title:</legend>
+        <input type="text" id="title" name="title" value="{{book.title}}" rows="5" cols="8">
+        <legend>Author:</legend>
+        <input type="text" id="author" name="author" value="{{book.author}}">
+        <legend>ISBN:</legend>
+        <input type="text" id="isbn" name="isbn" value="{{book.isbn}}">
+        <legend>Description:</legend>
+        <textarea type="text" id="description" name="description" rows="15" cols="40">{{book.description}}</textarea>
+        <legend>Image URL:</legend>
+        <input id="image" name="image" type="url" pattern="https?://.+" oninvalid="this.setCustomValidity('Please match the requested format')">
+        <br/>
+        <br/>
+        <input type="submit" name="update_book" value="Edit book" class="btn"/>
+    </form>
+
+    {#
+    Symfony form that uploads a file - wont work on Student Server - no writing access ? :(
+    <h1>Edit a book</h1>
     {{ form_start(form, {'method': 'PUT'}) }}
     {{ form_row(form.title) }}
     <br/>
@@ -18,5 +37,6 @@
     <br/>
     {{ form_row(form.save, { 'attr' : { 'class' : 'btn' }}) }}
     {{ form_end(form) }}
+#}
   </div>
 {% endblock %}
