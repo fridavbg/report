@@ -78,7 +78,6 @@ class LibraryController extends AbstractController
         $addBookForm->handleRequest($request);
 
         if ($addBookForm->isSubmitted() && $addBookForm->isValid()) {
-            /** @var UploadedFile $image */
             $title = $addBookForm->get('title')->getData();
             $author = $addBookForm->get('author')->getData();
             $isbn = $addBookForm->get('isbn')->getData();
@@ -139,13 +138,27 @@ class LibraryController extends AbstractController
         $description = $request->request->get('description');
         $image = $request->request->get('image');
 
-        $book = new Book();
-        $book->setTitle($title);
-        $book->setAuthor($author);
-        $book->setISBN($isbn);
-        $book->setDescription($description);
-        $book->setImage($image);
+        $inputs = [$title, $author, $isbn, $description, $image];
 
+        $stringCheck = false;
+
+
+
+        $book = new Book();
+        if (
+            is_string($title) and
+            is_string($author) and
+            is_string($isbn) and
+            is_string($description) and
+            is_string($description) and
+            is_string($image)
+        ) {
+            $book->setTitle($title);
+            $book->setAuthor($author);
+            $book->setISBN($isbn);
+            $book->setDescription($description);
+            $book->setImage($image);
+        }
         $entityManager->persist($book);
         $entityManager->flush();
 
@@ -168,9 +181,7 @@ class LibraryController extends AbstractController
         $editBookForm = $this->createForm(BookFormType::class, $book);
         $editBookForm->handleRequest($request);
 
-
         if ($editBookForm->isSubmitted() && $editBookForm->isValid()) {
-            /** @var UploadedFile $image */
             $title = $editBookForm->get('title')->getData();
             $author = $editBookForm->get('author')->getData();
             $isbn = $editBookForm->get('isbn')->getData();
@@ -193,7 +204,7 @@ class LibraryController extends AbstractController
                     );
                 } catch (FileException $e) {
                     // ... handle exception if something happens during file upload
-                   // dd($e);
+                    // dd($e);
                 }
                 // updates the 'imageFilename' property to store the image file name
                 // instead of its contents
@@ -201,10 +212,20 @@ class LibraryController extends AbstractController
             }
 
             // ... persist the $book variable or any other work
-            $book->setTitle($title);
-            $book->setAuthor($author);
-            $book->setISBN($isbn);
-            $book->setDescription($description);
+            if (
+                is_string($title) and
+                is_string($author) and
+                is_string($isbn) and
+                is_string($description) and
+                is_string($description) and
+                is_string($imageFile)
+            ) {
+                $book->setTitle($title);
+                $book->setAuthor($author);
+                $book->setISBN($isbn);
+                $book->setDescription($description);
+                $book->setImage($imageFile);
+            }
 
             $entityManager->persist($book);
             $entityManager->flush();
@@ -242,11 +263,20 @@ class LibraryController extends AbstractController
         $description = $request->request->get('description');
         $image = $request->request->get('image');
 
-        $book->setTitle($title);
-        $book->setAuthor($author);
-        $book->setISBN($isbn);
-        $book->setDescription($description);
-        $book->setImage($image);
+        if (
+            is_string($title) and
+            is_string($author) and
+            is_string($isbn) and
+            is_string($description) and
+            is_string($description) and
+            is_string($image)
+        ) {
+            $book->setTitle($title);
+            $book->setAuthor($author);
+            $book->setISBN($isbn);
+            $book->setDescription($description);
+            $book->setImage($image);
+        }
 
         $entityManager->flush();
 

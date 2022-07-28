@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Book;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,14 +16,14 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 class BookFormType extends AbstractType
 {
     /**
-     * @var array $options
+     * @var array<string> $options
      */
-    public $options = [];
+    public array $options = [];
     
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm(FormBuilderInterface $builder,  $options): void
     {
         $builder
-            ->add('title', TextType::class, [
+            ->add('title', EntityType::class, [
                 'required' => $options['require_title']
             ])
             ->add('author', TextType::class, [
