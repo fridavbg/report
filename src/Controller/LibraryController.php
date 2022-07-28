@@ -68,7 +68,13 @@ class LibraryController extends AbstractController
         $entityManager = $doctrine->getManager();
         $book = new Book();
 
-        $addBookForm = $this->createForm(BookFormType::class, $book);
+        $titleIsRequired = '...';
+        $authorIsRequired = '...';
+
+        $addBookForm = $this->createForm(BookFormType::class, $book, [
+            'require_title' => $titleIsRequired,
+            'require_author' => $authorIsRequired
+        ]);
         $addBookForm->handleRequest($request);
 
         if ($addBookForm->isSubmitted() && $addBookForm->isValid()) {

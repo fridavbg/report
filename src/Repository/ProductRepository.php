@@ -16,12 +16,17 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ProductRepository extends ServiceEntityRepository
 {
+    /**
+     * @var bool $flush
+     */
+    public $flush = false; 
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Product::class);
     }
 
-    public function add(Product $entity, bool $flush = false): void
+    public function add(Product $entity, bool $flush): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +35,7 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Product $entity, bool $flush = false): void
+    public function remove(Product $entity, bool $flush): void
     {
         $this->getEntityManager()->remove($entity);
 
