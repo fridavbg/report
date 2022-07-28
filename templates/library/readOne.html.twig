@@ -19,8 +19,8 @@
       {% endif %}
 
       <div class="btns">
-        <a class="btn" href="{{path('update_book_form', {id:book.id})}}">Edit</a>
-        <a class="btn" href="{{path('book_delete_by_id', {id: book.id})}}">Delete</a>
+        <a class="btn" href="{{path('update_book_form', {bookId:book.getId()})}}">Edit</a>
+        <a class="btn" href="{{path('book_delete_by_id', {bookId:book.getId()})}}">Delete</a>
       </div>
     </div>
   </div>

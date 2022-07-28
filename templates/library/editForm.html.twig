@@ -5,7 +5,7 @@
 {% block content %}
   <div class="site-wrap">
     <h1>Edit a book</h1>
-    <form action="{{path('book_update_process', {id: book.id})}}" method="post">
+    <form action="{{path('book_update_process', {bookId:book.getId()})}}" method="post">
         <legend>Title:</legend>
         <input type="text" id="title" name="title" value="{{book.title}}" rows="5" cols="8">
         <legend>Author:</legend>

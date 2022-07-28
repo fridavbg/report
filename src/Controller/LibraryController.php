@@ -42,14 +42,14 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/show/{id}", name="book_by_id")
+     * @Route("/library/show/{bookId}", name="book_by_id")
      */
     public function showBookById(
         BookRepository $bookRepository,
-        int $id
+        int $bookId
     ): Response {
         $book = $bookRepository
-            ->find($id);
+            ->find($bookId);
         $data = [
             'book' => $book
         ];
@@ -68,8 +68,8 @@ class LibraryController extends AbstractController
         $entityManager = $doctrine->getManager();
         $book = new Book();
 
-        $titleIsRequired = '...';
-        $authorIsRequired = '...';
+        $titleIsRequired = true;
+        $authorIsRequired = true;
 
         $addBookForm = $this->createForm(BookFormType::class, $book, [
             'require_title' => $titleIsRequired,
@@ -153,18 +153,18 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/update/form/{id}", name="update_book_form")
+     * @Route("/library/update/form/{bookId}", name="update_book_form")
      */
     public function updateBookForm(
         Request $request,
         BookRepository $bookRepository,
-        int $id,
+        int $bookId,
         SluggerInterface $slugger,
         ManagerRegistry $doctrine
     ): Response {
         $entityManager = $doctrine->getManager();
         $book = $bookRepository
-            ->find($id);
+            ->find($bookId);
         $editBookForm = $this->createForm(BookFormType::class, $book);
         $editBookForm->handleRequest($request);
 
@@ -221,19 +221,19 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/update/{id}", name="book_update_process")
+     * @Route("/library/update/{bookId}", name="book_update_process")
      */
     public function updateBookProcess(
         Request $request,
         ManagerRegistry $doctrine,
-        int $id,
+        int $bookId,
     ): Response {
         $entityManager = $doctrine->getManager();
-        $book = $entityManager->getRepository(Book::class)->find($id);
+        $book = $entityManager->getRepository(Book::class)->find($bookId);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id ' . $id
+                'No book found for id ' . $bookId
             );
         }
         $title = $request->request->get('title');
@@ -254,18 +254,18 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/delete/{id}", name="book_delete_by_id")
+     * @Route("/library/delete/{bookId}", name="book_delete_by_id")
      */
     public function deleteBookById(
         ManagerRegistry $doctrine,
-        int $id
+        int $bookId
     ): Response {
         $entityManager = $doctrine->getManager();
-        $book = $entityManager->getRepository(Book::class)->find($id);
+        $book = $entityManager->getRepository(Book::class)->find($bookId);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id ' . $id
+                'No book found for id ' . $bookId
             );
         }
 
