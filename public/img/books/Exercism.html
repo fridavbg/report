@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://exercism.org/tracks/python/exercises/currency-exchange/edit -->
+<html lang="en-US" class="js-focus-visible" data-js-focus-visible=""><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-editor.cm-focused {outline: 1px dotted #212121;}
+.ͼ1.cm-editor {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; min-height: 100%; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 4px;}
+.ͼ1 .cm-selectionLayer {z-index: -1; contain: size style;}
+.ͼ1 .cm-selectionBackground {position: absolute;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {z-index: 100; contain: size style; pointer-events: none;}
+.ͼ1.cm-focused .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {visibility: hidden;}}
+@keyframes cm-blink2 {50% {visibility: hidden;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {position: absolute; border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1.cm-focused .cm-cursor {display: block;}
+.ͼ2 .cm-activeLine {background-color: #f3f9ff;}
+.ͼ3 .cm-activeLine {background-color: #223039;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-a11y-panel {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li {overflow-x: hidden; text-overflow: ellipsis; cursor: pointer; padding: 1px 3px; line-height: 1.2;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: monospace; white-space: nowrap; overflow: hidden auto; max-width: 700px; max-width: min(700px, 95vw); min-width: 250px; max-height: 10em; list-style: none; margin: 0; padding: 0;}
+.ͼ2 .cm-tooltip-autocomplete ul li[aria-selected] {background: #17c; color: white;}
+.ͼ3 .cm-tooltip-autocomplete ul li[aria-selected] {background: #347; color: white;}
+.ͼ1 .cm-completionListIncompleteTop:before, .ͼ1 .cm-completionListIncompleteBottom:after {content: "···"; opacity: 0.5; display: block; text-align: center;}
+.ͼ1 .cm-tooltip.cm-completionInfo {position: absolute; padding: 3px 9px; width: max-content; max-width: 300px;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left {right: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right {left: 100%;}
+.ͼ2 .cm-snippetField {background-color: #00000022;}
+.ͼ3 .cm-snippetField {background-color: #ffffff22;}
+.ͼ1 .cm-snippetFieldPosition {vertical-align: text-top; width: 0; height: 1.15em; margin: 0 -0.7px -.7em; border-left: 1.4px dotted #888;}
+.ͼ1 .cm-completionMatchedText {text-decoration: underline;}
+.ͼ1 .cm-completionDetail {margin-left: 0.5em; font-style: italic;}
+.ͼ1 .cm-completionIcon {font-size: 90%; width: .8em; display: inline-block; text-align: center; padding-right: .6em; opacity: 0.6;}
+.ͼ1 .cm-completionIcon-function:after, .ͼ1 .cm-completionIcon-method:after {content: 'ƒ';}
+.ͼ1 .cm-completionIcon-class:after {content: '○';}
+.ͼ1 .cm-completionIcon-interface:after {content: '◌';}
+.ͼ1 .cm-completionIcon-variable:after {content: '𝑥';}
+.ͼ1 .cm-completionIcon-constant:after {content: '𝐶';}
+.ͼ1 .cm-completionIcon-type:after {content: '𝑡';}
+.ͼ1 .cm-completionIcon-enum:after {content: '∪';}
+.ͼ1 .cm-completionIcon-property:after {content: '□';}
+.ͼ1 .cm-completionIcon-keyword:after {content: '🔑︎';}
+.ͼ1 .cm-completionIcon-namespace:after {content: '▢';}
+.ͼ1 .cm-completionIcon-text:after {content: 'abc'; font-size: 50%; vertical-align: middle;}
+.ͼ1 .cm-tooltip {z-index: 100;}
+.ͼ2 .cm-tooltip {border: 1px solid #bbb; background-color: #f5f5f5;}
+.ͼ2 .cm-tooltip-section:not(:first-child) {border-top: 1px solid #bbb;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-tooltip-arrow:before, .ͼ1 .cm-tooltip-arrow:after {content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:before {border-top: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:after {border-top: 7px solid #f5f5f5; bottom: 1px;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow {bottom: -7px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:before {border-bottom: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:after {border-bottom: 7px solid #f5f5f5; top: 1px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow {top: -7px;}
+.ͼ1 .cm-tooltip-arrow {height: 7px; width: 14px; position: absolute; z-index: -1; overflow: hidden;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:before {border-top-color: #333338; border-bottom-color: #333338;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:after {border-top-color: transparent; border-bottom-color: transparent;}
+.ͼ1 .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1 .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-gutters {display: flex; height: 100%; box-sizing: border-box; left: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #999; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ5 {text-decoration: underline;}
+.ͼ6 {text-decoration: underline; font-weight: bold;}
+.ͼ7 {font-style: italic;}
+.ͼ8 {font-weight: bold;}
+.ͼ9 {text-decoration: line-through;}
+.ͼa {color: #708;}
+.ͼb {color: #219;}
+.ͼc {color: #164;}
+.ͼd {color: #a11;}
+.ͼe {color: #e40;}
+.ͼf {color: #00f;}
+.ͼg {color: #30a;}
+.ͼh {color: #085;}
+.ͼi {color: #167;}
+.ͼj {color: #256;}
+.ͼk {color: #00c;}
+.ͼl {color: #940;}
+.ͼm {color: #7a757a;}
+.ͼn {color: #f00;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+</style><style type="text/css">.turbo-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition:
+    width 300ms ease-out,
+    opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+</style>
+<!-- Do this first - we want things loading ASAP. -->
+
+
+
+<!-- We always want this rendered at the start. -->
+<link rel="stylesheet" href="./Exercism_files/website-a597afd9034ccce4eb5682e224bb1bb07513b73f.css" data-turbo-track="reload">
+<link rel="stylesheet" href="./Exercism_files/css2">
+<script data-api="/usage/api/event" data-domain="exercism.org" defer="" src="./Exercism_files/script.js"></script>
+<link rel="stylesheet" href="./Exercism_files/internal-6b2101fcbab07259dd58cc6a8318112a6f357ce2.css" data-turbo-track="reload">
+<link rel="stylesheet" href="./Exercism_files/application-69fb7b3abaf2e7663cc89f6a267aa2796b38294d.css" data-turbo-track="reload">
+<script src="./Exercism_files/core-bf71d33b34df0a7816c0254131f144d542d3b5dc.js" crossorigin="anonymous" type="module" data-turbo-track="reload" data-turbo-eval="false"></script>
+<script src="./Exercism_files/application-c5941315b87f90a333c68b31063d7a0ab79ad71c.js" crossorigin="anonymous" type="module" data-turbo-track="reload" data-turbo-eval="false"></script>
+<script src="./Exercism_files/internal-834331cf9ca74f79795f7a8676a06efeedb39b02.js" crossorigin="anonymous" type="module" data-turbo-track="reload" data-turbo-eval="false"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Twitter Card data -->
+
+
+
+
+
+
+
+<!-- Open Graph data -->
+
+
+
+
+
+
+
+<!-- Favicon -->
+
+
+
+
+
+
+<style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style><script src="./Exercism_files/v3"></script><link rel="stylesheet" href="./Exercism_files/font-awesome.min.css"><link href="https://fonts.googleapis.com/" rel="preconnect"><link crossorigin="true" href="https://fonts.gstatic.com/" rel="preconnect"><link crossorigin="true" href="https://d24y9kuxp2d7l2.cloudfront.net/" rel="preconnect"><meta content="width=device-width, initial-scale=1" name="viewport"><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="bo1999MUYb3hF8TfDU8TLs5XjYOXgod9KxXaT_Sj5ETsntQOEqCqWzTIKp4oM0taDlK99qr9ZuH5d_kYsjKLzQ"><meta name="action-cable-url" content="wss://exercism.org/cable"><meta content="language-servers-925786784.eu-west-2.elb.amazonaws.com" name="language-server-url"><meta content="https://exercism.org/api/v2/bug_reports" name="bug-reports-url"><meta content="https://exercism.org/api/v2/markdown/parse" name="parse-markdown-url"><meta content="945102" name="user-id"><meta content="pk_live_51IDGMXEoOT0Jqx0UGsyx7fUW7iojTCPobNQDDoVdVY64qsyeNyFDqQRAgXSdj2HF8mYzPGxsBWIEFPnenq0lEhLH00x7KfG52T" name="stripe-publishable-key"><title>Exercism</title><meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." name="description"><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"><meta content="summary_large_image" name="twitter:card"><meta content="@exercism_io" name="twitter:site"><meta content="@exercism_io" name="twitter:creator"><meta content="https://exercism.org/tracks/python/exercises/currency-exchange/edit" name="twitter:url"><meta content="Exercism" name="twitter:title"><meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." name="twitter:description"><meta content="https://dg8krxphbh767.cloudfront.net/meta/og.png" name="twitter:image"><meta content="Exercism" property="og:title"><meta content="website" property="og:type"><meta content="https://exercism.org/tracks/python/exercises/currency-exchange/edit" property="og:url"><meta content="https://dg8krxphbh767.cloudfront.net/meta/og.png" property="og:image"><meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." property="og:description"><meta content="Exercism" property="og:site_name"><meta content="744760440" property="fb:admins"><link href="https://dg8krxphbh767.cloudfront.net/meta/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"><link href="https://dg8krxphbh767.cloudfront.net/meta/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"><link href="https://dg8krxphbh767.cloudfront.net/meta/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"><link href="https://exercism.org/site.webmanifest" rel="manifest"></head>
+<body class="namespace-tracks controller-exercises action-edit theme-light user-signed_in">
+<header id="site-header"><div class="lg-container container"><a class="exercism-link xl:block" href="https://exercism.org/"><img alt="Exercism" class="c-icon" src="./Exercism_files/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg"></a><a class="ukraine-link" target="_blank" rel="noopener" href="https://donate.redcross.org.uk/appeal/ukraine-crisis-appeal"><img alt="Ukraine-coloured heart" class="c-icon" src="./Exercism_files/ukraine-ddee71b9968c24f6ffad2d0967fe8f39d2d00dd8.svg"></a><div class="docs-search"><div class="c-search-bar"><input class="--search" placeholder="Search Exercism&#39;s docs..."></div></div><nav class="signed-in"><ul><li><a href="https://exercism.org/dashboard"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/dashboard-d6d946e5b42a4aef577066eca7b695641e21130a.svg"><span>Dashboard</span></a></li><li><a href="https://exercism.org/tracks"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg"><span>Tracks</span></a></li><li><a href="https://exercism.org/mentoring/inbox"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/mentoring-4d1e266458e8e3293b94679b92ccea4aa2cdb58b.svg"><span>Mentoring</span></a></li><li><a href="https://exercism.org/contributing"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"><span>Contribute</span></a></li><li><a href="https://exercism.org/donate"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"><span>Donate 💜</span></a></li></ul></nav><div class="user-section"><div class="c-react-component c-react-wrapper-dropdowns-notifications --hydrated" data-react-dropdowns-notifications="true" data-react-data="{&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/notifications?order=unread_first&quot;}"><button class="c-notification --none" aria-label="Open notifications" aria-controls="60d8f64d-f585-42a8-8a5a-4b2600d6dc99" aria-haspopup="true"><img src="./Exercism_files/notifications-2e6c2d672e24a543905250aefc304f77e88718ff.svg" alt="You have 0 notifications" class="c-icon"><div class="--count">0</div></button></div><div class="c-react-component c-react-wrapper-dropdowns-reputation --hydrated" data-react-dropdowns-reputation="true" data-react-data="{&quot;reputation&quot;:&quot;1&quot;,&quot;is_seen&quot;:true,&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/reputation?order=unseen_first\u0026per_page=5&quot;}"><button class="c-primary-reputation" aria-label="1 reputation" aria-controls="74272c69-5440-4b8b-88e7-f5ff42f4f49a" aria-haspopup="true"><img src="./Exercism_files/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg" alt="Reputation" class="c-icon"><span>1</span><div class="--notification "></div></button></div><div class="c-react-component c-react-wrapper-dropdowns-dropdown --hydrated" data-react-dropdowns-dropdown="true" data-react-data="{&quot;menu_button&quot;:{&quot;label&quot;:&quot;Button to open the profile menu&quot;,&quot;className&quot;:&quot;user-menu&quot;,&quot;html&quot;:&quot;\u003cdiv class=\&quot;c-avatar\&quot; style=\&quot;background-image:url(\u0026quot;https://avatars.githubusercontent.com/u/54860813?v=4\u0026quot;)\&quot;\u003e\u003cimg alt=\&quot;Uploaded avatar of fridavbg\&quot; class=\&quot;sr-only\&quot; src=\&quot;https://avatars.githubusercontent.com/u/54860813?v=4\&quot; /\u003e\u003c/div\u003e\u003cimg alt=\&quot;Profile Menu\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/more-vertical-371ef6f2314bb5dbe5d3892a7ee098c6ebc3cf30.svg\&quot; /\u003e&quot;},&quot;menu_items&quot;:[{&quot;html&quot;:&quot;\u003ca href=\&quot;/profiles/intro\&quot;\u003e\u003cdiv class=\&quot;c-avatar\&quot; style=\&quot;background-image:url(\u0026quot;https://avatars.githubusercontent.com/u/54860813?v=4\u0026quot;)\&quot;\u003e\u003cimg alt=\&quot;Your uploaded avatar\&quot; class=\&quot;sr-only\&quot; src=\&quot;https://avatars.githubusercontent.com/u/54860813?v=4\&quot; /\u003e\u003c/div\u003e\u003cdiv class=\&quot;info\&quot;\u003e\u003cdiv class=\&quot;name\&quot;\u003efridavbg\u003c/div\u003e\u003cdiv class=\&quot;handle\&quot;\u003e@fridavbg\u003c/div\u003e\u003c/div\u003e\u003cimg alt=\&quot;Open public profile\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/external-link-49b422d65245eaf4cb29a072e85d73b5c6b8aa04.svg\&quot; /\u003e\u003c/a\u003e&quot;,&quot;className&quot;:&quot;profile&quot;},{&quot;html&quot;:&quot;\u003cdiv class=\&quot;c-primary-reputation\&quot; aria-label=\&quot;1 reputation\&quot;\u003e\u003cimg alt=\&quot;Reputation\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg\&quot; /\u003e\u003cspan\u003e1\u003c/span\u003e\u003c/div\u003e&quot;,&quot;className&quot;:&quot;reputation&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/dashboard\&quot;\u003eDashboard\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/tracks\&quot;\u003eTracks\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/mentoring/inbox\&quot;\u003eMentoring\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/contributing\&quot;\u003eContribute\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/donate\&quot;\u003eDonate 💜\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link donate&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/profiles/intro\&quot;\u003ePublic Profile\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/journey\&quot;\u003eYour Journey\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/settings\&quot;\u003eSettings\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca rel=\&quot;nofollow\&quot; data-method=\&quot;delete\&quot; href=\&quot;/users/sign_out\&quot;\u003eSign out\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;}]}"><button class="user-menu " aria-label="Button to open the profile menu" aria-controls="1daea880-addd-4edd-8e82-dcdee4ffe21c" aria-haspopup="true"><div class="c-avatar" style="background-image:url(&quot;https://avatars.githubusercontent.com/u/54860813?v=4&quot;)"><img alt="Uploaded avatar of fridavbg" class="sr-only" src="./Exercism_files/54860813"></div><img alt="Profile Menu" class="c-icon" src="./Exercism_files/more-vertical-371ef6f2314bb5dbe5d3892a7ee098c6ebc3cf30.svg"></button></div></div></div></header>
+<div class="c-react-component c-react-wrapper-editor --hydrated" data-react-editor="true" data-react-data="{&quot;default_submissions&quot;:[],&quot;default_files&quot;:[{&quot;filename&quot;:&quot;exchange.py&quot;,&quot;type&quot;:&quot;exercise&quot;,&quot;content&quot;:&quot;def exchange_money(budget, exchange_rate):\n    \&quot;\&quot;\&quot;\n\n    :param budget: float - amount of money you are planning to exchange.\n    :param exchange_rate: float - unit value of the foreign currency.\n    :return: float - exchanged value of the foreign currency you can receive.\n    \&quot;\&quot;\&quot;\n\n    pass\n\n\ndef get_change(budget, exchanging_value):\n    \&quot;\&quot;\&quot;\n\n    :param budget: float - amount of money you own.\n    :param exchanging_value: int - amount of your money you want to exchange now.\n    :return: float - amount left of your starting currency after exchanging.\n    \&quot;\&quot;\&quot;\n\n    pass\n\n\ndef get_value_of_bills(denomination, number_of_bills):\n    \&quot;\&quot;\&quot;\n\n    :param denomination: int - the value of a bill.\n    :param number_of_bills: int - amount of bills you received.\n    :return: int - total value of bills you now have.\n    \&quot;\&quot;\&quot;\n\n    pass\n\n\ndef get_number_of_bills(budget, denomination):\n    \&quot;\&quot;\&quot;\n\n    :param budget: float - the amount of money you are planning to exchange.\n    :param denomination: int - the value of a single bill.\n    :return: int - number of bills after exchanging all your money.\n    \&quot;\&quot;\&quot;\n\n    pass\n\n\ndef exchangeable_value(budget, exchange_rate, spread, denomination):\n    \&quot;\&quot;\&quot;\n\n    :param budget: float - the amount of your money you are planning to exchange.\n    :param exchange_rate: float - the unit value of the foreign currency.\n    :param spread: int - percentage that is taken as an exchange fee.\n    :param denomination: int - the value of a single bill.\n    :return: int - maximum value you can get.\n    \&quot;\&quot;\&quot;\n\n    pass\n\n\ndef non_exchangeable_value(budget, exchange_rate, spread, denomination):\n    \&quot;\&quot;\&quot;\n\n    :param budget: float - the amount of your money you are planning to exchange.\n    :param exchange_rate: float - the unit value of the foreign currency.\n    :param spread: int - percentage that is taken as an exchange fee.\n    :param denomination: int - the value of a single bill.\n    :return: int non-exchangeable value.\n    \&quot;\&quot;\&quot;\n\n    pass\n&quot;}],&quot;default_settings&quot;:{&quot;tab_size&quot;:4,&quot;use_soft_tabs&quot;:true},&quot;autosave&quot;:{&quot;key&quot;:&quot;461dbdb069594746956c546bf7a7fb64&quot;,&quot;save_interval&quot;:500},&quot;panels&quot;:{&quot;instructions&quot;:{&quot;introduction&quot;:&quot;\u003ch3\u003eNumbers\u003c/h3\u003e\n\u003cp\u003eThere are three different kinds of built-in numbers in Python : \u003ccode\u003eints\u003c/code\u003e, \u003ccode\u003efloats\u003c/code\u003e, and \u003ccode\u003ecomplex\u003c/code\u003e. However, in this exercise you&#39;ll be dealing only with \u003ccode\u003eints\u003c/code\u003e and \u003ccode\u003efloats\u003c/code\u003e.\u003c/p\u003e\n\u003ch4\u003eints\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003eints\u003c/code\u003e are whole numbers. e.g. \u003ccode\u003e1234\u003c/code\u003e, \u003ccode\u003e-10\u003c/code\u003e, \u003ccode\u003e20201278\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eIntegers in Python have \u003ca href=\&quot;https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic#:~:text=In%20computer%20science%2C%20arbitrary%2Dprecision,memory%20of%20the%20host%20system.\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003earbitrary precision\u003c/a\u003e -- the amount of digits is limited only by the available memory of the host system.\u003c/p\u003e\n\u003ch4\u003efloats\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003efloats\u003c/code\u003e are numbers containing a decimal point. e.g. \u003ccode\u003e0.0\u003c/code\u003e,\u003ccode\u003e3.14\u003c/code\u003e,\u003ccode\u003e-9.01\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eFloating point numbers are usually implemented in Python using a \u003ccode\u003edouble\u003c/code\u003e in C (\u003cem\u003e15 decimal places of precision\u003c/em\u003e), but will vary in representation based on the host system and other implementation details. This can create some surprises when working with floats, but is \&quot;good enough\&quot; for most situations.\u003c/p\u003e\n\u003cp\u003eYou can see more details and discussions in the following resources:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\&quot;https://docs.python.org/3/library/stdtypes.html#typesnumeric\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003ePython numeric type documentation\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;https://docs.python.org/3.9/tutorial/floatingpoint.html\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003eThe Python Tutorial\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;https://docs.python.org/3/library/functions.html#int\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003eDocumentation for \u003ccode\u003eint()\u003c/code\u003e built in\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;https://docs.python.org/3/library/functions.html#float\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003eDocumentation for \u003ccode\u003efloat()\u003c/code\u003e built in\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;https://0.30000000000000004.com/\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003e0.30000000000000004.com\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eArithmetic\u003c/h3\u003e\n\u003cp\u003ePython fully supports arithmetic between \u003ccode\u003eints\u003c/code\u003e and \u003ccode\u003efloats\u003c/code\u003e. It will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (\u003ccode\u003e+\u003c/code\u003e, \u003ccode\u003e-\u003c/code\u003e, \u003ccode\u003e*\u003c/code\u003e, \u003ccode\u003e/\u003c/code\u003e, \u003ccode\u003e//\u003c/code\u003e, and \u003ccode\u003e%\u003c/code\u003e). When division with \u003ccode\u003e/\u003c/code\u003e, \u003ccode\u003e//\u003c/code\u003e returns the quotient and \u003ccode\u003e%\u003c/code\u003e returns the remainder.\u003c/p\u003e\n\u003cp\u003ePython considers \u003ccode\u003eints\u003c/code\u003e narrower than \u003ccode\u003efloats\u003c/code\u003e. So, using a float in an expression ensures the result will be a float too. However, when doing division, the result will always be a float, even if only integers are used.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e# The int is widened to a float here, and a float type is returned.\n\u0026gt;\u0026gt;\u0026gt; 3 + 4.0\n7.0\n\u0026gt;\u0026gt;\u0026gt; 3 * 4.0\n12.0\n\u0026gt;\u0026gt;\u0026gt; 3 - 2.0\n1.0\n# Division always returns a float.\n\u0026gt;\u0026gt;\u0026gt; 6 / 2\n3.0\n\u0026gt;\u0026gt;\u0026gt; 7 / 4\n1.75\n# Calculating remainders.\n\u0026gt;\u0026gt;\u0026gt; 7 % 4\n3\n\u0026gt;\u0026gt;\u0026gt; 2 % 4\n2\n\u0026gt;\u0026gt;\u0026gt; 12.75 % 3\n0.75\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIf an int result is needed, you can use \u003ccode\u003e//\u003c/code\u003e to truncate the result.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; 6 // 2\n3\n\u0026gt;\u0026gt;\u0026gt; 7 // 4\n1\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTo convert a float to an integer, you can use \u003ccode\u003eint()\u003c/code\u003e. Also, to convert an integer to a float, you can use \u003ccode\u003efloat()\u003c/code\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; int(6 / 2)\n3\n\u0026gt;\u0026gt;\u0026gt; float(1 + 2)\n3.0\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;assignment&quot;:{&quot;overview&quot;:&quot;\u003cp\u003eYour friend Chandler plans to visit exotic countries all around the world. Sadly, Chandler&#39;s math skills aren&#39;t good.\nHe&#39;s pretty worried about being scammed by currency exchanges during his trip - and he wants you to make a currency\ncalculator for him. Here are his specifications for the app:\u003c/p\u003e\n&quot;,&quot;general_hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003e\n\u003ca href=\&quot;https://docs.python.org/3/tutorial/introduction.html#numbers\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003eThe Python Numbers Tutorial\u003c/a\u003e and \u003ca href=\&quot;https://docs.python.org/3.9/library/stdtypes.html#numeric-types-int-float-complex\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003ePython numeric\ntypes\u003c/a\u003e can be a great\nintroduction.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;],&quot;tasks&quot;:[{&quot;id&quot;:1,&quot;title&quot;:&quot;Estimate value after exchange&quot;,&quot;text&quot;:&quot;\u003cp\u003eCreate the \u003ccode\u003eexchange_money()\u003c/code\u003e function, taking 2 parameters:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003ccode\u003ebudget\u003c/code\u003e : The amount of money you are planning to exchange.\u003c/li\u003e\n\u003cli\u003e\n\u003ccode\u003eexchange_rate\u003c/code\u003e : The amount of domestic currency equal to one unit of foreign currency.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eThis function should return the value of the exchanged currency.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e If your currency is USD and you want to exchange USD for EUR with an exchange rate of \u003ccode\u003e1.20\u003c/code\u003e, then \u003ccode\u003e1.20 USD == 1 EUR\u003c/code\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; exchange_money(127.5, 1.2)\n106.25\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eYou can use the \u003ca href=\&quot;https://docs.python.org/3/tutorial/introduction.html#numbers\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003edivision operator\u003c/a\u003e to get the value\nof exchanged currency.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:2,&quot;title&quot;:&quot;Calculate currency left after an exchange&quot;,&quot;text&quot;:&quot;\u003cp\u003eCreate the \u003ccode\u003eget_change()\u003c/code\u003e function, taking 2 parameters:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003ccode\u003ebudget\u003c/code\u003e : Amount of money before exchange.\u003c/li\u003e\n\u003cli\u003e\n\u003ccode\u003eexchanging_value\u003c/code\u003e : Amount of money that is \u003cem\u003etaken\u003c/em\u003e from the budget to be exchanged.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eThis function should return the amount of money that \u003cem\u003eis left\u003c/em\u003e from the budget.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; get_change(127.5, 120)\n7.5\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eYou can use the \u003ca href=\&quot;https://docs.python.org/3/tutorial/introduction.html#numbers\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003esubtraction operator\u003c/a\u003e to get the\namount of changes.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:3,&quot;title&quot;:&quot;Calculate value of bills&quot;,&quot;text&quot;:&quot;\u003cp\u003eCreate the \u003ccode\u003eget_value_of_bills()\u003c/code\u003e function, taking 2 parameters:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003ccode\u003edenomination\u003c/code\u003e : The value of a single bill.\u003c/li\u003e\n\u003cli\u003e\n\u003ccode\u003enumber_of_bills\u003c/code\u003e : Amount of bills you received.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eThis exchanging booth only deals in cash of certain increments. The total you receive must be divisible by the value of\none \&quot;bill\&quot; or unit, which can leave behind a fraction or remainder. Your function should return only the total value of\nthe bills (\u003cem\u003eexcluding fractional amounts\u003c/em\u003e) the booth would give back. Unfortunately, the booth gets to keep the\nremainder/change as an added bonus.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; get_value_of_bills(5, 128)\n640\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eYou can use the \u003ca href=\&quot;https://docs.python.org/3/tutorial/introduction.html#numbers\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003emultiplication operator\u003c/a\u003e to get the\nvalue of bills.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:4,&quot;title&quot;:&quot;Calculate number of bills&quot;,&quot;text&quot;:&quot;\u003cp\u003eCreate the \u003ccode\u003eget_number_of_bills()\u003c/code\u003e function, taking \u003ccode\u003ebudget\u003c/code\u003e and \u003ccode\u003edenomination\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eThis function should return the \u003cem\u003enumber of new currency bills\u003c/em\u003e that you can receive within the given \u003cem\u003ebudget\u003c/em\u003e. In other\nwords: How many \u003cem\u003ewhole bills\u003c/em\u003e of new currency fit into the amount of old currency you have in your budget? Remember --\nyou can only receive \u003cem\u003ewhole bills\u003c/em\u003e, not fractions of bills, so remember to divide accordingly. Effectively, you are\nrounding \u003cem\u003edown\u003c/em\u003e to the nearest whole bill/denomination.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; get_number_of_bills(127.5, 5)\n25\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eYou need to divide \u003ccode\u003ebudget\u003c/code\u003e into \u003ccode\u003edenomination\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eYou need to use type casting to \u003cem\u003eint\u003c/em\u003e to get the exact number of bills.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eTo remove decimal places from a \u003ccode\u003efloat\u003c/code\u003e, you can convert it to \u003ccode\u003eint\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e The \u003ccode\u003e//\u003c/code\u003e operator also does floor division. But, if the operand has \u003ccode\u003efloat\u003c/code\u003e, the result is still \u003ccode\u003efloat\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:5,&quot;title&quot;:&quot;Calculate value after exchange&quot;,&quot;text&quot;:&quot;\u003cp\u003eCreate the \u003ccode\u003eexchangeable_value()\u003c/code\u003e function, taking \u003ccode\u003ebudget\u003c/code\u003e, \u003ccode\u003eexchange_rate\u003c/code\u003e, \u003ccode\u003espread\u003c/code\u003e, and \u003ccode\u003edenomination\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eParameter \u003ccode\u003espread\u003c/code\u003e is the \u003cem\u003epercentage taken\u003c/em\u003e as an exchange fee, written as an integer. It needs to be converted to\ndecimal by dividing it by 100. If \u003ccode\u003e1.00 EUR == 1.20 USD\u003c/code\u003e and the \u003cem\u003espread\u003c/em\u003e is \u003ccode\u003e10\u003c/code\u003e, the actual exchange rate will be:\n\u003ccode\u003e1.00 EUR == 1.32 USD\u003c/code\u003e because 10% of 1.20 is 0.12, and this additional fee is added to the exchange.\u003c/p\u003e\n\u003cp\u003eThis function should return the maximum value of the new currency after calculating the \u003cem\u003eexchange rate\u003c/em\u003e plus the\n\u003cem\u003espread\u003c/em\u003e. Remember that the currency \u003cem\u003edenomination\u003c/em\u003e is a whole number, and cannot be sub-divided.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e Returned value should be \u003ccode\u003eint\u003c/code\u003e type.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; exchangeable_value(127.25, 1.20, 10, 20)\n80\n\u0026gt;\u0026gt;\u0026gt; exchangeable_value(127.25, 1.20, 10, 5)\n95\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eYou need to calculate \u003ccode\u003espread\u003c/code\u003e percent of \u003ccode\u003eexchange_rate\u003c/code\u003e using multiplication operator and add it to\n\u003ccode\u003eexchange_rate\u003c/code\u003e to get the exchanged currency.\u003c/li\u003e\n\u003cli\u003eThe actual rate needs to be computed. Remember to add exchange rate and exchange fee.\u003c/li\u003e\n\u003cli\u003eYou can get exchanged money affected by commission by using divide operation and type casting \u003cem\u003eint\u003c/em\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:6,&quot;title&quot;:&quot;Calculate non-exchangeable value&quot;,&quot;text&quot;:&quot;\u003cp\u003eCreate the \u003ccode\u003enon_exchangeable_value()\u003c/code\u003e function, taking \u003ccode\u003ebudget\u003c/code\u003e, \u003ccode\u003eexchange_rate\u003c/code\u003e, \u003ccode\u003espread\u003c/code\u003e, and \u003ccode\u003edenomination\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eThis function should return the value that is \u003cem\u003enot\u003c/em\u003e exchangeable due to the \u003cem\u003edenomination\u003c/em\u003e of the bills. Remember - this\nbooth gets to keep the change \u003cem\u003ein addition\u003c/em\u003e to charging an exchange fee. Start by calculating the value you would\nreceive if you were able to keep subdivided bills, then subtract the amount you would receive in whole bills. Both\namounts should take the spread, or the exchange fee into account.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNote:\u003c/strong\u003e Returned value should be \u003ccode\u003eint\u003c/code\u003e type.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-python\&quot;\u003e\u0026gt;\u0026gt;\u0026gt; non_exchangeable_value(127.25, 1.20, 10, 20)\n16\n\u0026gt;\u0026gt;\u0026gt; non_exchangeable_value(127.25, 1.20, 10, 5)\n1\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[]}]},&quot;debugging_instructions&quot;:null},&quot;tests&quot;:null,&quot;results&quot;:{&quot;test_runner&quot;:{&quot;average_test_duration&quot;:3}}},&quot;track&quot;:{&quot;title&quot;:&quot;Python&quot;,&quot;slug&quot;:&quot;python&quot;},&quot;exercise&quot;:{&quot;title&quot;:&quot;Currency Exchange&quot;,&quot;slug&quot;:&quot;currency-exchange&quot;},&quot;links&quot;:{&quot;run_tests&quot;:&quot;https://exercism.org/api/v2/solutions/461dbdb069594746956c546bf7a7fb64/submissions&quot;,&quot;back&quot;:&quot;/tracks/python/exercises/currency-exchange&quot;}}"><div id="page-editor"><div class="header"><a href="https://exercism.org/tracks/python/exercises/currency-exchange" class="close-btn"><img src="./Exercism_files/arrow-left-4fedf4dce89347e9605602fd3ae9d14be590e735.svg" alt="" role="presentation" class="c-icon">Back to Exercise</a><div class="title"><div class="track">Python</div><div class="divider">/</div><div class="exercise">Currency Exchange</div></div><div class="options"><button class="hints-btn"><img src="./Exercism_files/hints-c457520410f634c7ecee6c9aa99a2e306c605ec1.svg" alt="View all hints" class="c-icon"></button><button class="settings-btn" aria-controls="f14bf114-24d9-449f-af01-eba7deb5d051" aria-haspopup="true"><img src="./Exercism_files/settings-f325518f0f05f6549f9585e2e89d694ba1686050.svg" alt="Settings" class="c-icon"></button><button aria-controls="aa5823a9-7b39-4268-8df2-b7360a3658fd" aria-haspopup="true" class="more-btn"><img src="./Exercism_files/more-horizontal-3d03736796a8555be89dea121bbb1721f6703001.svg" alt="Open more options" class="c-icon"></button></div></div><div class="c-split-pane"><div class="--split-lhs" style="min-width: 100px;"><div class="c-iteration-pane"><div class="tabs"><button class="c-tab  selected" role="tab" aria-selected="true" aria-controls="panel-exchange.py" id="tab-exchange.py" tabindex="0">exchange.py</button></div><div id="panel-exchange.py" role="tabpanel" aria-labelledby="tab-exchange.py" tabindex="0" class="--tab-panel undefined"><div class="editor"><div class="cm-editor cm-focused ͼ1 ͼ2 ͼ4"><div class="cm-panels cm-panels-top" style="top: 0px;"><div class="cm-a11y-panel cm-panel" aria-live="assertive" aria-atomic="true"></div></div><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 2452px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">99</div><div class="cm-gutterElement" style="height: 24px; margin-top: 336px;">15</div><div class="cm-gutterElement" style="height: 24px;">16</div><div class="cm-gutterElement" style="height: 48px;">17</div><div class="cm-gutterElement" style="height: 48px;">18</div><div class="cm-gutterElement" style="height: 48px;">19</div><div class="cm-gutterElement" style="height: 24px;">20</div><div class="cm-gutterElement" style="height: 24px;">21</div><div class="cm-gutterElement" style="height: 24px;">22</div><div class="cm-gutterElement" style="height: 24px;">23</div><div class="cm-gutterElement" style="height: 24px;">24</div><div class="cm-gutterElement" style="height: 24px;">25</div><div class="cm-gutterElement" style="height: 48px;">26</div><div class="cm-gutterElement" style="height: 24px;">27</div><div class="cm-gutterElement" style="height: 24px;">28</div><div class="cm-gutterElement" style="height: 48px;">29</div><div class="cm-gutterElement" style="height: 48px;">30</div><div class="cm-gutterElement" style="height: 48px;">31</div><div class="cm-gutterElement" style="height: 24px;">32</div><div class="cm-gutterElement" style="height: 48px;">33</div><div class="cm-gutterElement" style="height: 24px;">34</div><div class="cm-gutterElement" style="height: 24px;">35</div><div class="cm-gutterElement" style="height: 24px;">36</div><div class="cm-gutterElement" style="height: 48px;">37</div><div class="cm-gutterElement" style="height: 24px;">38</div><div class="cm-gutterElement" style="height: 24px;">39</div><div class="cm-gutterElement" style="height: 48px;">40</div><div class="cm-gutterElement" style="height: 48px;">41</div><div class="cm-gutterElement" style="height: 48px;">42</div><div class="cm-gutterElement" style="height: 24px;">43</div><div class="cm-gutterElement" style="height: 24px;">44</div><div class="cm-gutterElement" style="height: 24px;">45</div><div class="cm-gutterElement" style="height: 24px;">46</div><div class="cm-gutterElement" style="height: 24px;">47</div><div class="cm-gutterElement" style="height: 24px;">48</div><div class="cm-gutterElement" style="height: 48px;">49</div><div class="cm-gutterElement" style="height: 24px;">50</div><div class="cm-gutterElement" style="height: 24px;">51</div><div class="cm-gutterElement" style="height: 48px;">52</div><div class="cm-gutterElement" style="height: 48px;">53</div><div class="cm-gutterElement" style="height: 48px;">54</div><div class="cm-gutterElement" style="height: 48px;">55</div><div class="cm-gutterElement" style="height: 48px;">56</div><div class="cm-gutterElement" style="height: 24px;">57</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 48px;">58</div><div class="cm-gutterElement" style="height: 24px;">59</div><div class="cm-gutterElement" style="height: 96px;">60</div><div class="cm-gutterElement" style="height: 24px;">61</div><div class="cm-gutterElement" style="height: 24px;">62</div><div class="cm-gutterElement" style="height: 24px;">63</div><div class="cm-gutterElement" style="height: 48px;">64</div><div class="cm-gutterElement" style="height: 24px;">65</div><div class="cm-gutterElement" style="height: 24px;">66</div><div class="cm-gutterElement" style="height: 48px;">67</div><div class="cm-gutterElement" style="height: 48px;">68</div><div class="cm-gutterElement" style="height: 48px;">69</div><div class="cm-gutterElement" style="height: 48px;">70</div><div class="cm-gutterElement" style="height: 24px;">71</div><div class="cm-gutterElement" style="height: 24px;">72</div><div class="cm-gutterElement" style="height: 24px;">73</div><div class="cm-gutterElement" style="height: 24px;">74</div><div class="cm-gutterElement" style="height: 24px;">75</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement" style="height: 48px; margin-top: 672px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 48px; margin-top: 336px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 48px; margin-top: 336px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 48px; margin-top: 312px;"></div><div class="cm-gutterElement" style="height: 48px; margin-top: 192px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content cm-lineWrapping focus-visible" style="tab-size: 4;" role="textbox" aria-multiline="true" aria-autocomplete="list" aria-expanded="false" data-focus-visible-added=""><div contenteditable="false" style="height: 336px;"></div><div class="cm-line">    <span class="ͼd">"""</span></div><div class="cm-line"><span class="ͼd">    2</span></div><div class="cm-line"><span class="ͼd">    :param budget: float - amount of money you own.</span></div><div class="cm-line"><span class="ͼd">    :param exchanging_value: int - amount of your money you want to exchange now.</span></div><div class="cm-line"><span class="ͼd">    :return: float - amount left of your starting currency after exchanging.</span></div><div class="cm-line"><span class="ͼd">    """</span></div><div class="cm-line"><br></div><div class="cm-line">    change = budget - exchanging_value</div><div class="cm-line">    <span class="ͼa">return</span> change</div><div class="cm-line"><br></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼa">def</span> <span class="ͼf">get_value_of_bills</span>(denomination, number_of_bills):</div><div class="cm-line">    <span class="ͼd">"""</span></div><div class="cm-line"><span class="ͼd">    3</span></div><div class="cm-line"><span class="ͼd">    :param denomination: int - the value of a bill.</span></div><div class="cm-line"><span class="ͼd">    :param number_of_bills: int - amount of bills you received.</span></div><div class="cm-line"><span class="ͼd">    :return: int - total value of bills you now have.</span></div><div class="cm-line"><span class="ͼd">    """</span></div><div class="cm-line">    value_of_bills = denomination * number_of_bills</div><div class="cm-line">    <span class="ͼa">return</span> value_of_bills </div><div class="cm-line"><br></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼa">def</span> <span class="ͼf">get_number_of_bills</span>(budget, denomination):</div><div class="cm-line">    <span class="ͼd">"""</span></div><div class="cm-line"><span class="ͼd">    4</span></div><div class="cm-line"><span class="ͼd">    :param budget: float - the amount of money you are planning to exchange.</span></div><div class="cm-line"><span class="ͼd">    :param denomination: int - the value of a single bill.</span></div><div class="cm-line"><span class="ͼd">    :return: int - number of bills after exchanging all your money.</span></div><div class="cm-line"><span class="ͼd">    """</span></div><div class="cm-line"><br></div><div class="cm-line">    number_of_bills = budget / denomination</div><div class="cm-line">    <span class="ͼa">return</span> round(number_of_bills)</div><div class="cm-line"><br></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼa">def</span> <span class="ͼf">exchangeable_value</span>(budget, exchange_rate, spread, denomination):</div><div class="cm-line">    <span class="ͼd">"""</span></div><div class="cm-line"><span class="ͼd">    5</span></div><div class="cm-line"><span class="ͼd">    :param budget: float - the amount of your money you are planning to exchange.</span></div><div class="cm-line"><span class="ͼd">    :param exchange_rate: float - the unit value of the foreign currency.</span></div><div class="cm-line"><span class="ͼd">    :param spread: int - percentage that is taken as an exchange fee.</span></div><div class="cm-line"><span class="ͼd">    :param denomination: int - the value of a single bill.</span></div><div class="cm-line"><span class="ͼd">    :return: int - maximum value you can get.</span></div><div class="cm-line"><span class="ͼd">    """</span></div><div class="cm-activeLine cm-line">    actual_exchange_rate = float<span class="cm-matchingBracket">(</span>exchange_rate * (<span class="ͼc">1</span> + spread / <span class="ͼc">100</span>)<span class="cm-matchingBracket">)</span></div><div class="cm-line">    </div><div class="cm-line">    exchanged_money = exchange_money(budget, actual_exchange_rate)  - (exchange_money % denomination)</div><div class="cm-line"><br></div><div class="cm-line">    print(exchanged_money)</div><div class="cm-line">    </div><div class="cm-line"><span class="ͼa">def</span> <span class="ͼf">non_exchangeable_value</span>(budget, exchange_rate, spread, denomination):</div><div class="cm-line">    <span class="ͼd">"""</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼd">    :param budget: float - the amount of your money you are planning to exchange.</span></div><div class="cm-line"><span class="ͼd">    :param exchange_rate: float - the unit value of the foreign currency.</span></div><div class="cm-line"><span class="ͼd">    :param spread: int - percentage that is taken as an exchange fee.</span></div><div class="cm-line"><span class="ͼd">    :param denomination: int - the value of a single bill.</span></div><div class="cm-line"><span class="ͼd">    :return: int non-exchangeable value.</span></div><div class="cm-line"><span class="ͼd">    """</span></div><div class="cm-line"><br></div><div class="cm-line">    <span class="ͼa">pass</span></div><div class="cm-line"><br></div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms; animation-name: cm-blink;"><div class="cm-cursor cm-cursor-primary" style="left: 119.031px; top: 1826px; height: 19px;"></div></div></div></div></div></div></div><footer class="lhs-footer"><div class="run-tests-btn"><button type="button" class="btn-enhanced btn-s"><img src="./Exercism_files/run-tests-7259457020c0ad37ed70454416e07956cb5d40cf.svg" alt="" role="presentation" class="c-icon"><span>Run Tests</span></button></div><div class="submit-btn"><button type="button" disabled="" class="btn-primary btn-s"><span>Submit</span></button></div></footer></div><div class="--split-divider"></div><div class="--split-rhs" style="min-width: 100px;"><div class="tabs"><button class="c-tab " role="tab" aria-selected="false" aria-controls="panel-instructions" id="tab-instructions" tabindex="-1"><img src="./Exercism_files/instructions-9600acff7c3b15930263c8cdd8c35d46960bd924.svg" alt="" role="presentation" class="c-icon"><span data-text="Instructions">Instructions</span></button><button class="c-tab  selected" role="tab" aria-selected="true" aria-controls="panel-results" id="tab-results" tabindex="0"><img src="./Exercism_files/test-results-5545e191cc6045b988e47e2fdfed00d72faebf4e.svg" alt="" role="presentation" class="c-icon"><span data-text="Results">Results</span></button></div><div id="panel-instructions" role="tabpanel" aria-labelledby="tab-instructions" tabindex="0" class="--tab-panel undefined" style="display: none;"><section class="instructions-pane"><div class="c-textual-content --small"><div class="introduction"><h2>Introduction</h2><div class="content"><h3>Numbers</h3>
+<p>There are three different kinds of built-in numbers in Python : <code>ints</code>, <code>floats</code>, and <code>complex</code>. However, in this exercise you'll be dealing only with <code>ints</code> and <code>floats</code>.</p>
+<h4>ints</h4>
+<p><code>ints</code> are whole numbers. e.g. <code>1234</code>, <code>-10</code>, <code>20201278</code>.</p>
+<p>Integers in Python have <a href="https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic#:~:text=In%20computer%20science%2C%20arbitrary%2Dprecision,memory%20of%20the%20host%20system." target="_blank" rel="noopener">arbitrary precision</a> -- the amount of digits is limited only by the available memory of the host system.</p>
+<h4>floats</h4>
+<p><code>floats</code> are numbers containing a decimal point. e.g. <code>0.0</code>,<code>3.14</code>,<code>-9.01</code>.</p>
+<p>Floating point numbers are usually implemented in Python using a <code>double</code> in C (<em>15 decimal places of precision</em>), but will vary in representation based on the host system and other implementation details. This can create some surprises when working with floats, but is "good enough" for most situations.</p>
+<p>You can see more details and discussions in the following resources:</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#typesnumeric" target="_blank" rel="noopener">Python numeric type documentation</a></li>
+<li><a href="https://docs.python.org/3.9/tutorial/floatingpoint.html" target="_blank" rel="noopener">The Python Tutorial</a></li>
+<li><a href="https://docs.python.org/3/library/functions.html#int" target="_blank" rel="noopener">Documentation for <code>int()</code> built in</a></li>
+<li><a href="https://docs.python.org/3/library/functions.html#float" target="_blank" rel="noopener">Documentation for <code>float()</code> built in</a></li>
+<li><a href="https://0.30000000000000004.com/" target="_blank" rel="noopener">0.30000000000000004.com</a></li>
+</ul>
+<h3>Arithmetic</h3>
+<p>Python fully supports arithmetic between <code>ints</code> and <code>floats</code>. It will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code>, and <code>%</code>). When division with <code>/</code>, <code>//</code> returns the quotient and <code>%</code> returns the remainder.</p>
+<p>Python considers <code>ints</code> narrower than <code>floats</code>. So, using a float in an expression ensures the result will be a float too. However, when doing division, the result will always be a float, even if only integers are used.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-comment"># The int is widened to a float here, and a float type is returned.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3</span> + <span class="hljs-number">4.0</span>
+<span class="hljs-number">7.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3</span> * <span class="hljs-number">4.0</span>
+<span class="hljs-number">12.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3</span> - <span class="hljs-number">2.0</span>
+<span class="hljs-number">1.0</span>
+<span class="hljs-comment"># Division always returns a float.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">6</span> / <span class="hljs-number">2</span>
+<span class="hljs-number">3.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">7</span> / <span class="hljs-number">4</span>
+<span class="hljs-number">1.75</span>
+<span class="hljs-comment"># Calculating remainders.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">7</span> % <span class="hljs-number">4</span>
+<span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span> % <span class="hljs-number">4</span>
+<span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">12.75</span> % <span class="hljs-number">3</span>
+<span class="hljs-number">0.75</span>
+</code></pre>
+<p>If an int result is needed, you can use <code>//</code> to truncate the result.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">6</span> // <span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">7</span> // <span class="hljs-number">4</span>
+<span class="hljs-number">1</span>
+</code></pre>
+<p>To convert a float to an integer, you can use <code>int()</code>. Also, to convert an integer to a float, you can use <code>float()</code>.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">int</span>(<span class="hljs-number">6</span> / <span class="hljs-number">2</span>)
+<span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">float</span>(<span class="hljs-number">1</span> + <span class="hljs-number">2</span>)
+<span class="hljs-number">3.0</span>
+</code></pre>
+</div></div><div class="instructions"><h2>Instructions</h2><div class="content"><p>Your friend Chandler plans to visit exotic countries all around the world. Sadly, Chandler's math skills aren't good.
+He's pretty worried about being scammed by currency exchanges during his trip - and he wants you to make a currency
+calculator for him. Here are his specifications for the app:</p>
+</div><details class="c-details task" open=""><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 1</div><span class="summary-title">Estimate value after exchange</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon"></span></div></summary><div><p>Create the <code>exchange_money()</code> function, taking 2 parameters:</p>
+<ol>
+<li>
+<code>budget</code> : The amount of money you are planning to exchange.</li>
+<li>
+<code>exchange_rate</code> : The amount of domestic currency equal to one unit of foreign currency.</li>
+</ol>
+<p>This function should return the value of the exchanged currency.</p>
+<p><strong>Note:</strong> If your currency is USD and you want to exchange USD for EUR with an exchange rate of <code>1.20</code>, then <code>1.20 USD == 1 EUR</code>.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span>exchange_money(<span class="hljs-number">127.5</span>, <span class="hljs-number">1.2</span>)
+<span class="hljs-number">106.25</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task" open=""><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 2</div><span class="summary-title">Calculate currency left after an exchange</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon"></span></div></summary><div><p>Create the <code>get_change()</code> function, taking 2 parameters:</p>
+<ol>
+<li>
+<code>budget</code> : Amount of money before exchange.</li>
+<li>
+<code>exchanging_value</code> : Amount of money that is <em>taken</em> from the budget to be exchanged.</li>
+</ol>
+<p>This function should return the amount of money that <em>is left</em> from the budget.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span>get_change(<span class="hljs-number">127.5</span>, <span class="hljs-number">120</span>)
+<span class="hljs-number">7.5</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task" open=""><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 3</div><span class="summary-title">Calculate value of bills</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon"></span></div></summary><div><p>Create the <code>get_value_of_bills()</code> function, taking 2 parameters:</p>
+<ol>
+<li>
+<code>denomination</code> : The value of a single bill.</li>
+<li>
+<code>number_of_bills</code> : Amount of bills you received.</li>
+</ol>
+<p>This exchanging booth only deals in cash of certain increments. The total you receive must be divisible by the value of
+one "bill" or unit, which can leave behind a fraction or remainder. Your function should return only the total value of
+the bills (<em>excluding fractional amounts</em>) the booth would give back. Unfortunately, the booth gets to keep the
+remainder/change as an added bonus.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span>get_value_of_bills(<span class="hljs-number">5</span>, <span class="hljs-number">128</span>)
+<span class="hljs-number">640</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 4</div><span class="summary-title">Calculate number of bills</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon"></span></div></summary><div><p>Create the <code>get_number_of_bills()</code> function, taking <code>budget</code> and <code>denomination</code>.</p>
+<p>This function should return the <em>number of new currency bills</em> that you can receive within the given <em>budget</em>. In other
+words: How many <em>whole bills</em> of new currency fit into the amount of old currency you have in your budget? Remember --
+you can only receive <em>whole bills</em>, not fractions of bills, so remember to divide accordingly. Effectively, you are
+rounding <em>down</em> to the nearest whole bill/denomination.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span>get_number_of_bills(<span class="hljs-number">127.5</span>, <span class="hljs-number">5</span>)
+<span class="hljs-number">25</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task" open=""><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 5</div><span class="summary-title">Calculate value after exchange</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon"></span></div></summary><div><p>Create the <code>exchangeable_value()</code> function, taking <code>budget</code>, <code>exchange_rate</code>, <code>spread</code>, and <code>denomination</code>.</p>
+<p>Parameter <code>spread</code> is the <em>percentage taken</em> as an exchange fee, written as an integer. It needs to be converted to
+decimal by dividing it by 100. If <code>1.00 EUR == 1.20 USD</code> and the <em>spread</em> is <code>10</code>, the actual exchange rate will be:
+<code>1.00 EUR == 1.32 USD</code> because 10% of 1.20 is 0.12, and this additional fee is added to the exchange.</p>
+<p>This function should return the maximum value of the new currency after calculating the <em>exchange rate</em> plus the
+<em>spread</em>. Remember that the currency <em>denomination</em> is a whole number, and cannot be sub-divided.</p>
+<p><strong>Note:</strong> Returned value should be <code>int</code> type.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span>exchangeable_value(<span class="hljs-number">127.25</span>, <span class="hljs-number">1.20</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
+<span class="hljs-number">80</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>exchangeable_value(<span class="hljs-number">127.25</span>, <span class="hljs-number">1.20</span>, <span class="hljs-number">10</span>, <span class="hljs-number">5</span>)
+<span class="hljs-number">95</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 6</div><span class="summary-title">Calculate non-exchangeable value</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon"></span></div></summary><div><p>Create the <code>non_exchangeable_value()</code> function, taking <code>budget</code>, <code>exchange_rate</code>, <code>spread</code>, and <code>denomination</code>.</p>
+<p>This function should return the value that is <em>not</em> exchangeable due to the <em>denomination</em> of the bills. Remember - this
+booth gets to keep the change <em>in addition</em> to charging an exchange fee. Start by calculating the value you would
+receive if you were able to keep subdivided bills, then subtract the amount you would receive in whole bills. Both
+amounts should take the spread, or the exchange fee into account.</p>
+<p><strong>Note:</strong> Returned value should be <code>int</code> type.</p>
+<pre><code class="language-python hljs" data-highlighted="true"><span class="hljs-meta">&gt;&gt;&gt; </span>non_exchangeable_value(<span class="hljs-number">127.25</span>, <span class="hljs-number">1.20</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
+<span class="hljs-number">16</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>non_exchangeable_value(<span class="hljs-number">127.25</span>, <span class="hljs-number">1.20</span>, <span class="hljs-number">10</span>, <span class="hljs-number">5</span>)
+<span class="hljs-number">1</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details></div></div></section></div><div id="panel-results" role="tabpanel" aria-labelledby="tab-results" tabindex="0" class="--tab-panel undefined" style=""><section class="results"><div class="c-test-run"><div class="progress failed grouped-by-task"><div class="bar" style="width: 26.6667%;"></div></div><div class="summary-status failed grouped-by-task" role="status"><span class="--dot"></span>4 / 6 Tasks Completed</div><div class="tests-grouped-by-task"><details class="tests-group c-details"><summary class="tests-group-summary"><div class="--summary-inner"><div class="task-marker passed">Task 1</div><div class="title">Estimate value after exchange</div><img src="./Exercism_files/completed-check-circle-611f69e228bf620a3a5d883825d6e760abf0e25d.svg" alt="" role="presentation" class="c-icon indicator"><img src="./Exercism_files/plus-4218d8787a84df23418f18a866369ea5a5b0ec12.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/minus-b52010c097bad569d7c1166857d1c091ab8f2382.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><details class="c-details c-test-summary pass"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Passed</span></div><div class="--summary-details"><div class="--summary-idx">Test 1</div><div class="--summary-name">CurrencyExchange &gt; exchange money</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">input_data = [(<span class="hljs-number">100000</span>, <span class="hljs-number">0.84</span>), (<span class="hljs-number">700000</span>, <span class="hljs-number">10.1</span>)]
+output_data = [<span class="hljs-number">119047</span>, <span class="hljs-number">69306</span>]
+
+<span class="hljs-keyword">for</span> variant, (input_data, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(input_data, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, input_data=input_data, output_data=output_data):
+        self.assertEqual(<span class="hljs-built_in">int</span>(exchange_money(input_data[<span class="hljs-number">0</span>], input_data[<span class="hljs-number">1</span>])), output_data)</code></pre></div></div></details><button class="instructions-btn btn-enhanced btn-s" type="button">Jump to Instructions</button></details><details class="tests-group c-details"><summary class="tests-group-summary"><div class="--summary-inner"><div class="task-marker passed">Task 2</div><div class="title">Calculate currency left after an exchange</div><img src="./Exercism_files/completed-check-circle-611f69e228bf620a3a5d883825d6e760abf0e25d.svg" alt="" role="presentation" class="c-icon indicator"><img src="./Exercism_files/plus-4218d8787a84df23418f18a866369ea5a5b0ec12.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/minus-b52010c097bad569d7c1166857d1c091ab8f2382.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><details class="c-details c-test-summary pass"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Passed</span></div><div class="--summary-details"><div class="--summary-idx">Test 2</div><div class="--summary-name">CurrencyExchange &gt; get change</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">input_data = [(<span class="hljs-number">463000</span>, <span class="hljs-number">5000</span>), (<span class="hljs-number">1250</span>, <span class="hljs-number">120</span>), (<span class="hljs-number">15000</span>, <span class="hljs-number">1380</span>)]
+output_data = [<span class="hljs-number">458000</span>, <span class="hljs-number">1130</span>, <span class="hljs-number">13620</span>]
+
+<span class="hljs-keyword">for</span> variant, (input_data, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(input_data, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, input_data=input_data, output_data=output_data):
+        self.assertEqual(get_change(input_data[<span class="hljs-number">0</span>], input_data[<span class="hljs-number">1</span>]), output_data)</code></pre></div></div></details><button class="instructions-btn btn-enhanced btn-s" type="button">Jump to Instructions</button></details><details class="tests-group c-details"><summary class="tests-group-summary"><div class="--summary-inner"><div class="task-marker passed">Task 3</div><div class="title">Calculate value of bills</div><img src="./Exercism_files/completed-check-circle-611f69e228bf620a3a5d883825d6e760abf0e25d.svg" alt="" role="presentation" class="c-icon indicator"><img src="./Exercism_files/plus-4218d8787a84df23418f18a866369ea5a5b0ec12.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/minus-b52010c097bad569d7c1166857d1c091ab8f2382.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><details class="c-details c-test-summary pass"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Passed</span></div><div class="--summary-details"><div class="--summary-idx">Test 3</div><div class="--summary-name">CurrencyExchange &gt; get value of bills</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">input_data = [(<span class="hljs-number">10000</span>, <span class="hljs-number">128</span>), (<span class="hljs-number">50</span>, <span class="hljs-number">360</span>), (<span class="hljs-number">200</span>, <span class="hljs-number">200</span>)]
+output_data = [<span class="hljs-number">1280000</span>, <span class="hljs-number">18000</span>, <span class="hljs-number">40000</span>]
+
+<span class="hljs-keyword">for</span> variant, (input_data, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(input_data, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, input_data=input_data, output_data=output_data):
+        self.assertEqual(get_value_of_bills(input_data[<span class="hljs-number">0</span>], input_data[<span class="hljs-number">1</span>]), output_data)</code></pre></div></div></details><button class="instructions-btn btn-enhanced btn-s" type="button">Jump to Instructions</button></details><details class="tests-group c-details"><summary class="tests-group-summary"><div class="--summary-inner"><div class="task-marker passed">Task 4</div><div class="title">Calculate number of bills</div><img src="./Exercism_files/completed-check-circle-611f69e228bf620a3a5d883825d6e760abf0e25d.svg" alt="" role="presentation" class="c-icon indicator"><img src="./Exercism_files/plus-4218d8787a84df23418f18a866369ea5a5b0ec12.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/minus-b52010c097bad569d7c1166857d1c091ab8f2382.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><details class="c-details c-test-summary pass"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Passed</span></div><div class="--summary-details"><div class="--summary-idx">Test 4</div><div class="--summary-name">CurrencyExchange &gt; get number of bills</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">input_data = [(<span class="hljs-number">163270</span>, <span class="hljs-number">50000</span>), (<span class="hljs-number">54361</span>, <span class="hljs-number">1000</span>)]
+output_data = [<span class="hljs-number">3</span>, <span class="hljs-number">54</span>]
+
+<span class="hljs-keyword">for</span> variant, (input_data, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(input_data, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, input_data=input_data, output_data=output_data):
+        self.assertEqual(get_number_of_bills(input_data[<span class="hljs-number">0</span>], input_data[<span class="hljs-number">1</span>]), output_data)</code></pre></div></div></details><button class="instructions-btn btn-enhanced btn-s" type="button">Jump to Instructions</button></details><details open="" class="tests-group c-details"><summary class="tests-group-summary"><div class="--summary-inner"><div class="task-marker pending">Task 5</div><div class="title">Calculate value after exchange</div><img src="./Exercism_files/plus-4218d8787a84df23418f18a866369ea5a5b0ec12.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/minus-b52010c097bad569d7c1166857d1c091ab8f2382.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><details class="c-details c-test-summary fail" open=""><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 5</div><div class="--summary-name">CurrencyExchange &gt; exchangeable value</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">1050</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10000000000</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">0.00000009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>)]
+
+output_data = [<span class="hljs-number">8568</span>, <span class="hljs-number">1400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4017094016600</span>, <span class="hljs-number">363300</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>One or more variations of this test failed. Details can be found under each [variant#].</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 6</div><div class="--summary-name">CurrencyExchange &gt; exchangeable value [variation #1] (inputs=(100000, 10.61, 10, 1), output data=8568)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">1050</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10000000000</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">0.00000009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>)]
+
+output_data = [<span class="hljs-number">8568</span>, <span class="hljs-number">1400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4017094016600</span>, <span class="hljs-number">363300</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>TypeError: unsupported operand type(s) for %: 'function' and 'int'</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 7</div><div class="--summary-name">CurrencyExchange &gt; exchangeable value [variation #2] (inputs=(1500, 0.84, 25, 40), output data=1400)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">1050</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10000000000</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">0.00000009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>)]
+
+output_data = [<span class="hljs-number">8568</span>, <span class="hljs-number">1400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4017094016600</span>, <span class="hljs-number">363300</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>TypeError: unsupported operand type(s) for %: 'function' and 'int'</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 8</div><div class="--summary-name">CurrencyExchange &gt; exchangeable value [variation #3] (inputs=(470000, 1050, 30, 10000000000), output data=0)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">1050</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10000000000</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">0.00000009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>)]
+
+output_data = [<span class="hljs-number">8568</span>, <span class="hljs-number">1400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4017094016600</span>, <span class="hljs-number">363300</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>TypeError: unsupported operand type(s) for %: 'function' and 'int'</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 9</div><div class="--summary-name">CurrencyExchange &gt; exchangeable value [variation #4] (inputs=(470000, 9e-08, 30, 700), output data=4017094016600)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">1050</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10000000000</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">0.00000009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>)]
+
+output_data = [<span class="hljs-number">8568</span>, <span class="hljs-number">1400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4017094016600</span>, <span class="hljs-number">363300</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>TypeError: unsupported operand type(s) for %: 'function' and 'int'</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 10</div><div class="--summary-name">CurrencyExchange &gt; exchangeable value [variation #5] (inputs=(425.33, 0.0009, 30, 700), output data=363300)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">1050</span>, <span class="hljs-number">30</span>, <span class="hljs-number">10000000000</span>),
+    (<span class="hljs-number">470000</span>, <span class="hljs-number">0.00000009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>)]
+
+output_data = [<span class="hljs-number">8568</span>, <span class="hljs-number">1400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4017094016600</span>, <span class="hljs-number">363300</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>TypeError: unsupported operand type(s) for %: 'function' and 'int'</pre></div></div></details><button class="instructions-btn btn-enhanced btn-s" type="button">Jump to Instructions</button></details><details class="tests-group c-details"><summary class="tests-group-summary"><div class="--summary-inner"><div class="task-marker pending">Task 6</div><div class="title">Calculate non-exchangeable value</div><img src="./Exercism_files/plus-4218d8787a84df23418f18a866369ea5a5b0ec12.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/minus-b52010c097bad569d7c1166857d1c091ab8f2382.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 11</div><div class="--summary-name">CurrencyExchange &gt; non exchangeable value</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">12000</span>, <span class="hljs-number">0.0096</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>)]
+
+output_data = [<span class="hljs-number">0</span>, <span class="hljs-number">28</span>, <span class="hljs-number">229</span>, <span class="hljs-number">13</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(non_exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>One or more variations of this test failed. Details can be found under each [variant#].</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 12</div><div class="--summary-name">CurrencyExchange &gt; non exchangeable value [variation #1] (inputs=(100000, 10.61, 10, 1), output data=0)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">12000</span>, <span class="hljs-number">0.0096</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>)]
+
+output_data = [<span class="hljs-number">0</span>, <span class="hljs-number">28</span>, <span class="hljs-number">229</span>, <span class="hljs-number">13</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(non_exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>AssertionError: None != 0</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 13</div><div class="--summary-name">CurrencyExchange &gt; non exchangeable value [variation #2] (inputs=(1500, 0.84, 25, 40), output data=28)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">12000</span>, <span class="hljs-number">0.0096</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>)]
+
+output_data = [<span class="hljs-number">0</span>, <span class="hljs-number">28</span>, <span class="hljs-number">229</span>, <span class="hljs-number">13</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(non_exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>AssertionError: None != 28</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 14</div><div class="--summary-name">CurrencyExchange &gt; non exchangeable value [variation #3] (inputs=(425.33, 0.0009, 30, 700), output data=229)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">12000</span>, <span class="hljs-number">0.0096</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>)]
+
+output_data = [<span class="hljs-number">0</span>, <span class="hljs-number">28</span>, <span class="hljs-number">229</span>, <span class="hljs-number">13</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(non_exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>AssertionError: None != 229</pre></div></div></details><details class="c-details c-test-summary fail"><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 15</div><div class="--summary-name">CurrencyExchange &gt; non exchangeable value [variation #4] (inputs=(12000, 0.0096, 10, 50), output data=13)</div></div><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Code Run</h3><pre><code class="python hljs language-python" data-highlighted="true">inputs = [
+    (<span class="hljs-number">100000</span>, <span class="hljs-number">10.61</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">1500</span>, <span class="hljs-number">0.84</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>),
+    (<span class="hljs-number">425.33</span>, <span class="hljs-number">0.0009</span>, <span class="hljs-number">30</span>, <span class="hljs-number">700</span>),
+    (<span class="hljs-number">12000</span>, <span class="hljs-number">0.0096</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>)]
+
+output_data = [<span class="hljs-number">0</span>, <span class="hljs-number">28</span>, <span class="hljs-number">229</span>, <span class="hljs-number">13</span>]
+
+<span class="hljs-keyword">for</span> variant, (inputs, output_data) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-built_in">zip</span>(inputs, output_data), start=<span class="hljs-number">1</span>):
+    <span class="hljs-keyword">with</span> self.subTest(<span class="hljs-string">f"variation #<span class="hljs-subst">{variant}</span>"</span>, inputs=inputs, output_data=output_data):
+        self.assertEqual(non_exchangeable_value(inputs[<span class="hljs-number">0</span>], inputs[<span class="hljs-number">1</span>], inputs[<span class="hljs-number">2</span>], inputs[<span class="hljs-number">3</span>]), output_data)</code></pre></div><div class="--info"><h3>Test Failure</h3><pre>AssertionError: None != 13</pre></div></div></details><button class="instructions-btn btn-enhanced btn-s" type="button">Jump to Instructions</button></details></div></div></section></div></div></div></div></div>
+
+
+<div id="portal-container"></div>
+<div class="c-loading-overlay"></div>
+<footer id="site-footer" style="display: block;"><div class="lg-container">
+<div class="nfp mb-40 md:mb-58">
+<img role="presentation" alt="" class="c-icon" src="./Exercism_files/exercism-face-gradient-31ce1b1261c54ead735cf687a2dc8549b3d00bb1.svg">
+<h2 class="text-h2 mb-32">Help us keep Exercism free for everyone, everywhere.</h2>
+<div class="c-react-component c-react-wrapper-donations-footer-form --hydrated" data-react-donations-footer-form="true" data-react-data="{&quot;request&quot;:{&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/donations/active_subscription&quot;,&quot;options&quot;:{&quot;initial_data&quot;:{&quot;subscription&quot;:null}}},&quot;user_signed_in&quot;:true,&quot;links&quot;:{&quot;settings&quot;:&quot;https://exercism.org/settings/donations&quot;}}"><form class="donations-form flex flex-col md:flex-row items-stretch"><div class="amounts mb-16 md:mb-0"><button class="btn-m selected" type="button">$16</button><button class="btn-m" type="button">$32</button><button class="btn-m" type="button">$64</button><button class="btn-m" type="button">$128</button><label class="c-faux-input"><div class="icon">$</div><input type="number" min="0" step="0.01" placeholder="Custom amount" value=""></label></div><button class="btn-m continue-btn w-100 md:w-auto md:h-auto md:ml-32"><span>Continue</span><img src="./Exercism_files/arrow-right-0f5e363467e0c55fe280b4864639a9c677afa0d2.svg" alt="" role="presentation" class="c-icon"></button></form></div>
+<h3 class="text-h4 mt-32 mb-8">Exercism is open source and 100% free.</h3>
+<p class="text-p-large">Help us provide opportunity for people of all backgrounds by helping them develop their programming skills through code practice and mentorship.</p>
+</div>
+<hr>
+<div class="site-links mt-24 md:mt-56">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-x-40">
+<div class="col">
+<h3>Editions</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/">Exercism</a></li>
+<li><a href="https://exercism.org/docs/using/editions/teams">Exercism for Teams</a></li>
+<li><a href="https://exercism.org/docs/using/editions/research">Exercism Research</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>About</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/about">About Exercism</a></li>
+<li><a href="https://exercism.org/about/team">Our team</a></li>
+<li><a href="https://exercism.org/contributing/contributors">Contributors</a></li>
+<li><a href="https://exercism.org/about/supporters/organisations">Supporting organisations</a></li>
+<li><a href="https://exercism.org/about/supporters/individuals">Individual supporters</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Get involved</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/contributing">Contribute</a></li>
+<li><a href="https://exercism.org/mentoring">Mentor</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Legal &amp; policies</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/docs/using/legal/terms-of-service">Terms of usage</a></li>
+<li><a href="https://exercism.org/docs/using/legal/privacy-policy">Privacy policy</a></li>
+<li><a href="https://exercism.org/docs/using/legal/cookie-policy">Cookie policy</a></li>
+<li><a href="https://exercism.org/docs/using/legal/code-of-conduct">Code of conduct</a></li>
+<li><a href="https://exercism.org/docs/using/legal/accessibility">Accessibility statement</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Keep in touch</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/blog">Exercism's blog</a></li>
+<li><a href="https://github.com/exercism/exercism">Discuss on GitHub</a></li>
+<li><a href="https://exercism.org/docs/using/contact">Contact us</a></li>
+<li><a href="https://exercism.org/docs/using/report-abuse">Report abuse</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Get help</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/docs">Exercism's Docs</a></li>
+<li><a href="https://exercism.org/docs/using/getting-started">Getting started</a></li>
+<li><a href="https://exercism.org/docs/using/faqs">FAQs</a></li>
+<li><a href="https://exercism.org/docs/using/solving-exercises/working-locally">Installing the CLI</a></li>
+<li><a href="https://exercism.org/cli-walkthrough">Interactive CLI Walkthrough</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="socials mt-24 mb-40 md:mb-56">
+<a class="icon twitter" href="https://twitter.com/exercism_io"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/external-site-twitter-6717f73e3402edb200e17233edc6d9aa756d084c.svg">
+</a><a class="icon facebook" href="https://facebook.com/exercism.io"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/external-site-facebook-30d7c9862735514b98cc354bc12f460a4a40d26b.svg">
+</a><a class="icon github" href="https://github.com/exercism"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/external-site-github-10a8a76f55f4e6955417df6aa374dd48fab4392b.svg">
+</a></div>
+<hr>
+<div class="tracks mt-32 md:mt-48 mb-32 md:mb-48 md:items-center">
+<div class="hidden md:block">
+<h2 class="text-h3">Our programming language tracks</h2>
+<hr class="c-divider mt-28 mb-36">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-x-32">
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/abap">ABAP</a></li>
+<li><a href="https://exercism.org/tracks/awk">AWK</a></li>
+<li><a href="https://exercism.org/tracks/bash">Bash</a></li>
+<li><a href="https://exercism.org/tracks/c">C</a></li>
+<li><a href="https://exercism.org/tracks/csharp">C#</a></li>
+<li><a href="https://exercism.org/tracks/cpp">C++</a></li>
+<li><a href="https://exercism.org/tracks/cfml">CFML</a></li>
+<li><a href="https://exercism.org/tracks/clojure">Clojure</a></li>
+<li><a href="https://exercism.org/tracks/clojurescript">ClojureScript</a></li>
+<li><a href="https://exercism.org/tracks/coffeescript">CoffeeScript</a></li>
+<li><a href="https://exercism.org/tracks/common-lisp">Common Lisp</a></li>
+<li><a href="https://exercism.org/tracks/crystal">Crystal</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/d">D</a></li>
+<li><a href="https://exercism.org/tracks/dart">Dart</a></li>
+<li><a href="https://exercism.org/tracks/delphi">Delphi Pascal</a></li>
+<li><a href="https://exercism.org/tracks/elixir">Elixir</a></li>
+<li><a href="https://exercism.org/tracks/elm">Elm</a></li>
+<li><a href="https://exercism.org/tracks/emacs-lisp">Emacs Lisp</a></li>
+<li><a href="https://exercism.org/tracks/erlang">Erlang</a></li>
+<li><a href="https://exercism.org/tracks/fsharp">F#</a></li>
+<li><a href="https://exercism.org/tracks/fortran">Fortran</a></li>
+<li><a href="https://exercism.org/tracks/go">Go</a></li>
+<li><a href="https://exercism.org/tracks/groovy">Groovy</a></li>
+<li><a href="https://exercism.org/tracks/haskell">Haskell</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/java">Java</a></li>
+<li><a href="https://exercism.org/tracks/javascript">JavaScript</a></li>
+<li><a href="https://exercism.org/tracks/julia">Julia</a></li>
+<li><a href="https://exercism.org/tracks/kotlin">Kotlin</a></li>
+<li><a href="https://exercism.org/tracks/lfe">LFE</a></li>
+<li><a href="https://exercism.org/tracks/lua">Lua</a></li>
+<li><a href="https://exercism.org/tracks/mips">MIPS Assembly</a></li>
+<li><a href="https://exercism.org/tracks/nim">Nim</a></li>
+<li><a href="https://exercism.org/tracks/objective-c">Objective-C</a></li>
+<li><a href="https://exercism.org/tracks/ocaml">OCaml</a></li>
+<li><a href="https://exercism.org/tracks/perl5">Perl 5</a></li>
+<li><a href="https://exercism.org/tracks/pharo-smalltalk">Pharo</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/php">PHP</a></li>
+<li><a href="https://exercism.org/tracks/plsql">PL/SQL</a></li>
+<li><a href="https://exercism.org/tracks/prolog">Prolog</a></li>
+<li><a href="https://exercism.org/tracks/purescript">PureScript</a></li>
+<li><a href="https://exercism.org/tracks/python">Python</a></li>
+<li><a href="https://exercism.org/tracks/r">R</a></li>
+<li><a href="https://exercism.org/tracks/racket">Racket</a></li>
+<li><a href="https://exercism.org/tracks/raku">Raku</a></li>
+<li><a href="https://exercism.org/tracks/reasonml">ReasonML</a></li>
+<li><a href="https://exercism.org/tracks/ruby">Ruby</a></li>
+<li><a href="https://exercism.org/tracks/rust">Rust</a></li>
+<li><a href="https://exercism.org/tracks/scala">Scala</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/scheme">Scheme</a></li>
+<li><a href="https://exercism.org/tracks/sml">Standard ML</a></li>
+<li><a href="https://exercism.org/tracks/swift">Swift</a></li>
+<li><a href="https://exercism.org/tracks/tcl">Tcl</a></li>
+<li><a href="https://exercism.org/tracks/typescript">TypeScript</a></li>
+<li><a href="https://exercism.org/tracks/unison">Unison</a></li>
+<li><a href="https://exercism.org/tracks/vbnet">VB.NET</a></li>
+<li><a href="https://exercism.org/tracks/vimscript">Vim script</a></li>
+<li><a href="https://exercism.org/tracks/wasm">WebAssembly</a></li>
+<li><a href="https://exercism.org/tracks/wren">Wren</a></li>
+<li><a href="https://exercism.org/tracks/x86-64-assembly">x86-64 Assembly</a></li>
+</ul>
+</div>
+<div class="col hidden md:block mt-32 xl:mt-0">
+<h3 class="text-h6">Want to add a language track to Exercism?</h3>
+<p class="text-p-base">
+<a href="https://github.com/exercism/exercism/issues/new?title=Create%20new%20track%20for%20[LANGUAGE]">Open an issue</a>
+and let's discuss it.
+</p>
+</div>
+</div>
+</div>
+<hr>
+<div class="legals mt-24 md:mt-32 mb-32 md:mb-40 flex md:items-center flex-col md:flex-row">
+<div class="company mb-16 md:mb-0 md:mr-32">
+Exercism is not-for-profit organisation registered in the UK with company number
+<a href="https://find-and-update.company-information.service.gov.uk/company/11733062">11733062</a>.
+Its trustees are <a href="https://www.kytrinyx.com/">Katrina Owen</a> and <a href="https://ihid.info/">Jeremy Walker</a>.
+</div>
+<div class="copyright md:ml-auto">
+© 2022 Exercism
+</div>
+</div>
+</div>
+</footer>
+<!-- Prefetch the deferred packs which are needed on other pages -->
+
+
+
+<!-- TODO: Add test for this! -->
+<div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><iframe name="__privateStripeMetricsController9700" frameborder="0" allowtransparency="true" scrolling="no" allow="payment *" src="./Exercism_files/m-outer-4807e1f7f870bb98b3cb264d1517ad10.html" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>
