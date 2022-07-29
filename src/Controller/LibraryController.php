@@ -171,14 +171,20 @@ class LibraryController extends AbstractController
     public function updateBookForm(
         Request $request,
         int $bookId,
-        BookRepository $bookRepository,
+       // BookRepository $bookRepository,
         SluggerInterface $slugger,
         ManagerRegistry $doctrine
     ): Response {
         $entityManager = $doctrine->getManager();
-      //  $bookRepository = $doctrine->getRepository(Book::class);
+        $bookRepository = $doctrine->getRepository(Book::class);
         $book = $bookRepository
             ->find($bookId);
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for id ' . $bookId
+            );
+        }
 
         $editBookForm = $this->createForm(BookFormType::class, $book);
         $editBookForm->handleRequest($request);
@@ -220,7 +226,7 @@ class LibraryController extends AbstractController
                 is_string($isbn) and
                 is_string($description) and
                 is_string($description) and
-                is_string($imageFile) 
+                is_string($imageFile)
                 //and !is_null($book)
             ) {
                 $book->setTitle($title);
@@ -279,6 +285,7 @@ class LibraryController extends AbstractController
             $book->setISBN($isbn);
             $book->setDescription($description);
             $book->setImage($image);
+        } else {
         }
 
         $entityManager->flush();
