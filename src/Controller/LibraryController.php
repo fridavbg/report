@@ -42,14 +42,14 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/show/{id}", name="book_by_id")
+     * @Route("/library/show/{bookId}", name="book_by_id")
      */
     public function showBookById(
         BookRepository $bookRepository,
-        int $id
+        int $bookId
     ): Response {
         $book = $bookRepository
-            ->find($id);
+            ->find($bookId);
         $data = [
             'book' => $book
         ];
@@ -68,11 +68,16 @@ class LibraryController extends AbstractController
         $entityManager = $doctrine->getManager();
         $book = new Book();
 
-        $addBookForm = $this->createForm(BookFormType::class, $book);
+        $titleIsRequired = true;
+        $authorIsRequired = true;
+
+        $addBookForm = $this->createForm(BookFormType::class, $book, [
+            'require_title' => $titleIsRequired,
+            'require_author' => $authorIsRequired
+        ]);
         $addBookForm->handleRequest($request);
 
         if ($addBookForm->isSubmitted() && $addBookForm->isValid()) {
-            /** @var UploadedFile $image */
             $title = $addBookForm->get('title')->getData();
             $author = $addBookForm->get('author')->getData();
             $isbn = $addBookForm->get('isbn')->getData();
@@ -133,13 +138,27 @@ class LibraryController extends AbstractController
         $description = $request->request->get('description');
         $image = $request->request->get('image');
 
-        $book = new Book();
-        $book->setTitle($title);
-        $book->setAuthor($author);
-        $book->setISBN($isbn);
-        $book->setDescription($description);
-        $book->setImage($image);
+        $inputs = [$title, $author, $isbn, $description, $image];
 
+        $stringCheck = false;
+
+
+
+        $book = new Book();
+        if (
+            is_string($title) and
+            is_string($author) and
+            is_string($isbn) and
+            is_string($description) and
+            is_string($description) and
+            is_string($image)
+        ) {
+            $book->setTitle($title);
+            $book->setAuthor($author);
+            $book->setISBN($isbn);
+            $book->setDescription($description);
+            $book->setImage($image);
+        }
         $entityManager->persist($book);
         $entityManager->flush();
 
@@ -147,24 +166,30 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/update/form/{id}", name="update_book_form")
+     * @Route("/library/update/form/{bookId}", name="update_book_form")
      */
     public function updateBookForm(
         Request $request,
-        BookRepository $bookRepository,
-        int $id,
+        int $bookId,
+        // BookRepository $bookRepository,
         SluggerInterface $slugger,
         ManagerRegistry $doctrine
     ): Response {
         $entityManager = $doctrine->getManager();
+        $bookRepository = $doctrine->getRepository(Book::class);
         $book = $bookRepository
-            ->find($id);
+            ->find($bookId);
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for id ' . $bookId
+            );
+        }
+
         $editBookForm = $this->createForm(BookFormType::class, $book);
         $editBookForm->handleRequest($request);
 
-
         if ($editBookForm->isSubmitted() && $editBookForm->isValid()) {
-            /** @var UploadedFile $image */
             $title = $editBookForm->get('title')->getData();
             $author = $editBookForm->get('author')->getData();
             $isbn = $editBookForm->get('isbn')->getData();
@@ -187,7 +212,7 @@ class LibraryController extends AbstractController
                     );
                 } catch (FileException $e) {
                     // ... handle exception if something happens during file upload
-                   // dd($e);
+                    // dd($e);
                 }
                 // updates the 'imageFilename' property to store the image file name
                 // instead of its contents
@@ -195,10 +220,21 @@ class LibraryController extends AbstractController
             }
 
             // ... persist the $book variable or any other work
-            $book->setTitle($title);
-            $book->setAuthor($author);
-            $book->setISBN($isbn);
-            $book->setDescription($description);
+            if (
+                is_string($title) and
+                is_string($author) and
+                is_string($isbn) and
+                is_string($description) and
+                is_string($description) and
+                is_string($imageFile)
+                //and !is_null($book)
+            ) {
+                $book->setTitle($title);
+                $book->setAuthor($author);
+                $book->setISBN($isbn);
+                $book->setDescription($description);
+                $book->setImage($imageFile);
+            }
 
             $entityManager->persist($book);
             $entityManager->flush();
@@ -215,19 +251,19 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/update/{id}", name="book_update_process")
+     * @Route("/library/update/{bookId}", name="book_update_process")
      */
     public function updateBookProcess(
         Request $request,
         ManagerRegistry $doctrine,
-        int $id,
+        int $bookId,
     ): Response {
         $entityManager = $doctrine->getManager();
-        $book = $entityManager->getRepository(Book::class)->find($id);
+        $book = $entityManager->getRepository(Book::class)->find($bookId);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id ' . $id
+                'No book found for id ' . $bookId
             );
         }
         $title = $request->request->get('title');
@@ -236,11 +272,21 @@ class LibraryController extends AbstractController
         $description = $request->request->get('description');
         $image = $request->request->get('image');
 
-        $book->setTitle($title);
-        $book->setAuthor($author);
-        $book->setISBN($isbn);
-        $book->setDescription($description);
-        $book->setImage($image);
+        if (
+            is_string($title) and
+            is_string($author) and
+            is_string($isbn) and
+            is_string($description) and
+            is_string($description) and
+            is_string($image)
+        ) {
+            $book->setTitle($title);
+            $book->setAuthor($author);
+            $book->setISBN($isbn);
+            $book->setDescription($description);
+            $book->setImage($image);
+        } else {
+        }
 
         $entityManager->flush();
 
@@ -248,18 +294,18 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/delete/{id}", name="book_delete_by_id")
+     * @Route("/library/delete/{bookId}", name="book_delete_by_id")
      */
     public function deleteBookById(
         ManagerRegistry $doctrine,
-        int $id
+        int $bookId
     ): Response {
         $entityManager = $doctrine->getManager();
-        $book = $entityManager->getRepository(Book::class)->find($id);
+        $book = $entityManager->getRepository(Book::class)->find($bookId);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id ' . $id
+                'No book found for id ' . $bookId
             );
         }
 
