@@ -19,15 +19,15 @@ class BookFormType extends AbstractType
      * @var array<string> $options
      */
     public array $options = [];
-    
+
     public function buildForm(FormBuilderInterface $builder,  $options): void
     {
         $builder
-            ->add('title', EntityType::class, [
+            ->add('title', TextType::class, [
                 'required' => $options['require_title']
             ])
             ->add('author', TextType::class, [
-                'required' => $options['require_title']
+                'required' => $options['require_author']
             ])
             ->add('isbn', TextType::class)
             ->add('description', TextareaType::class, array(
@@ -61,6 +61,5 @@ class BookFormType extends AbstractType
         ]);
         $resolver->setAllowedTypes('require_title', 'bool');
         $resolver->setAllowedTypes('require_author', 'bool');
-
     }
 }
