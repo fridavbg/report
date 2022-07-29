@@ -171,7 +171,7 @@ class LibraryController extends AbstractController
     public function updateBookForm(
         Request $request,
         int $bookId,
-       // BookRepository $bookRepository,
+        // BookRepository $bookRepository,
         SluggerInterface $slugger,
         ManagerRegistry $doctrine
     ): Response {
