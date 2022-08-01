@@ -5,9 +5,9 @@ filter:
     excluded_paths: [vendor/*, test/*]
 
 build:
+    image: default-bionic
     nodes:
         my-tests:
-            image: default-bionic
             environment:
                 php:
                     version: 8.1.8
