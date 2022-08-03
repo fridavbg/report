@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MetricsController!{% endblock %}
+{% block title %}
+    {{title}}
+{% endblock %}
 
 {% block content %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Controller/MetricsController.php'|file_link(0) }}">src/Controller/MetricsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/templates/metrics/index.html.twig'|file_link(0) }}">templates/metrics/index.html.twig</a></code></li>
-    </ul>
-</div>
+  <article class="site-wrap">
+    <section>
+      <h1>Introduktion</h1>
+      <p>I denna rapport så kommer jag att gå igenom och analysera kodkvaliteten för detta projekt.</p>
+      <a class="standard-link" href="https://github.com/fridavbg/report" target="_blank">Git repo med all kod finns här</a>
+    </section>
+    <section>
+    {{ include('metrics/fourCs.md') }}    
+    </section>
+  </article>
 {% endblock %}

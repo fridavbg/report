@@ -228,7 +228,7 @@ nav ul li a:hover {
     font-size: medium;
     text-decoration: none;
     cursor: pointer;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 12px;
     color: var(--light-text);
     box-shadow: var(--accent) 0px 20px 30px -10px;
@@ -509,4 +509,33 @@ label {
     text-transform: uppercase;
     text-shadow: var(--dark-bkg) 0px 0px 10px;
     font-family: Title;
+}
+
+/* METRICS */
+
+section {
+    margin-top: 2em;
+}
+
+h3 {
+    font-family: Title;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+h4 {
+    margin-bottom: 2em;
+}
+
+ul {
+    padding: inherit;
+}
+
+li {
+    list-style: none;
+    margin: 3em;
+}
+
+.code-cvg-phpUnit {
+    width: 650px;
 }

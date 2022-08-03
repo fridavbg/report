@@ -113,7 +113,7 @@
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
         "phpdoc": "tools/phpdoc/phpdoc",
         "doc" : "tools/phpdoc/phpdoc -d ./src -t ./docs/api",
-        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json"
+        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json --junit"
     },
     "conflict": {
         "symfony/symfony": "*"

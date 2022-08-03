@@ -11,8 +11,9 @@ class MetricsController extends AbstractController
     #[Route('/metrics', name: 'app_metrics')]
     public function index(): Response
     {
-        return $this->render('metrics/index.html.twig', [
-            'controller_name' => 'MetricsController',
-        ]);
+        $data = [
+            'title' => 'Metrics analysis',
+        ];
+        return $this->render('metrics/index.html.twig', $data);
     }
 }
