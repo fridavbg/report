@@ -5,111 +5,59 @@
 <p>Scrutinizer</p>
 </section>
 
+<!-- INTRODUKTION -->
+
+<!-- 
+Börja med en rubrik “Introduktion” där du förklarar de fyra C:na och hur de kan påverka kodens kvalitet. 
+Exemplifiera med några mätvärden för de fyra C:na som är kopplade till din egen kod och ge en kort förklaring relaterad till kodkvalitet.
+-->
 <section>
-    <h2>Mätvärden</h2>
-    <p>
-        I rapporten så kommer följande mätvärden ligga i fokus:
-    </p>
+    <h2>Introduktion</h2>
+    <h4>Dem fyra C:na</h4>
     <h3>
         Coverage
     </h3>
-    <h4>
-        Verktyg: PHPUnit & Scrutinizer
-    </h4>
-    <h4>
-        Initialt värde i Scrutinizer:
-    </h4>
-    </br>
-    <img alt="Code Coverage Scrutinizer 28%"src="https://scrutinizer-ci.com/g/fridavbg/report/badges/coverage.png?b=main"/>
-    <h4>
-        Intiialt värde i PHPUnit: 
-    </h4> 
-    </br>
-    <img class="code-cvg-phpUnit" alt="Code Coverage PHPUnit" src="{{asset('img/metrics/PHPUnit-coverage.png')}}"/>
     <p>
-        Coverage är det mätvärde som används för att se över hur mycket utav källkoden täcks utav tester, och även för att bedöma kvaliteten på test sviterna.  Det är ett sätt att förstå hur en applikation skall fungera när den används korrekt, och vart man skall lägga sin fokus. 
+        Coverage är det mätvärde som används för att se över hur mycket utav källkoden täcks utav tester, och även för att bedöma kvaliteten på test sviterna.  Det är ett sätt att förstå hur en applikation skall fungera när den används korrekt, men också vad som kan hända om någon använder applikationen på fel sätt.  Tester kan därför hjälpa till att förstå vart man skall lägga sin fokus, medans projektet växer. 
     </p>
-    <p>
-        Den första analys som jag fick i Scrutinizer var enbart på 28%, men detta ver ej så förvånande då jag vet att mina tester för tillfället bara täcker dem klasser som finns i projektet. Så ett mål för att förbättra min kodkvalitet är att göra flera tester som täcker mer utav källkoden.
+    <p> 
+        Det första värdet som jag fick i Scrutinizer för coverage var på 28%, detta därför att mina tester enbart täcker mina klasser och ej andra delar utav min källkod. Detta påverkar så klart min kodkvalitet då en stor del utav mitt projekt ej har några unit tester, så det finns ingenting som kan identifiera eventuella felsteg i min logik. Även statistiken i PHPMetrics bekräftar detta då den visar på att 73.33% utav mina klasser ej är testade.
     </p>
+    <hr/>
     <h3>
         Complexity
     </h3>
-    <h4>
-        Initiallt värde i Scrutinizer:
-    </h4>
-    <h4 style="color:red;">FIND CC in Scrutinizer!!!!!!!</h4>
-     <h4>
-        Intiialt värde i PHPMetrics: 
-    </h4> 
-    <img alt="Code Coverage PHPUnit" src="{{asset('img/metrics/maintainability-phpmetrics.png')}}"/>
-    <img class="code-cvg-phpUnit" alt="Code Coverage PHPUnit" src="{{asset('img/metrics/cc-phpmetrics.png')}}"/>
     <p>
         Code complexity är ett mätvärde som används för att kunna hitta onödigt komplicerad kod. Detta kan underlätta då ju mindre komplicerad kod, ju lättare är det för andra att underhålla koden medans ett projekt växer. Ju mer komplicerad kod desto större risk att koden är defekt, vilket kan betyda mer tid till att lösa buggar.
     </p>
     <p>
         Den bit utav min kod som verkar ha störst problem är min LibraryController som visas som den stora röda cirkeln i PHPMetrics Maintainability / complexity, så ett utav mina mål med denna analys kommer att vara att förbättra den utöver bästa förmåga. Det finns även en liten röd cirkel som visar till min Dice klass, men den känns ej så akut då cyclomatic complexity ligger på 1 jämfört med LibraryControllerns 30.
     </p>
+    <hr/>
     <h3>
         Cohesion
     </h3>
-    <h4>
-        Initiallt värde i Scrutinizer:
-    </h4>
-    <h4 style="color:red;">
-    FIND Cohesion in Scrutinizer!!!!!!!</h4>
-    <h4>
-        Intiialt värde i PHPMetrics: 
-    </h4> 
-    <h4 style="color:red;">FIND Cohesion in PHPMetrics!!!!!!!</h4>
-    <p>Cohesion är ett sätt att mäta en klass eller en funktions ansvar, och hur dem hör ihop. En hög cohesion innebär att en klass eller metod har en single responsiblity, det vill säga att klassen har ett ansvarsområde.
-    Men vill ofta att en klass eller funktion endast skall göra en sak, då blir kodkvaliteten lättare att underhålla.
+    <p>
+        Cohesion är ett sätt att mäta samnhörighet emellan delar utav kod. Man kan säga att klasser som hör ihop skall grupperas tillsammans. Generellt så vill man att klasser och metoder har ett ända mål (single responsibility). Single responsibility principen säger att en klass eller metod skall ha enbart en anledning till att ändra på sig.
     </p>
-    <p></p>
+    <p>
+        I PHPMetrics så finns det ett LCOM mätvärde som står för Lack of Cohesion of Methods, som mäter antal ansvarsområden för en klass. I min rapport så har jag fått ett genomsnittsvärde på 1.34, vilket känns som ett ok värde, då det är låga värden är vad man vill ha. Enligt PHPMetrics så är ideal LCOM värde en 1. 
+    </p>
+    <hr/>
     <h3>
         Coupling
     </h3>
-      <h4>
-        Initiallt värde i Scrutinizer:
-    </h4>
-    <h4 style="color:red;">FIND Coupling in Scrutinizer!!!!!!!</h4>
-     <h4>
-        Intiialt värde i PHPMetrics: 
-    </h4> 
-     <h4 style="color:red;">FIND Coupling in PHPMetrics!!!!!!!</h4>
     <p>
         Coupling är ett mätvärden som mäter hur en bit av kod relaterar till en annan. Om ett problem uppkommer i en bit utav kod så kommer det påverka all kod som är kopplad till just den biten. För att undvika detta så vill man därför ha en svag koppling emellan delar utav koden, då det kan ibland vara svårt att se om till exempel en kopplad funktion ej blivit uppdaterad.
     </p>
-    <p></p>
+    <p>
+        I PHPMetrics så delas värden för coupling upp emellan AC, utgående koppling (Afferent coupling) och EC (Efferent coupling), ingående koppling. AC visar hur många klasser som kan bli påverkade utav en klass. I min rapport så kan man se att Deck klassen har ett AC värde på 7, vilket visar på att det är den klass som återanvänds mest i andra klasser. EC värdet för Deck klassen är betydligt mindre och ligger på 1, vilket också stämmer bra överens. Detta med tanke på att endast en klass (Card klassen) används inuti Deck klassen.
+    </p>
+    <hr/>
     <h3>
         Andra mätvärden
     </h3>
-    <h4>
-        CRAP Score
-    </h4>
-    <h4>
-        Initiallt värde i Scrutinizer:
-    </h4>
-    <h4 style="color:red;">FIND Cohesion in Scrutinizer!!!!!!!</h4>
-     <h4>
-        Intiialt värde i PHPMetrics: 
-    </h4> 
-    <h4 style="color:red;">FIND Cohesion in PHPMetrics!!!!!!!</h4>
-</section>
-<section>
-    <h4>
-        Källhänvisningar
-    </h4>
-    <ul>
-        <li>
-            <a class="standard-link" href="https://www.atlassian.com/continuous-delivery/software-testing/code-coverage" target="_blank">
-                An introduction to code coverage by Atlassian
-            </a>
-        </li>
-        <li>
-            <a class="standard-link" href="https://linearb.io/blog/what-is-code-complexity/">
-                What Is Code Complexity? What It Means And How To Measure It
-            </a>
-        </li>
-    </ul>
+    <p>
+        Några andra mätvärden kommer även att tas i åtanke under denna analys, men då PHPMetrics och Scrutinizer skiljer sig en del åt så kommer andra mätvärden nämnas under respektive rubrik.
+    </p>
 </section>

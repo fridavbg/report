@@ -142,8 +142,6 @@ class LibraryController extends AbstractController
 
         $stringCheck = false;
 
-
-
         $book = new Book();
         if (
             is_string($title) and

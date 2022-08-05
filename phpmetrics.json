@@ -3,7 +3,7 @@
         "src"
     ],
     "exclude": [
-      "test[s]?"
+        "test[s]?"
     ],
     "report": {
         "html": "docs/metrics"
@@ -11,6 +11,9 @@
     "plugins": {
         "git": {
             "binary": "git"
+        },
+        "junit": {
+            "report": "junit.xml"
         }
     }
 }

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{title}}
+  {{title}}
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,42 @@
       <a class="standard-link" href="https://github.com/fridavbg/report" target="_blank">Git repo med all kod finns här</a>
     </section>
     <section>
-    {{ include('metrics/fourCs.md') }}    
+      {{ include('metrics/fourCs.md') }}
+    </section>
+    <section>
+      {{ include('metrics/phpmetrics.md') }}
+    </section>
+    <section>
+      {{ include('metrics/scrutinizer.md') }}
+    </section>
+    <section>
+      {{ include('metrics/improvements.md') }}
+    </section>
+    <section>
+      {{ include('metrics/discussion.md') }}
+    </section>
+  </article>
+
+ <!-- KÄLLHÄNVISNINGAR -->
+  <article>
+    <section>
+      <section>
+        <h4>
+          Källhänvisningar
+        </h4>
+        <ul>
+          <li>
+            <a class="standard-link" href="https://www.atlassian.com/continuous-delivery/software-testing/code-coverage" target="_blank">
+              An introduction to code coverage by Atlassian
+            </a>
+          </li>
+          <li>
+            <a class="standard-link" href="https://linearb.io/blog/what-is-code-complexity/">
+              What Is Code Complexity? What It Means And How To Measure It
+            </a>
+          </li>
+        </ul>
+      </section>
     </section>
   </article>
 {% endblock %}
