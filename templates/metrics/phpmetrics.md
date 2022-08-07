@@ -31,7 +31,7 @@ Skapa en rubrik “Phpmetrics” och analysera dess rapport för din kod. Använ
     <img alt="Maintainability/Complexity PHPMetrics" src="{{asset('img/metrics/maintainability-phpmetrics.png')}}"/>
     <img class="code-cvg-phpUnit" alt="Code Coverage PHPUnit" src="{{asset('img/metrics/cc-phpmetrics.png')}}"/>
     <p>
-        I PHPMetrics så visas tillsammans med complexitet värdena ett maintainability index som då baseras på detta värde. Dem ger då en ganska klar överbild på vilka klasser som i framtiden eventuellt kan få buggar. Om man tittar på bilden så visas därför LibraryControllern som den största röda cirkeln, då den är den klass som har mest möjliga utkomster. Medans mindre komplexa klasser representeras som mindre gröna cirklar. Om man går djupare så kan man även finns statisik över varje enskild klass, så då kan hjälpa att eventuellt avgöra om man behöver bryta ner klass funktionalitet till mindre moduler, vilket kan vara fallet i LibraryControllern.
+        I PHPMetrics så visas tillsammans med komplexitet värdena ett maintainability index som då baseras på detta värde. Dem ger då en ganska klar överbild på vilka klasser som i framtiden eventuellt kan få buggar. Om man tittar på bilden så visas därför LibraryControllern som den största röda cirkeln, då den är den klass som har mest möjliga utkomster. Medans mindre komplexa klasser representeras som mindre gröna cirklar. Om man går djupare så kan man även finna statistik över varje enskild klass, så då kan hjälpa att eventuellt avgöra om man behöver bryta ner klass funktionalitet till mindre moduler, vilket kan vara fallet i LibraryControllern.
     </p>
     <h4>
         Intiiala Cohesion värden i PHPMetrics: 
