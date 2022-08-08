@@ -1,51 +1,18 @@
-<!-- PHPMETRICS -->
-<!-- 
-Skapa en rubrik “Phpmetrics” och analysera dess rapport för din kod. Använd 4C på utvalda delar av din kod och hitta minst ett ytterligare mätvärde som du väljer att ta upp. Använd mätvärdena för att hitta flaskhalsar och svaga punkter i din kod. Det vill alltså hitta kod-delar som du kan uppdatera för att få bättre mätvärden.
--->
 <section>
-    <h2>
-        PHPMetrics
-    </h2>
-    <h4>
-        Code coverage värden i PHPMetrics: 
-    </h4> 
-    <img class="code-cvg-phpUnit" alt="Classes never called by tests 73.33%" src="{{asset('img/metrics/phpmetrics-codecoverage.png')}}"/>
-    <p>Classes never called by tests 73.33%</p>
-    <img class="code-cvg-phpUnit" alt="Code Coverage PHPMetrics CC values" src="{{asset('img/metrics/phpmetrics-cc.png')}}"/>
-    <p>
-    Cyclomatisk complexitet för LibraryControllern: 30
-    </p>
-    <p>
-    Cyclomatisk complexitet för JsonCardControllern: 1
-    </p>
-    <p>
-            Code coverage rapporten i PHPMetrics visar på att mycket utav källkoden ej har några tester, vilket bekräftar det som jag tog upp tidigare. Den visar även att dem klasser som har högst komplexitet är dem som har störst behov utav tester. I detta projekt så finns till exempel LibraryControllern med ett cyclomatisk complex värde på 30. LibraryContollern har i detta fall allt ansvar som en CRUD app har. Den hanterar därför allt som är kopplat till databasen, ta in ny data, ändra data, läs data och ta bort data. 
-            Även kod som kan ladda upp filer lokalt, men ej fungerar på studentservern finns med i vissa funktioner.
-            Som klass följer den därför in alls Single Responsibility Principen, och desto mer ansvarsområden ju fler resultat finns det att kolla så att det blir rätt. 
-            För att jämföra så finns JsonCardControllern som endast har ett ansvar att rendera en kortlek i Json format, och på så sätt har en låg cyclomatisk komplexitet på 1.
-            PHPMetrics visar på så sätt vilka klasser som kommer behöva mest tester och vart man skall lägga sin fokus på.
-    </p>
-    <h4>
-        Intiiala complexity värden i PHPMetrics: 
-    </h4> 
-    <img alt="Maintainability/Complexity PHPMetrics" src="{{asset('img/metrics/maintainability-phpmetrics.png')}}"/>
-    <img class="code-cvg-phpUnit" alt="Code Coverage PHPUnit" src="{{asset('img/metrics/cc-phpmetrics.png')}}"/>
-    <p>
-        I PHPMetrics så visas tillsammans med komplexitet värdena ett maintainability index som då baseras på detta värde. Dem ger då en ganska klar överbild på vilka klasser som i framtiden eventuellt kan få buggar. Om man tittar på bilden så visas därför LibraryControllern som den största röda cirkeln, då den är den klass som har mest möjliga utkomster. Medans mindre komplexa klasser representeras som mindre gröna cirklar. Om man går djupare så kan man även finna statistik över varje enskild klass, så då kan hjälpa att eventuellt avgöra om man behöver bryta ner klass funktionalitet till mindre moduler, vilket kan vara fallet i LibraryControllern.
-    </p>
-    <h4>
-        Intiiala Cohesion värden i PHPMetrics: 
-    </h4> 
-    <img class="code-cvg-phpUnit" alt="Cohesion PHPMetrics" src="{{asset('img/metrics/cohesion-phpmetrics.png')}}"/>
-    <p>
-        LCOM, Lack of Cohesion of Methods är det värde som PHPMetrics använder för att visa Cohesion. I rapporten så ligger ProductControllern med högst värde på 4, vilket innebär att denna Controllern totalt har fyra ansvar, vilket stämmer då det är en CRUD app där varje metod hanterar en produkt lägger till, läser, uppdaterar och tar bort. 
-        Fundering är då varför LibraryControllern som även den hanterar en CRUD app men har ett LCOM värde på 1. Största skillnaden är ju då att data renderas direkt i JSON format i ProductControllern medans LibraryControllern samlar upp all data och sedan renderar dem i twig templates, men är det då detta som avgör LCOM värdet.
-    </p>
-    <h4>
-        Intiiala coupling värden i PHPMetrics: 
-    </h4> 
-       <img class="code-cvg-phpUnit" alt="Coupling PHPMetrics" src="{{asset('img/metrics/coupling-phpmetrics.png')}}"/>
-        <p>
-            När det kommer till coupling på bilden så kan man se att högst AC, utgående koppling har Deck klassen, vilket stämmer då det den klass som återanvänds mest i andra klasser. Högst EC, ingående koppling får LibraryControllern, vilket får mig att fundera på alla parametrar som används när jag valde att försöka ladda upp en bildfil. 
-        </p>
+  <h2>PHP Metrics</h2>
+  <p>
+    Code coverage rapporten ifrån PHPMetrics visar på att en stor del utav källkoden saknar tester. Den säger också att klasser som har högst komplexitet är i störst behov utav tester. I detta projekt så finns t ex LibraryControllern med ett cyclomatiskt complex värde på 30. LibraryControllern hanterar en hel del routers, rendera twig templates, användarinput, filuppladdning m.m. Som klass så följer den därför inte alls Single Responsibility Principen. Den har ett flertal ansvarsområden som gör att det finns mer resultat att kolla så att det blir rätt. För att jämföra så kan man titta på JsonCardControllern som endast har ett ansvarsområde att rendera en kortlek i Jsonformat. Det cyclomatiska komplexvärdet ligger pa 1.
+  </p>
+  <p>
+    I PHPMetrics så visas tillsammans med komplexitet värde, CC ett maintainability index, MI. CC representeras utav storlek på en cirkel och MI visas som en färg i antingen rött, grönt eller gult. Om man då tittar på bilden så visas LibraryControllern som den största röda cirkeln. Minde komplexa klasser är dem minsta gröna cirklarna.
+  </p>
+  <p>
+    Lack of Cohesion, LCOM är det värde som visar Cohesion. I rapporten så ligger ProductControllern med högst värde på 4. ProductControllern hanterar flowet på en CRUD app, så 4 ansvarsområden känns rimligt. LibraryControllern är ju även den en CRUD app, men med mer komplexitet.
+  </p>
+  <p>
+    Högst AC, utgånde koppling har Deck klassen, vilket stämmer då det är den klass som återanvänds mest i andra klasser. Högst EC, ingående koppling får LibraryControllern vilket får mig att fundera på mina use statements och hur dem kan påverka rapporten.
+  </p>
+  <p>
+    Andra värden som jag valt att se över är violations, errors och warnings. Rapporten visar 6 violations, 5 warnings och 1 error. Två klasser CardController med 0.41 buggar och LibraryControllern med 0.74 buggar visas som “ Probably bugged” och LibraryControllern visar även en varning om att koden är för komplex. Andra varningar är att Card, Deck samt Entity ej följer Stable Abstractions Principen, vilket innebär att deras funktionalitet kan vara svår att återanvända utan att ändra befintlig kod.
+  </p>
 </section>
