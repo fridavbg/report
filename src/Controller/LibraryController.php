@@ -51,6 +51,7 @@ class LibraryController extends AbstractController
         $book = $bookRepository
             ->find($bookId);
         $data = [
+            'title' => 'Book by Id',
             'book' => $book
         ];
 
