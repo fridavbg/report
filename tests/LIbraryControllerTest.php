@@ -31,11 +31,13 @@ class LibraryControllerTest extends WebTestCase
     /**
      * Check that response is successful for /library/show/{bookId}
      */
-    public function testShowBookById() {
-        $client = static::createClient();
-        $bookId = 1;
-        $client->request('GET', '/library/show/' . $bookId);
-        $this->assertResponseIsSuccessful();
-    }
+    // public function testShowBookById() {
+    //     $client = static::createClient();
+
+    //     $bookId = 1;
+    //     $client->request('GET', '/library/show/' . $bookId);
+
+    //     $this->assertResponseIsSuccessful();
+    // }
 
 }
