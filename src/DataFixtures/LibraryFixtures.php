@@ -17,7 +17,6 @@ class LibraryFixtures extends Fixture
             var_dump($book);
             $manager->persist($book);
         }
-        $manager->persist($book);
 
         $manager->flush();
     }

@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\Book;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class BookRepositoryTest extends KernelTestCase
