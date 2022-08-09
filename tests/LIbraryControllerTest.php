@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
+use App\Repository\BookRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
@@ -12,7 +15,7 @@ class LibraryControllerTest extends WebTestCase
     /**
      * Check that response is successful for /library
      */
-    public function testIndex() 
+    public function testIndex()
     {
         $client = static::createClient();
         $client->request('GET', '/library');
@@ -22,22 +25,21 @@ class LibraryControllerTest extends WebTestCase
     /**
      * Check that response is successful for /library/show
      */
-    public function testShowAllBooks() {
+    public function testShowAllBooks()
+    {
         $client = static::createClient();
         $client->request('GET', '/library/show');
         $this->assertResponseIsSuccessful();
     }
 
     /**
-     * Check that response is successful for /library/show/{bookId}
+     * Check that exceptions is thrown for /library/show/{bookId}
      */
-    // public function testShowBookById() {
+    // public function testExceptionShowBookById() {
     //     $client = static::createClient();
-
-    //     $bookId = 1;
+    //     // $bookId = rand(7, 37);
+    //     $bookId = 37;
     //     $client->request('GET', '/library/show/' . $bookId);
-
-    //     $this->assertResponseIsSuccessful();
+    //     $this->assertResponseStatusCodeSame(200);
     // }
-
 }

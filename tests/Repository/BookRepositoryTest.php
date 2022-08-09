@@ -33,7 +33,6 @@ class BookRepositoryTest extends KernelTestCase
 
         $this->assertSame('Test', $book->getTitle());
         $this->assertSame('Testie Testson', $book->getAuthor());
-
     }
 
     public function testRemove()
