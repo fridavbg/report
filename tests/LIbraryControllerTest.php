@@ -17,7 +17,7 @@ class LibraryControllerTest extends WebTestCase
      */
     private $entityManager;
     private $client;
-    private $book;
+    private $books;
 
     protected function setUp(): void
     {
@@ -32,7 +32,7 @@ class LibraryControllerTest extends WebTestCase
         $this->book->setAuthor('Testie Testson');
         $bookRepository = $this->entityManager
             ->getRepository(Book::class);
-        $bookRepository->add($this->book, true);
+        $this->books = $bookRepository->findAll();
     }
 
     /**
@@ -58,21 +58,22 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testShowBookById()
     {
-        $bookId = $this->book->getId();
+        var_dump($this->books);
+        // $bookId = $this->book->getId();
 
-        $this->client->request('GET', '/library/show/' . $bookId);
-        $this->assertResponseStatusCodeSame(200);
+        // $this->client->request('GET', '/library/show/' . $bookId);
+        // $this->assertResponseStatusCodeSame(200);
     }
     
     /**
      * Check that exception is thrown for /library/show/{bookId}
      * if no bookId
      */
-    public function testExceptionShowBookById()
-    {
-        $bookId = 1;
+    // public function testExceptionShowBookById()
+    // {
+    //     $bookId = 1;
 
-        $this->client->request('GET', '/library/show/' . $bookId);
-        $this->assertResponseStatusCodeSame(404);
-    }
+    //     $this->client->request('GET', '/library/show/' . $bookId);
+    //     $this->assertResponseStatusCodeSame(404);
+    // }
 }

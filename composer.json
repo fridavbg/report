@@ -115,7 +115,8 @@
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit --log-junit=junit.xml",
         "phpdoc": "tools/phpdoc/phpdoc",
         "doc" : "tools/phpdoc/phpdoc -d ./src -t ./docs/api",
-        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json"
+        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json",
+        "fixtures" : "php bin/console doctrine:fixtures:load"
     },
     "conflict": {
         "symfony/symfony": "*"
