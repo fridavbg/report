@@ -17,22 +17,22 @@ class LibraryControllerTest extends WebTestCase
      */
     private $entityManager;
     private $client;
+    private $book;
 
     protected function setUp(): void
     {
         $this->client = static::createClient();
-        $kernel = self::bootKernel();
 
-        $this->entityManager = $kernel->getContainer()
+        $this->entityManager = $this->client->getContainer()
             ->get('doctrine')
             ->getManager();
 
-        $book = new Book();
-        $book->setTitle('Test');
-        $book->setAuthor('Testie Testson');
+        $this->book = new Book();
+        $this->book->setTitle('Test');
+        $this->book->setAuthor('Testie Testson');
         $bookRepository = $this->entityManager
             ->getRepository(Book::class);
-        $bookRepository->add($book, true);
+        $bookRepository->add($this->book, true);
     }
 
     /**
@@ -56,24 +56,23 @@ class LibraryControllerTest extends WebTestCase
     /**
      * Check that response is successful for /library/show/{bookId}
      */
-    // public function testShowBookById()
-    // {
-    //     $client = static::createClient();
-    //     $bookId = rand(1, 20);
+    public function testShowBookById()
+    {
+        $bookId = $this->book->getId();
 
-    //     $client->request('GET', '/library/show/' . $bookId);
-    //     $this->assertResponseStatusCodeSame(200);
-    // }
-
+        $this->client->request('GET', '/library/show/' . $bookId);
+        $this->assertResponseStatusCodeSame(200);
+    }
+    
     /**
-     * Check that expception is thrown for /library/show/{bookId}
+     * Check that exception is thrown for /library/show/{bookId}
+     * if no bookId
      */
-    // public function testExceptionShowBookById()
-    // {
-    //     $client = static::createClient();
-    //     $bookId = 20;
+    public function testExceptionShowBookById()
+    {
+        $bookId = 1;
 
-    //     $client->request('GET', '/library/show/' . $bookId);
-    //     $this->assertResponseStatusCodeSame(404);
-    // }
+        $this->client->request('GET', '/library/show/' . $bookId);
+        $this->assertResponseStatusCodeSame(404);
+    }
 }
