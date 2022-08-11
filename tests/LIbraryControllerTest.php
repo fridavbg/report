@@ -48,42 +48,43 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testIndex()
     {
-        $this->client->request('GET', '/library');
-        $this->assertResponseIsSuccessful();
+        // $this->client->request('GET', '/library');
+        // $this->assertResponseIsSuccessful();
+        var_dump($this->entityManager->getConnection());
     }
 
     /**
      * Check that response is successful for /library/show
      */
-    public function testShowAllBooks()
-    {
-        $this->client->request('GET', '/library/show');
-        $this->assertResponseIsSuccessful();
-    }
+    // public function testShowAllBooks()
+    // {
+    //     $this->client->request('GET', '/library/show');
+    //     $this->assertResponseIsSuccessful();
+    // }
 
     /**
      * Check that response is successful for /library/show/{bookId}
      */
-    public function testShowBookById()
-    {
-        $bookId = rand(37, 47);
+    // public function testShowBookById()
+    // {
+    //     $bookId = rand(37, 47);
 
-        $this->client->request('GET', '/library/show/' . $bookId);
-        $this->assertResponseStatusCodeSame(200);
-    }
+    //     $this->client->request('GET', '/library/show/' . $bookId);
+    //     $this->assertResponseStatusCodeSame(200);
+    // }
     
     /**
      * Check that exception is thrown for /library/show/{bookId}
      * if no bookId
      */
-    public function testExceptionShowBookById()
-    {
-        $bookId = rand(1, 36);
+    // public function testExceptionShowBookById()
+    // {
+    //     $bookId = rand(1, 36);
 
-        $this->client->request('GET', '/library/show/' . $bookId);
-        $this->assertResponseStatusCodeSame(404);
-        $response = $this->client->getResponse();
-        $data = $response->getContent();
-        $this->assertStringContainsString( 'No book found for id ' . $bookId, $data);
-    }
+    //     $this->client->request('GET', '/library/show/' . $bookId);
+    //     $this->assertResponseStatusCodeSame(404);
+    //     $response = $this->client->getResponse();
+    //     $data = $response->getContent();
+    //     $this->assertStringContainsString( 'No book found for id ' . $bookId, $data);
+    // }
 }
