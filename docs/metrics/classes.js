@@ -1258,7 +1258,7 @@ var classes = [
         "violations": {}
     },
     {
-        "name": "App\\DataFixtures\\LibraryFixtures",
+        "name": "App\\DataFixtures\\AppFixtures",
         "interface": false,
         "abstract": false,
         "final": false,
