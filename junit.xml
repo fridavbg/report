@@ -1,1942 +1,503 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="40" assertions="95" errors="1" warnings="0" failures="0" skipped="0" time="1.718368">
-    <testsuite name="Project Test Suite" tests="40" assertions="95" errors="1" warnings="0" failures="0" skipped="0" time="1.718368">
-      <testsuite name="App\Classes\Card\CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.073332">
-        <testcase name="testCreateCard" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.066649"/>
-        <testcase name="testCreateCardVerifyValue" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="27" assertions="2" time="0.004517"/>
-        <testcase name="testCreateCardVerifySuit" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="38" assertions="2" time="0.001067"/>
-        <testcase name="testCreateCardVerifyValueAsString" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="50" assertions="2" time="0.001100"/>
+  <testsuite name="" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.065344">
+    <testsuite name="Project Test Suite" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.065344">
+      <testsuite name="App\Classes\Card\CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.045166">
+        <testcase name="testCreateCard" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.039755"/>
+        <testcase name="testCreateCardVerifyValue" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="27" assertions="2" time="0.003030"/>
+        <testcase name="testCreateCardVerifySuit" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="38" assertions="2" time="0.001312"/>
+        <testcase name="testCreateCardVerifyValueAsString" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="50" assertions="2" time="0.001069"/>
       </testsuite>
-      <testsuite name="App\Classes\Card\Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.009627">
-        <testcase name="testCreateDeck2" class="App\Classes\Card\Deck2Test" classname="App.Classes.Card.Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" line="16" assertions="3" time="0.009627"/>
+      <testsuite name="App\Classes\Card\Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.010881">
+        <testcase name="testCreateDeck2" class="App\Classes\Card\Deck2Test" classname="App.Classes.Card.Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" line="16" assertions="3" time="0.010881"/>
       </testsuite>
-      <testsuite name="App\Classes\Card\DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" tests="9" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.047310">
-        <testcase name="testCreateDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="15" assertions="2" time="0.001270"/>
-        <testcase name="testGetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="27" assertions="2" time="0.003288"/>
-        <testcase name="testSetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="39" assertions="2" time="0.001711"/>
-        <testcase name="testGetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="53" assertions="2" time="0.001763"/>
-        <testcase name="testSetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="65" assertions="2" time="0.003153"/>
-        <testcase name="testShuffleDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="78" assertions="3" time="0.031666"/>
-        <testcase name="testGetCards" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="95" assertions="2" time="0.001139"/>
-        <testcase name="testGetCardsForPlayer" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="109" assertions="2" time="0.000943"/>
-        <testcase name="testGetJson" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="123" assertions="3" time="0.002379"/>
+      <testsuite name="App\Classes\Card\DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" tests="9" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.044126">
+        <testcase name="testCreateDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="15" assertions="2" time="0.001400"/>
+        <testcase name="testGetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="27" assertions="2" time="0.003432"/>
+        <testcase name="testSetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="39" assertions="2" time="0.002277"/>
+        <testcase name="testGetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="53" assertions="2" time="0.001822"/>
+        <testcase name="testSetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="65" assertions="2" time="0.001700"/>
+        <testcase name="testShuffleDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="78" assertions="3" time="0.028973"/>
+        <testcase name="testGetCards" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="95" assertions="2" time="0.001052"/>
+        <testcase name="testGetCardsForPlayer" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="109" assertions="2" time="0.000970"/>
+        <testcase name="testGetJson" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="123" assertions="3" time="0.002499"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.005073">
-        <testcase name="testCreateDiceGraphic" class="App\Classes\Dice\DiceGraphicTest" classname="App.Classes.Dice.DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" line="16" assertions="2" time="0.005073"/>
+      <testsuite name="App\Classes\Dice\DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.003851">
+        <testcase name="testCreateDiceGraphic" class="App\Classes\Dice\DiceGraphicTest" classname="App.Classes.Dice.DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" line="16" assertions="2" time="0.003851"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" tests="4" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.013457">
-        <testcase name="testCreateDiceHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="16" assertions="2" time="0.002669"/>
-        <testcase name="testAddToHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="28" assertions="2" time="0.000715"/>
-        <testcase name="testRoll" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="42" assertions="5" time="0.008671"/>
-        <testcase name="testGetNumberDices" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="58" assertions="3" time="0.001401"/>
+      <testsuite name="App\Classes\Dice\DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" tests="4" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.034292">
+        <testcase name="testCreateDiceHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="16" assertions="2" time="0.002646"/>
+        <testcase name="testAddToHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="28" assertions="2" time="0.000841"/>
+        <testcase name="testRoll" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="42" assertions="5" time="0.009038"/>
+        <testcase name="testGetNumberDices" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="58" assertions="3" time="0.021767"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.002129">
-        <testcase name="testCreateDice" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="16" assertions="2" time="0.000732"/>
-        <testcase name="testRoll" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="27" assertions="5" time="0.001398"/>
+      <testsuite name="App\Classes\Dice\DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.001582">
+        <testcase name="testCreateDice" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="16" assertions="2" time="0.000679"/>
+        <testcase name="testRoll" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="27" assertions="5" time="0.000902"/>
       </testsuite>
-      <testsuite name="App\Classes\Game\BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" tests="9" assertions="26" errors="0" warnings="0" failures="0" skipped="0" time="0.026771">
-        <testcase name="testCreateBlackjack" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="16" assertions="3" time="0.013745"/>
-        <testcase name="testGetCurrentDeck" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="30" assertions="3" time="0.001091"/>
-        <testcase name="testReset" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="43" assertions="8" time="0.001542"/>
-        <testcase name="testBlackjackScoresUnder21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="77" assertions="2" time="0.001780"/>
-        <testcase name="testBlackjackScoreOver21PlayerOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="97" assertions="2" time="0.001992"/>
-        <testcase name="testBlackjackScoreOver21Dealer21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="117" assertions="2" time="0.001599"/>
-        <testcase name="testBlackjackScoreOver21Player21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="137" assertions="2" time="0.001944"/>
-        <testcase name="testBlackjackScoreOver21Dealer" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="158" assertions="2" time="0.001429"/>
-        <testcase name="testBlackjackEqualScoreOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="179" assertions="2" time="0.001649"/>
+      <testsuite name="App\Classes\Game\BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" tests="9" assertions="26" errors="0" warnings="0" failures="0" skipped="0" time="0.025994">
+        <testcase name="testCreateBlackjack" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="16" assertions="3" time="0.012963"/>
+        <testcase name="testGetCurrentDeck" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="30" assertions="3" time="0.001126"/>
+        <testcase name="testReset" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="43" assertions="8" time="0.001539"/>
+        <testcase name="testBlackjackScoresUnder21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="77" assertions="2" time="0.001588"/>
+        <testcase name="testBlackjackScoreOver21PlayerOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="97" assertions="2" time="0.001498"/>
+        <testcase name="testBlackjackScoreOver21Dealer21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="117" assertions="2" time="0.001738"/>
+        <testcase name="testBlackjackScoreOver21Player21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="137" assertions="2" time="0.001590"/>
+        <testcase name="testBlackjackScoreOver21Dealer" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="158" assertions="2" time="0.002480"/>
+        <testcase name="testBlackjackEqualScoreOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="179" assertions="2" time="0.001473"/>
       </testsuite>
-      <testsuite name="App\Classes\Game\PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="7" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.010557">
-        <testcase name="testSetCurrentCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="18" assertions="2" time="0.001763"/>
-        <testcase name="testSCalculateCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="30" assertions="2" time="0.000894"/>
-        <testcase name="testGetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="44" assertions="2" time="0.001709"/>
-        <testcase name="testSetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="55" assertions="2" time="0.000703"/>
-        <testcase name="testIsActive" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="67" assertions="2" time="0.002201"/>
-        <testcase name="testDraw" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="78" assertions="2" time="0.001134"/>
-        <testcase name="testStop" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="91" assertions="2" time="0.002153"/>
+      <testsuite name="App\Classes\Game\PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="7" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.008532">
+        <testcase name="testSetCurrentCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="18" assertions="2" time="0.000742"/>
+        <testcase name="testSCalculateCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="30" assertions="2" time="0.000869"/>
+        <testcase name="testGetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="44" assertions="2" time="0.000817"/>
+        <testcase name="testSetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="55" assertions="2" time="0.000952"/>
+        <testcase name="testIsActive" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="67" assertions="2" time="0.002636"/>
+        <testcase name="testDraw" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="78" assertions="2" time="0.001073"/>
+        <testcase name="testStop" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="91" assertions="2" time="0.001442"/>
       </testsuite>
-      <testsuite name="App\Controller\LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="1.520729">
-        <testcase name="testIndex" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="49" assertions="0" time="1.520729">
-          <error type="PHPUnit\Framework\RiskyTestError">App\Controller\LibraryControllerTest::testIndex
-This test did not perform any assertions
-
-/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php:49</error>
-          <system-out>object(Doctrine\DBAL\Configuration)#13466 (6) {
-  ["middlewares":"Doctrine\DBAL\Configuration":private]=&gt;
-  array(3) {
-    [0]=&gt;
-    object(DAMA\DoctrineTestBundle\Doctrine\DBAL\Middleware)#13386 (0) {
-    }
-    [1]=&gt;
-    object(Doctrine\DBAL\Logging\Middleware)#13385 (1) {
-      ["logger":"Doctrine\DBAL\Logging\Middleware":private]=&gt;
-      object(Symfony\Bridge\Monolog\Logger)#13462 (8) {
-        ["name":protected]=&gt;
-        string(8) "doctrine"
-        ["handlers":protected]=&gt;
-        array(1) {
-          [0]=&gt;
-          object(Monolog\Handler\FingersCrossedHandler)#13378 (9) {
-            ["handler":protected]=&gt;
-            object(Monolog\Handler\StreamHandler)#13377 (11) {
-              ["level":protected]=&gt;
-              int(100)
-              ["bubble":protected]=&gt;
-              bool(true)
-              ["processors":protected]=&gt;
-              array(1) {
-                [0]=&gt;
-                object(Monolog\Processor\PsrLogMessageProcessor)#13376 (2) {
-                  ["dateFormat":"Monolog\Processor\PsrLogMessageProcessor":private]=&gt;
-                  NULL
-                  ["removeUsedContextFields":"Monolog\Processor\PsrLogMessageProcessor":private]=&gt;
-                  bool(false)
-                }
-              }
-              ["formatter":protected]=&gt;
-              NULL
-              ["streamChunkSize":protected]=&gt;
-              int(13421772)
-              ["stream":protected]=&gt;
-              NULL
-              ["url":protected]=&gt;
-              string(65) "/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/var/log/test.log"
-              ["errorMessage":"Monolog\Handler\StreamHandler":private]=&gt;
-              NULL
-              ["filePermission":protected]=&gt;
-              NULL
-              ["useLocking":protected]=&gt;
-              bool(false)
-              ["dirCreated":"Monolog\Handler\StreamHandler":private]=&gt;
-              NULL
-            }
-            ["activationStrategy":protected]=&gt;
-            object(Symfony\Bridge\Monolog\Handler\FingersCrossed\HttpCodeActivationStrategy)#13366 (3) {
-              ["requestStack":"Symfony\Bridge\Monolog\Handler\FingersCrossed\HttpCodeActivationStrategy":private]=&gt;
-              object(Symfony\Component\HttpFoundation\RequestStack)#13379 (1) {
-                ["requests":"Symfony\Component\HttpFoundation\RequestStack":private]=&gt;
-                array(0) {
-                }
-              }
-              ["exclusions":"Symfony\Bridge\Monolog\Handler\FingersCrossed\HttpCodeActivationStrategy":private]=&gt;
-              array(2) {
-                [0]=&gt;
-                array(2) {
-                  ["code"]=&gt;
-                  int(404)
-                  ["urls"]=&gt;
-                  array(0) {
-                  }
-                }
-                [1]=&gt;
-                array(2) {
-                  ["code"]=&gt;
-                  int(405)
-                  ["urls"]=&gt;
-                  array(0) {
-                  }
-                }
-              }
-              ["inner":"Symfony\Bridge\Monolog\Handler\FingersCrossed\HttpCodeActivationStrategy":private]=&gt;
-              object(Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy)#13367 (1) {
-                ["actionLevel":"Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy":private]=&gt;
-                int(400)
-              }
-            }
-            ["buffering":protected]=&gt;
-            bool(true)
-            ["bufferSize":protected]=&gt;
-            int(0)
-            ["buffer":protected]=&gt;
-            array(15) {
-              [0]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(35) "Connecting with parameters {params}"
-                ["context"]=&gt;
-                array(1) {
-                  ["params"]=&gt;
-                  array(13) {
-                    ["url"]=&gt;
-                    string(10) "&lt;redacted&gt;"
-                    ["dbname_suffix"]=&gt;
-                    string(5) "_test"
-                    ["driver"]=&gt;
-                    string(10) "pdo_sqlite"
-                    ["host"]=&gt;
-                    string(9) "localhost"
-                    ["port"]=&gt;
-                    NULL
-                    ["user"]=&gt;
-                    string(4) "root"
-                    ["password"]=&gt;
-                    NULL
-                    ["driverOptions"]=&gt;
-                    array(0) {
-                    }
-                    ["defaultTableOptions"]=&gt;
-                    array(0) {
-                    }
-                    ["dama.keep_static"]=&gt;
-                    bool(true)
-                    ["dama.connection_name"]=&gt;
-                    string(7) "default"
-                    ["path"]=&gt;
-                    string(60) "/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/var/data.db"
-                    ["charset"]=&gt;
-                    string(4) "utf8"
-                  }
-                }
-                ["level"]=&gt;
-                int(200)
-                ["level_name"]=&gt;
-                string(4) "INFO"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13627 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:17.993077"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [1]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(21) "Beginning transaction"
-                ["context"]=&gt;
-                array(0) {
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13651 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.034536"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [2]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(26) "Executing statement: {sql}"
-                ["context"]=&gt;
-                array(1) {
-                  ["sql"]=&gt;
-                  string(31) "SAVEPOINT DOCTRINE2_SAVEPOINT_2"
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13375 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.409228"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [3]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 1"
-                    [2]=&gt;
-                    string(8) "author 1"
-                    [3]=&gt;
-                    string(1) "1"
-                    [4]=&gt;
-                    string(13) "description 1"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13513 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.485228"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [4]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 2"
-                    [2]=&gt;
-                    string(8) "author 2"
-                    [3]=&gt;
-                    string(1) "2"
-                    [4]=&gt;
-                    string(13) "description 2"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13556 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.495202"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [5]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 3"
-                    [2]=&gt;
-                    string(8) "author 3"
-                    [3]=&gt;
-                    string(1) "3"
-                    [4]=&gt;
-                    string(13) "description 3"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13569 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.495416"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [6]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 4"
-                    [2]=&gt;
-                    string(8) "author 4"
-                    [3]=&gt;
-                    string(1) "4"
-                    [4]=&gt;
-                    string(13) "description 4"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13574 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.495568"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [7]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 5"
-                    [2]=&gt;
-                    string(8) "author 5"
-                    [3]=&gt;
-                    string(1) "5"
-                    [4]=&gt;
-                    string(13) "description 5"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13572 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.495738"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [8]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 6"
-                    [2]=&gt;
-                    string(8) "author 6"
-                    [3]=&gt;
-                    string(1) "6"
-                    [4]=&gt;
-                    string(13) "description 6"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13570 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.495886"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [9]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 7"
-                    [2]=&gt;
-                    string(8) "author 7"
-                    [3]=&gt;
-                    string(1) "7"
-                    [4]=&gt;
-                    string(13) "description 7"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13566 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.496035"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [10]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 8"
-                    [2]=&gt;
-                    string(8) "author 8"
-                    [3]=&gt;
-                    string(1) "8"
-                    [4]=&gt;
-                    string(13) "description 8"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13551 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.496181"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [11]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(6) "book 9"
-                    [2]=&gt;
-                    string(8) "author 9"
-                    [3]=&gt;
-                    string(1) "9"
-                    [4]=&gt;
-                    string(13) "description 9"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13564 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.496328"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [12]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(65) "Executing statement: {sql} (parameters: {params}, types: {types})"
-                ["context"]=&gt;
-                array(3) {
-                  ["sql"]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                  ["params"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    string(7) "book 10"
-                    [2]=&gt;
-                    string(9) "author 10"
-                    [3]=&gt;
-                    string(2) "10"
-                    [4]=&gt;
-                    string(14) "description 10"
-                    [5]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types"]=&gt;
-                  array(5) {
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                    [5]=&gt;
-                    int(2)
-                  }
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13562 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.496472"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [13]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(26) "Executing statement: {sql}"
-                ["context"]=&gt;
-                array(1) {
-                  ["sql"]=&gt;
-                  string(39) "RELEASE SAVEPOINT DOCTRINE2_SAVEPOINT_2"
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13666 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.496758"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-              [14]=&gt;
-              array(7) {
-                ["message"]=&gt;
-                string(22) "Executing query: {sql}"
-                ["context"]=&gt;
-                array(1) {
-                  ["sql"]=&gt;
-                  string(160) "SELECT t0.book_id AS book_id_1, t0.title AS title_2, t0.author AS author_3, t0.isbn AS isbn_4, t0.description AS description_5, t0.image AS image_6 FROM book t0"
-                }
-                ["level"]=&gt;
-                int(100)
-                ["level_name"]=&gt;
-                string(5) "DEBUG"
-                ["channel"]=&gt;
-                string(8) "doctrine"
-                ["datetime"]=&gt;
-                object(Monolog\DateTimeImmutable)#13668 (4) {
-                  ["useMicroseconds":"Monolog\DateTimeImmutable":private]=&gt;
-                  bool(true)
-                  ["date"]=&gt;
-                  string(26) "2022-08-11 16:20:18.511698"
-                  ["timezone_type"]=&gt;
-                  int(3)
-                  ["timezone"]=&gt;
-                  string(3) "UTC"
-                }
-                ["extra"]=&gt;
-                array(0) {
-                }
-              }
-            }
-            ["stopBuffering":protected]=&gt;
-            bool(true)
-            ["passthruLevel":protected]=&gt;
-            NULL
-            ["bubble":protected]=&gt;
-            bool(true)
-            ["processors":protected]=&gt;
-            array(0) {
-            }
-          }
-        }
-        ["processors":protected]=&gt;
-        array(0) {
-        }
-        ["microsecondTimestamps":protected]=&gt;
-        bool(true)
-        ["timezone":protected]=&gt;
-        object(DateTimeZone)#13460 (2) {
-          ["timezone_type"]=&gt;
-          int(3)
-          ["timezone"]=&gt;
-          string(3) "UTC"
-        }
-        ["exceptionHandler":protected]=&gt;
-        NULL
-        ["logDepth":"Monolog\Logger":private]=&gt;
-        int(0)
-        ["detectCycles":"Monolog\Logger":private]=&gt;
-        bool(true)
-      }
-    }
-    [2]=&gt;
-    object(Doctrine\Bundle\DoctrineBundle\Middleware\DebugMiddleware)#13396 (3) {
-      ["debugDataHolder":"Doctrine\Bundle\DoctrineBundle\Middleware\DebugMiddleware":private]=&gt;
-      object(Doctrine\Bundle\DoctrineBundle\Middleware\BacktraceDebugDataHolder)#13390 (3) {
-        ["data":"Symfony\Bridge\Doctrine\Middleware\Debug\DebugDataHolder":private]=&gt;
-        array(1) {
-          ["default"]=&gt;
-          array(14) {
-            [0]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(19) ""START TRANSACTION""
-              ["params"]=&gt;
-              array(0) {
-              }
-              ["types"]=&gt;
-              array(0) {
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13348 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.03451)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(4.8160552978515625E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(19) ""START TRANSACTION""
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [1]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(31) "SAVEPOINT DOCTRINE2_SAVEPOINT_2"
-              ["params"]=&gt;
-              array(0) {
-              }
-              ["types"]=&gt;
-              array(0) {
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13661 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.409204)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(7.700920104980469E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(31) "SAVEPOINT DOCTRINE2_SAVEPOINT_2"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [2]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 1"
-                [1]=&gt;
-                string(8) "author 1"
-                [2]=&gt;
-                string(1) "1"
-                [3]=&gt;
-                string(13) "description 1"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13552 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 1"
-                    [1]=&gt;
-                    string(8) "author 1"
-                    [2]=&gt;
-                    string(1) "1"
-                    [3]=&gt;
-                    string(13) "description 1"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.485206)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(0.009737014770507812)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [3]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 2"
-                [1]=&gt;
-                string(8) "author 2"
-                [2]=&gt;
-                string(1) "2"
-                [3]=&gt;
-                string(13) "description 2"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13578 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 2"
-                    [1]=&gt;
-                    string(8) "author 2"
-                    [2]=&gt;
-                    string(1) "2"
-                    [3]=&gt;
-                    string(13) "description 2"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.495179)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(6.604194641113281E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [4]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 3"
-                [1]=&gt;
-                string(8) "author 3"
-                [2]=&gt;
-                string(1) "3"
-                [3]=&gt;
-                string(13) "description 3"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13557 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 3"
-                    [1]=&gt;
-                    string(8) "author 3"
-                    [2]=&gt;
-                    string(1) "3"
-                    [3]=&gt;
-                    string(13) "description 3"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.495406)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.7179718017578125E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [5]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 4"
-                [1]=&gt;
-                string(8) "author 4"
-                [2]=&gt;
-                string(1) "4"
-                [3]=&gt;
-                string(13) "description 4"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13583 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 4"
-                    [1]=&gt;
-                    string(8) "author 4"
-                    [2]=&gt;
-                    string(1) "4"
-                    [3]=&gt;
-                    string(13) "description 4"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.495558)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.5033950805664062E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [6]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 5"
-                [1]=&gt;
-                string(8) "author 5"
-                [2]=&gt;
-                string(1) "5"
-                [3]=&gt;
-                string(13) "description 5"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13573 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 5"
-                    [1]=&gt;
-                    string(8) "author 5"
-                    [2]=&gt;
-                    string(1) "5"
-                    [3]=&gt;
-                    string(13) "description 5"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.495729)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.5033950805664062E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [7]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 6"
-                [1]=&gt;
-                string(8) "author 6"
-                [2]=&gt;
-                string(1) "6"
-                [3]=&gt;
-                string(13) "description 6"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13571 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 6"
-                    [1]=&gt;
-                    string(8) "author 6"
-                    [2]=&gt;
-                    string(1) "6"
-                    [3]=&gt;
-                    string(13) "description 6"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.495877)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.5033950805664062E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [8]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 7"
-                [1]=&gt;
-                string(8) "author 7"
-                [2]=&gt;
-                string(1) "7"
-                [3]=&gt;
-                string(13) "description 7"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13567 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 7"
-                    [1]=&gt;
-                    string(8) "author 7"
-                    [2]=&gt;
-                    string(1) "7"
-                    [3]=&gt;
-                    string(13) "description 7"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.496025)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.47955322265625E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [9]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 8"
-                [1]=&gt;
-                string(8) "author 8"
-                [2]=&gt;
-                string(1) "8"
-                [3]=&gt;
-                string(13) "description 8"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13561 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 8"
-                    [1]=&gt;
-                    string(8) "author 8"
-                    [2]=&gt;
-                    string(1) "8"
-                    [3]=&gt;
-                    string(13) "description 8"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.496172)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.4080276489257812E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [10]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(6) "book 9"
-                [1]=&gt;
-                string(8) "author 9"
-                [2]=&gt;
-                string(1) "9"
-                [3]=&gt;
-                string(13) "description 9"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13688 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(6) "book 9"
-                    [1]=&gt;
-                    string(8) "author 9"
-                    [2]=&gt;
-                    string(1) "9"
-                    [3]=&gt;
-                    string(13) "description 9"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.496317)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.5033950805664062E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [11]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-              ["params"]=&gt;
-              array(5) {
-                [0]=&gt;
-                string(7) "book 10"
-                [1]=&gt;
-                string(9) "author 10"
-                [2]=&gt;
-                string(2) "10"
-                [3]=&gt;
-                string(14) "description 10"
-                [4]=&gt;
-                string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-              }
-              ["types"]=&gt;
-              array(5) {
-                [0]=&gt;
-                int(2)
-                [1]=&gt;
-                int(2)
-                [2]=&gt;
-                int(2)
-                [3]=&gt;
-                int(2)
-                [4]=&gt;
-                int(2)
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13563 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    string(7) "book 10"
-                    [1]=&gt;
-                    string(9) "author 10"
-                    [2]=&gt;
-                    string(2) "10"
-                    [3]=&gt;
-                    string(14) "description 10"
-                    [4]=&gt;
-                    string(162) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.entrepreneur.com%2Fcontent%2F3x2%2F2000%2F20191219170611-GettyImages-1152794789.jpeg&amp;f=1&amp;nofb=1"
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(5) {
-                    [0]=&gt;
-                    int(2)
-                    [1]=&gt;
-                    int(2)
-                    [2]=&gt;
-                    int(2)
-                    [3]=&gt;
-                    int(2)
-                    [4]=&gt;
-                    int(2)
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.496463)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(2.384185791015625E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(81) "INSERT INTO book (title, author, isbn, description, image) VALUES (?, ?, ?, ?, ?)"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [12]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(39) "RELEASE SAVEPOINT DOCTRINE2_SAVEPOINT_2"
-              ["params"]=&gt;
-              array(0) {
-              }
-              ["types"]=&gt;
-              array(0) {
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13558 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.496747)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(3.409385681152344E-5)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(39) "RELEASE SAVEPOINT DOCTRINE2_SAVEPOINT_2"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-            [13]=&gt;
-            array(4) {
-              ["sql"]=&gt;
-              string(160) "SELECT t0.book_id AS book_id_1, t0.title AS title_2, t0.author AS author_3, t0.isbn AS isbn_4, t0.description AS description_5, t0.image AS image_6 FROM book t0"
-              ["params"]=&gt;
-              array(0) {
-              }
-              ["types"]=&gt;
-              array(0) {
-              }
-              ["executionMS"]=&gt;
-              array(2) {
-                [0]=&gt;
-                object(Symfony\Bridge\Doctrine\Middleware\Debug\Query)#13500 (5) {
-                  ["params":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["types":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  array(0) {
-                  }
-                  ["start":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(1660234818.511672)
-                  ["duration":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  float(0.00011086463928222656)
-                  ["sql":"Symfony\Bridge\Doctrine\Middleware\Debug\Query":private]=&gt;
-                  string(160) "SELECT t0.book_id AS book_id_1, t0.title AS title_2, t0.author AS author_3, t0.isbn AS isbn_4, t0.description AS description_5, t0.image AS image_6 FROM book t0"
-                }
-                [1]=&gt;
-                string(11) "getDuration"
-              }
-            }
-          }
-        }
-        ["connWithBacktraces":"Doctrine\Bundle\DoctrineBundle\Middleware\BacktraceDebugDataHolder":private]=&gt;
-        array(0) {
-        }
-        ["backtraces":"Doctrine\Bundle\DoctrineBundle\Middleware\BacktraceDebugDataHolder":private]=&gt;
-        array(0) {
-        }
-      }
-      ["stopwatch":"Doctrine\Bundle\DoctrineBundle\Middleware\DebugMiddleware":private]=&gt;
-      object(Symfony\Component\Stopwatch\Stopwatch)#13392 (3) {
-        ["morePrecision":"Symfony\Component\Stopwatch\Stopwatch":private]=&gt;
-        bool(true)
-        ["sections":"Symfony\Component\Stopwatch\Stopwatch":private]=&gt;
-        array(1) {
-          ["__root__"]=&gt;
-          object(Symfony\Component\Stopwatch\Section)#13387 (5) {
-            ["events":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            array(1) {
-              ["doctrine"]=&gt;
-              object(Symfony\Component\Stopwatch\StopwatchEvent)#13365 (6) {
-                ["periods":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                array(4) {
-                  [0]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#8340 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(0)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(1.5)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(35651584)
-                  }
-                  [1]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#13539 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(374.7)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(374.8)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(37748736)
-                  }
-                  [2]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#13565 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(462.2)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(462.3)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(37748736)
-                  }
-                  [3]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#13544 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(477.2)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(477.3)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(39845888)
-                  }
-                }
-                ["origin":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                float(1660234818034.5)
-                ["category":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                string(8) "doctrine"
-                ["morePrecision":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                bool(true)
-                ["started":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                array(0) {
-                }
-                ["name":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                string(8) "doctrine"
-              }
-            }
-            ["origin":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            NULL
-            ["morePrecision":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            bool(true)
-            ["id":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            NULL
-            ["children":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            array(0) {
-            }
-          }
-        }
-        ["activeSections":"Symfony\Component\Stopwatch\Stopwatch":private]=&gt;
-        array(1) {
-          ["__root__"]=&gt;
-          object(Symfony\Component\Stopwatch\Section)#13387 (5) {
-            ["events":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            array(1) {
-              ["doctrine"]=&gt;
-              object(Symfony\Component\Stopwatch\StopwatchEvent)#13365 (6) {
-                ["periods":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                array(4) {
-                  [0]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#8340 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(0)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(1.5)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(35651584)
-                  }
-                  [1]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#13539 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(374.7)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(374.8)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(37748736)
-                  }
-                  [2]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#13565 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(462.2)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(462.3)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(37748736)
-                  }
-                  [3]=&gt;
-                  object(Symfony\Component\Stopwatch\StopwatchPeriod)#13544 (3) {
-                    ["start":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(477.2)
-                    ["end":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    float(477.3)
-                    ["memory":"Symfony\Component\Stopwatch\StopwatchPeriod":private]=&gt;
-                    int(39845888)
-                  }
-                }
-                ["origin":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                float(1660234818034.5)
-                ["category":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                string(8) "doctrine"
-                ["morePrecision":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                bool(true)
-                ["started":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                array(0) {
-                }
-                ["name":"Symfony\Component\Stopwatch\StopwatchEvent":private]=&gt;
-                string(8) "doctrine"
-              }
-            }
-            ["origin":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            NULL
-            ["morePrecision":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            bool(true)
-            ["id":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            NULL
-            ["children":"Symfony\Component\Stopwatch\Section":private]=&gt;
-            array(0) {
-            }
-          }
-        }
-      }
-      ["connectionName":"Doctrine\Bundle\DoctrineBundle\Middleware\DebugMiddleware":private]=&gt;
-      string(7) "default"
-    }
+      <testsuite name="App\Controller\LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="1.880203">
+        <testcase name="testIndex" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="54" assertions="1" time="1.813772">
+          <system-out>object(App\Entity\Book)#13474 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 1"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 1"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "1"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 1"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13539 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 2"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 2"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "2"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 2"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13472 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 3"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 3"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "3"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 3"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13544 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 4"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 4"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "4"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 4"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13375 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 5"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 5"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "5"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 5"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13490 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 6"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 6"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "6"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 6"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13500 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 7"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 7"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "7"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 7"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13622 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 8"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 8"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "8"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 8"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13650 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 9"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 9"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "9"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 9"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#13508 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(7) "book 10"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(9) "author 10"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(2) "10"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(27) "Description from FIXTURE 10"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+</system-out>
+        </testcase>
+        <testcase name="testShowAllBooks" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="63" assertions="1" time="0.066431">
+          <system-out>object(App\Entity\Book)#11389 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 1"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 1"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "1"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 1"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11391 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 2"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 2"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "2"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 2"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11390 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 3"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 3"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "3"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 3"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11388 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 4"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 4"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "4"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 4"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11387 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 5"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 5"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "5"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 5"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11386 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 6"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 6"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "6"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 6"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11385 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 7"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 7"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "7"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 7"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11384 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 8"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 8"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "8"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 8"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11383 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(6) "book 9"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(8) "author 9"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(1) "9"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(26) "Description from FIXTURE 9"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+object(App\Entity\Book)#11382 (6) {
+  ["bookId":"App\Entity\Book":private]=&gt;
+  NULL
+  ["title":"App\Entity\Book":private]=&gt;
+  string(7) "book 10"
+  ["author":"App\Entity\Book":private]=&gt;
+  string(9) "author 10"
+  ["isbn":"App\Entity\Book":private]=&gt;
+  string(2) "10"
+  ["description":"App\Entity\Book":private]=&gt;
+  string(27) "Description from FIXTURE 10"
+  ["image":"App\Entity\Book":private]=&gt;
+  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+}
+array(10) {
+  [0]=&gt;
+  object(App\Entity\Book)#11389 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(213)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 1"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 1"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "1"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 1"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
   }
-  ["sqlLogger":protected]=&gt;
-  NULL
-  ["resultCache":"Doctrine\DBAL\Configuration":private]=&gt;
-  NULL
-  ["resultCacheImpl":protected]=&gt;
-  NULL
-  ["schemaAssetsFilter":protected]=&gt;
-  NULL
-  ["autoCommit":protected]=&gt;
-  bool(true)
+  [1]=&gt;
+  object(App\Entity\Book)#11391 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(214)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 2"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 2"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "2"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 2"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [2]=&gt;
+  object(App\Entity\Book)#11390 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(215)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 3"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 3"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "3"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 3"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [3]=&gt;
+  object(App\Entity\Book)#11388 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(216)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 4"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 4"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "4"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 4"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [4]=&gt;
+  object(App\Entity\Book)#11387 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(217)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 5"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 5"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "5"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 5"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [5]=&gt;
+  object(App\Entity\Book)#11386 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(218)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 6"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 6"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "6"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 6"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [6]=&gt;
+  object(App\Entity\Book)#11385 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(219)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 7"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 7"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "7"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 7"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [7]=&gt;
+  object(App\Entity\Book)#11384 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(220)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 8"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 8"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "8"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 8"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [8]=&gt;
+  object(App\Entity\Book)#11383 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(221)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(6) "book 9"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(8) "author 9"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(1) "9"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(26) "Description from FIXTURE 9"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
+  [9]=&gt;
+  object(App\Entity\Book)#11382 (6) {
+    ["bookId":"App\Entity\Book":private]=&gt;
+    int(222)
+    ["title":"App\Entity\Book":private]=&gt;
+    string(7) "book 10"
+    ["author":"App\Entity\Book":private]=&gt;
+    string(9) "author 10"
+    ["isbn":"App\Entity\Book":private]=&gt;
+    string(2) "10"
+    ["description":"App\Entity\Book":private]=&gt;
+    string(27) "Description from FIXTURE 10"
+    ["image":"App\Entity\Book":private]=&gt;
+    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
+  }
 }
 </system-out>
         </testcase>
       </testsuite>
-      <testsuite name="App\Repository\BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.009381">
-        <testcase name="testAdd" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="24" assertions="2" time="0.005426"/>
-        <testcase name="testRemove" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="37" assertions="1" time="0.003955"/>
+      <testsuite name="App\Repository\BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.010718">
+        <testcase name="testAdd" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="24" assertions="2" time="0.005688"/>
+        <testcase name="testRemove" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="37" assertions="1" time="0.005030"/>
       </testsuite>
     </testsuite>
   </testsuite>
