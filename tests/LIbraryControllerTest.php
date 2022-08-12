@@ -48,30 +48,30 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testIndex()
     {
-        // $this->client->request('GET', '/library');
-        // $this->assertResponseIsSuccessful();
-        var_dump($this->entityManager->getConnection());
+        $this->client->request('GET', '/library');
+        $this->assertResponseIsSuccessful();
+        // var_dump($this->entityManager->getConnection()->getConfiguration());
     }
 
     /**
      * Check that response is successful for /library/show
      */
-    // public function testShowAllBooks()
-    // {
-    //     $this->client->request('GET', '/library/show');
-    //     $this->assertResponseIsSuccessful();
-    // }
+    public function testShowAllBooks()
+    {
+        $this->client->request('GET', '/library/show');
+        $this->assertResponseIsSuccessful();
+    }
 
     /**
      * Check that response is successful for /library/show/{bookId}
      */
-    // public function testShowBookById()
-    // {
-    //     $bookId = rand(37, 47);
+    public function testShowBookById()
+    {
+        $bookId = rand(1, 10);
 
-    //     $this->client->request('GET', '/library/show/' . $bookId);
-    //     $this->assertResponseStatusCodeSame(200);
-    // }
+        $this->client->request('GET', '/library/show/' . $bookId);
+        $this->assertResponseStatusCodeSame(200);
+    }
     
     /**
      * Check that exception is thrown for /library/show/{bookId}
