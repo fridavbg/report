@@ -87,7 +87,7 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testExceptionShowBookById()
     {
-        $bookId = rand(11, 20);
+        $bookId = 24;
 
         $this->client->request('GET', '/library/show/' . $bookId);
         $this->assertResponseStatusCodeSame(404);
@@ -165,7 +165,7 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testExceptionUpdateBookForm()
     {
-        $bookId = 12;
+        $bookId = 24;
 
         $this->client->request('GET', '/library/update/form/' . $bookId);
         $this->assertResponseStatusCodeSame(404);
