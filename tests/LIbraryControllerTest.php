@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Book;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\response;
+use Symfony\Component\HttpFoundation\Request;
 use App\DataFixtures\AppFixtures;
 
 /**
@@ -17,7 +19,6 @@ class LibraryControllerTest extends WebTestCase
      */
     private $entityManager;
     private $client;
-    private $books;
 
     protected function setUp(): void
     {
@@ -26,7 +27,7 @@ class LibraryControllerTest extends WebTestCase
         $this->entityManager = $this->client->getContainer()
             ->get('doctrine')
             ->getManager();
-        $this->truncateEntities();
+        // $this->truncateEntities();
 
         $fixture = new AppFixtures();
         $fixture->load($this->entityManager);
@@ -40,6 +41,15 @@ class LibraryControllerTest extends WebTestCase
     {
         $purger = new ORMPurger($this->entityManager);
         $purger->purge();
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        // doing this is recommended to avoid memory leaks
+        $this->entityManager->close();
+        $this->entityManager = null;
     }
 
     /**
@@ -58,32 +68,125 @@ class LibraryControllerTest extends WebTestCase
     {
         $this->client->request('GET', '/library/show');
         $this->assertResponseIsSuccessful();
-        var_dump($this->books);
     }
 
     /**
      * Check that response is successful for /library/show/{bookId}
      */
-    // public function testShowBookById()
-    // {
-    //     $bookId = rand(1, 10);
+    public function testShowBookById()
+    {
+        $bookId = rand(1, 10);
 
-    //     $this->client->request('GET', '/library/show/' . $bookId);
-    //     $this->assertResponseStatusCodeSame(200);
-    // }
+        $this->client->request('GET', '/library/show/' . $bookId);
+        $this->assertResponseIsSuccessful();
+    }
 
     /**
      * Check that exception is thrown for /library/show/{bookId}
      * if no bookId
      */
-    // public function testExceptionShowBookById()
-    // {
-    //     $bookId = rand(1, 36);
+    public function testExceptionShowBookById()
+    {
+        $bookId = rand(11, 20);
 
-    //     $this->client->request('GET', '/library/show/' . $bookId);
-    //     $this->assertResponseStatusCodeSame(404);
+        $this->client->request('GET', '/library/show/' . $bookId);
+        $this->assertResponseStatusCodeSame(404);
+        $response = $this->client->getResponse();
+        $data = $response->getContent();
+        $this->assertStringContainsString('No book found for id ' . $bookId, $data);
+    }
+
+    /**
+     * Check that response is successful for /library/create/form
+     */
+    public function testCreateBookForm()
+    {
+        $this->client->request('GET', '/library/create/form');
+        $this->assertResponseIsSuccessful();
+    }
+
+    /**
+     * Check that response is successful for /library/create
+     */
+
+    // public function testCreateBookProcess()
+    // {
+    //     $title = 'Title';
+    //     $author = 'Author McAuthorson';
+    //     $isbn = '1234-567-8910';
+    //     $description = 'Descriptive descriptionness';
+    //     $image = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.probytes.net%2Fwp-content%2Fuploads%2F2018%2F01%2F4-1.png&f=1&nofb=1';
+
+    //     $book = new Book();
+    //     if (
+    //         is_string($title) and
+    //         is_string($author) and
+    //         is_string($isbn) and
+    //         is_string($description) and
+    //         is_string($description) and
+    //         is_string($image)
+    //     ) {
+    //         $book->setTitle($title);
+    //         $book->setAuthor($author);
+    //         $book->setISBN($isbn);
+    //         $book->setDescription($description);
+    //         $book->setImage($image);
+    //     }
+        
+    //     $entityManagerMock = $this->getMockBuilder('Doctrine\ORM\EntityManager')
+    //     ->setMethods(array('persist', 'flush'))
+    //     ->disableOriginalConstructor()
+    //     ->getMock();
+
+    //     $entityManagerMock->expects($this->once())
+    //         ->method('flush');
+
+    //     $this->client->followRedirects();
+    //     $this->client->request('POST', '/library/create');
+
     //     $response = $this->client->getResponse();
-    //     $data = $response->getContent();
-    //     $this->assertStringContainsString( 'No book found for id ' . $bookId, $data);
+    //     var_dump($response);
     // }
+
+    /**
+     * Check that response is successful for /library/update/form/{bookId}
+     */
+    public function testUpdateBookForm()
+    {
+        $bookId = rand(1, 10);
+
+        $this->client->request('GET', '/library/update/form/' . $bookId);
+        $this->assertResponseIsSuccessful();
+    }
+
+    /**
+     * Check that exception is thrown for /library/update/form/{bookId}
+     * if no bookId
+     */
+    public function testExceptionUpdateBookForm()
+    {
+        $bookId = rand(12, 20);
+
+        $this->client->request('GET', '/library/update/form/' . $bookId);
+        $this->assertResponseStatusCodeSame(404);
+        $response = $this->client->getResponse();
+        $data = $response->getContent();
+        $this->assertStringContainsString('No book found for id ' . $bookId, $data);
+    }
+
+    /**
+     * Check that exception is thrown for /library/delete/{bookId}
+     * if no bookId
+     */
+    public function testExceptionDeleteBookById(
+    )
+    {
+        $bookId = rand(11, 20);
+
+        $this->client->request('GET', '/library/delete/' . $bookId);
+        $this->assertResponseStatusCodeSame(404);
+        $response = $this->client->getResponse();
+        $data = $response->getContent();
+        $this->assertStringContainsString('No book found for id ' . $bookId, $data);
+    }
 }

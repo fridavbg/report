@@ -20,23 +20,5 @@
         <br/>
         <input type="submit" name="update_book" value="Edit book" class="btn"/>
     </form>
-
-    {#
-    Symfony form that uploads a file - wont work on Student Server - no writing access ? :(
-    <h1>Edit a book</h1>
-    {{ form_start(form, {'method': 'PUT'}) }}
-    {{ form_row(form.title) }}
-    <br/>
-    {{ form_row(form.author) }}
-    <br/>
-    {{ form_row(form.isbn) }}
-    <br/>
-    {{ form_row(form.description) }}
-    <br/>
-    {{ form_row(form.image) }}
-    <br/>
-    {{ form_row(form.save, { 'attr' : { 'class' : 'btn' }}) }}
-    {{ form_end(form) }}
-#}
   </div>
 {% endblock %}

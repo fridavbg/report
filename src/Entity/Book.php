@@ -28,6 +28,13 @@ class Book
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
+    public function setId(int $bookId): self
+    {
+        $this->bookId = $bookId;
+
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->bookId;

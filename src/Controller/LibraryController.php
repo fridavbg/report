@@ -7,11 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Book;
-use App\Form\BookFormType;
 use App\Repository\BookRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\String\Slugger\SluggerInterface;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 
 class LibraryController extends AbstractController
@@ -56,7 +53,7 @@ class LibraryController extends AbstractController
                 'No book found for id ' . $bookId
             );
         }
-        
+
         $data = [
             'title' => 'Book by Id',
             'book' => $book
@@ -68,65 +65,10 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/create/form", name="create_book_form")
      */
-    public function createBookForm(
-        Request $request,
-        SluggerInterface $slugger,
-        ManagerRegistry $doctrine
-    ): Response {
-        $entityManager = $doctrine->getManager();
-        $book = new Book();
-
-        $titleIsRequired = true;
-        $authorIsRequired = true;
-
-        $addBookForm = $this->createForm(BookFormType::class, $book, [
-            'require_title' => $titleIsRequired,
-            'require_author' => $authorIsRequired
-        ]);
-        $addBookForm->handleRequest($request);
-
-        if ($addBookForm->isSubmitted() && $addBookForm->isValid()) {
-            $title = $addBookForm->get('title')->getData();
-            $author = $addBookForm->get('author')->getData();
-            $isbn = $addBookForm->get('isbn')->getData();
-            $description = $addBookForm->get('description')->getData();
-            $imageFile = $addBookForm->get('image')->getData();
-
-            // this condition is needed because the 'image' field is not required
-            // so the image file must be processed only when a file is uploaded
-            if ($imageFile) {
-                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-
-                // Move the file to the directory where images are stored
-                try {
-                    $imageFile->move(
-                        $this->getParameter('image_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    // dd($e);
-                }
-                // updates the 'imageFilename' property to store the image file name
-                // instead of its contents
-                $book->setImage($newFilename);
-            }
-
-            // ... persist the $book variable or any other work
-            $book->setTitle($title);
-            $book->setAuthor($author);
-            $book->setISBN($isbn);
-            $book->setDescription($description);
-
-            $entityManager->persist($book);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('library_show_all');
-        }
+    public function createBookForm(): Response
+    {
         $data = [
-            'form' => $addBookForm->createView()
+            'title' => 'Add a book'
         ];
         return $this->render('library/createForm.html.twig', $data);
     }
@@ -145,10 +87,6 @@ class LibraryController extends AbstractController
         $isbn = $request->request->get('isbn');
         $description = $request->request->get('description');
         $image = $request->request->get('image');
-
-        $inputs = [$title, $author, $isbn, $description, $image];
-
-        $stringCheck = false;
 
         $book = new Book();
         if (
@@ -175,13 +113,9 @@ class LibraryController extends AbstractController
      * @Route("/library/update/form/{bookId}", name="update_book_form")
      */
     public function updateBookForm(
-        Request $request,
         int $bookId,
-        // BookRepository $bookRepository,
-        SluggerInterface $slugger,
         ManagerRegistry $doctrine
     ): Response {
-        $entityManager = $doctrine->getManager();
         $bookRepository = $doctrine->getRepository(Book::class);
         $book = $bookRepository
             ->find($bookId);
@@ -192,65 +126,8 @@ class LibraryController extends AbstractController
             );
         }
 
-        $editBookForm = $this->createForm(BookFormType::class, $book);
-        $editBookForm->handleRequest($request);
-
-        if ($editBookForm->isSubmitted() && $editBookForm->isValid()) {
-            $title = $editBookForm->get('title')->getData();
-            $author = $editBookForm->get('author')->getData();
-            $isbn = $editBookForm->get('isbn')->getData();
-            $description = $editBookForm->get('description')->getData();
-            $imageFile = $editBookForm->get('image')->getData();
-
-            // this condition is needed because the 'image' field is not required
-            // so the image file must be processed only when a file is uploaded
-            if ($imageFile) {
-                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-
-                // Move the file to the directory where images are stored
-                try {
-                    $imageFile->move(
-                        $this->getParameter('image_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                    // dd($e);
-                }
-                // updates the 'imageFilename' property to store the image file name
-                // instead of its contents
-                $book->setImage($newFilename);
-            }
-
-            // ... persist the $book variable or any other work
-            if (
-                is_string($title) and
-                is_string($author) and
-                is_string($isbn) and
-                is_string($description) and
-                is_string($description) and
-                is_string($imageFile)
-                //and !is_null($book)
-            ) {
-                $book->setTitle($title);
-                $book->setAuthor($author);
-                $book->setISBN($isbn);
-                $book->setDescription($description);
-                $book->setImage($imageFile);
-            }
-
-            $entityManager->persist($book);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('library_show_all');
-        }
-
         $data = [
             'book' => $book,
-            'form' => $editBookForm->createView()
         ];
 
         return $this->render('library/editForm.html.twig', $data);
@@ -314,7 +191,7 @@ class LibraryController extends AbstractController
                 'No book found for id ' . $bookId
             );
         }
-
+        
         $entityManager->remove($book);
         $entityManager->flush();
 

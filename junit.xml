@@ -1,503 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.344615">
-    <testsuite name="Project Test Suite" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.344615">
-      <testsuite name="App\Classes\Card\CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.035706">
-        <testcase name="testCreateCard" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.031857"/>
-        <testcase name="testCreateCardVerifyValue" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="27" assertions="2" time="0.001873"/>
-        <testcase name="testCreateCardVerifySuit" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="38" assertions="2" time="0.000684"/>
-        <testcase name="testCreateCardVerifyValueAsString" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="50" assertions="2" time="0.001292"/>
+  <testsuite name="" tests="47" assertions="106" errors="0" warnings="0" failures="0" skipped="0" time="1.811466">
+    <testsuite name="Project Test Suite" tests="47" assertions="106" errors="0" warnings="0" failures="0" skipped="0" time="1.811466">
+      <testsuite name="App\Classes\Card\CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.036606">
+        <testcase name="testCreateCard" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.033513"/>
+        <testcase name="testCreateCardVerifyValue" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="27" assertions="2" time="0.001853"/>
+        <testcase name="testCreateCardVerifySuit" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="38" assertions="2" time="0.000636"/>
+        <testcase name="testCreateCardVerifyValueAsString" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="50" assertions="2" time="0.000603"/>
       </testsuite>
-      <testsuite name="App\Classes\Card\Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.013043">
-        <testcase name="testCreateDeck2" class="App\Classes\Card\Deck2Test" classname="App.Classes.Card.Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" line="16" assertions="3" time="0.013043"/>
+      <testsuite name="App\Classes\Card\Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.005010">
+        <testcase name="testCreateDeck2" class="App\Classes\Card\Deck2Test" classname="App.Classes.Card.Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" line="16" assertions="3" time="0.005010"/>
       </testsuite>
-      <testsuite name="App\Classes\Card\DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" tests="9" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.044119">
-        <testcase name="testCreateDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="15" assertions="2" time="0.001330"/>
-        <testcase name="testGetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="27" assertions="2" time="0.002033"/>
-        <testcase name="testSetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="39" assertions="2" time="0.001095"/>
-        <testcase name="testGetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="53" assertions="2" time="0.001126"/>
-        <testcase name="testSetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="65" assertions="2" time="0.001348"/>
-        <testcase name="testShuffleDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="78" assertions="3" time="0.031162"/>
-        <testcase name="testGetCards" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="95" assertions="2" time="0.001025"/>
-        <testcase name="testGetCardsForPlayer" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="109" assertions="2" time="0.000978"/>
-        <testcase name="testGetJson" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="123" assertions="3" time="0.004022"/>
+      <testsuite name="App\Classes\Card\DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" tests="9" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.041731">
+        <testcase name="testCreateDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="15" assertions="2" time="0.001344"/>
+        <testcase name="testGetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="27" assertions="2" time="0.002737"/>
+        <testcase name="testSetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="39" assertions="2" time="0.001077"/>
+        <testcase name="testGetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="53" assertions="2" time="0.000943"/>
+        <testcase name="testSetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="65" assertions="2" time="0.000965"/>
+        <testcase name="testShuffleDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="78" assertions="3" time="0.030150"/>
+        <testcase name="testGetCards" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="95" assertions="2" time="0.001003"/>
+        <testcase name="testGetCardsForPlayer" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="109" assertions="2" time="0.001135"/>
+        <testcase name="testGetJson" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="123" assertions="3" time="0.002377"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.003877">
-        <testcase name="testCreateDiceGraphic" class="App\Classes\Dice\DiceGraphicTest" classname="App.Classes.Dice.DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" line="16" assertions="2" time="0.003877"/>
+      <testsuite name="App\Classes\Dice\DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.001961">
+        <testcase name="testCreateDiceGraphic" class="App\Classes\Dice\DiceGraphicTest" classname="App.Classes.Dice.DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" line="16" assertions="2" time="0.001961"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" tests="4" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.011371">
-        <testcase name="testCreateDiceHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="16" assertions="2" time="0.002710"/>
+      <testsuite name="App\Classes\Dice\DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" tests="4" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.010927">
+        <testcase name="testCreateDiceHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="16" assertions="2" time="0.001377"/>
         <testcase name="testAddToHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="28" assertions="2" time="0.000716"/>
-        <testcase name="testRoll" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="42" assertions="5" time="0.006770"/>
-        <testcase name="testGetNumberDices" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="58" assertions="3" time="0.001175"/>
+        <testcase name="testRoll" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="42" assertions="5" time="0.007131"/>
+        <testcase name="testGetNumberDices" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="58" assertions="3" time="0.001702"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.002388">
-        <testcase name="testCreateDice" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="16" assertions="2" time="0.000756"/>
-        <testcase name="testRoll" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="27" assertions="5" time="0.001632"/>
+      <testsuite name="App\Classes\Dice\DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.004827">
+        <testcase name="testCreateDice" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="16" assertions="2" time="0.003356"/>
+        <testcase name="testRoll" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="27" assertions="5" time="0.001470"/>
       </testsuite>
-      <testsuite name="App\Classes\Game\BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" tests="9" assertions="26" errors="0" warnings="0" failures="0" skipped="0" time="0.038173">
-        <testcase name="testCreateBlackjack" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="16" assertions="3" time="0.017365"/>
-        <testcase name="testGetCurrentDeck" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="30" assertions="3" time="0.001243"/>
-        <testcase name="testReset" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="43" assertions="8" time="0.001762"/>
-        <testcase name="testBlackjackScoresUnder21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="77" assertions="2" time="0.002562"/>
-        <testcase name="testBlackjackScoreOver21PlayerOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="97" assertions="2" time="0.002192"/>
-        <testcase name="testBlackjackScoreOver21Dealer21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="117" assertions="2" time="0.003778"/>
-        <testcase name="testBlackjackScoreOver21Player21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="137" assertions="2" time="0.002735"/>
-        <testcase name="testBlackjackScoreOver21Dealer" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="158" assertions="2" time="0.002944"/>
-        <testcase name="testBlackjackEqualScoreOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="179" assertions="2" time="0.003592"/>
+      <testsuite name="App\Classes\Game\BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" tests="9" assertions="26" errors="0" warnings="0" failures="0" skipped="0" time="0.034950">
+        <testcase name="testCreateBlackjack" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="16" assertions="3" time="0.014327"/>
+        <testcase name="testGetCurrentDeck" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="30" assertions="3" time="0.002007"/>
+        <testcase name="testReset" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="43" assertions="8" time="0.001910"/>
+        <testcase name="testBlackjackScoresUnder21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="77" assertions="2" time="0.002935"/>
+        <testcase name="testBlackjackScoreOver21PlayerOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="97" assertions="2" time="0.002687"/>
+        <testcase name="testBlackjackScoreOver21Dealer21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="117" assertions="2" time="0.002840"/>
+        <testcase name="testBlackjackScoreOver21Player21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="137" assertions="2" time="0.004166"/>
+        <testcase name="testBlackjackScoreOver21Dealer" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="158" assertions="2" time="0.002403"/>
+        <testcase name="testBlackjackEqualScoreOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="179" assertions="2" time="0.001675"/>
       </testsuite>
-      <testsuite name="App\Classes\Game\PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="7" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.012177">
-        <testcase name="testSetCurrentCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="18" assertions="2" time="0.000775"/>
-        <testcase name="testSCalculateCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="30" assertions="2" time="0.000836"/>
-        <testcase name="testGetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="44" assertions="2" time="0.000795"/>
-        <testcase name="testSetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="55" assertions="2" time="0.000659"/>
-        <testcase name="testIsActive" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="67" assertions="2" time="0.003240"/>
-        <testcase name="testDraw" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="78" assertions="2" time="0.003114"/>
-        <testcase name="testStop" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="91" assertions="2" time="0.002757"/>
+      <testsuite name="App\Classes\Game\PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="7" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.013096">
+        <testcase name="testSetCurrentCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="18" assertions="2" time="0.001021"/>
+        <testcase name="testSCalculateCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="30" assertions="2" time="0.001142"/>
+        <testcase name="testGetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="44" assertions="2" time="0.001085"/>
+        <testcase name="testSetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="55" assertions="2" time="0.000921"/>
+        <testcase name="testIsActive" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="67" assertions="2" time="0.002795"/>
+        <testcase name="testDraw" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="78" assertions="2" time="0.003351"/>
+        <testcase name="testStop" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="91" assertions="2" time="0.002780"/>
       </testsuite>
-      <testsuite name="App\Controller\LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LIbraryControllerTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="2.141791">
-        <testcase name="testIndex" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LIbraryControllerTest.php" line="48" assertions="1" time="2.086015">
-          <system-out>object(App\Entity\Book)#13474 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 1"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 1"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "1"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 1"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13539 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 2"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 2"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "2"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 2"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13472 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 3"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 3"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "3"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 3"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13544 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 4"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 4"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "4"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 4"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13375 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 5"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 5"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "5"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 5"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13490 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 6"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 6"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "6"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 6"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13500 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 7"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 7"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "7"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 7"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13631 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 8"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 8"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "8"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 8"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13616 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 9"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 9"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "9"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 9"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#13508 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(7) "book 10"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(9) "author 10"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(2) "10"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(27) "Description from FIXTURE 10"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-</system-out>
-        </testcase>
-        <testcase name="testShowAllBooks" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LIbraryControllerTest.php" line="57" assertions="1" time="0.055776">
-          <system-out>object(App\Entity\Book)#11389 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 1"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 1"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "1"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 1"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11391 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 2"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 2"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "2"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 2"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11390 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 3"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 3"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "3"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 3"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11388 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 4"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 4"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "4"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 4"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11387 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 5"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 5"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "5"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 5"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11386 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 6"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 6"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "6"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 6"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11385 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 7"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 7"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "7"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 7"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11384 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 8"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 8"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "8"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 8"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11383 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(6) "book 9"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(8) "author 9"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(1) "9"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(26) "Description from FIXTURE 9"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-object(App\Entity\Book)#11382 (6) {
-  ["bookId":"App\Entity\Book":private]=&gt;
-  NULL
-  ["title":"App\Entity\Book":private]=&gt;
-  string(7) "book 10"
-  ["author":"App\Entity\Book":private]=&gt;
-  string(9) "author 10"
-  ["isbn":"App\Entity\Book":private]=&gt;
-  string(2) "10"
-  ["description":"App\Entity\Book":private]=&gt;
-  string(27) "Description from FIXTURE 10"
-  ["image":"App\Entity\Book":private]=&gt;
-  string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-}
-array(10) {
-  [0]=&gt;
-  object(App\Entity\Book)#11389 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(1)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 1"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 1"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "1"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 1"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [1]=&gt;
-  object(App\Entity\Book)#11391 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(2)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 2"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 2"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "2"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 2"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [2]=&gt;
-  object(App\Entity\Book)#11390 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(3)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 3"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 3"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "3"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 3"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [3]=&gt;
-  object(App\Entity\Book)#11388 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(4)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 4"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 4"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "4"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 4"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [4]=&gt;
-  object(App\Entity\Book)#11387 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(5)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 5"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 5"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "5"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 5"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [5]=&gt;
-  object(App\Entity\Book)#11386 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(6)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 6"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 6"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "6"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 6"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [6]=&gt;
-  object(App\Entity\Book)#11385 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(7)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 7"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 7"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "7"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 7"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [7]=&gt;
-  object(App\Entity\Book)#11384 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(8)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 8"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 8"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "8"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 8"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [8]=&gt;
-  object(App\Entity\Book)#11383 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(9)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(6) "book 9"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(8) "author 9"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(1) "9"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(26) "Description from FIXTURE 9"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-  [9]=&gt;
-  object(App\Entity\Book)#11382 (6) {
-    ["bookId":"App\Entity\Book":private]=&gt;
-    int(10)
-    ["title":"App\Entity\Book":private]=&gt;
-    string(7) "book 10"
-    ["author":"App\Entity\Book":private]=&gt;
-    string(9) "author 10"
-    ["isbn":"App\Entity\Book":private]=&gt;
-    string(2) "10"
-    ["description":"App\Entity\Book":private]=&gt;
-    string(27) "Description from FIXTURE 10"
-    ["image":"App\Entity\Book":private]=&gt;
-    string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
-  }
-}
-</system-out>
-        </testcase>
+      <testsuite name="App\Controller\LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" tests="8" assertions="11" errors="0" warnings="0" failures="0" skipped="0" time="1.650311">
+        <testcase name="testIndex" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="58" assertions="1" time="0.953275"/>
+        <testcase name="testShowAllBooks" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="67" assertions="1" time="0.039760"/>
+        <testcase name="testShowBookById" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="76" assertions="1" time="0.065361"/>
+        <testcase name="testExceptionShowBookById" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="88" assertions="2" time="0.260338"/>
+        <testcase name="testCreateBookForm" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="102" assertions="1" time="0.020728"/>
+        <testcase name="testUpdateBookForm" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="154" assertions="1" time="0.022749"/>
+        <testcase name="testExceptionUpdateBookForm" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="166" assertions="2" time="0.152587"/>
+        <testcase name="testExceptionDeleteBookById" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="181" assertions="2" time="0.135512"/>
       </testsuite>
-      <testsuite name="App\Repository\BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.041970">
-        <testcase name="testAdd" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="24" assertions="2" time="0.034197"/>
-        <testcase name="testRemove" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="37" assertions="1" time="0.007773"/>
+      <testsuite name="App\Repository\BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.012049">
+        <testcase name="testAdd" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="24" assertions="2" time="0.005363"/>
+        <testcase name="testRemove" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="37" assertions="1" time="0.006686"/>
       </testsuite>
     </testsuite>
   </testsuite>
