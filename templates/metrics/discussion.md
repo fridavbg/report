@@ -6,34 +6,34 @@
 <th>Efter förbättringar</th>
 </tr>
   <tr>
-    <th>Code Coverage</th>
+    <th>Code Coverage classes never called by tests</th>
     <td>73.33%</td>
-    <td>%</td>
+    <td>66.67 %</td>
   </tr>
   <tr>
     <th>Maintainability Index LibraryController</th>
     <td>56.79</td>
-    <td>--</td>
+    <td>64.95</td>
   </tr>
   <tr>
     <th>Cyclomatic Complexity LibraryController</th>
     <td>30</td>
-    <td>---</td>
+    <td>17</td>
   </tr>
   <tr>
     <th>Cohesion - LCOM</th>
     <td>1.34</td>
-    <td>--</td>
+    <td>1.31</td>
   </tr>
   <tr>
-    <th>Afferent Coupling Deck klassen</th>
-    <td>7</td>
-    <td>--</td>
+    <th>Afferent Coupling LibraryController</th>
+    <td>0</td>
+    <td>0</td>
   </tr>
     <tr>
-    <th>Efferent Coupling Deck klassen</th>
-    <td>1</td>
-    <td>--</td>
+    <th>Efferent Coupling LibraryController</th>
+    <td>7</td>
+    <td>7</td>
   </tr>
 </table>
 <br/>
@@ -73,3 +73,5 @@
     <td>---</td>
   </tr>
 </table>
+
+<p>tjolllaaahoooppp</p>

@@ -165,7 +165,7 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testExceptionUpdateBookForm()
     {
-        $bookId = rand(12, 20);
+        $bookId = 12;
 
         $this->client->request('GET', '/library/update/form/' . $bookId);
         $this->assertResponseStatusCodeSame(404);
@@ -181,12 +181,12 @@ class LibraryControllerTest extends WebTestCase
     public function testExceptionDeleteBookById(
     )
     {
-        $bookId = rand(11, 20);
+        $bookId = 11;
 
         $this->client->request('GET', '/library/delete/' . $bookId);
-        $this->assertResponseStatusCodeSame(404);
+        $this->assertResponseStatusCodeSame(302);
         $response = $this->client->getResponse();
         $data = $response->getContent();
-        $this->assertStringContainsString('No book found for id ' . $bookId, $data);
+        $this->assertStringContainsString('Redirecting to /library/show', $data);
     }
 }
