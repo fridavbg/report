@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.065344">
-    <testsuite name="Project Test Suite" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.065344">
-      <testsuite name="App\Classes\Card\CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.045166">
-        <testcase name="testCreateCard" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.039755"/>
-        <testcase name="testCreateCardVerifyValue" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="27" assertions="2" time="0.003030"/>
-        <testcase name="testCreateCardVerifySuit" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="38" assertions="2" time="0.001312"/>
-        <testcase name="testCreateCardVerifyValueAsString" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="50" assertions="2" time="0.001069"/>
+  <testsuite name="" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.344615">
+    <testsuite name="Project Test Suite" tests="41" assertions="97" errors="0" warnings="0" failures="0" skipped="0" time="2.344615">
+      <testsuite name="App\Classes\Card\CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.035706">
+        <testcase name="testCreateCard" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.031857"/>
+        <testcase name="testCreateCardVerifyValue" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="27" assertions="2" time="0.001873"/>
+        <testcase name="testCreateCardVerifySuit" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="38" assertions="2" time="0.000684"/>
+        <testcase name="testCreateCardVerifyValueAsString" class="App\Classes\Card\CardTest" classname="App.Classes.Card.CardTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="50" assertions="2" time="0.001292"/>
       </testsuite>
-      <testsuite name="App\Classes\Card\Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.010881">
-        <testcase name="testCreateDeck2" class="App\Classes\Card\Deck2Test" classname="App.Classes.Card.Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" line="16" assertions="3" time="0.010881"/>
+      <testsuite name="App\Classes\Card\Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.013043">
+        <testcase name="testCreateDeck2" class="App\Classes\Card\Deck2Test" classname="App.Classes.Card.Deck2Test" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/Deck2Test.php" line="16" assertions="3" time="0.013043"/>
       </testsuite>
-      <testsuite name="App\Classes\Card\DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" tests="9" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.044126">
-        <testcase name="testCreateDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="15" assertions="2" time="0.001400"/>
-        <testcase name="testGetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="27" assertions="2" time="0.003432"/>
-        <testcase name="testSetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="39" assertions="2" time="0.002277"/>
-        <testcase name="testGetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="53" assertions="2" time="0.001822"/>
-        <testcase name="testSetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="65" assertions="2" time="0.001700"/>
-        <testcase name="testShuffleDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="78" assertions="3" time="0.028973"/>
-        <testcase name="testGetCards" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="95" assertions="2" time="0.001052"/>
-        <testcase name="testGetCardsForPlayer" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="109" assertions="2" time="0.000970"/>
-        <testcase name="testGetJson" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="123" assertions="3" time="0.002499"/>
+      <testsuite name="App\Classes\Card\DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" tests="9" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.044119">
+        <testcase name="testCreateDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="15" assertions="2" time="0.001330"/>
+        <testcase name="testGetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="27" assertions="2" time="0.002033"/>
+        <testcase name="testSetDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="39" assertions="2" time="0.001095"/>
+        <testcase name="testGetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="53" assertions="2" time="0.001126"/>
+        <testcase name="testSetCardHand" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="65" assertions="2" time="0.001348"/>
+        <testcase name="testShuffleDeck" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="78" assertions="3" time="0.031162"/>
+        <testcase name="testGetCards" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="95" assertions="2" time="0.001025"/>
+        <testcase name="testGetCardsForPlayer" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="109" assertions="2" time="0.000978"/>
+        <testcase name="testGetJson" class="App\Classes\Card\DeckTest" classname="App.Classes.Card.DeckTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Card/DeckTest.php" line="123" assertions="3" time="0.004022"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.003851">
-        <testcase name="testCreateDiceGraphic" class="App\Classes\Dice\DiceGraphicTest" classname="App.Classes.Dice.DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" line="16" assertions="2" time="0.003851"/>
+      <testsuite name="App\Classes\Dice\DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.003877">
+        <testcase name="testCreateDiceGraphic" class="App\Classes\Dice\DiceGraphicTest" classname="App.Classes.Dice.DiceGraphicTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceGraphicTest.php" line="16" assertions="2" time="0.003877"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" tests="4" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.034292">
-        <testcase name="testCreateDiceHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="16" assertions="2" time="0.002646"/>
-        <testcase name="testAddToHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="28" assertions="2" time="0.000841"/>
-        <testcase name="testRoll" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="42" assertions="5" time="0.009038"/>
-        <testcase name="testGetNumberDices" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="58" assertions="3" time="0.021767"/>
+      <testsuite name="App\Classes\Dice\DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" tests="4" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.011371">
+        <testcase name="testCreateDiceHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="16" assertions="2" time="0.002710"/>
+        <testcase name="testAddToHand" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="28" assertions="2" time="0.000716"/>
+        <testcase name="testRoll" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="42" assertions="5" time="0.006770"/>
+        <testcase name="testGetNumberDices" class="App\Classes\Dice\DiceHandTest" classname="App.Classes.Dice.DiceHandTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceHandTest.php" line="58" assertions="3" time="0.001175"/>
       </testsuite>
-      <testsuite name="App\Classes\Dice\DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.001582">
-        <testcase name="testCreateDice" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="16" assertions="2" time="0.000679"/>
-        <testcase name="testRoll" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="27" assertions="5" time="0.000902"/>
+      <testsuite name="App\Classes\Dice\DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.002388">
+        <testcase name="testCreateDice" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="16" assertions="2" time="0.000756"/>
+        <testcase name="testRoll" class="App\Classes\Dice\DiceTest" classname="App.Classes.Dice.DiceTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="27" assertions="5" time="0.001632"/>
       </testsuite>
-      <testsuite name="App\Classes\Game\BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" tests="9" assertions="26" errors="0" warnings="0" failures="0" skipped="0" time="0.025994">
-        <testcase name="testCreateBlackjack" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="16" assertions="3" time="0.012963"/>
-        <testcase name="testGetCurrentDeck" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="30" assertions="3" time="0.001126"/>
-        <testcase name="testReset" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="43" assertions="8" time="0.001539"/>
-        <testcase name="testBlackjackScoresUnder21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="77" assertions="2" time="0.001588"/>
-        <testcase name="testBlackjackScoreOver21PlayerOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="97" assertions="2" time="0.001498"/>
-        <testcase name="testBlackjackScoreOver21Dealer21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="117" assertions="2" time="0.001738"/>
-        <testcase name="testBlackjackScoreOver21Player21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="137" assertions="2" time="0.001590"/>
-        <testcase name="testBlackjackScoreOver21Dealer" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="158" assertions="2" time="0.002480"/>
-        <testcase name="testBlackjackEqualScoreOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="179" assertions="2" time="0.001473"/>
+      <testsuite name="App\Classes\Game\BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" tests="9" assertions="26" errors="0" warnings="0" failures="0" skipped="0" time="0.038173">
+        <testcase name="testCreateBlackjack" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="16" assertions="3" time="0.017365"/>
+        <testcase name="testGetCurrentDeck" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="30" assertions="3" time="0.001243"/>
+        <testcase name="testReset" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="43" assertions="8" time="0.001762"/>
+        <testcase name="testBlackjackScoresUnder21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="77" assertions="2" time="0.002562"/>
+        <testcase name="testBlackjackScoreOver21PlayerOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="97" assertions="2" time="0.002192"/>
+        <testcase name="testBlackjackScoreOver21Dealer21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="117" assertions="2" time="0.003778"/>
+        <testcase name="testBlackjackScoreOver21Player21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="137" assertions="2" time="0.002735"/>
+        <testcase name="testBlackjackScoreOver21Dealer" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="158" assertions="2" time="0.002944"/>
+        <testcase name="testBlackjackEqualScoreOver21" class="App\Classes\Game\BlackjackTest" classname="App.Classes.Game.BlackjackTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/BlackjackTest.php" line="179" assertions="2" time="0.003592"/>
       </testsuite>
-      <testsuite name="App\Classes\Game\PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="7" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.008532">
-        <testcase name="testSetCurrentCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="18" assertions="2" time="0.000742"/>
-        <testcase name="testSCalculateCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="30" assertions="2" time="0.000869"/>
-        <testcase name="testGetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="44" assertions="2" time="0.000817"/>
-        <testcase name="testSetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="55" assertions="2" time="0.000952"/>
-        <testcase name="testIsActive" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="67" assertions="2" time="0.002636"/>
-        <testcase name="testDraw" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="78" assertions="2" time="0.001073"/>
-        <testcase name="testStop" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="91" assertions="2" time="0.001442"/>
+      <testsuite name="App\Classes\Game\PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="7" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.012177">
+        <testcase name="testSetCurrentCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="18" assertions="2" time="0.000775"/>
+        <testcase name="testSCalculateCardHand" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="30" assertions="2" time="0.000836"/>
+        <testcase name="testGetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="44" assertions="2" time="0.000795"/>
+        <testcase name="testSetPlayer" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="55" assertions="2" time="0.000659"/>
+        <testcase name="testIsActive" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="67" assertions="2" time="0.003240"/>
+        <testcase name="testDraw" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="78" assertions="2" time="0.003114"/>
+        <testcase name="testStop" class="App\Classes\Game\PlayerTest" classname="App.Classes.Game.PlayerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="91" assertions="2" time="0.002757"/>
       </testsuite>
-      <testsuite name="App\Controller\LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="1.880203">
-        <testcase name="testIndex" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="54" assertions="1" time="1.813772">
+      <testsuite name="App\Controller\LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LIbraryControllerTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="2.141791">
+        <testcase name="testIndex" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LIbraryControllerTest.php" line="48" assertions="1" time="2.086015">
           <system-out>object(App\Entity\Book)#13474 (6) {
   ["bookId":"App\Entity\Book":private]=&gt;
   NULL
@@ -155,7 +155,7 @@ object(App\Entity\Book)#13500 (6) {
   ["image":"App\Entity\Book":private]=&gt;
   string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
 }
-object(App\Entity\Book)#13622 (6) {
+object(App\Entity\Book)#13631 (6) {
   ["bookId":"App\Entity\Book":private]=&gt;
   NULL
   ["title":"App\Entity\Book":private]=&gt;
@@ -169,7 +169,7 @@ object(App\Entity\Book)#13622 (6) {
   ["image":"App\Entity\Book":private]=&gt;
   string(157) "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F503458-paper-literature-books.jpg&amp;f=1&amp;nofb=1"
 }
-object(App\Entity\Book)#13650 (6) {
+object(App\Entity\Book)#13616 (6) {
   ["bookId":"App\Entity\Book":private]=&gt;
   NULL
   ["title":"App\Entity\Book":private]=&gt;
@@ -199,7 +199,7 @@ object(App\Entity\Book)#13508 (6) {
 }
 </system-out>
         </testcase>
-        <testcase name="testShowAllBooks" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LibraryControllerTest.php" line="63" assertions="1" time="0.066431">
+        <testcase name="testShowAllBooks" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/LIbraryControllerTest.php" line="57" assertions="1" time="0.055776">
           <system-out>object(App\Entity\Book)#11389 (6) {
   ["bookId":"App\Entity\Book":private]=&gt;
   NULL
@@ -344,7 +344,7 @@ array(10) {
   [0]=&gt;
   object(App\Entity\Book)#11389 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(213)
+    int(1)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 1"
     ["author":"App\Entity\Book":private]=&gt;
@@ -359,7 +359,7 @@ array(10) {
   [1]=&gt;
   object(App\Entity\Book)#11391 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(214)
+    int(2)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 2"
     ["author":"App\Entity\Book":private]=&gt;
@@ -374,7 +374,7 @@ array(10) {
   [2]=&gt;
   object(App\Entity\Book)#11390 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(215)
+    int(3)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 3"
     ["author":"App\Entity\Book":private]=&gt;
@@ -389,7 +389,7 @@ array(10) {
   [3]=&gt;
   object(App\Entity\Book)#11388 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(216)
+    int(4)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 4"
     ["author":"App\Entity\Book":private]=&gt;
@@ -404,7 +404,7 @@ array(10) {
   [4]=&gt;
   object(App\Entity\Book)#11387 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(217)
+    int(5)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 5"
     ["author":"App\Entity\Book":private]=&gt;
@@ -419,7 +419,7 @@ array(10) {
   [5]=&gt;
   object(App\Entity\Book)#11386 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(218)
+    int(6)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 6"
     ["author":"App\Entity\Book":private]=&gt;
@@ -434,7 +434,7 @@ array(10) {
   [6]=&gt;
   object(App\Entity\Book)#11385 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(219)
+    int(7)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 7"
     ["author":"App\Entity\Book":private]=&gt;
@@ -449,7 +449,7 @@ array(10) {
   [7]=&gt;
   object(App\Entity\Book)#11384 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(220)
+    int(8)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 8"
     ["author":"App\Entity\Book":private]=&gt;
@@ -464,7 +464,7 @@ array(10) {
   [8]=&gt;
   object(App\Entity\Book)#11383 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(221)
+    int(9)
     ["title":"App\Entity\Book":private]=&gt;
     string(6) "book 9"
     ["author":"App\Entity\Book":private]=&gt;
@@ -479,7 +479,7 @@ array(10) {
   [9]=&gt;
   object(App\Entity\Book)#11382 (6) {
     ["bookId":"App\Entity\Book":private]=&gt;
-    int(222)
+    int(10)
     ["title":"App\Entity\Book":private]=&gt;
     string(7) "book 10"
     ["author":"App\Entity\Book":private]=&gt;
@@ -495,9 +495,9 @@ array(10) {
 </system-out>
         </testcase>
       </testsuite>
-      <testsuite name="App\Repository\BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.010718">
-        <testcase name="testAdd" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="24" assertions="2" time="0.005688"/>
-        <testcase name="testRemove" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="37" assertions="1" time="0.005030"/>
+      <testsuite name="App\Repository\BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.041970">
+        <testcase name="testAdd" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="24" assertions="2" time="0.034197"/>
+        <testcase name="testRemove" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" file="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="37" assertions="1" time="0.007773"/>
       </testsuite>
     </testsuite>
   </testsuite>

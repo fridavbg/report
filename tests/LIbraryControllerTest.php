@@ -42,11 +42,6 @@ class LibraryControllerTest extends WebTestCase
         $purger->purge();
     }
 
-    public function tearDown()
-    {
-        $this->truncateEntities(); 
-    }
-
     /**
      * Check that response is successful for /library
      */

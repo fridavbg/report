@@ -5,16 +5,16 @@
 
 <h4>Mer tester.</h4>
 <p>
-  Jag kommer att göra fler tester, och speciellt fokusera på mina Controllers. Mycket i rapporterna har indikerat att koden i LibraryControllern kan ha problem, så vill jag se hur det kommer att se ut med en högre code coverage percent. Vill se hur det ser ut med bara ett sättet där användare kan lägga till en bild med en url i min CRUD Library App. Men vill även se ifall jag kan finna några felsteg i min logik i LIbraryControllerns metoder.
+Mycket i rapporterna har indikerat att koden i LibraryControllern kan ha problem, så vill jag se hur det kommer att se ut med en högre code coverage percent. Vill se hur det ser ut med bara ett sättet där användare kan lägga till en bild med en url i min CRUD Library App.
 </p>
 <h4>Ta bort kod som laddar upp bildfiler</h4>
 <p>
-  I LibraryControllern sa finns det två sätt att lägga till en bild. Jag kommer att ta bort den kod som bara fungerar lokalt, men ej på studentservern. Mycket utav den kod, har skapats med Make, och använder mer importerade komponenter. Så vill se hur mycket som detta kan påverka mätvärden i dem båda rapporterna.
+Jag kommer att ta bort den kod som bara fungerar lokalt, men ej på studentservern. Mycket utav den kod, har skapats med Make, och använder mer importerade komponenter. Så vill se hur mycket som detta kan påverka mätvärden i dem båda rapporterna.
 </p>
 
 <h4>
-  Validering i LibraryControllern
+  Make formuläret i LibraryControllern
 </h4>
 <p>
-  I min LibraryController så tänkte jag se över dem if statements som hanterar användarinput, och se om jag kan göra bättre validering kollar för formulär fälten. Det finns även ett formulär som skapades med Make, som används med filuppladdningskoden. Så återigen så kommer jag ta bort denna kod, då den kommer vara oanvänd, och se hur mycket utav den koden förändrar mätvärdena.
+  Det finns även ett formulär som skapades med Make, som används med filuppladdningskoden. Så återigen så kommer jag ta bort denna kod, då den kommer vara oanvänd, och se hur mycket utav det förändrar mätvärdena.
 </p>
