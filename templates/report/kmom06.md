@@ -1,6 +1,6 @@
 
         <p>
-          Jag tyckte det var mycket lättare att jobba med PHPMetrics jämfört med Scrutinizer. Interfacet var mycket lättare att använda, jämfört med Scrutinizer. Gillade att komplexitet och maintainability index visades som en "graph", som snabbt gav en över blick utav vilka klasser som behövdes ses över. Gillade inte riktigt att Scrutinizer skapade sin egna rating, i mitt fall så var ju dem flesta klasserna med ett A så kändes att jag fick ut mer i PHPMetrics.
+          Jag tyckte det var mycket lättare att jobba med PHPMetrics jämfört med Scrutinizer. Interfacet var mycket lättare att använda. Gillade att komplexitet och maintainability index visades som en "graph", som snabbt gav en överblick utav vilka klasser som behövdes ses över. Gillade inte riktigt att Scrutinizer skapade sin egna rating, i mitt fall så var ju dem flesta klasserna med ett A så kändes att jag fick ut mer i PHPMetrics. Sen så kändes lättare att testa saker och ting i PHPMetrics eftersom jag jobbade med det lokalt, och inte behövde pusha till git varje gång efter en ändring.
         </p>
         <p>
           Scrutinizer var lite krångligare att jobba med, då jag fick en hel del fel meddelande som tog en del tid att se över. Absolut att en fördel att få badges att använda i sitt github repo, kan ge snabbt ge en ide om kvalitet på ett projekt. Mitt första kodtäckningsvärde låg på 28 % men lyckade att höja det till 44 %. Min kodkvalitet låg på 9.8 och höjdes till 9.91.
