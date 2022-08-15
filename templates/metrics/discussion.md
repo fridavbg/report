@@ -8,7 +8,7 @@
   <tr>
     <th>Code Coverage classes never called by tests</th>
     <td>73.33%</td>
-    <td>66.67 %</td>
+    <td>66.67%</td>
   </tr>
   <tr>
     <th>Maintainability Index LibraryController</th>
@@ -46,32 +46,37 @@
   <tr>
     <th>Code Coverage</th>
     <td>28%</td>
-    <td>%</td>
+    <td>44%</td>
   </tr>
   <tr>
-    <th>Cyclomatic complexiity LibraryController</th>
+    <th>Total complexiity LibraryController</th>
     <td>37</td>
-    <td>--</td>
+    <td>24</td></td>
   </tr>
   <tr>
     <th>Size LibraryController</th>
     <td>299</td>
-    <td>--</td>
+    <td>185</td>
   </tr>
     <tr>
     <th>Code Rating <br/>
     LibraryController::updateBookForm()
     </th>
     <td>C</td>
-    <td>---</td>
+    <td>A</td>
   </tr>
     <tr>
     <th>CRAP Score <br/>
     LibraryController::updateBookForm()
     </th>
     <td>156</td>
-    <td>---</td>
+    <td>2</td>
   </tr>
 </table>
 
-<p>tjolllaaahoooppp</p>
+<p>
+Om jag snabbt skall ser över mina resultat så kan man se att dem värdena som påverkade utav filuppladdnings koden var komplexitet, CRAP Score och storlek, vilket var lite det som jag förväntade mig då jag tog bort en del kod. Mest förvånade var nog att Maintainability Index har ökat.
+</p>
+<p>
+En fördel att jobba med kodkvalitet är nog att man på ett snabbt sätt kan gå över koden, och se till så den följer vissa mönster, och logik. Men kan också se en hel del nackdelar, då det kan bli rätt tidskrävande att gå över alla aspekter utav ett större projekt.
+</p>
