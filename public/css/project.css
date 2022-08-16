@@ -1,7 +1,7 @@
 :root {
-    --accent: #2275C8;
+    --accent: #022f5b;
     --dark-bkg: #060116;
-    --text: #72abf1;
+    --text: #2480f0;
     --light-text: #ceeac8;
     --mid-bkg: #072a7e;
     --gradient-blue: linear-gradient(260deg, var(--accent) 0%, var(--light-text) 100%);
@@ -49,7 +49,8 @@ header h1 {
     opacity: 0.8;
     padding: 18px;
     border-radius: 12px;
-    color: var(--mid-bkg) font-family: Title;
+    color: var(--mid-bkg);
+    font-family: Title;
 }
 
 /* ARROW-DOWN */
@@ -225,7 +226,7 @@ nav ul li a:hover {
 .standard-link:hover {
     background-color: var(--dark-bkg);
     border-radius: 12px;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .report-link {
@@ -245,14 +246,36 @@ nav ul li a:hover {
     border-radius: 12px;
 }
 
+/* WRAPPERS */
 .project-wrapper {
+    display: flex;
+    flex-direction: row;
     background: var(--mid-bkg);
-    padding: 40px;
-    margin: 6em;
+    padding: 20px;
+    margin: 3em 1em 0em 1em;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 12px;
 }
 
+.about-wrapper {
+    background: var(--mid-bkg);
+    padding: 20px;
+    margin: 3em 1em 0em 1em;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.login-container{
+    border: 1px solid white;
+    padding: 1em;
+    border-radius: 12px;
+}
 
 h1 {
     margin-bottom: 12px;
@@ -261,6 +284,7 @@ h1 {
 }
 
 h2 {
+    background-color: var(--dark-bkg);
     margin-bottom: 1em;
     padding: 0.5em;
     border: 1px solid var(--purple);
@@ -289,6 +313,44 @@ p {
     text-shadow: var(--accent) 0px 0px 10px;
     font-family: Font;
     border-radius: 12px;
+}
+
+.summary {
+    text-align: left;
+    width: 100%;
+}
+
+/* IMAGES */
+
+.cod-img {
+    float: left;
+    margin-right: 1.5em;
+    border-radius: 12px;
+}
+
+.tuna-img {
+    float: right;
+    margin: 0em 1.5em 1.5em 1.5em;
+    border-radius: 12px;
+}
+
+/* LIST */
+
+.list {
+    width: 35%;
+    background-color:var(--mid-bkg);
+    box-shadow:2px 2px 2px 2px black ;
+    display: inline-block;
+}
+
+ul li {
+    padding: 10px;
+    margin-left:15px;
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 /* FOOTER */

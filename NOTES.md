@@ -44,3 +44,13 @@ You can open the PHP built in webserver to verify the installation.
 ```
 php -S localhost:8888 -t public
 ```
+
+LOAD DATA LOCAL INFILE 'plastic_waste_emitted_to_the_ocean.csv'
+INTO TABLE plastic_waste_emitted_to_the_ocean
+CHARSET utf8
+FIELDS
+    TERMINATED BY ','
+    ENCLOSED BY '"'
+LINES
+    TERMINATED BY '\n'
+IGNORE 1 LINES;

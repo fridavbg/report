@@ -1,0 +1,39 @@
+{% extends 'projectBase.html.twig' %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="about-wrapper">
+    <h1>
+      About Hav och marina resurser
+    </h1>
+    <section class="content-wrapper">
+      <ul class="list">
+      <h4>Database</h4>
+        <li>
+          <a href="{{path('project-reset')}}" class="standard-link">Ställ om Databasen</a>
+        </li>
+        <h4>Dokumentation</h4>
+        <li>
+          - Länk till dokumentationen som är genererad via phpdoc.
+        </li>
+        <li>
+          - Länk till rapporten från phpmetrics.
+        </li>
+        <li>
+          <a href="https://github.com/fridavbg/report" target="_blank" class="standard-link">Github repo</a>
+        </li>
+        <li>
+          - Länk till Scrutinizer för ditt repo.
+        </li>
+      </ul>
+      <article class="summary">
+        <p>
+          - Din about-sida skall innehålla en summering där du berättar om projektets kodkvalitet. Berätta vilka eventuella åtgärder du gjort för att kvalitetssäkra projektet och hur du jobbat med kodkvaliteten och vilka verktyg du använt. Har du fokuserat på några speciella saker, verktyg eller metrics, så kan du berätta om dem.
+        </p>
+      </article>
+    </section>
+  </div>
+{% endblock %}

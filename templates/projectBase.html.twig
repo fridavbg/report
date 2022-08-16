@@ -9,7 +9,7 @@
   <body>
     <div>
       <header>
-        <h1>Project</h1>
+        <h1>14 HAV OCH MARINA RESURSER</h1>
       </header>
       <nav class="nav-bar" id="nav-bar">
         <ul>
@@ -49,8 +49,14 @@
           <li>
             <a href="{{path('app_metrics')}}">Metrics</a>
           </li>
-          <li>
-            <a href="{{path('project')}}">Proj</a>
+              <li class="dropdown">
+              <button class="dropbtn">
+              Project 
+              </button>
+              <div class="dropdown-content">
+                <a href="{{path("project")}}">Home</a>
+                <a href="{{path("project-about")}}">About Project</a>
+              </div>
           </li>
         </ul>
       </nav>
