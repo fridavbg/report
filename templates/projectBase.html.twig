@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="favicon.ico">
+    {# <link rel="icon" href="favicon.ico"> #}
     <link rel="stylesheet" href="{{ asset('css/project.css') }}"/>
 
   </head>
@@ -49,14 +49,14 @@
           <li>
             <a href="{{path('app_metrics')}}">Metrics</a>
           </li>
-          <li class="dropdown">
-            <button class="dropbtn">
-              Project
-            </button>
-            <div class="dropdown-content">
-              <a href="{{path('project')}}">Home</a>
-              <a href="{{path('project-about')}}">About Project</a>
-            </div>
+              <li class="dropdown">
+              <button class="dropbtn">
+              Project 
+              </button>
+              <div class="dropdown-content">
+                <a href="{{path("project")}}">Home</a>
+                <a href="{{path("project-about")}}">About Project</a>
+              </div>
           </li>
         </ul>
       </nav>
@@ -77,5 +77,11 @@
     <div class="sitefooter">
       <p>Skapad utav Frida i BTHs MVC kurs</p>
     </div>
+
+    <script src="../public/js/main.js">
+      {
+        # NOT WORKING !!!#
+      }
+    </script>
   </body>
 </html>

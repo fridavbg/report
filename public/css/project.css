@@ -4,28 +4,19 @@
     --text: #2480f0;
     --light-text: #ceeac8;
     --mid-bkg: #072a7e;
-    --gradient-blue: linear-gradient(
-        260deg,
-        var(--accent) 0%,
-        var(--light-text) 100%
-    );
-    --gradient-green: linear-gradient(
-        260deg,
-        var(--dark-bkg) 0%,
-        var(--text) 100%
-    );
+    --gradient-blue: linear-gradient(260deg, var(--accent) 0%, var(--light-text) 100%);
+    --gradient-green: linear-gradient(260deg, var(--dark-bkg) 0%, var(--text) 100%);
 }
 
 /* TYPOGRAPHY */
 @font-face {
     font-family: Title;
-    src: url("../fonts/DynaPuff/DynaPuff-VariableFont_wdth.ttf")
-        format("truetype");
+    src: url('../fonts/DynaPuff/DynaPuff-VariableFont_wdth.ttf') format('truetype');
 }
 
 @font-face {
     font-family: Font;
-    src: url("../fonts/Lato/Lato-Light.ttf") format("truetype");
+    src: url('../fonts/Lato/Lato-Light.ttf') format('truetype');
 }
 
 * {
@@ -68,66 +59,52 @@ header h1 {
 }
 
 .arrows {
-    width: 60px;
-    height: 72px;
-    position: absolute;
-    left: 50%;
-    margin-left: -30px;
-    bottom: 20px;
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
     z-index: 1;
 }
 
 .arrows path {
-    stroke: #2994d1;
-    fill: transparent;
-    stroke-width: 1px;
-    animation: arrow 2s infinite;
-    -webkit-animation: arrow 2s infinite;
+	stroke: #2994D1;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
 }
 
-@keyframes arrow {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
 }
 
-@-webkit-keyframes arrow /*Safari and Chrome*/ {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
 }
 
 .arrows path.a1 {
-    animation-delay: -1s;
-    -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
 }
 
 .arrows path.a2 {
-    animation-delay: -0.5s;
-    -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
 }
 
-.arrows path.a3 {
-    animation-delay: 0s;
-    -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
 
 /* NAVBAR */
@@ -205,8 +182,7 @@ nav ul li a:hover {
 .dropdown:hover .dropbtn {
     color: var(--blue);
     border: 0.5px solid var(--light-text);
-    border-radius: 12px;
-}
+    border-radius: 12px;}
 
 .dropdown-content {
     display: none;
@@ -294,7 +270,8 @@ nav ul li a:hover {
     flex-direction: row;
 }
 
-.login-container {
+
+.login-container{
     border: 1px solid white;
     padding: 1em;
     border-radius: 12px;
@@ -312,7 +289,8 @@ h2 {
     padding: 0.5em;
     border: 1px solid var(--purple);
     border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.3) 5px 19px 38px,
+    box-shadow:
+        rgba(0, 0, 0, 0.3) 5px 19px 38px,
         rgba(0, 0, 0, 0.22) 5px 15px 12px;
     font-family: Title;
 }
@@ -360,25 +338,19 @@ p {
 
 .list {
     width: 35%;
-    background-color: var(--mid-bkg);
-    box-shadow: 2px 2px 2px 2px black;
+    background-color:var(--mid-bkg);
+    box-shadow:2px 2px 2px 2px black ;
     display: inline-block;
 }
 
 ul li {
     padding: 10px;
-    margin-left: 15px;
+    margin-left:15px;
     display: grid;
     grid-template-columns: 8fr 1fr;
     font-size: 14px;
     cursor: pointer;
-    font-family: "Shadows Into Light", cursive;
-}
-
-/* CHART */
-
-.my-chart {
-    border: 1px solid black;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 /* FOOTER */
