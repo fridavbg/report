@@ -41,7 +41,6 @@ class ProjectController extends AbstractController
             ],
         ]);
 
-
         $plasticProduction = $plasticProductionRepository->findAll();
         $sector = $sectorRepository->findAll();
 
