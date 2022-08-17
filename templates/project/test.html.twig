@@ -9,10 +9,7 @@
     <h1>
       TEST
     </h1>
-    <code>
-      {{dump(sector)}}
-
-      {{dump(plasticProduction)}}
-    </code>
+    {{ render_chart(chart) }}
+    {{dump(chart)}}
   </div>
 {% endblock %}
