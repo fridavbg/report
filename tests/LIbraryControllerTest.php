@@ -5,8 +5,6 @@ namespace App\Controller;
 use App\Entity\Book;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\response;
-use Symfony\Component\HttpFoundation\Request;
 use App\DataFixtures\AppFixtures;
 
 /**
@@ -132,7 +130,7 @@ class LibraryControllerTest extends WebTestCase
     //         $book->setDescription($description);
     //         $book->setImage($image);
     //     }
-        
+
     //     $entityManagerMock = $this->getMockBuilder('Doctrine\ORM\EntityManager')
     //     ->setMethods(array('persist', 'flush'))
     //     ->disableOriginalConstructor()
@@ -178,8 +176,7 @@ class LibraryControllerTest extends WebTestCase
      * Check that exception is thrown for /library/delete/{bookId}
      * if no bookId
      */
-    public function testExceptionDeleteBookById(
-    )
+    public function testExceptionDeleteBookById()
     {
         $bookId = 11;
 

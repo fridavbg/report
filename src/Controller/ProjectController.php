@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PlasticProductionRepository;
 use App\Repository\SectorRepository;
+use App\Repository\MismanagedPlasticRepository;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 
@@ -17,7 +18,8 @@ class ProjectController extends AbstractController
     public function index(
         ChartBuilderInterface $chartBuilder,
         PlasticProductionRepository $plasticProductionRepository,
-        SectorRepository $sectorRepository
+        SectorRepository $sectorRepository,
+        MismanagedPlasticRepository $mismanagedPlasticRepository 
     ): Response {
 
         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
@@ -34,19 +36,12 @@ class ProjectController extends AbstractController
             ],
         ]);
 
-        $chart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
-
         $plasticProduction = $plasticProductionRepository->findAll();
         $sector = $sectorRepository->findAll();
+        $mismanagedPlastic = $mismanagedPlasticRepository->findAll();
         $data = [
             'title' => 'MVC Kmom10',
+            'mismanagedPlastic' => $mismanagedPlastic,
             'plasticProduction' => $plasticProduction,
             'sector' => $sector,
             'chart' => $chart

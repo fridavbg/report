@@ -12,6 +12,9 @@ class BookRepositoryTest extends KernelTestCase
      */
     private $entityManager;
 
+    /**
+     * Test Environment
+     */
     protected function setUp(): void
     {
         $kernel = self::bootKernel();
@@ -21,6 +24,9 @@ class BookRepositoryTest extends KernelTestCase
             ->getManager();
     }
 
+    /**
+     * Test to add a book, and make sure it is saved to the Book repository
+     */
     public function testAdd()
     {
         $book = new Book();
