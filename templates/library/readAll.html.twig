@@ -8,16 +8,13 @@
     {% if books %}
       {% for book in books %}
         <div>
-          {# UPLOADED IMAGE FILE - NOT WORKING ON STUDENT SERVER
-          <img class="book-image" src="{{asset('img/books/')}}{{book.image}}" alt="{{ book.title }}"/>
-         #}
           {% if book.image %}
             <img class="book-image" src="{{book.image}}" alt="{{ book.title }}"/>
           {% else %}
             <img class="book-image" src="{{asset('img/books/')}}book" alt="{{ book.title }}"/>
           {% endif %}
           <div class="btns">
-            
+
             <a class="btn" href="{{path('book_by_id', {bookId: book.getId()})}}">View</a>
             <a class="btn" href="{{path('update_book_form', {bookId:book.getId()})}}">Edit</a>
             <a class="btn" href="{{path('book_delete_by_id', {bookId:book.getId()})}}">Delete</a>

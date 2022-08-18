@@ -9,7 +9,12 @@
     <h1>
       TEST
     </h1>
-    {{ render_chart(chart) }}
+    <div>
+      {{ render_chart(chart) }}
+      {{ render_chart(chart, {'data-controller': 'mychart'}) }}
+    </div>
+    <code>
     {{dump(chart)}}
+    </code>
   </div>
 {% endblock %}
