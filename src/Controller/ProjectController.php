@@ -46,7 +46,7 @@ class ProjectController extends AbstractController
             'sector' => $sector,
             'chart' => $chart
         ];
-        return $this->render('project/index.html.twig', $data);
+        return $this->render('project/test.html.twig', $data);
     }
 
     #[Route('/proj/about', name: 'project-about')]
