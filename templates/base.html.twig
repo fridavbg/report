@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     {# <link rel="icon" href="favicon.ico"> #}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-
+    {{ encore_entry_link_tags('app')}}
+    {% block stylesheets %}{% endblock %}
   </head>
   <body>
     <div>
@@ -72,10 +73,7 @@
       <p>Skapad utav Frida i BTHs MVC kurs</p>
     </div>
 
-    <script src="../public/js/main.js">
-      {
-        # NOT WORKING !!!#
-      }
-    </script>
+    {{ encore_entry_script_tags('app')}}
+    {% block javascript %}{% endblock %}
   </body>
 </html>
