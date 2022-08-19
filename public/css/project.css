@@ -44,7 +44,7 @@ body {
 /* HEADER */
 
 header {
-    height: 70vh;
+    height: 50vh;
     background: url("../img/header_bkg23.jpg") bottom center no-repeat;
     background-size: cover;
     display: flex;
@@ -56,8 +56,8 @@ header {
 header h1 {
     background-color: var(--accent);
     opacity: 0.8;
-    padding: 18px;
-    border-radius: 12px;
+    padding: 8px;
+    border-radius: 10px;
     color: var(--light-text);
     font-family: Title;
 }
@@ -179,7 +179,7 @@ nav a {
 nav ul li a:hover {
     color: var(--blue);
     border: 0.5px solid var(--light-text);
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 /* NAVBAR DROPDOWN */
@@ -205,7 +205,7 @@ nav ul li a:hover {
 .dropdown:hover .dropbtn {
     color: var(--blue);
     border: 0.5px solid var(--light-text);
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .dropdown-content {
@@ -241,7 +241,7 @@ nav ul li a:hover {
     text-decoration: none;
     cursor: pointer;
     padding: 0.5em;
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--light-text);
     box-shadow: var(--accent) 0px 20px 30px -10px;
     background-color: var(--accent);
@@ -249,7 +249,7 @@ nav ul li a:hover {
 
 .standard-link:hover {
     background-color: var(--dark-bkg);
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 0.5em;
 }
 
@@ -259,7 +259,7 @@ nav ul li a:hover {
     text-decoration: none;
     cursor: pointer;
     padding: 0.5em;
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--light-text);
     box-shadow: var(--accent) 0px 20px 30px -10px;
     background-color: var(--accent);
@@ -267,7 +267,7 @@ nav ul li a:hover {
 
 .report-link:hover {
     background-color: var(--dark-bkg);
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 /* WRAPPERS */
@@ -278,7 +278,7 @@ nav ul li a:hover {
     padding: 20px;
     margin: 3em 1em 0em 1em;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .about-wrapper {
@@ -286,7 +286,7 @@ nav ul li a:hover {
     padding: 20px;
     margin: 3em 1em 0em 1em;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .content-wrapper {
@@ -294,10 +294,16 @@ nav ul li a:hover {
     flex-direction: row;
 }
 
+/* PROJECT TEXT */
+.text-container {
+    flex: 70%;
+}
+
 .login-container {
+    flex: 30%;
     border: 1px solid white;
     padding: 1em;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 h1 {
@@ -311,7 +317,7 @@ h2 {
     margin-bottom: 1em;
     padding: 0.5em;
     border: 1px solid var(--purple);
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 19px 38px,
         rgba(0, 0, 0, 0.22) 5px 15px 12px;
     font-family: Title;
@@ -334,7 +340,7 @@ p {
     word-spacing: 0.1em;
     text-shadow: var(--accent) 0px 0px 10px;
     font-family: Font;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .summary {
@@ -347,13 +353,13 @@ p {
 .cod-img {
     float: left;
     margin-right: 1.5em;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .tuna-img {
     float: right;
     margin: 0em 1.5em 1.5em 1.5em;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 /* LIST */
@@ -378,14 +384,13 @@ ul li {
 /* CHART */
 .chart-wrapper {
     display: inline-block;
-    height: 170vh;
-    width: 125vh;
+    width: 115vh;
 }
-.sector-chart {
+.chart {
     background-color: rgb(248, 242, 234);
     padding: 1.5em;
     margin: 1em;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 /* FOOTER */

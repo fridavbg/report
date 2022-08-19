@@ -23,24 +23,42 @@ class ProjectController extends AbstractController
     ): Response {
 
         $sectorChart = $chartBuilder->createChart(Chart::TYPE_DOUGHNUT);
+        $plasticProductionChart = $chartBuilder->createChart(Chart::TYPE_LINE);
+        $mismanagedPlasticChart = $chartBuilder->createChart(Chart::TYPE_BAR);
 
-        $labels = [];
-        $datasets = [];
+        $sectorLabels = [];
+        $sectorDatasets = [];
+
+        $plasticProductionLabels = [];
+        $plasticProductionDatasets = [];
+
+        $mismanagedPlasticLabels = [];
+        $mismanagedPlasticDatasets = [];
 
         $plasticProduction = $plasticProductionRepository->findAll();
         $sector = $sectorRepository->findAll();
         $mismanagedPlastic = $mismanagedPlasticRepository->findAll();
 
         foreach ($sector as $data) {
-            $labels[] = $data->getName();
-            $datasets[] = $data->getPrimaryPlasticProductionMillionTonnes();
+            $sectorLabels[] = $data->getName();
+            $sectorDatasets[] = $data->getPrimaryPlasticProductionMillionTonnes();
+        }
+
+        foreach ($plasticProduction as $data) {
+            $plasticProductionLabels[] = $data->getYear();
+            $plasticProductionDatasets[] = $data->getPlasticsProductionMillionTones();
+        }
+
+        foreach ($mismanagedPlastic as $data) {
+            $mismanagedPlasticLabels[] = $data->getCountry();
+            $mismanagedPlasticDatasets[] = $data->getProbabilityOfPlasticBeingEmittedToOcean();
         }
 
         $sectorChart->setData([
-            'labels' => $labels,
+            'labels' => $sectorLabels,
             'datasets' => [
                 [
-                    'label' => 'My First dataset',
+                    'label' => 'Plastic production by sector',
                     'backgroundColor' => [
                         'rgb(204, 204, 255)',
                         'rgb(204, 229, 255)',
@@ -49,22 +67,51 @@ class ProjectController extends AbstractController
                         'rgb(27, 126, 246)',
                     ],
                     'borderColor' => 'rgb(2, 12, 12)',
-                    'data' => $datasets,
+                    'data' => $sectorDatasets,
                 ],
             ],
         ]);
 
-        $sectorChart->setOptions([
-            'maintainAspectRatio' => 'false',
+        $mismanagedPlasticChart->setData([
+            'labels' => $mismanagedPlasticLabels,
+            'datasets' => [
+                [
+                    'label' => 'Probability of mismanaged plastic per country 2019',
+                    'backgroundColor' => [
+                        'rgb(204, 204, 255)'
+                    ],
+                    'borderColor' => 'rgb(2, 12, 12)',
+                    'data' => $mismanagedPlasticDatasets,
+                ],
+            ],
         ]);
 
+        $plasticProductionChart->setData([
+            'labels' => $plasticProductionLabels,
+            'datasets' => [
+                [
+                    'label' => 'Global Plastic Producton',
+                    'backgroundColor' => [
+                        'rgb(204, 204, 255)',
+                        'rgb(204, 229, 255)',
+                        'rgb(153, 204, 255)',
+                        'rgb(51, 153, 255)',
+                        'rgb(27, 126, 246)',
+                    ],
+                    'borderColor' => 'rgb(2, 12, 12)',
+                    'data' => $plasticProductionDatasets,
+                ],
+            ],
+        ]);
 
         $data = [
             'title' => 'MVC Kmom10',
             'mismanagedPlastic' => $mismanagedPlastic,
             'plasticProduction' => $plasticProduction,
             'sector' => $sector,
-            'chart' => $sectorChart
+            'plasticProductionChart' => $plasticProductionChart,
+            'sectorChart' => $sectorChart,
+            'mismanagedPlasticChart' => $mismanagedPlasticChart
         ];
         return $this->render('project/index.html.twig', $data);
     }

@@ -6,7 +6,7 @@
 
 {% block content %}
   <div class="project-wrapper">
-    <div>
+    <div class="text-container">
       <h1>
         Hav och marina resurser
       </h1>
@@ -20,7 +20,10 @@
       <p>
         Överfiske, försurning, gifter och föroreningar är några av de problem som drabbar våra hav idag. Visste du till exempel att åtta miljoner ton plast hamnar i haven varje år? Fortsätter det i denna takt kommer haven att bestå av mer plast än fisk år 2050. Vi måste skydda våra hav och säkerställa hållbar användning av havsbaserade resurser och ekosystem. Vi har alltid behövt haven. Nu behöver haven oss.
       </p>
-
+      <div class="chart-wrapper">
+        <h4>Plast producton i ton ifrån 2015</h4>
+        {{ render_chart(plasticProductionChart, {'class': 'chart'}) }}
+      </div>
       <h4>AVSKAFFA SUBVENTIONER SOM BIDRAR TILL ÖVERFISKE</h4>
       <p>
         Senast 2020 förbjuda vissa former av fiskesubventioner som bidrar till överkapacitet och överfiske, avskaffa subventioner som bidrar till olagligt, orapporterat och oreglerat fiske och avstå från att införa nya sådana subventioner, med erkännande av att en ändamålsenlig och effektiv särskild och differentierad behandling av utvecklingsländerna och de minst utvecklade länderna bör vara en integrerad del av förhandlingarna om fiskesubventioner i Världshandelsorganisationen.* *Med beaktande av pågående förhandlingar i Världshandelsorganisationen, utvecklingsagendan från Doha och mandatet från ministermötet i Hongkong.
@@ -31,8 +34,12 @@
         Till 2025 förebygga och avsevärt minska alla slags föroreningar i havet, i synnerhet från landbaserad verksamhet, inklusive marint skräp och tillförsel av näringsämnen.
       </p>
       <div class="chart-wrapper">
-        <h4>Plast producton i ton ifrån 2015</h4>
-        {{ render_chart(chart, {'class': 'sector-chart'}) }}
+        <h4>Plast produkton i ton år 2015</h4>
+        {{ render_chart(sectorChart, {'class': 'chart'}) }}
+      </div>
+      <div class="chart-wrapper">
+      <h4>Sannolikhet utav missköt plast hanteringi länder år 2019</h4>
+      {{ render_chart(mismanagedPlasticChart, {'class': 'chart'}) }}
       </div>
     </div>
 
