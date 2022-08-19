@@ -13,7 +13,6 @@
       <p>
         Bevara och nyttja haven och de marina resurserna på ett hållbart sätt för en hållbar utveckling
       </p>
-      <img src="{{asset('img/project/tuna.jpg')}}" width="500" alt="Tuna stim" class="tuna-img"/>
       <p>
         Världens hav – deras temperatur, kemi, strömmar och liv – driver globala system som gör jorden beboelig för mänskligheten. Haven täcker 70 procent av vår planet och över tre miljarder människor är beroende av den marina och kustnära biologiska mångfalden för sin försörjning. Hur vi hanterar våra hav är avgörande för mänskligheten som helhet och för att balansera effekterna av klimatförändringarna.
       </p>
@@ -26,10 +25,15 @@
       <p>
         Senast 2020 förbjuda vissa former av fiskesubventioner som bidrar till överkapacitet och överfiske, avskaffa subventioner som bidrar till olagligt, orapporterat och oreglerat fiske och avstå från att införa nya sådana subventioner, med erkännande av att en ändamålsenlig och effektiv särskild och differentierad behandling av utvecklingsländerna och de minst utvecklade länderna bör vara en integrerad del av förhandlingarna om fiskesubventioner i Världshandelsorganisationen.* *Med beaktande av pågående förhandlingar i Världshandelsorganisationen, utvecklingsagendan från Doha och mandatet från ministermötet i Hongkong.
       </p>
+      <img src="{{asset('img/project/tuna.jpg')}}" width="500" alt="Tuna stim" class="tuna-img"/>
       <h4>MINSKA FÖRORENINGARNA I HAVEN</h4>
       <p>
         Till 2025 förebygga och avsevärt minska alla slags föroreningar i havet, i synnerhet från landbaserad verksamhet, inklusive marint skräp och tillförsel av näringsämnen.
       </p>
+      <div class="chart-wrapper">
+        <h4>Plast producton i ton ifrån 2015</h4>
+        {{ render_chart(chart, {'class': 'sector-chart'}) }}
+      </div>
     </div>
 
     <div class="login-container">

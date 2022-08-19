@@ -10,8 +10,7 @@
       TEST
     </h1>
     <div>
-      {{ render_chart(chart) }}
-      {{ render_chart(chart, {'data-controller': 'mychart'}) }}
+      {{ render_chart(chart, {'class': 'sector-chart'}) }}
     </div>
     <code>
     {{dump(chart)}}

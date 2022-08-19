@@ -19,34 +19,54 @@ class ProjectController extends AbstractController
         ChartBuilderInterface $chartBuilder,
         PlasticProductionRepository $plasticProductionRepository,
         SectorRepository $sectorRepository,
-        MismanagedPlasticRepository $mismanagedPlasticRepository 
+        MismanagedPlasticRepository $mismanagedPlasticRepository
     ): Response {
 
-        $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
+        $sectorChart = $chartBuilder->createChart(Chart::TYPE_DOUGHNUT);
 
-        $chart->setData([
-            'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            'datasets' => [
-                [
-                    'label' => 'My First dataset',
-                    'backgroundColor' => 'rgb(255, 99, 132)',
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [0, 10, 5, 2, 20, 30, 45],
-                ],
-            ],
-        ]);
+        $labels = [];
+        $datasets = [];
 
         $plasticProduction = $plasticProductionRepository->findAll();
         $sector = $sectorRepository->findAll();
         $mismanagedPlastic = $mismanagedPlasticRepository->findAll();
+
+        foreach ($sector as $data) {
+            $labels[] = $data->getName();
+            $datasets[] = $data->getPrimaryPlasticProductionMillionTonnes();
+        }
+
+        $sectorChart->setData([
+            'labels' => $labels,
+            'datasets' => [
+                [
+                    'label' => 'My First dataset',
+                    'backgroundColor' => [
+                        'rgb(204, 204, 255)',
+                        'rgb(204, 229, 255)',
+                        'rgb(153, 204, 255)',
+                        'rgb(51, 153, 255)',
+                        'rgb(27, 126, 246)',
+                    ],
+                    'borderColor' => 'rgb(2, 12, 12)',
+                    'data' => $datasets,
+                ],
+            ],
+        ]);
+
+        $sectorChart->setOptions([
+            'maintainAspectRatio' => 'false',
+        ]);
+
+
         $data = [
             'title' => 'MVC Kmom10',
             'mismanagedPlastic' => $mismanagedPlastic,
             'plasticProduction' => $plasticProduction,
             'sector' => $sector,
-            'chart' => $chart
+            'chart' => $sectorChart
         ];
-        return $this->render('project/test.html.twig', $data);
+        return $this->render('project/index.html.twig', $data);
     }
 
     #[Route('/proj/about', name: 'project-about')]
