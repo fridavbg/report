@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    {# <link rel="icon" href="favicon.ico"> #}
-    <link rel="stylesheet" href="{{ asset('css/project.css') }}"/>
-    {{ encore_entry_link_tags('app')}}
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+      {# <link rel="icon" href="favicon.ico"> #}
+      <link rel="stylesheet" href="{{ asset('css/project.css') }}"/>
+      {{ encore_entry_link_tags('app')}}
+    {% endblock %}
   </head>
   <body>
     <div>
@@ -78,7 +79,8 @@
     <div class="sitefooter">
       <p>Skapad utav Frida i BTHs MVC kurs</p>
     </div>
-    {{ encore_entry_script_tags('app')}}
-    {% block javascript %} {% endblock %}
+    {% block javascript %}
+      {{ encore_entry_script_tags('app')}}
+    {% endblock %}
   </body>
 </html>
