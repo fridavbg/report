@@ -217,6 +217,11 @@ p {
     width: 100%;
 }
 
+.summary h1 {
+    margin-left: 0.8em;
+}
+
+
 /* IMAGES */
 
 .cod-img {

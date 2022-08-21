@@ -24,50 +24,64 @@
       <h4>Hur mycket plast har producerats sedan 2015?
       </h4>
       <p>
-        Enligt Arabella Ruiz, senior researcher för <a  class= "standard-link" href="https://theroundup.org/">The RoundUp</a> så kommer plast produktionen att forsätta att öka. 2019 så producerades 368 miljoner metric ton, men 2020 så minskade det på grund utav Corona situationen. Enligt <a class= "standard-link" href="https://plasticseurope.org/">PlasticsEurope (PEMRG)</a> så förväntas dock produktionen att fortsatt öka år för år.
+        Enligt Arabella Ruiz, senior researcher för
+        <a class="standard-link" href="https://theroundup.org/">The RoundUp</a>
+        så kommer plastproduktionen att forsätta att öka. 2019 så producerades 368 miljoner metric ton, men 2020 så minskade det på grund utav Corona situationen. Dock enligt
+        <a class="standard-link" href="https://plasticseurope.org/">PlasticsEurope (PEMRG)</a>
+        så förväntas dock produktionen att fortsatt öka år för år.
       </p>
       <img src="{{asset('img/project/Total-Annual-Global-Plastic-Production-Graph.png')}}" width="500" alt="Graph showing total annual global plastic production" class="center-img"/>
 
-    <h4>Olika typer utav plast</h4>
-    <p>Finns det någon skillnad på plast och plast? </p>
-    <p>Nedstående diagram visar vilka sektorer som producerade mest plast under år 2015. Där packnings sektor har den största andelen på 42 procent. </p>
+      <h4>Finns det någon skillnad på plast och plast?</h4>
+      <p>Nedstående diagram visar vilka sektorer som producerade mest plast under år 2015. Där packningssektorn har den största andelen på 42 procent. Då nerbrytningstiden för olika sorters plast kan variera ganska kraftigt så finns det en stor anledning att därför ha koll olika sektorers produktion samt plastens största användningsområde. Man kan ju då ställa sig frågan om det finns nått annat bättre mer miljövänligt material som kanske kan bytas ut i respektive sektor.
+      </p>
       <div class="chart-wrapper">
         <h4>Plast produktion i ton år 2015 per sektor</h4>
         {{ render_chart(sectorChart, {'class': 'chart'}) }}
       </div>
+      <h4>Hur vill vi att framtiden skall se ut?</h4>
+      <p></p>
+      <h4>Plasthantering världen över</h4>
       <div class="chart-wrapper">
         <h4>Sannolikhet utav missköt plast hantering i länder år 2019</h4>
         {{ render_chart(mismanagedPlasticChart, {'class': 'chart'}) }}
       </div>
-      <
-      {# PROJECT WRAPPER /DIV #}
     </div>
-
     <div class="login-container">
       <center>
-        <h1>
+        <h2>
           Login / Register
-        </h1>
+        </h2>
       </center>
       <form>
         <div class="container">
-          <label>Username :
+          <label>
+            Username :
           </label>
           <input type="text" placeholder="Enter Username" name="username" required="required">
-          <label>Password :
-          </label>
-          <input type="password" placeholder="Enter Password" name="password" required="required">
-          <button type="submit">Login</button>
-          <input type="checkbox" checked="checked">
-          Remember me
-          <button type="button" class="cancelbtn">
-            Cancel</button>
-          Forgot
-          <a href="#">
-            password?
-          </a>
-        </div>
-      </form>
-    </div>
-  </div>
+        </br>
+        <label>
+          Password :
+        </label>
+        <input type="password" placeholder="Enter Password" name="password" required="required">
+      </br>
+      <button type="submit">
+        Login
+      </button>
+    </br>
+    <input type="checkbox" checked="checked">
+    Remember me
+  </br>
+  <button type="button" class="cancelbtn">
+    Cancel
+  </button>
+</br>
+Forgot
+<a href="#">
+  password?
+</a>
+</div>
+</form>
+</div>
+</div>
 {% endblock %}
