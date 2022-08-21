@@ -56,78 +56,10 @@ header {
 header h1 {
     background-color: var(--accent);
     opacity: 0.8;
-    padding: 8px;
+    padding: 10px;
     border-radius: 10px;
     color: var(--light-text);
     font-family: Title;
-}
-
-/* ARROW-DOWN */
-.arrow-container {
-    padding: 2em;
-}
-
-.arrows {
-    width: 60px;
-    height: 72px;
-    position: absolute;
-    left: 50%;
-    margin-left: -30px;
-    bottom: 20px;
-    z-index: 1;
-}
-
-.arrows path {
-    stroke: #2994d1;
-    fill: transparent;
-    stroke-width: 1px;
-    animation: arrow 2s infinite;
-    -webkit-animation: arrow 2s infinite;
-}
-
-@keyframes arrow {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes arrow /*Safari and Chrome*/ {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.arrows path.a1 {
-    animation-delay: -1s;
-    -webkit-animation-delay: -1s; /* Safari 和 Chrome */
-}
-
-.arrows path.a2 {
-    animation-delay: -0.5s;
-    -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
-}
-
-.arrows path.a3 {
-    animation-delay: 0s;
-    -webkit-animation-delay: 0s; /* Safari 和 Chrome */
 }
 
 /* NAVBAR */
@@ -162,7 +94,7 @@ nav ul {
 nav li {
     border: 1px solid var(--accent);
     margin: 12px;
-    border-radius: 12px;
+    border-radius: 50%;
 }
 
 nav a {
@@ -179,26 +111,7 @@ nav a {
 nav ul li a:hover {
     color: var(--blue);
     border: 0.5px solid var(--light-text);
-    border-radius: 10px;
-}
-
-/* NAVBAR DROPDOWN */
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 16px;
-    text-transform: uppercase;
-    text-shadow: var(--dark-bkg) 0px 0px 10px;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: inherit;
-    font-family: Title;
-    padding: 20px;
-    margin: 0;
+    border-radius: 50%;
 }
 
 .navbar a:hover,
@@ -208,38 +121,11 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 /* LINKS */
 .standard-link {
     font-family: Font;
-    font-size: medium;
+    font-size: small;
     text-decoration: none;
-    cursor: pointer;
     padding: 0.5em;
     border-radius: 10px;
     color: var(--light-text);
@@ -251,23 +137,6 @@ nav ul li a:hover {
     background-color: var(--dark-bkg);
     border-radius: 10px;
     padding: 0.5em;
-}
-
-.report-link {
-    font-family: Font;
-    font-size: medium;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0.5em;
-    border-radius: 10px;
-    color: var(--light-text);
-    box-shadow: var(--accent) 0px 20px 30px -10px;
-    background-color: var(--accent);
-}
-
-.report-link:hover {
-    background-color: var(--dark-bkg);
-    border-radius: 10px;
 }
 
 /* WRAPPERS */
@@ -361,6 +230,12 @@ p {
     margin: 0em 1.5em 1.5em 1.5em;
     border-radius: 10px;
 }
+
+.center-img {
+    margin: 0em 1.5em 1.5em 1.5em;
+    border-radius: 10px;
+}
+
 
 /* LIST */
 

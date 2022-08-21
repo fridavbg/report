@@ -11,36 +11,33 @@
         Hav och marina resurser
       </h1>
       <p>
-        Bevara och nyttja haven och de marina resurserna på ett hållbart sätt för en hållbar utveckling
-      </p>
-      <p>
-        Världens hav – deras temperatur, kemi, strömmar och liv – driver globala system som gör jorden beboelig för mänskligheten. Haven täcker 70 procent av vår planet och över tre miljarder människor är beroende av den marina och kustnära biologiska mångfalden för sin försörjning. Hur vi hanterar våra hav är avgörande för mänskligheten som helhet och för att balansera effekterna av klimatförändringarna.
+        Jordens hav – deras temperatur, kemi, strömmar och liv – är en stor del utav vår planets globala system som gör jorden beboelig för mänskligheten, och andra varelser. Haven täcker 70 procent av vår planet och över tre miljarder människor är beroende av den marina och kustnära biologiska mångfalden för sin försörjning. Hur vi tar hand om våra hav är avgörande för att balansera effekterna av klimatförändringarna.
       </p>
       <img src="{{asset('img/project/cod.jpg')}}" width="500" alt="Torsk stim" class="cod-img"/>
       <p>
-        Överfiske, försurning, gifter och föroreningar är några av de problem som drabbar våra hav idag. Visste du till exempel att åtta miljoner ton plast hamnar i haven varje år? Fortsätter det i denna takt kommer haven att bestå av mer plast än fisk år 2050. Vi måste skydda våra hav och säkerställa hållbar användning av havsbaserade resurser och ekosystem. Vi har alltid behövt haven. Nu behöver haven oss.
+        Enligt den statistik som jag har hittat så hamnar ungefär åtta miljoner ton plast i havet varje år. Åtta miljoner plast låter ju som en hel del, men frågan går ju då till hur mycket plast som det produceras årligen. Följande diagram visar en tabell över hur mycket plast som producerats ifrån 1950 fram till 2015. Plast produktionen har sedan 1950 bara ökat och 2015 så låg produktionen på 381 000 000 ton plast.
       </p>
       <div class="chart-wrapper">
         <h4>Plast producton i ton ifrån 2015</h4>
         {{ render_chart(plasticProductionChart, {'class': 'chart'}) }}
       </div>
-      <h4>AVSKAFFA SUBVENTIONER SOM BIDRAR TILL ÖVERFISKE</h4>
+      <h4>Hur mycket plast har producerats sedan 2015?
+      </h4>
       <p>
-        Senast 2020 förbjuda vissa former av fiskesubventioner som bidrar till överkapacitet och överfiske, avskaffa subventioner som bidrar till olagligt, orapporterat och oreglerat fiske och avstå från att införa nya sådana subventioner, med erkännande av att en ändamålsenlig och effektiv särskild och differentierad behandling av utvecklingsländerna och de minst utvecklade länderna bör vara en integrerad del av förhandlingarna om fiskesubventioner i Världshandelsorganisationen.* *Med beaktande av pågående förhandlingar i Världshandelsorganisationen, utvecklingsagendan från Doha och mandatet från ministermötet i Hongkong.
+        Enligt Arabella Ruiz, senior researcher för <a  class= "standard-link" href="https://theroundup.org/">The RoundUp</a> så kommer plast produktionen att forsätta att öka. 2019 så producerades 368 miljoner metric ton, men 2020 så minskade det på grund utav Corona situationen. Enligt <a class= "standard-link" href="https://plasticseurope.org/">PlasticsEurope (PEMRG)</a> så förväntas dock produktionen att fortsatt öka år för år.
       </p>
-      <img src="{{asset('img/project/tuna.jpg')}}" width="500" alt="Tuna stim" class="tuna-img"/>
-      <h4>MINSKA FÖRORENINGARNA I HAVEN</h4>
-      <p>
-        Till 2025 förebygga och avsevärt minska alla slags föroreningar i havet, i synnerhet från landbaserad verksamhet, inklusive marint skräp och tillförsel av näringsämnen.
-      </p>
+      <img src="{{asset('img/project/Total-Annual-Global-Plastic-Production-Graph.png')}}" width="500" alt="Graph showing total annual global plastic production" class="center-img"/>
+
       <div class="chart-wrapper">
-        <h4>Plast produkton i ton år 2015</h4>
+        <h4>Plast produktion i ton år 2015</h4>
         {{ render_chart(sectorChart, {'class': 'chart'}) }}
       </div>
       <div class="chart-wrapper">
-      <h4>Sannolikhet utav missköt plast hanteringi länder år 2019</h4>
-      {{ render_chart(mismanagedPlasticChart, {'class': 'chart'}) }}
+        <h4>Sannolikhet utav missköt plast hantering i länder år 2019</h4>
+        {{ render_chart(mismanagedPlasticChart, {'class': 'chart'}) }}
       </div>
+      <
+      {# PROJECT WRAPPER /DIV #}
     </div>
 
     <div class="login-container">
