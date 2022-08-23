@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660815496">
-  <project timestamp="1660815496">
+<coverage generated="1661274995">
+  <project timestamp="1661274995">
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Classes/Card/Card.php">
       <class name="App\Classes\Card\Card" namespace="global">
         <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
@@ -680,24 +680,42 @@
     </file>
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Controller/ProjectController.php">
       <class name="App\Controller\ProjectController" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+        <metrics complexity="6" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="33" coveredelements="0"/>
       </class>
-      <line num="17" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="17" type="method" name="index" visibility="public" complexity="4" crap="20" count="0"/>
       <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
       <line num="27" type="stmt" count="0"/>
-      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
       <line num="39" type="stmt" count="0"/>
       <line num="40" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
       <line num="42" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
       <line num="49" type="stmt" count="0"/>
-      <line num="52" type="method" name="about" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="55" type="stmt" count="0"/>
-      <line num="58" type="stmt" count="0"/>
-      <line num="60" type="method" name="reset" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="63" type="stmt" count="0"/>
-      <line num="66" type="stmt" count="0"/>
-      <metrics loc="69" ncloc="69" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="75" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="107" type="stmt" count="0"/>
+      <line num="116" type="stmt" count="0"/>
+      <line num="119" type="method" name="about" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="122" type="stmt" count="0"/>
+      <line num="125" type="stmt" count="0"/>
+      <line num="127" type="method" name="reset" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="130" type="stmt" count="0"/>
+      <line num="133" type="stmt" count="0"/>
+      <metrics loc="136" ncloc="136" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="33" coveredelements="0"/>
     </file>
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Controller/ReportController.php">
       <class name="App\Controller\ReportController" namespace="global">
@@ -789,6 +807,29 @@
       <line num="63" type="stmt" count="1"/>
       <metrics loc="66" ncloc="66" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="17" coveredelements="17"/>
     </file>
+    <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Entity/PlasticLifetime.php">
+      <class name="App\Entity\PlasticLifetime" namespace="global">
+        <metrics complexity="7" methods="7" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="4" elements="17" coveredelements="7"/>
+      </class>
+      <line num="22" type="method" name="getId" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="27" type="method" name="getSector" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="32" type="method" name="setSector" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="39" type="method" name="getYear" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="44" type="method" name="setYear" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="51" type="method" name="getLifetimeInYears" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="56" type="method" name="setLifetimeInYears" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <metrics loc="63" ncloc="63" classes="1" methods="7" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="4" elements="17" coveredelements="7"/>
+    </file>
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Entity/PlasticProduction.php">
       <class name="App\Entity\PlasticProduction" namespace="global">
         <metrics complexity="5" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
@@ -848,6 +889,23 @@
       <line num="64" type="stmt" count="0"/>
       <metrics loc="67" ncloc="67" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="17" coveredelements="0"/>
     </file>
+    <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Form/BookFormType.php">
+      <class name="App\Form\BookFormType" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="11" coveredelements="0"/>
+      </class>
+      <line num="17" type="method" name="buildForm" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="45" type="method" name="configureOptions" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <metrics loc="52" ncloc="52" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="11" coveredelements="0"/>
+    </file>
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Kernel.php">
       <class name="App\Kernel" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -876,6 +934,22 @@
       </class>
       <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
       <line num="21" type="stmt" count="7"/>
+      <line num="24" type="method" name="add" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="33" type="method" name="remove" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="1" elements="10" coveredelements="2"/>
+    </file>
+    <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Repository/PlasticLifetimeRepository.php">
+      <class name="App\Repository\PlasticLifetimeRepository" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="1" elements="10" coveredelements="2"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="21" type="stmt" count="3"/>
       <line num="24" type="method" name="add" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="26" type="stmt" count="0"/>
       <line num="28" type="stmt" count="0"/>
@@ -934,6 +1008,6 @@
       <line num="38" type="stmt" count="0"/>
       <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="37" loc="2610" ncloc="2029" classes="35" methods="153" coveredmethods="80" conditionals="0" coveredconditionals="0" statements="561" coveredstatements="214" elements="714" coveredelements="294"/>
+    <metrics files="40" loc="2859" ncloc="2247" classes="38" methods="165" coveredmethods="84" conditionals="0" coveredconditionals="0" statements="605" coveredstatements="219" elements="770" coveredelements="303"/>
   </project>
 </coverage>

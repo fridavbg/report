@@ -34,7 +34,7 @@ class MismanagedPlasticTest extends KernelTestCase
     }
 
     /**
-     * 
+     * Test to check that id is not empty and an integer
      */
     public function testGetId()
     {
@@ -46,7 +46,8 @@ class MismanagedPlasticTest extends KernelTestCase
     }
 
     /**
-     * Test to make sure country name is not Empty and is a string. 
+     * Test to make sure country name 
+     * is not Empty and is a string. 
      */
     public function testGetCountry()
     {
