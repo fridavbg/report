@@ -17,27 +17,27 @@ class ProjectController extends AbstractController
     #[Route('/proj', name: 'project')]
     public function index(
         ChartBuilderInterface $chartBuilder,
-        PlasticProductionRepository $plasticProductionRepository,
+        PlasticProductionRepository $plasticProdRepo,
         SectorRepository $sectorRepository,
-        MismanagedPlasticRepository $mismanagedPlasticRepository
+        MismanagedPlasticRepository $mismaPlasticRepo
     ): Response {
 
         $sectorChart = $chartBuilder->createChart(Chart::TYPE_DOUGHNUT);
-        $plasticProductionChart = $chartBuilder->createChart(Chart::TYPE_LINE);
-        $mismanagedPlasticChart = $chartBuilder->createChart(Chart::TYPE_BAR);
+        $plasticProdChart = $chartBuilder->createChart(Chart::TYPE_LINE);
+        $mismaPlasticChart = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $sectorLabels = [];
         $sectorDatasets = [];
 
-        $plasticProductionLabels = [];
-        $plasticProductionDatasets = [];
+        $plasticProdLabels = [];
+        $plasticProdDatasets = [];
 
-        $mismanagedPlasticLabels = [];
-        $mismanagedPlasticDatasets = [];
+        $mismaPlasticLabels = [];
+        $mismaPlasticData = [];
 
-        $plasticProduction = $plasticProductionRepository->findAll();
+        $plasticProduction = $plasticProdRepo->findAll();
         $sector = $sectorRepository->findAll();
-        $mismanagedPlastic = $mismanagedPlasticRepository->findAll();
+        $mismanagedPlastic = $mismaPlasticRepo->findAll();
 
         foreach ($sector as $data) {
             $sectorLabels[] = $data->getName();
@@ -45,13 +45,13 @@ class ProjectController extends AbstractController
         }
 
         foreach ($plasticProduction as $data) {
-            $plasticProductionLabels[] = $data->getYear();
-            $plasticProductionDatasets[] = $data->getPlasticsProductionMillionTones();
+            $plasticProdLabels[] = $data->getYear();
+            $plasticProdDatasets[] = $data->getPlasticsProductionMillionTones();
         }
 
         foreach ($mismanagedPlastic as $data) {
-            $mismanagedPlasticLabels[] = $data->getCountry();
-            $mismanagedPlasticDatasets[] = $data->getProbabilityOfPlasticBeingEmittedToOcean();
+            $mismaPlasticLabels[] = $data->getCountry();
+            $mismaPlasticData[] = $data->getProbabilityOfPlasticBeingEmittedToOcean();
         }
 
         $sectorChart->setData([
@@ -72,8 +72,8 @@ class ProjectController extends AbstractController
             ],
         ]);
 
-        $mismanagedPlasticChart->setData([
-            'labels' => $mismanagedPlasticLabels,
+        $mismaPlasticChart->setData([
+            'labels' => $mismaPlasticLabels,
             'datasets' => [
                 [
                     'label' => 'Probability of mismanaged plastic per country 2019',
@@ -81,13 +81,13 @@ class ProjectController extends AbstractController
                         'rgb(204, 204, 255)'
                     ],
                     'borderColor' => 'rgb(2, 12, 12)',
-                    'data' => $mismanagedPlasticDatasets,
+                    'data' => $mismaPlasticData,
                 ],
             ],
         ]);
 
-        $plasticProductionChart->setData([
-            'labels' => $plasticProductionLabels,
+        $plasticProdChart->setData([
+            'labels' => $plasticProdLabels,
             'datasets' => [
                 [
                     'label' => 'Global Plastic Producton',
@@ -99,7 +99,7 @@ class ProjectController extends AbstractController
                         'rgb(27, 126, 246)',
                     ],
                     'borderColor' => 'rgb(2, 12, 12)',
-                    'data' => $plasticProductionDatasets,
+                    'data' => $plasticProdDatasets,
                 ],
             ],
         ]);
@@ -109,9 +109,9 @@ class ProjectController extends AbstractController
             'mismanagedPlastic' => $mismanagedPlastic,
             'plasticProduction' => $plasticProduction,
             'sector' => $sector,
-            'plasticProductionChart' => $plasticProductionChart,
+            'plasticProdChart' => $plasticProdChart,
             'sectorChart' => $sectorChart,
-            'mismanagedPlasticChart' => $mismanagedPlasticChart
+            'mismaPlasticChart' => $mismaPlasticChart
         ];
         return $this->render('project/index.html.twig', $data);
     }

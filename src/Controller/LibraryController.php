@@ -48,12 +48,6 @@ class LibraryController extends AbstractController
         $book = $bookRepository
             ->find($bookId);
 
-        if (!$book) {
-            throw $this->createNotFoundException(
-                'No book found for id ' . $bookId
-            );
-        }
-
         $data = [
             'title' => 'Book by Id',
             'book' => $book
@@ -168,9 +162,7 @@ class LibraryController extends AbstractController
             $book->setISBN($isbn);
             $book->setDescription($description);
             $book->setImage($image);
-        } else {
-        }
-
+        } 
         $entityManager->flush();
 
         return $this->redirectToRoute('library_show_all');

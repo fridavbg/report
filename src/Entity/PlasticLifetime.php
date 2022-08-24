@@ -36,18 +36,6 @@ class PlasticLifetime
         return $this;
     }
 
-    public function getYear(): ?int
-    {
-        return $this->year;
-    }
-
-    public function setYear(?int $year): self
-    {
-        $this->year = $year;
-
-        return $this;
-    }
-
     public function getLifetimeInYears(): ?int
     {
         return $this->lifetime_in_years;

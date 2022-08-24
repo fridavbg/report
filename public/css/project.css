@@ -203,7 +203,7 @@ h4 {
 
 p {
     margin: 1em;
-    padding: 1em;
+    padding: 0em 1em 0em 1em;
     font-size: 18px;
     line-height: 2em;
     word-spacing: 0.1em;
@@ -221,7 +221,6 @@ p {
     margin-left: 0.8em;
 }
 
-
 /* IMAGES */
 
 .cod-img {
@@ -236,11 +235,17 @@ p {
     border-radius: 10px;
 }
 
+.boat-img {
+    width: 300px;
+    margin: 0em 1em 0em 1em;
+    float: left;
+    border-radius: 10px;
+}
+
 .center-img {
     margin: 0em 1.5em 1.5em 1.5em;
     border-radius: 10px;
 }
-
 
 /* LIST */
 
