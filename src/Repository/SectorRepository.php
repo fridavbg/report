@@ -16,12 +16,14 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class SectorRepository extends ServiceEntityRepository
 {
+    public bool $flush = false;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Sector::class);
     }
 
-    public function add(Sector $entity, bool $flush = false): void
+    public function add(Sector $entity, bool $flush): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +32,7 @@ class SectorRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Sector $entity, bool $flush = false): void
+    public function remove(Sector $entity, bool $flush): void
     {
         $this->getEntityManager()->remove($entity);
 

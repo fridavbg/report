@@ -11,17 +11,17 @@ class PlasticLifetime
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column()]
-    private ?int $id = null;
+    private ?int $plId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $sector = null;
 
     #[ORM\Column]
-    private ?int $lifetime_in_years = null;
+    private ?int $lifetime = null;
 
-    public function getId(): ?int
+    public function getplId(): ?int
     {
-        return $this->id;
+        return $this->plId;
     }
 
     public function getSector(): ?string
@@ -36,14 +36,14 @@ class PlasticLifetime
         return $this;
     }
 
-    public function getLifetimeInYears(): ?int
+    public function getLifetime(): ?int
     {
-        return $this->lifetime_in_years;
+        return $this->lifetime;
     }
 
-    public function setLifetimeInYears(int $lifetime_in_years): self
+    public function setLifetime(int $lifetime): self
     {
-        $this->lifetime_in_years = $lifetime_in_years;
+        $this->lifetime = $lifetime;
 
         return $this;
     }

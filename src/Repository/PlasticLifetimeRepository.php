@@ -16,12 +16,14 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PlasticLifetimeRepository extends ServiceEntityRepository
 {
+    public bool $flush = false;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, PlasticLifetime::class);
     }
 
-    public function add(PlasticLifetime $entity, bool $flush = false): void
+    public function add(PlasticLifetime $entity, bool $flush): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +32,7 @@ class PlasticLifetimeRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(PlasticLifetime $entity, bool $flush = false): void
+    public function remove(PlasticLifetime $entity, bool $flush): void
     {
         $this->getEntityManager()->remove($entity);
 
