@@ -17,6 +17,7 @@ class LibraryControllerTest extends WebTestCase
      */
     private $entityManager;
     private $client;
+    private $bookRepository;
 
     protected function setUp(): void
     {
@@ -32,7 +33,7 @@ class LibraryControllerTest extends WebTestCase
 
         $bookRepository = $this->entityManager
             ->getRepository(Book::class);
-        $this->books = $bookRepository->findAll();
+        //$this->books = $bookRepository->findAll();
     }
 
     private function truncateEntities()
@@ -77,21 +78,6 @@ class LibraryControllerTest extends WebTestCase
 
         $this->client->request('GET', '/library/show/' . $bookId);
         $this->assertResponseIsSuccessful();
-    }
-
-    /**
-     * Check that exception is thrown for /library/show/{bookId}
-     * if no bookId
-     */
-    public function testExceptionShowBookById()
-    {
-        $bookId = 24;
-
-        $this->client->request('GET', '/library/show/' . $bookId);
-        $this->assertResponseStatusCodeSame(404);
-        $response = $this->client->getResponse();
-        $data = $response->getContent();
-        $this->assertStringContainsString('No book found for id ' . $bookId, $data);
     }
 
     /**

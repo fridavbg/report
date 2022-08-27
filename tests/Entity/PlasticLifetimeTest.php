@@ -17,7 +17,6 @@ class PlasticLifetimeTest extends KernelTestCase
      * @var \Doctrine\ORM\EntityManager
      */
     private $entityManager;
-    private $plasticLifeRepository;
 
     /**
      * SetUp environment for test
@@ -42,7 +41,7 @@ class PlasticLifetimeTest extends KernelTestCase
     public function testGetId()
     {
         $plasticLifeInPackaging = $this->mismanagedPlasticRepository->findOneBy(['sector' => 'Packaging']);
-        $plasticLifeTimeId = $plasticLifeInPackaging->getId();
+        $plasticLifeTimeId = $plasticLifeInPackaging->getplId();
         $this->assertNotEmpty($plasticLifeTimeId);
         $this->assertIsInt($plasticLifeTimeId);
         assertEquals(6, $plasticLifeTimeId);

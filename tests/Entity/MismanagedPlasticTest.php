@@ -36,10 +36,10 @@ class MismanagedPlasticTest extends KernelTestCase
     /**
      * Test to check that id is not empty and an integer
      */
-    public function testGetId()
+    public function testGetMprId()
     {
         $mismanagedPlasticInSweden = $this->mismanagedPlasticRepository->findOneBy(['country' => 'Sweden']);
-        $countryId = $mismanagedPlasticInSweden->getId();
+        $countryId = $mismanagedPlasticInSweden->getMprId();
         $this->assertNotEmpty($countryId);
         $this->assertIsInt($countryId);
         assertEquals(143, $countryId);
