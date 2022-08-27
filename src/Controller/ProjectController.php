@@ -11,7 +11,6 @@ use App\Repository\MismanagedPlasticRepository;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 
-
 class ProjectController extends AbstractController
 {
     #[Route('/proj', name: 'project')]
@@ -131,5 +130,14 @@ class ProjectController extends AbstractController
             'title' => 'Reset DB MVC Kmom10'
         ];
         return $this->render('project/reset.html.twig', $data);
+    }
+
+    #[Route('/proj/test', name: 'project-test')]
+    public function test(): Response
+    {
+        $data = [
+            'title' => 'test MVC Kmom10'
+        ];
+        return $this->render('project/test.html.twig', $data);
     }
 }

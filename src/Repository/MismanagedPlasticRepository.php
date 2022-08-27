@@ -16,7 +16,6 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class MismanagedPlasticRepository extends ServiceEntityRepository
 {
-
     public bool $flush = false;
 
     public function __construct(ManagerRegistry $registry)

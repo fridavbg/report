@@ -16,7 +16,6 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class BookRepository extends ServiceEntityRepository
 {
-
     /**
      * @var bool $flush
      */
