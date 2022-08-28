@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PlasticProductionRepository;
-use App\Repository\SectorRepository;
 use App\Repository\MismanagedPlasticRepository;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
@@ -17,16 +16,11 @@ class ProjectController extends AbstractController
     public function index(
         ChartBuilderInterface $chartBuilder,
         PlasticProductionRepository $plasticProdRepo,
-        SectorRepository $sectorRepository,
         MismanagedPlasticRepository $mismaPlasticRepo
     ): Response {
 
-        $sectorChart = $chartBuilder->createChart(Chart::TYPE_DOUGHNUT);
         $plasticProdChart = $chartBuilder->createChart(Chart::TYPE_LINE);
         $mismaPlasticChart = $chartBuilder->createChart(Chart::TYPE_BAR);
-
-        $sectorLabels = [];
-        $sectorDatasets = [];
 
         $plasticProdLabels = [];
         $plasticProdDatasets = [];
@@ -35,13 +29,7 @@ class ProjectController extends AbstractController
         $mismaPlasticData = [];
 
         $plasticProduction = $plasticProdRepo->findAll();
-        $sector = $sectorRepository->findAll();
         $mismanagedPlastic = $mismaPlasticRepo->findAll();
-
-        foreach ($sector as $data) {
-            $sectorLabels[] = $data->getName();
-            $sectorDatasets[] = $data->getPrimaryPlasticProductionMillionTonnes();
-        }
 
         foreach ($plasticProduction as $data) {
             $plasticProdLabels[] = $data->getYear();
@@ -52,24 +40,6 @@ class ProjectController extends AbstractController
             $mismaPlasticLabels[] = $data->getCountry();
             $mismaPlasticData[] = $data->getProbabilityOfPlasticBeingEmittedToOcean();
         }
-
-        $sectorChart->setData([
-            'labels' => $sectorLabels,
-            'datasets' => [
-                [
-                    'label' => 'Plastic production by sector',
-                    'backgroundColor' => [
-                        'rgb(204, 204, 255)',
-                        'rgb(204, 229, 255)',
-                        'rgb(153, 204, 255)',
-                        'rgb(51, 153, 255)',
-                        'rgb(27, 126, 246)',
-                    ],
-                    'borderColor' => 'rgb(2, 12, 12)',
-                    'data' => $sectorDatasets,
-                ],
-            ],
-        ]);
 
         $mismaPlasticChart->setData([
             'labels' => $mismaPlasticLabels,
@@ -107,9 +77,7 @@ class ProjectController extends AbstractController
             'title' => 'Project MVC Kmom10',
             'mismanagedPlastic' => $mismanagedPlastic,
             'plasticProduction' => $plasticProduction,
-            'sector' => $sector,
             'plasticProdChart' => $plasticProdChart,
-            'sectorChart' => $sectorChart,
             'mismaPlasticChart' => $mismaPlasticChart
         ];
         return $this->render('project/index.html.twig', $data);

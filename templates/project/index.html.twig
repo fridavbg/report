@@ -35,10 +35,7 @@
       <h4>Finns det någon skillnad på plast och plast?</h4>
       <p>Nedstående diagram visar vilka sektorer som producerade mest plast under år 2015. Där packningssektorn har den största andelen på 42 procent. Då nerbrytningstiden för olika sorters plast kan variera ganska kraftigt så finns det en stor anledning att därför ha koll olika sektorers produktion samt plastens största användningsområde. Man kan ju då ställa sig frågan om det finns nått annat bättre mer miljövänligt material som kanske kan bytas ut i respektive sektor.
       </p>
-      <div class="chart-wrapper">
-        <h4>Plast produktion i ton år 2015 per sektor</h4>
-        {{ render_chart(sectorChart, {'class': 'chart'}) }}
-      </div>
+      {{render(controller('App\\Controller\\ChartController::sectorChart'))}}
       <h4>Hur vill vi att framtiden skall se ut?</h4>
       <p></p>
       <h4>Plasthantering världen över</h4>
@@ -47,7 +44,7 @@
         {{ render_chart(mismaPlasticChart, {'class': 'chart'}) }}
       </div>
     </div>
-    {{render(controller('App\\Controller\\SecurityController::login'))}}
+    {# {{render(controller('App\\Controller\\SecurityController::login'))}} #}
   </div>
 </div>
 </div>
