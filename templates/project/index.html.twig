@@ -13,7 +13,10 @@
       <p>
         Jordens hav – deras temperatur, kemi, strömmar och liv – är en stor del utav vår planets globala system som gör jorden beboelig för mänskligheten, och andra varelser. Haven täcker 70 procent av vår planet och över tre miljarder människor är beroende av den marina och kustnära biologiska mångfalden för sin försörjning. Hur vi tar hand om våra hav är avgörande för att balansera effekterna av klimatförändringarna.
       </p>
-      <img src="{{asset('img/project/cod.jpg')}}" width="500" alt="Torsk stim" class="cod-img"/>
+      <p style="color:red;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <img src="{{asset('img/project/cod.jpg')}}" width="500" alt="Torsk stim" class="right-img"/>
       <p>
         Enligt den statistik som jag har hittat så hamnar ungefär åtta miljoner ton plast i havet varje år. Åtta miljoner plast låter ju som en hel del, men frågan går ju då till hur mycket plast som det produceras årligen. Följande diagram visar en tabell över hur mycket plast som producerats ifrån 1950 fram till 2015. Plast produktionen har sedan 1950 bara ökat och 2015 så låg produktionen på 381 000 000 ton plast.
       </p>
@@ -22,21 +25,40 @@
       </h4>
       <p>
         Enligt Arabella Ruiz, senior researcher för
-        <a class="standard-link" href="https://theroundup.org/">The RoundUp</a>
-        så kommer plastproduktionen att forsätta att öka. 2019 så producerades 368 miljoner metric ton, men 2020 så minskade det på grund utav Corona situationen. Dock enligt
+        <a class="standard-link" href="https://theroundup.org/plastic-waste-statistics/" target="_blank">The RoundUp</a>
+        så kommer plastproduktionen att forsätta att öka. 2019 så producerades 368 miljoner ton, men 2020 så minskade det på grund utav Corona situationen. Enligt
         <a class="standard-link" href="https://plasticseurope.org/">PlasticsEurope (PEMRG)</a>
-        så förväntas dock produktionen att fortsatt öka år för år.
+        så förväntas dock produktionen att fortsatt öka år för år. Då globalt efterfrågan för plast beräknas att öka med 4.1% till 2030, och återigen med 2.4% emellan 2030 och 2050.
       </p>
-      <img src="{{asset('img/project/Total-Annual-Global-Plastic-Production-Graph.png')}}" width="500" alt="Graph showing total annual global plastic production" class="center-img"/>
+      <img src="{{asset('img/project/Total-Annual-Global-Plastic-Production-Graph.png')}}" width="500" alt="Graph showing total annual global plastic production" class="left-img"/>
 
-      <h4>Finns det någon skillnad på plast och plast?</h4>
-      <p>Nedstående diagram visar vilka sektorer som producerade mest plast under år 2015. Där packningssektorn har den största andelen på 42 procent. Då nerbrytningstiden för olika sorters plast kan variera ganska kraftigt så finns det en stor anledning att därför ha koll olika sektorers produktion samt plastens största användningsområde. Man kan ju då ställa sig frågan om det finns nått annat bättre mer miljövänligt material som kanske kan bytas ut i respektive sektor.
+      <h4>
+        Finns det någon skillnad på plast och plast?
+      </h4>
+      <p>
+        Det finns hundratals olika sorters plast, även kallad polymerer. Ungefär 91% utav världens plast återvinns ej, vilket innebär att det går till deponier där det kan ta flera år till det bryts ner. Ofta så när det kommer till återevinning så fokuserar man på 6 olika klassifikationer utav plast PET, HDPE, PVC, LDPE, PP, PS samt en sista del som ofta ej klassifieras.
       </p>
+      <p>
+        Nedstående diagram visar vilka sektorer som producerade mest plast under år 2015. Där packningssektorn har den största andelen på 42 procent. Då det kan variera kraftigt i nedbrytningstid för olika plastsorter,så finns det en stor anledning att därför ha koll olika sektorers produktion samt plastens största användningsområde. Man kan ju då ställa sig frågan om det finns nått annat bättre mer miljövänligt material som kanske kan bytas ut i respektive sektor.
+      </p>
+
       {{render(controller('App\\Controller\\ChartController::sectorChart'))}}
-      <h4>Hur vill vi att framtiden skall se ut?</h4>
-      <p></p>
+      <p>
+        Följande diagram visar nedbrytningstid utav plast ifrån dem olika industrisektorerna. Där plast ifrån byggindustri visar längst tid på 35 år. Medans pakteringsektorn har minsta värdet på ett halvt år. Pakteringsektorn tillverkar också mest med sina 146 000 000 ton medans byggindustrin tillverkar 65 000 000. 
+      </p>
+      {{render(controller('App\\Controller\\ChartController::plasticLifeChart'))}}
       <h4>Plasthantering världen över</h4>
-  {{ render(controller('App\\Controller\\ChartController::mismaPlasticChart'))}}
+      <p style="color:red;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      {{ render(controller('App\\Controller\\ChartController::mismaPlasticChart'))}}
+
+      <h4>
+        Hur vill vi att framtiden skall se ut?
+      </h4>
+      <p style="color:red;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
     </div>
     {# {{render(controller('App\\Controller\\SecurityController::login'))}} #}
   </div>

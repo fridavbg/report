@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Repository\SectorRepository;
 use App\Repository\PlasticProductionRepository;
 use App\Repository\MismanagedPlasticRepository;
+use App\Repository\PlasticLifetimeRepository;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 
@@ -124,5 +125,50 @@ class ChartController extends AbstractController
             ],
         ]);
         return $this->render('project/charts/mismaPlasticChart.html.twig', ["mismaPlasticChart" => $mismaPlasticChart]);
+    }
+
+    /***
+     * Function to render mismanaged plastic chart
+     */
+    public function plasticLifeChart(
+        ChartBuilderInterface $chartBuilder,
+        PlasticLifetimeRepository $plasticLifeRepo,
+    ): Response {
+        $plasticLifeChart = $chartBuilder->createChart(Chart::TYPE_BAR);
+
+        $plasticLifeLabels = [];
+        $plasticLifeData = [];
+
+        $plasticLife = $plasticLifeRepo->findAll();
+
+        foreach ($plasticLife as $data) {
+            $plasticLifeLabels[] = $data->getSector();
+            $plasticLifeData[] = $data->getLifetime();
+        }
+
+        $plasticLifeChart->setData([
+            'labels' => $plasticLifeLabels,
+            'datasets' => [
+                [
+                    'label' => 'Plastic Lifetime in years',
+                    'backgroundColor' => [
+                        'rgb(204, 204, 255)'
+                    ],
+                    'borderColor' => 'rgb(2, 12, 12)',
+                    'data' => $plasticLifeData,
+                ],
+            ],
+        ]);
+
+        $plasticLifeChart->setOptions([
+            'scales' => [
+                'y' => [
+                    'min' => 0,
+                    'max' => 40,
+                ],
+            ],
+        ]);
+
+        return $this->render('project/charts/plasticLifeChart.html.twig', ["plasticLifeChart" => $plasticLifeChart]);
     }
 }
