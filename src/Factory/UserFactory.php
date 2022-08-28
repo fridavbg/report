@@ -35,6 +35,11 @@ final class UserFactory extends ModelFactory
         // TODO inject services if required (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#factories-as-services)
     }
 
+    /**
+     * Set defaults values for user fixture
+     * @return array<string, string>.
+     * 
+     */
     protected function getDefaults(): array
     {
         return [

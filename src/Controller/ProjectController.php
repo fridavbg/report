@@ -9,7 +9,8 @@ use App\Repository\PlasticProductionRepository;
 use App\Repository\MismanagedPlasticRepository;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
-
+use App\Entity\User;
+use App\Repository\UserRepository;
 class ProjectController extends AbstractController
 {
     #[Route('/proj', name: 'project')]
@@ -101,10 +102,18 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/proj/test', name: 'project-test')]
-    public function test(): Response
+    public function test(
+        UserRepository $userRepository,
+    ): Response
     {
+        $users = $userRepository->findAll();
+
+        foreach ($users as $user) {
+            $user->getRoles();
+        }
+
         $data = [
-            'title' => 'Test MVC Kmom10'
+            'users' => $users
         ];
         return $this->render('project/test.html.twig', $data);
     }

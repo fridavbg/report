@@ -12,20 +12,23 @@ class User implements UserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column()]
-    private ?int $id = null;
+    private ?int $uId = null;
 
     #[ORM\Column(length: 180, unique: true)]
     private ?string $username = null;
 
     #[ORM\Column]
-    private array $roles = [];
+    /**
+     * @var array<string> $roles
+     */
+    private array $roles;
 
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
     public function getId(): ?int
     {
-        return $this->id;
+        return $this->uId;
     }
 
     public function getUsername(): ?string
@@ -52,6 +55,7 @@ class User implements UserInterface
 
     /**
      * @see UserInterface
+     * @return array<string> $roles
      */
     public function getRoles(): array
     {
@@ -61,6 +65,11 @@ class User implements UserInterface
 
         return array_unique($roles);
     }
+
+    /**
+     * Setter for Roles
+     * @param array<string> $roles
+     */
 
     public function setRoles(array $roles): self
     {
@@ -72,7 +81,7 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function eraseCredentials()
+    public function eraseCredentials(): void
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
