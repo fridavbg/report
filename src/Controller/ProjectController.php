@@ -104,7 +104,7 @@ class ProjectController extends AbstractController
         ]);
 
         $data = [
-            'title' => 'MVC Kmom10',
+            'title' => 'Project MVC Kmom10',
             'mismanagedPlastic' => $mismanagedPlastic,
             'plasticProduction' => $plasticProduction,
             'sector' => $sector,
@@ -136,7 +136,7 @@ class ProjectController extends AbstractController
     public function test(): Response
     {
         $data = [
-            'title' => 'test MVC Kmom10'
+            'title' => 'Test MVC Kmom10'
         ];
         return $this->render('project/test.html.twig', $data);
     }

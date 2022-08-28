@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1661619154">
-  <project timestamp="1661619154">
+<coverage generated="1661693317">
+  <project timestamp="1661693317">
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Classes/Card/Card.php">
       <class name="App\Classes\Card\Card" namespace="global">
         <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
@@ -746,7 +746,7 @@
       <line num="20" type="stmt" count="7"/>
       <line num="21" type="stmt" count="7"/>
       <line num="23" type="stmt" count="7"/>
-      <metrics loc="26" ncloc="26" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
+      <metrics loc="25" ncloc="25" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
     </file>
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Entity/Book.php">
       <class name="App\Entity\Book" namespace="global">
@@ -884,6 +884,33 @@
       <line num="64" type="stmt" count="0"/>
       <metrics loc="67" ncloc="67" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="17" coveredelements="0"/>
     </file>
+    <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Entity/User.php">
+      <class name="App\Entity\User" namespace="global">
+        <metrics complexity="9" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="21" coveredelements="0"/>
+      </class>
+      <line num="26" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="31" type="method" name="getUsername" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="36" type="method" name="setUsername" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="48" type="method" name="getUserIdentifier" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="56" type="method" name="getRoles" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <line num="65" type="method" name="setRoles" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="67" type="stmt" count="0"/>
+      <line num="69" type="stmt" count="0"/>
+      <line num="81" type="method" name="getPassword" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="83" type="stmt" count="0"/>
+      <line num="86" type="method" name="setPassword" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="90" type="stmt" count="0"/>
+      <metrics loc="93" ncloc="79" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="21" coveredelements="0"/>
+    </file>
     <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Kernel.php">
       <class name="App\Kernel" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -986,6 +1013,22 @@
       <line num="40" type="stmt" count="0"/>
       <metrics loc="69" ncloc="38" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="39" loc="2800" ncloc="2188" classes="37" methods="162" coveredmethods="84" conditionals="0" coveredconditionals="0" statements="592" coveredstatements="216" elements="754" coveredelements="300"/>
+    <file name="/Users/frida/Kod/BTH/dbwebb-kurser/mvc/me/report/src/Repository/UserRepository.php">
+      <class name="App\Repository\UserRepository" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="24" type="method" name="add" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="33" type="method" name="remove" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+    </file>
+    <metrics files="41" loc="2959" ncloc="2302" classes="39" methods="173" coveredmethods="84" conditionals="0" coveredconditionals="0" statements="612" coveredstatements="216" elements="785" coveredelements="300"/>
   </project>
 </coverage>

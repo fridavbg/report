@@ -139,6 +139,24 @@ nav ul li a:hover {
     padding: 0.5em;
 }
 
+/* BUTTONS */
+
+.btn {
+    margin: 1.3em;
+    padding: 2em;
+    border-radius: 50%;
+    font-family: Title;
+    font-size: 18px;
+    color: var(--light-text);
+    background-color: var(--dark-bkg);
+}
+
+.btn:hover {
+    color: var(----text);
+    border: 3px solid var(--light-text);
+    border-radius: 50%;
+}
+
 /* WRAPPERS */
 .project-wrapper {
     display: flex;
@@ -163,7 +181,7 @@ nav ul li a:hover {
     flex-direction: row;
 }
 
-/* PROJECT TEXT */
+/* PROJECT TEXT / TYPOGRAPHY */
 .text-container {
     flex: 70%;
 }
@@ -173,6 +191,10 @@ nav ul li a:hover {
     border: 1px solid white;
     padding: 1em;
     border-radius: 10px;
+}
+
+input {
+    margin: 1em;
 }
 
 h1 {

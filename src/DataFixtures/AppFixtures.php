@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Book;
+use App\Factory\UserFactory;
 
 class AppFixtures extends Fixture
 {
@@ -20,6 +21,8 @@ class AppFixtures extends Fixture
             $book->setImage('https://bit.ly/3ANU9Xb');
             $manager->persist($book);
         }
+
+        UserFactory::new()->create();
         $manager->flush();
     }
 }
