@@ -47,7 +47,7 @@
         {{ render_chart(mismaPlasticChart, {'class': 'chart'}) }}
       </div>
     </div>
-        {{ include('project/login.html.twig') }}
+    {{render(controller('App\\Controller\\SecurityController::login'))}}
   </div>
 </div>
 </div>
