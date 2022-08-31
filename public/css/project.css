@@ -249,7 +249,6 @@ p {
 
 .left-img {
     width: 500px;
-    height: 200px;
     float: left;
     margin-right: 1.5em;
     border-radius: 10px;
@@ -318,21 +317,37 @@ ul li {
 }
 
 @media screen and (min-width: 480px) {
+    .project-wrapper {
+        flex-direction: column-reverse;
+    }
     .content-wrapper {
         display: flex;
         flex-direction: column;
+    }
+    .login-container {
+        margin-bottom: 1em;
+    }
+    .btn {
+        margin: 0.8em;
+        padding: 1em;
+        font-size: 14px;
     }
     h1 {
         font-size: 30px;
     }
     .chart-wrapper {
         display: inline-block;
-        width: 95vh;
+        width: 90vh;
     }
     .chart {
         background-color: rgb(248, 242, 234);
-        padding: 1.5em;
-        margin: 1em;
+        margin-left: 2vh;
         border-radius: 10px;
+    }
+    .right-img {
+        float: none;
+    }
+    .left-img {
+        float: none;
     }
 }
