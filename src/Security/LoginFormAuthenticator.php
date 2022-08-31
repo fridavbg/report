@@ -3,6 +3,7 @@
 namespace App\Security;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -14,6 +15,12 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 
 class LoginFormAuthenticator extends AbstractAuthenticator
 {
+    private UserRepository $userRepository;
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
     public function supports(Request $request): ?bool
     {
         return $request->getPathInfo() === '/proj' && $request->isMethod('POST');
@@ -24,21 +31,27 @@ class LoginFormAuthenticator extends AbstractAuthenticator
         $username = $request->request->get('username');
         $password = $request->request->get('password');
         return new Passport(
-            new UserBadge($username),
-            new CustomCredentials(function($credentials, User $user) {
-                dd($credentials, $user);
+            new UserBadge($username, function ($userIdentifier) {
+                $user = $this->userRepository->findOneBy(['username' => $userIdentifier]);
+                if (!$user) {
+                    throw new \Exception('No username was provided');
+                }
+                return $user;
+            }),
+            new CustomCredentials(function ($credentials, User $user) {
+                return $credentials === 'tada';
             }, $password)
         );
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        // TODO: Implement onAuthenticationSuccess() method.
+        dd('Logged In');
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): ?Response
     {
-        // TODO: Implement onAuthenticationFailure() method.
+        dd('Login failed');
     }
 
     //    public function start(Request $request, AuthenticationException $authException = null): Response
