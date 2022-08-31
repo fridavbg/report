@@ -14,7 +14,7 @@ class SecurityController extends AbstractController
     public function login(): Response
     {
         $data = [
-            'test' => 'Login MVC Kmom10',
+            'test' => 'Login Tjenmos Kmom10',
         ];
         return $this->render('project/login.html.twig', $data);
     }
