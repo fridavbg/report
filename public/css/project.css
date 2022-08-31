@@ -277,6 +277,7 @@ p {
 
 .list {
     width: 35%;
+    border-radius: 10px;
     background-color: var(--mid-bkg);
     box-shadow: 2px 2px 2px 2px black;
     display: inline-block;
@@ -338,10 +339,12 @@ ul li {
     .chart-wrapper {
         display: inline-block;
         width: 90vh;
+        padding: 0.5em;
     }
     .chart {
         background-color: rgb(248, 242, 234);
         margin-left: 2vh;
+        padding: 0.5em;
         border-radius: 10px;
     }
     .right-img {
@@ -349,5 +352,8 @@ ul li {
     }
     .left-img {
         float: none;
+    }
+    .list {
+        margin-top: 1em;
     }
 }
