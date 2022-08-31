@@ -248,12 +248,15 @@ p {
 /* IMAGES */
 
 .left-img {
+    width: 500px;
+    height: 200px;
     float: left;
     margin-right: 1.5em;
     border-radius: 10px;
 }
 
 .right-img {
+    width: 500px;
     float: right;
     margin: 0em 1.5em 1.5em 1.5em;
     border-radius: 10px;
@@ -315,6 +318,10 @@ ul li {
 }
 
 @media screen and (min-width: 480px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
     h1 {
         font-size: 30px;
     }

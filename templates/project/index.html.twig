@@ -11,12 +11,12 @@
         Hav och marina resurser
       </h1>
       <p>
-        Jordens hav – deras temperatur, kemi, strömmar och liv – är en stor del utav vår planets globala system som gör jorden beboelig för mänskligheten, och andra varelser. Haven täcker 70 procent av vår planet och över tre miljarder människor är beroende av den marina och kustnära biologiska mångfalden för sin försörjning. Hur vi tar hand om våra hav är avgörande för att balansera effekterna av klimatförändringarna.
+        I detta projekt har jag valt att samla ihop och presentera mätvärden gällande föroreningar i haven.
+        <a class="standard-link" href="https://www.globalamalen.se/om-globala-malen/mal-14-hav-och-marina-resurser/">Mål 14</a>
+        handlar i helhet om hur hav och marina resurser kan bevara och nyttjas på ett hållbart sätt för en hålllbar utveckling. Man jag har valt att fokusera mer specifikt på delmål 14.1, minska föroreningar i haven, med störst fokus på plast. Mer om detta på
+        <a class="standard-link" href="{{path('project-about')}}">About</a>
       </p>
-      <p style="color:red;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <img src="{{asset('img/project/cod.jpg')}}" width="500" alt="Torsk stim" class="right-img"/>
+      <img src="{{asset('img/project/cod.jpg')}}" alt="Torsk stim" class="right-img"/>
       <p>
         Enligt den statistik som jag har hittat så hamnar ungefär åtta miljoner ton plast i havet varje år. Åtta miljoner plast låter ju som en hel del, men frågan går ju då till hur mycket plast som det produceras årligen. Följande diagram visar en tabell över hur mycket plast som producerats ifrån 1950 fram till 2015. Plast produktionen har sedan 1950 bara ökat och 2015 så låg produktionen på 381 000 000 ton plast.
       </p>
@@ -31,34 +31,49 @@
         så förväntas dock produktionen att fortsatt öka år för år. Då globalt efterfrågan för plast beräknas att öka med 4.1% till 2030, och återigen med 2.4% emellan 2030 och 2050.
       </p>
       <img src="{{asset('img/project/Total-Annual-Global-Plastic-Production-Graph.png')}}" width="500" alt="Graph showing total annual global plastic production" class="left-img"/>
-
       <h4>
         Finns det någon skillnad på plast och plast?
       </h4>
       <p>
-        Det finns hundratals olika sorters plast, även kallad polymerer. Ungefär 91% utav världens plast återvinns ej, vilket innebär att det går till deponier där det kan ta flera år till det bryts ner. Ofta så när det kommer till återevinning så fokuserar man på 6 olika klassifikationer utav plast PET, HDPE, PVC, LDPE, PP, PS samt en sista del som ofta ej klassifieras.
+        Det finns hundratals olika sorters plast, även kallad polymerer. Ungefär 91% utav världens plast återvinns ej, vilket innebär att det går till deponier där det kan ta flera år till det bryts ner. Ofta så när det kommer till återvinning så fokuserar man på 6 olika klassifikationer utav plast PET, HDPE, PVC, LDPE, PP, PS samt en sista del som ofta ej klassifieras.
       </p>
+      <img src="{{asset('img/project/tuna.jpg')}}" alt="Torsk stim" class="right-img"/>
       <p>
         Nedstående diagram visar vilka sektorer som producerade mest plast under år 2015. Där packningssektorn har den största andelen på 42 procent. Då det kan variera kraftigt i nedbrytningstid för olika plastsorter,så finns det en stor anledning att därför ha koll olika sektorers produktion samt plastens största användningsområde. Man kan ju då ställa sig frågan om det finns nått annat bättre mer miljövänligt material som kanske kan bytas ut i respektive sektor.
       </p>
 
       {{render(controller('App\\Controller\\ChartController::sectorChart'))}}
       <p>
-        Följande diagram visar nedbrytningstid utav plast ifrån dem olika industrisektorerna. Där plast ifrån byggindustri visar längst tid på 35 år. Medans pakteringsektorn har minsta värdet på ett halvt år. Pakteringsektorn tillverkar också mest med sina 146 000 000 ton medans byggindustrin tillverkar 65 000 000. 
+        Följande diagram visar nedbrytningstid utav plast ifrån dem olika industrisektorerna. Där plast ifrån byggindustri visar längst tid på 35 år. Medans pakteringsektorn har minsta värdet på ett halvt år. Pakteringsektorn tillverkar också mest med sina 146 000 000 ton medans byggindustrin tillverkar 65 000 000.
       </p>
       {{render(controller('App\\Controller\\ChartController::plasticLifeChart'))}}
       <h4>Plasthantering världen över</h4>
-      <p style="color:red;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>
+        Världen över så varieras avfallshantering, plast kommer endast till havet via floder som har dålig avfallshantering. Låg- till medelinkomstländer har en tendens att ha en sämre infrastruktur för att kunna hantera sitt avfall. I diagrammet nedan så visas ett diagram över sannolikhet att misskött avfall kommer till haven i olika länder. Vad som påverkar denna sannolikhet är klimat, terräng, markanvändning och avstånd inom avrinningsområden där vatten dränneras.
       </p>
       {{ render(controller('App\\Controller\\ChartController::mismaPlasticChart'))}}
-
       <h4>
         Hur vill vi att framtiden skall se ut?
       </h4>
-      <p style="color:red;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>
+        Enligt
+        <a class="standard-link" href="https://theoceancleanup.com/updates/predicting-the-future-of-plastic-pollution-and-why-cleanup-is-part-of-the-solution/">The Ocean Clean Up</a>
+        ett internationellt team utav forskare och experter så finns det ingen enkel lösning till att lösa plast föroreningen i våra hav. Men tre lösningar förslås och det är att minska användning utav plast, bättre avfallshantering och en stor-skalig
       </p>
+      <h4>
+        Mer information
+      </h4>
+      <ul class="list">
+        <li>
+          <a class="standard-link" href="https://www.worldcleanupday.org/">World CleanUp Day</a>
+        </li>
+        <li>
+          <a class="standard-link" href="https://www.globalamalen.se/om-globala-malen/">Globala målen</a>
+        </li>
+        <li>
+          <a class="standard-link" href="https://theoceancleanup.com/">The Ocean CleanUp</a>
+        </li>
+      </ul>
     </div>
     {# {{render(controller('App\\Controller\\SecurityController::login'))}} #}
   </div>
