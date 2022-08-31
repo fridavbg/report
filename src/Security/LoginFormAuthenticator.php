@@ -4,8 +4,10 @@ namespace App\Security;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authenticator\AbstractAuthenticator;
@@ -16,9 +18,12 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 class LoginFormAuthenticator extends AbstractAuthenticator
 {
     private UserRepository $userRepository;
-    public function __construct(UserRepository $userRepository)
+    private RouterInterface $router;
+
+    public function __construct(UserRepository $userRepository, RouterInterface $router)
     {
         $this->userRepository = $userRepository;
+        $this->router = $router;
     }
 
     public function supports(Request $request): ?bool
@@ -39,14 +44,16 @@ class LoginFormAuthenticator extends AbstractAuthenticator
                 return $user;
             }),
             new CustomCredentials(function ($credentials, User $user) {
-                return $credentials === 'tada';
+                return $credentials === $user->getPassword();
             }, $password)
         );
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        dd('Logged In');
+        return new RedirectResponse(
+            $this->router->generate('project')
+        );
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): ?Response
