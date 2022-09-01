@@ -20,4 +20,12 @@ class SecurityController extends AbstractController
         ];
         return $this->render('project/login.html.twig', $data);
     }
+
+    /**
+     * @Route("/proj/logout", name="project_logout")
+     */
+    public function logout()
+    {
+        throw new \Exception('logout() should never be reached');
+    }
 }

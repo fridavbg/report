@@ -4,23 +4,23 @@
     <div class="login-form">
       <form method="post">
         <h2>Inlogging</h2>
-        {% if error %}
-          <div class="error-msg">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-        <div>
-          <label for="inputUsername">Akronym</label>
-          <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
-        </div>
-        <div>
-          <label for="inputPassword">Lösenord</label>
-          <input type="password" name="password" id="inputPassword" required="required">
-        </div>
-        <div>
-          <button class="btn" type="submit">
-            Logga in
-          </button>
-        </div>
-        {# <pre>
-            {{ dump(error) }}
-        </pre> #}
-      </form>
+      </div>
+    {% if error %}
+      <div class="error-msg">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+      </div>
+    {% endif %}
+    <div>
+      <label for="inputUsername">Akronym</label>
+      <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
+    </div>
+    <div>
+      <label for="inputPassword">Lösenord</label>
+      <input type="password" name="password" id="inputPassword" required="required">
+    </div>
+    <div>
+      <button class="btn" type="submit">
+        Logga in
+      </button>
+    </div>
+  </form>
