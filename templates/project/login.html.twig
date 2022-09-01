@@ -1,20 +1,26 @@
 <!-- LOGIN -->
 <div class="login-container">
-<div class="login-row">
+  <div class="login-row">
     <div class="login-form">
-    <form method="post">
+      <form method="post">
         <h2>Please sign in</h2>
+        {% if error %}
+          <div class="error-msg">{{ error.messageKey }}</div>
+        {% endif %}
         <div>
-        <label for="inputUsername">Username</label>
-        <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
+          <label for="inputUsername">Username</label>
+          <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
         </div>
         <div>
-        <label for="inputPassword">Password</label>
-        <input type="password" name="password" id="inputPassword" required="required">
+          <label for="inputPassword">Password</label>
+          <input type="password" name="password" id="inputPassword" required="required">
         </div>
         <div>
-        <button class="btn" type="submit">
+          <button class="btn" type="submit">
             Sign in
-        </button>
+          </button>
         </div>
-    </form>
+        {# <pre>
+            {{ dump(error) }}
+        </pre> #}
+      </form>

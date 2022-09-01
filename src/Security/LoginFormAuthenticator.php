@@ -10,10 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 use Symfony\Component\Security\Http\Authenticator\AbstractAuthenticator;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\CustomCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
+use Symfony\Component\Security\Core\Security;
 
 class LoginFormAuthenticator extends AbstractAuthenticator
 {
@@ -39,7 +41,7 @@ class LoginFormAuthenticator extends AbstractAuthenticator
             new UserBadge($username, function ($userIdentifier) {
                 $user = $this->userRepository->findOneBy(['username' => $userIdentifier]);
                 if (!$user) {
-                    throw new \Exception('No username was provided');
+                    throw new UserNotFoundException();
                 }
                 return $user;
             }),
@@ -58,7 +60,10 @@ class LoginFormAuthenticator extends AbstractAuthenticator
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): ?Response
     {
-        dd('Login failed');
+        $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
+        return new RedirectResponse(
+            $this->router->generate('project')
+        );
     }
 
     //    public function start(Request $request, AuthenticationException $authException = null): Response
