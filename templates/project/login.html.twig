@@ -3,21 +3,21 @@
   <div class="login-row">
     <div class="login-form">
       <form method="post">
-        <h2>Please sign in</h2>
+        <h2>Inlogging</h2>
         {% if error %}
-          <div class="error-msg">{{ error.messageKey }}</div>
+          <div class="error-msg">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
         <div>
-          <label for="inputUsername">Username</label>
+          <label for="inputUsername">Akronym</label>
           <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
         </div>
         <div>
-          <label for="inputPassword">Password</label>
+          <label for="inputPassword">Lösenord</label>
           <input type="password" name="password" id="inputPassword" required="required">
         </div>
         <div>
           <button class="btn" type="submit">
-            Sign in
+            Logga in
           </button>
         </div>
         {# <pre>
