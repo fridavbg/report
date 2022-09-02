@@ -35,6 +35,17 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * @Route("/proj/register", name="project_register")
+     */
+    public function register()
+    {
+        $data = [
+            'title' => 'Login MVC Kmom10',
+        ];
+        return $this->render('project/register.html.twig', $data);
+    }
+
+    /**
      * @Route("/proj/logout", name="project_logout")
      */
     public function logout()

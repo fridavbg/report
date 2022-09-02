@@ -182,7 +182,9 @@ input {
 }
 
 /* BUTTONS */
-
+.btn-container {
+    margin: 1em;
+}
 .btn {
     margin: 1.3em;
     padding: 2em;
