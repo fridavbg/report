@@ -15,17 +15,21 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        
+
         // returns your User object, or null if the user is not authenticated
         /** @var \App\Entity\User $user */
         $user = $this->getUser();
+        $userRole = '';
 
-        
+        if ($user) {
+            $userRole = $user->getRoles();
+        }
 
         $data = [
             'test' => 'Login MVC Kmom10',
             'error' => $authenticationUtils->getLastAuthenticationError(),
-            'user' => $user
+            'user' => $user,
+            'userRole' => $userRole
         ];
         return $this->render('project/login.html.twig', $data);
     }

@@ -1,44 +1,55 @@
-<!-- LOGIN -->
-<div class="login-container">
-  <div class="login-row">
-    <div class="login-form">
-      <form method="post">
-        <h2>Inlogging</h2>
-      </div>
-      {% if error %}
-        <div class="error-msg">
-          {{ error.messageKey|trans(error.messageData, 'security') }}
+{% if user %}
+  {% if userRole[0] == 'ROLE_ADMIN' %}
+    <div class="adminProfile">
+      <p>Logged in as
+        {{user.getUsername()}}
+        <p>
+          <a class="btn" href="{{path('project_logout')}}">
+            Logga ut
+          </a>
+          <a class="btn" href="#">
+            Ändra profil
+          </a>
         </div>
-      {% endif %}
-      <div>
-        <label for="inputUsername">Akronym</label>
-        <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
-      </div>
-      <div>
-        <label for="inputPassword">Lösenord</label>
-        <input type="password" name="password" id="inputPassword" required="required">
-      </div>
-      <div>
-        <button class="btn" type="submit">
-          Logga in
-        </button>
-      </div>
-    </form>
-
-    {% if user %}
-      {% if user.getUsername() == 'admin' %}
-        <p>ADMIN<p>
-            <div>
+      {% elseif user.getUsername() == 'doe' %}
+        <div class="userProfile">
+          <p>Logged in as
+            {{user.getUsername()}}
+            <p>
               <a class="btn" href="{{path('project_logout')}}">
                 Logga ut
               </a>
+              <a class="btn" href="#">
+                Ändra profil
+              </a>
             </div>
-          {% elseif user.getUsername() == 'doe' %}
-            <p>USER<p>
-                <div>
-                  <a class="btn" href="#">
-                    Logga ut
-                  </a>
+          {% endif %}
+        {%else %}
+          <!-- LOGIN -->
+          <div class="login-container">
+            <div class="login-row">
+              <div class="login-form">
+                <form method="post">
+                  <h2>Inlogging</h2>
                 </div>
+                {% if error %}
+                  <div class="error-msg">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                  </div>
+                {% endif %}
+                <div>
+                  <label for="inputUsername">Akronym</label>
+                  <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
+                </div>
+                <div>
+                  <label for="inputPassword">Lösenord</label>
+                  <input type="password" name="password" id="inputPassword" required="required">
+                </div>
+                <div>
+                  <button class="btn" type="submit">
+                    Logga in
+                  </button>
+                </div>
+              </form>
+              <div>
               {% endif %}
-            {% endif %}
