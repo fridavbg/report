@@ -1,6 +1,7 @@
 {% if user %}
   {% if userRole[0] == 'ROLE_ADMIN' %}
-    <div class="adminProfile">
+    <div class="userProfile">
+      <img src="" alt="profile-picture"/>
       <p>Logged in as
         {{user.getUsername()}}
         <p>
@@ -10,9 +11,11 @@
           <a class="btn" href="#">
             Ändra profil
           </a>
+          <a class="btn" href="#">Användare</a>
         </div>
       {% elseif user.getUsername() == 'doe' %}
         <div class="userProfile">
+          <img src="" alt="profile-picture"/>
           <p>Logged in as
             {{user.getUsername()}}
             <p>

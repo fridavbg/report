@@ -146,6 +146,23 @@ input {
     color: red;
 }
 
+/* PROFILE */
+.userProfile {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+.userProfile img {
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 20%;
+}
+
 /* LINKS */
 .standard-link {
     font-family: Font;
