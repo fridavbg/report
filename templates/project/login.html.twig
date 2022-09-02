@@ -5,22 +5,40 @@
       <form method="post">
         <h2>Inlogging</h2>
       </div>
-    {% if error %}
-      <div class="error-msg">
-        {{ error.messageKey|trans(error.messageData, 'security') }}
+      {% if error %}
+        <div class="error-msg">
+          {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+      {% endif %}
+      <div>
+        <label for="inputUsername">Akronym</label>
+        <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
       </div>
-    {% endif %}
-    <div>
-      <label for="inputUsername">Akronym</label>
-      <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
-    </div>
-    <div>
-      <label for="inputPassword">Lösenord</label>
-      <input type="password" name="password" id="inputPassword" required="required">
-    </div>
-    <div>
-      <button class="btn" type="submit">
-        Logga in
-      </button>
-    </div>
-  </form>
+      <div>
+        <label for="inputPassword">Lösenord</label>
+        <input type="password" name="password" id="inputPassword" required="required">
+      </div>
+      <div>
+        <button class="btn" type="submit">
+          Logga in
+        </button>
+      </div>
+    </form>
+
+    {% if user %}
+      {% if user.getUsername() == 'admin' %}
+        <p>ADMIN<p>
+            <div>
+              <a class="btn" href="{{path('project_logout')}}">
+                Logga ut
+              </a>
+            </div>
+          {% elseif user.getUsername() == 'doe' %}
+            <p>USER<p>
+                <div>
+                  <a class="btn" href="#">
+                    Logga ut
+                  </a>
+                </div>
+              {% endif %}
+            {% endif %}
