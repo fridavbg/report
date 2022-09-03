@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,10 +17,10 @@ class SecurityController extends AbstractController
 {
     /***
      * Function to render login form
+     * @Route("/proj/login", name="project_login)
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-
         // returns your User object, or null if the user is not authenticated
         /** @var \App\Entity\User $user */
         $user = $this->getUser();
@@ -39,7 +40,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/proj/register", name="project_register")
+     * @Route("/proj/register/form", name="project_register_form")
      */
     public function register()
     {
@@ -50,11 +51,56 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * @Route("/proj/register", name="project_register_process")
+     */
+    public function registerProcess(
+        Request $request,
+        ManagerRegistry $doctrine,
+    ): Response {
+        $entityManager = $doctrine->getManager();
+
+        $username = $request->request->get('username');
+        $password = $request->request->get('password');
+        $image = $request->request->get('image');
+
+        $user = new User();
+        if (
+            is_string($username) and
+            is_string($password) and
+            is_string($image)
+        ) {
+            $user->setUsername($username);
+            $user->setRoles(["ROLE_USER"]);
+            $user->setPassword($password);
+            $user->setImage($image);
+        }
+        $entityManager->persist($user);
+        $entityManager->flush();
+        return $this->redirectToRoute('project');
+    }
+
+    /**
+     * @Route("/proj/{username}/users", name="project_users")
+     */
+    public function showAllUsers(
+        UserRepository $userRepo
+    )
+    {
+        $user = $this->getUser();
+        $userRepo = $userRepo->findAll();
+        $data = [
+            'title' => 'Login MVC Kmom10',
+            'user' => $user,
+            'allUsers' => $userRepo
+        ];
+        return $this->render('project/login/users.html.twig', $data);
+    }
+
+    /**
      * @Route("/proj/edit/form/{username}", name="project_edit_form")
      */
-    public function editProfile(
-        string $username
-    ) {
+    public function editProfile()
+    {
         $user = $this->getUser();
         $data = [
             'title' => 'Login MVC Kmom10',

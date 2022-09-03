@@ -1,0 +1,39 @@
+{% extends 'projectBase.html.twig' %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="about-wrapper">
+    <div class="btn-container">
+      <a class="btn" href="{{path('project_register_form')}}">
+        Registrera ny user
+      </a>
+    </div>
+    <h1>
+      Users
+    </h1>
+    <table class="users-table">
+      {% if allUsers %}
+        <tr>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        {% for user in allUsers %}
+          <tr>
+            <td>{{user.getId()}}</td>
+            <td>{{user.getUserIdentifier()}}</td>
+            <td>Edit</td>
+            <td>Delete</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+    <pre>
+    {{dump(allUsers)}}
+    </pre>
+  </div>
+{% endblock %}

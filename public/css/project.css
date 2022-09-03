@@ -326,6 +326,14 @@ ul li {
     font-family: "Shadows Into Light", cursive;
 }
 
+/* TABLE */
+
+.users-table table,
+th,
+td {
+    border: 1px solid black;
+}
+
 /* CHART */
 .chart-wrapper {
     display: inline-block;
@@ -362,8 +370,8 @@ ul li {
         margin-bottom: 1em;
     }
     .userProfile img {
-        width: 50%;
-        height: 150%;
+        width: 100px;
+        height: 150px;
         border: 1px solid black;
         border-radius: 20%;
     }

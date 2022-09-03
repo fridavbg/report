@@ -1,7 +1,7 @@
 {% if user %}
   {% if userRole[0] == 'ROLE_ADMIN' %}
     <div class="userProfile">
-      <img src="{{user.getImage()}}" alt="profile-picture"/>
+      <img class="userImage" src="{{user.getImage()}}" alt="profile-picture"/>
       <p>Logged in as
         {{user.getUsername()}}
         <p>
@@ -14,12 +14,14 @@
       })}}">
               Ändra profil
             </a>
-            <a class="btn" href="#">Användare</a>
+            <a class="btn" href="{{path('project_users', {
+        username : user.getUserIdentifier()
+      })}}">Användare</a>
           </div>
         </div>
-      {% elseif user.getUsername() == 'doe' %}
+      {% elseif userRole[0] == 'ROLE_USER' %}
         <div class="userProfile">
-          <img src="{{user.getImage()}}" alt="profile-picture"/>
+          <img class="userImage" src="{{user.getImage()}}" alt="profile-picture"/>
           <p>Logged in as
             {{user.getUsername()}}
             <p>
@@ -63,7 +65,7 @@
                 </div>
               </form>
               <div class="btn-container">
-                <a class="btn" href="{{path('project_register')}}">
+                <a class="btn" href="{{path('project_register_form')}}">
                   Register
                 </a>
               </div>
