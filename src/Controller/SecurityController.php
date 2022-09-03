@@ -80,17 +80,15 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/proj/{username}/users", name="project_users")
+     * @Route("/proj/users", name="project_users")
      */
     public function showAllUsers(
         UserRepository $userRepo
     )
     {
-        $user = $this->getUser();
         $userRepo = $userRepo->findAll();
         $data = [
             'title' => 'Login MVC Kmom10',
-            'user' => $user,
             'allUsers' => $userRepo
         ];
         return $this->render('project/login/users.html.twig', $data);

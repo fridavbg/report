@@ -16,24 +16,33 @@
     </h1>
     <table class="users-table">
       {% if allUsers %}
-        <tr>
-          <th>User ID</th>
-          <th>Username</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-        {% for user in allUsers %}
+        <thead>
           <tr>
-            <td>{{user.getId()}}</td>
-            <td>{{user.getUserIdentifier()}}</td>
-            <td>Edit</td>
-            <td>Delete</td>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Redigera</th>
+            <th>Ta bort</th>
           </tr>
+        </thead>
+        {% for singleUser in allUsers %}
+          <tbody>
+            <tr>
+              <td>{{singleUser.getId()}}</td>
+              <td>{{singleUser.getUserIdentifier()}}</td>
+              <td>
+                <a class="standard-link" href="#">
+                  Radera
+                </a>
+              </td>
+              <td>
+                <a class="standard-link" href="/">
+                  Ändra profil {{singleUser.getUserIdentifier()}}
+                </a>
+              </td>
+            </tr>
+          </tbody>
         {% endfor %}
       </table>
     {% endif %}
-    <pre>
-    {{dump(allUsers)}}
-    </pre>
   </div>
 {% endblock %}

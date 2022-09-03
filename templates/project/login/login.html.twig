@@ -14,9 +14,7 @@
       })}}">
               Ändra profil
             </a>
-            <a class="btn" href="{{path('project_users', {
-        username : user.getUserIdentifier()
-      })}}">Användare</a>
+            <a class="btn" href="{{path('project_users')}}">Användare</a>
           </div>
         </div>
       {% elseif userRole[0] == 'ROLE_USER' %}

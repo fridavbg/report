@@ -327,11 +327,27 @@ ul li {
 }
 
 /* TABLE */
+.users-table {
+    width: 100%;
+}
 
-.users-table table,
-th,
+.users-table table {
+    border-collapse: collapse;
+}
+
+.users-table th,
 td {
     border: 1px solid black;
+    padding: 8px;
+}
+
+.users-table thead th {
+    width: 25%;
+    background-color: #333;
+    color: white;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2%;
 }
 
 /* CHART */
