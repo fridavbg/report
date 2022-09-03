@@ -5,13 +5,17 @@
       <p>Logged in as
         {{user.getUsername()}}
         <p>
-          <a class="btn" href="{{path('project_logout')}}">
-            Logga ut
-          </a>
-          <a class="btn" href="#">
-            Ändra profil
-          </a>
-          <a class="btn" href="#">Användare</a>
+          <div class="btn-container">
+            <a class="btn" href="{{path('project_logout')}}">
+              Logga ut
+            </a>
+            <a class="btn" href="{{path('project_edit_form', {
+        username : user.getUserIdentifier()
+      })}}">
+              Ändra profil
+            </a>
+            <a class="btn" href="#">Användare</a>
+          </div>
         </div>
       {% elseif user.getUsername() == 'doe' %}
         <div class="userProfile">
