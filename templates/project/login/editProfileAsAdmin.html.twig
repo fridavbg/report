@@ -7,12 +7,13 @@
 {% block content %}
   <div class="about-wrapper">
     <h1>Edit profile as
-      {{user.getUserIdentifier()}}</h1>
-    <form class="edit-form" action="{{path('project_edit_process', {username: user.getUserIdentifier()})}}" method="POST">
+      {{admin.getUserIdentifier()}}
+    </h1>
+    <form class="edit-form" action="{{path('project_admin_edit_process', {username: user.getUserIdentifier()})}}" method="POST">
       <legend>Username:</legend>
       <input type="text" id="username" name="username" value="{{user.getUsername()}}" rows="5" cols="8">
       <legend>Password:</legend>
-      <input type="text" id="password" name="password" value="{{user.getPassword()}}" rows="5" cols="8">
+      <input type="password" id="password" name="password" value="{{user.getPassword()}}" rows="5" cols="8">
       <legend>Image:</legend>
       <input type="text" id="image" name="image" value="{{user.getImage()}}" rows="5" cols="8">
       <br/>

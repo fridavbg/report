@@ -12,7 +12,7 @@
       </a>
     </div>
     <h1>
-      Users
+      Users viewed by {{user.getUserIdentifier()}}
     </h1>
     <table class="users-table">
       {% if allUsers %}
@@ -35,7 +35,7 @@
                 </a>
               </td>
               <td>
-                <a class="standard-link" href="/">
+                <a class="standard-link" href="{{path('project_admin_edit', {username: singleUser.getUserIdentifier()})}}">
                   Ändra profil {{singleUser.getUserIdentifier()}}
                 </a>
               </td>

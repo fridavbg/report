@@ -84,14 +84,67 @@ class SecurityController extends AbstractController
      */
     public function showAllUsers(
         UserRepository $userRepo
-    )
-    {
+    ) {
+        $user = $this->getUser();
         $userRepo = $userRepo->findAll();
         $data = [
             'title' => 'Login MVC Kmom10',
+            'user' => $user,
             'allUsers' => $userRepo
         ];
         return $this->render('project/login/users.html.twig', $data);
+    }
+
+    /**
+     * @Route("/proj/admin/edit/form/{username}", name="project_admin_edit")
+     */
+    public function editProfileAsAdmin(
+        UserRepository $userRepo,
+        string $username
+    ) {
+        $admin = $userRepo->findOneBy(array('username' => 'admin'));
+        $user = $userRepo->findOneBy(array('username' => $username));
+
+        $data = [
+            'title' => 'Login MVC Kmom10',
+            'user' => $user,
+            'admin' => $admin
+        ];
+        return $this->render('project/login/editProfileAsAdmin.html.twig', $data);
+    }
+
+    /**
+     * @Route("/proj/admin/edit/{username}", name="project_admin_edit_process")
+     */
+    public function editProfileAsAdminProcess(
+        Request $request,
+        ManagerRegistry $doctrine,
+        string $username,
+        UserRepository $userRepo,
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $user = $userRepo->findOneBy(array('username' => $username));;
+
+        if (!$username) {
+            throw $this->createNotFoundException(
+                'No user found with username: ' . $username
+            );
+        }
+        $username = $request->request->get('username');
+        $password = $request->request->get('password');
+        $image = $request->request->get('image');
+
+        if (
+            is_string($username) and
+            is_string($password) and
+            is_string($image)
+        ) {
+            $user->setUsername($username);
+            $user->setPassword($password);
+            $user->setImage($image);
+        }
+        $entityManager->flush();
+        return $this->redirectToRoute('project_users');
     }
 
     /**
