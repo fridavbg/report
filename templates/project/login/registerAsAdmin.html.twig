@@ -1,0 +1,24 @@
+{% extends 'projectBase.html.twig' %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="about-wrapper">
+    <div class="about-wrapper">
+      <h1>Skapa nya användare</h1>
+      <form class="register-form" action="{{path('project_admin_register_process')}}" method="POST">
+        <legend>Username:</legend>
+        <input type="text" id="username" name="username" placeholder="Välj en användarakronym" rows="5" cols="8" required="required">
+        <legend>Password:</legend>
+        <input type="password" id="password" name="password" placeholder="Välj ett lösenord" rows="5" cols="8" required="required">
+        <legend>Image:</legend>
+        <input type="text" id="image" name="image" placeholder="Bild url" rows="5" cols="8">
+        <br/>
+        <br/>
+        <input type="submit" value="Spara" class="btn"/>
+      </form>
+    </div>
+  </div>
+{% endblock %}

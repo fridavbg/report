@@ -7,12 +7,13 @@
 {% block content %}
   <div class="about-wrapper">
     <div class="btn-container">
-      <a class="btn" href="{{path('project_register_form')}}">
+      <a class="btn" href="{{path('project_admin_register_form')}}">
         Registrera ny user
       </a>
     </div>
     <h1>
-      Users viewed by {{user.getUserIdentifier()}}
+      Users viewed by
+      {{admin.getUserIdentifier()}}
     </h1>
     <table class="users-table">
       {% if allUsers %}
@@ -20,26 +21,30 @@
           <tr>
             <th>User ID</th>
             <th>Username</th>
+            <th>Image</th>
             <th>Redigera</th>
             <th>Ta bort</th>
           </tr>
         </thead>
         {% for singleUser in allUsers %}
-          <tbody>
-            <tr>
-              <td>{{singleUser.getId()}}</td>
-              <td>{{singleUser.getUserIdentifier()}}</td>
-              <td>
-                <a class="standard-link" href="#">
-                  Radera
-                </a>
-              </td>
-              <td>
-                <a class="standard-link" href="{{path('project_admin_edit', {username: singleUser.getUserIdentifier()})}}">
-                  Ändra profil {{singleUser.getUserIdentifier()}}
-                </a>
-              </td>
-            </tr>
+           <tbody>
+            {% if singleUser.getRoles()[0] == "ROLE_USER" %}
+                <tr>
+                  <td>{{singleUser.getId()}}</td>
+                  <td>{{singleUser.getUserIdentifier()}}</td>
+                  <td><img src="{{singleUser.getImage()}} alt="Profil bild"/></td>
+                  <td>
+                    <a class="standard-link" href="{{path('project_admin_erase', {username: singleUser.getUserIdentifier()})}}">
+                      Radera
+                    </a>
+                  </td>
+                  <td>
+                    <a class="standard-link" href="{{path('project_admin_edit', {username: singleUser.getUserIdentifier()})}}">
+                      Ändra
+                    </a>
+                  </td>
+                </tr>
+              {% endif %}
           </tbody>
         {% endfor %}
       </table>
