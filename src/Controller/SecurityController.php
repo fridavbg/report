@@ -7,6 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
+
+
 
 class SecurityController extends AbstractController
 {
@@ -31,7 +35,7 @@ class SecurityController extends AbstractController
             'user' => $user,
             'userRole' => $userRole
         ];
-        return $this->render('project/login.html.twig', $data);
+        return $this->render('project/login/login.html.twig', $data);
     }
 
     /**
@@ -42,7 +46,54 @@ class SecurityController extends AbstractController
         $data = [
             'title' => 'Login MVC Kmom10',
         ];
-        return $this->render('project/register.html.twig', $data);
+        return $this->render('project/login/register.html.twig', $data);
+    }
+
+    /**
+     * @Route("/proj/edit/form/{username}", name="project_edit_form")
+     */
+    public function editProfile(
+        string $username
+    ) {
+        $user = $this->getUser();
+        $data = [
+            'title' => 'Login MVC Kmom10',
+            'user' => $user
+        ];
+        return $this->render('project/login/editProfile.html.twig', $data);
+    }
+
+    /**
+     * @Route("/proj/edit/{username}", name="project_edit_process")
+     */
+    public function editProfileProcess(
+        Request $request,
+        ManagerRegistry $doctrine,
+        string $username,
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $user = $this->getUser();
+
+        if (!$username) {
+            throw $this->createNotFoundException(
+                'No user found with username: ' . $username
+            );
+        }
+        $username = $request->request->get('username');
+        $password = $request->request->get('password');
+        $image = $request->request->get('image');
+
+        if (
+            is_string($username) and
+            is_string($password) and
+            is_string($image)
+        ) {
+            $user->setUsername($username);
+            $user->setPassword($password);
+            $user->setImage($image);
+        }
+        $entityManager->flush();
+        return $this->redirectToRoute('project');
     }
 
     /**
