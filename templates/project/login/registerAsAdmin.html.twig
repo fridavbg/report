@@ -5,8 +5,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="about-wrapper">
-    <div class="about-wrapper">
+    <div class="form-wrapper">
       <h1>Skapa nya användare</h1>
       <form class="register-form" action="{{path('project_admin_register_process')}}" method="POST">
         <legend>Username:</legend>
@@ -20,5 +19,4 @@
         <input type="submit" value="Spara" class="btn"/>
       </form>
     </div>
-  </div>
 {% endblock %}

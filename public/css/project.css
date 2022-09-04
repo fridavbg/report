@@ -182,6 +182,44 @@ input {
     padding: 0.5em;
 }
 
+.erase-link {
+    font-family: Font;
+    font-size: small;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 10px;
+    color: var(--light-text);
+    box-shadow: var(--accent) 0px 20px 30px -10px;
+    background-color: var(--accent);
+}
+
+.erase-link:hover {
+    background-color: var(--dark-bkg);
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: red 5px 20px 30px 10px;
+    font-size: medium;
+}
+
+.edit-link {
+    font-family: Font;
+    font-size: small;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 10px;
+    color: var(--light-text);
+    box-shadow: var(--accent) 0px 20px 30px -10px;
+    background-color: var(--accent);
+}
+
+.edit-link:hover {
+    background-color: var(--dark-bkg);
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: var(--light-text) 5px 20px 30px 10px;
+    font-size: medium;
+}
+
 /* BUTTONS */
 .btn-container {
     margin: 1em;
@@ -197,8 +235,40 @@ input {
 }
 
 .btn:hover {
-    color: var(----text);
+    color: var(--text);
     border: 3px solid var(--light-text);
+    border-radius: 50%;
+}
+
+.back-btn {
+    margin: 1.3em;
+    padding: 0.8em;
+    border-radius: 50%;
+    font-family: Title;
+    font-size: 18px;
+    color: var(--light-text);
+    background-color: var(--dark-bkg);
+}
+
+.back-btn:hover {
+    color: var(--text);
+    border: 3px solid var(--text);
+    border-radius: 50%;
+}
+
+.register-btn {
+    margin: 1.3em;
+    padding: 0.8em;
+    border-radius: 50%;
+    font-family: Title;
+    font-size: 18px;
+    color: var(--light-text);
+    background-color: var(--dark-bkg);
+}
+
+.register-btn:hover {
+    color: var(--accent);
+    border: 3px solid var(--accent);
     border-radius: 50%;
 }
 
@@ -223,7 +293,7 @@ input {
     border-radius: 10px;
 }
 
-.some-wrapper {
+.form-wrapper {
     background: var(--mid-bkg);
     padding: 20px;
     margin: 3em 1em 0em 1em;
@@ -345,13 +415,16 @@ ul li {
     border-collapse: collapse;
 }
 
+.users-table th {
+    padding: 1em;
+}
+
 .users-table th,
 td {
     border: 1px solid black;
-    padding: 8px;
 }
 
-.users-table thead th {
+.users-table thead {
     width: 25%;
     background-color: #333;
     color: white;

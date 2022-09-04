@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-  <div class="about-wrapper">
+  <div class="form-wrapper">
     <div class="btn-container">
-      <a class="btn" href="{{path('project_admin_register_form')}}">
+      <a class="register-btn" href="{{path('project_admin_register_form')}}">
         Registrera ny user
       </a>
     </div>
@@ -26,28 +26,34 @@
             <th>Ta bort</th>
           </tr>
         </thead>
-        {% for singleUser in allUsers %}
-           <tbody>
+        <tbody>
+          {% for singleUser in allUsers %}
             {% if singleUser.getRoles()[0] == "ROLE_USER" %}
-                <tr>
-                  <td>{{singleUser.getId()}}</td>
-                  <td>{{singleUser.getUserIdentifier()}}</td>
-                  <td><img src="{{singleUser.getImage()}} alt="Profil bild"/></td>
-                  <td>
-                    <a class="standard-link" href="{{path('project_admin_erase', {username: singleUser.getUserIdentifier()})}}">
-                      Radera
-                    </a>
-                  </td>
-                  <td>
-                    <a class="standard-link" href="{{path('project_admin_edit', {username: singleUser.getUserIdentifier()})}}">
-                      Ändra
-                    </a>
-                  </td>
-                </tr>
-              {% endif %}
-          </tbody>
-        {% endfor %}
-      </table>
-    {% endif %}
-  </div>
+              <tr>
+                <td>
+                  {{singleUser.getId()}}
+                </td>
+                <td>
+                  {{singleUser.getUserIdentifier()}}
+                </td>
+                <td>
+                  <img src="{{singleUser.getImage()}} alt=" profil="Profil" bild"/>
+                </td>
+                <td>
+                    <a class=" edit-link" href=" {{path('project_admin_edit', {username: singleUser.getUserIdentifier()})}} ">
+                  Ändra
+                </a>
+              </td>
+              <td>
+                <a class="erase-link" href="{{path('project_admin_erase', {username: singleUser.getUserIdentifier()})}}">
+                  Radera
+                </a>
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div>
 {% endblock %}
