@@ -5,8 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\User;
 use App\Repository\UserRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 class ProjectController extends AbstractController
 {
@@ -28,26 +28,33 @@ class ProjectController extends AbstractController
         return $this->render('project/about.html.twig', $data);
     }
     #[Route('/proj/reset', name: 'project-reset')]
-    public function reset(): Response
-    {
+    public function reset(
+        ManagerRegistry $doctrine,
+        UserRepository $userRepository,
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $users = $userRepository->findAll();
+
+        foreach ($users as $user) {
+            if ($user->getUserIdentifier() != 'admin' && $user->getUserIdentifier() != 'doe') {
+                $entityManager->remove($user);
+                $entityManager->flush();
+            }
+        }
+
         $data = [
-            'title' => 'Reset DB MVC Kmom10'
+            'title' => 'Reset DB MVC Kmom10',
+            'userCount' => count($users)
         ];
         return $this->render('project/reset.html.twig', $data);
     }
 
     #[Route('/proj/test', name: 'project-test')]
-    public function test(
-        UserRepository $userRepository,
-    ): Response {
-        $users = $userRepository->findAll();
-
-        foreach ($users as $user) {
-            $user->getRoles();
-        }
+    public function test(): Response
+    {
 
         $data = [
-            'users' => $users
+            'test' => 'test'
         ];
         return $this->render('project/test.html.twig', $data);
     }

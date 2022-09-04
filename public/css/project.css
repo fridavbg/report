@@ -127,6 +127,7 @@ nav ul li a:hover {
     flex: 30%;
     border: 1px solid white;
     padding: 1em;
+    margin-left: 1em;
     border-radius: 10px;
 }
 
@@ -205,8 +206,6 @@ input {
 .project-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* flex-direction: row; */
     background: var(--mid-bkg);
     padding: 20px;
     margin: 3em 1em 0em 1em;
@@ -215,6 +214,16 @@ input {
 }
 
 .about-wrapper {
+    display: flex;
+    flex-direction: row;
+    background: var(--mid-bkg);
+    padding: 20px;
+    margin: 3em 1em 0em 1em;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.some-wrapper {
     background: var(--mid-bkg);
     padding: 20px;
     margin: 3em 1em 0em 1em;
@@ -270,8 +279,7 @@ p {
 }
 
 .summary {
-    text-align: left;
-    width: 100%;
+    /* margin-left: 1em; */
 }
 
 .summary h1 {
@@ -307,13 +315,15 @@ p {
 }
 
 /* LIST */
+.list-wrapper {
+    list-style-type: none;
+}
 
 .list {
-    width: 35%;
     border-radius: 10px;
     background-color: var(--mid-bkg);
     box-shadow: 2px 2px 2px 2px black;
-    display: inline-block;
+    padding: 0.5em;
 }
 
 ul li {
@@ -374,7 +384,7 @@ td {
     margin-top: 7em;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 950px) {
     .project-wrapper {
         flex-direction: column-reverse;
     }
@@ -402,10 +412,11 @@ td {
     }
     h1 {
         font-size: 30px;
+        margin-top: 1em;
     }
     .chart-wrapper {
         display: inline-block;
-        width: 90vh;
+        width: 80vh;
         padding: 0.5em;
     }
     .chart {
@@ -421,6 +432,6 @@ td {
         float: none;
     }
     .list {
-        margin-top: 1em;
+        margin: 1em 1em 0em 0em;
     }
 }

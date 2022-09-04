@@ -11,8 +11,6 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 
-
-
 class SecurityController extends AbstractController
 {
     /***
@@ -180,10 +178,14 @@ class SecurityController extends AbstractController
         UserRepository $userRepo,
     ): Response {
         $entityManager = $doctrine->getManager();
-        $user = $userRepo->findOneBy(array('username' => $username));;
+        $user = $userRepo->
+        findOneBy(
+            array('username' => $username)
+        );
 
         if (!$username) {
-            throw $this->createNotFoundException(
+            throw $this->
+            createNotFoundException(
                 'No user found with username: ' . $username
             );
         }
