@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-08-14 12:53:35        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-09-07 17:05:57        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -292,6 +292,123 @@
         "relations": []
     },
     {
+        "name": "\\App\\Repository\\MismanagedPlasticRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\MismanagedPlastic",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\PlasticLifetimeRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\PlasticLifetime",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\SectorRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Sector",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\PlasticProductionRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\PlasticProduction",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\UserRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\User",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Security\\LoginFormAuthenticator",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Component\\Security\\Http\\Authenticator\\AbstractAuthenticator",
+            "\\App\\Repository\\UserRepository",
+            "\\Symfony\\Component\\Routing\\RouterInterface",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Passport",
+            "\\Symfony\\Component\\Security\\Core\\Exception\\UserNotFoundException",
+            "\\Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Badge\\UserBadge",
+            "\\Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Credentials\\CustomCredentials",
+            "\\Symfony\\Component\\Security\\Core\\Authentication\\Token\\TokenInterface",
+            "\\Symfony\\Component\\HttpFoundation\\RedirectResponse",
+            "\\Symfony\\Component\\Security\\Core\\Exception\\AuthenticationException"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Http\\Authenticator\\AbstractAuthenticator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Routing\\RouterInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Passport",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Core\\Exception\\UserNotFoundException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Badge\\UserBadge",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Credentials\\CustomCredentials",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Core\\Authentication\\Token\\TokenInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\RedirectResponse",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Core\\Exception\\AuthenticationException",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Classes\\Card\\Card",
         "size": 3000,
         "relations": []
@@ -342,6 +459,16 @@
         "relations": []
     },
     {
+        "name": "\\App\\Classes\\Exceptions\\LogOutException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Core\\User\\UserInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\DataFixtures\\AppFixtures",
         "size": 3000,
         "relations": [
@@ -361,13 +488,16 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\FormLoginController",
+        "name": "\\App\\Controller\\AdminController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\Routing\\Annotation\\Route",
-            "\\Symfony\\Component\\HttpFoundation\\Request"
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\User",
+            "\\App\\Repository\\UserRepository"
         ]
     },
     {
@@ -386,7 +516,31 @@
         "relations": []
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "name": "\\App\\Controller\\FormLoginController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route",
+            "\\Symfony\\Component\\HttpFoundation\\Request"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\SecurityController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\User",
+            "\\App\\Classes\\Exceptions\\LogOutException"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils",
         "size": 3000,
         "relations": []
     },
@@ -407,6 +561,16 @@
         "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\ProjectController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Repository\\UserRepository"
+        ]
     },
     {
         "name": "\\App\\Controller\\MetricsController",
@@ -470,6 +634,24 @@
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
         ]
+    },
+    {
+        "name": "\\App\\Controller\\ChartController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\UX\\Chartjs\\Builder\\ChartBuilderInterface",
+            "\\App\\Repository\\SectorRepository",
+            "\\App\\Repository\\PlasticProductionRepository",
+            "\\App\\Repository\\MismanagedPlasticRepository",
+            "\\App\\Repository\\PlasticLifetimeRepository"
+        ]
+    },
+    {
+        "name": "\\Symfony\\UX\\Chartjs\\Builder\\ChartBuilderInterface",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\DiceGraphicController",
@@ -536,6 +718,18 @@
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Entity\\Book"
         ]
+    },
+    {
+        "name": "\\App\\Factory\\UserFactory",
+        "size": 3000,
+        "relations": [
+            "\\Zenstruck\\Foundry\\ModelFactory"
+        ]
+    },
+    {
+        "name": "\\Zenstruck\\Foundry\\ModelFactory",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Kernel",

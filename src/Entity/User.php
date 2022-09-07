@@ -17,10 +17,10 @@ class User implements UserInterface
     #[ORM\Column(length: 180, unique: true)]
     private ?string $username = null;
 
-    #[ORM\Column]
     /**
      * @var array<string> $roles
      */
+    #[ORM\Column]
     private array $roles;
 
     #[ORM\Column(length: 255)]

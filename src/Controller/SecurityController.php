@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
 use Symfony\Component\HttpFoundation\Request;
 
 class SecurityController extends AbstractController
@@ -128,6 +129,6 @@ class SecurityController extends AbstractController
      */
     public function logout(): Response
     {
-        throw new LogOutException('logout() should never be reached');
+        throw new Exception('logout() should never be reached');
     }
 }

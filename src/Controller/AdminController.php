@@ -92,7 +92,6 @@ class AdminController extends AbstractController
      */
     public function eraseProfileAsAdmin(
         ManagerRegistry $doctrine,
-        UserRepository $userRepo,
         string $username
     ): Response {
         $entityManager = $doctrine->getManager();

@@ -1306,6 +1306,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-SecurityController.html#method_login"
         },                {
+            "fqsen": "\\App\\Controller\\SecurityController\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "",
+            "url": "classes/App-Controller-SecurityController.html#method_register"
+        },                {
+            "fqsen": "\\App\\Controller\\SecurityController\u003A\u003AregisterProcess\u0028\u0029",
+            "name": "registerProcess",
+            "summary": "",
+            "url": "classes/App-Controller-SecurityController.html#method_registerProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\SecurityController\u003A\u003AeditProfile\u0028\u0029",
+            "name": "editProfile",
+            "summary": "",
+            "url": "classes/App-Controller-SecurityController.html#method_editProfile"
+        },                {
+            "fqsen": "\\App\\Controller\\SecurityController\u003A\u003AeditProfileProcess\u0028\u0029",
+            "name": "editProfileProcess",
+            "summary": "",
+            "url": "classes/App-Controller-SecurityController.html#method_editProfileProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\SecurityController\u003A\u003Alogout\u0028\u0029",
+            "name": "logout",
+            "summary": "",
+            "url": "classes/App-Controller-SecurityController.html#method_logout"
+        },                {
             "fqsen": "\\App\\Entity\\User",
             "name": "User",
             "summary": "",
@@ -1356,6 +1381,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-User.html#method_setPassword"
         },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003AgetImage\u0028\u0029",
+            "name": "getImage",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#method_getImage"
+        },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003AsetImage\u0028\u0029",
+            "name": "setImage",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#method_setImage"
+        },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003A\u0024uId",
             "name": "uId",
             "summary": "",
@@ -1375,6 +1410,11 @@ Search.appendIndex(
             "name": "password",
             "summary": "",
             "url": "classes/App-Entity-User.html#property_password"
+        },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003A\u0024image",
+            "name": "image",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#property_image"
         },                {
             "fqsen": "\\App\\Factory\\UserFactory",
             "name": "UserFactory",
@@ -1426,6 +1466,96 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Repository-UserRepository.html#property_flush"
         },                {
+            "fqsen": "\\App\\Classes\\Exceptions\\LogOutException",
+            "name": "LogOutException",
+            "summary": "",
+            "url": "classes/App-Classes-Exceptions-LogOutException.html"
+        },                {
+            "fqsen": "\\App\\Classes\\Exceptions\\LogOutException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Classes-Exceptions-LogOutException.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Classes\\Exceptions\\LogOutException\u003A\u003A\u0024details",
+            "name": "details",
+            "summary": "",
+            "url": "classes/App-Classes-Exceptions-LogOutException.html#property_details"
+        },                {
+            "fqsen": "\\App\\Controller\\AdminController",
+            "name": "AdminController",
+            "summary": "",
+            "url": "classes/App-Controller-AdminController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\AdminController\u003A\u003AregisterAsAdmin\u0028\u0029",
+            "name": "registerAsAdmin",
+            "summary": "",
+            "url": "classes/App-Controller-AdminController.html#method_registerAsAdmin"
+        },                {
+            "fqsen": "\\App\\Controller\\AdminController\u003A\u003AregisterAsAdminProcess\u0028\u0029",
+            "name": "registerAsAdminProcess",
+            "summary": "",
+            "url": "classes/App-Controller-AdminController.html#method_registerAsAdminProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\AdminController\u003A\u003AshowAllUsers\u0028\u0029",
+            "name": "showAllUsers",
+            "summary": "",
+            "url": "classes/App-Controller-AdminController.html#method_showAllUsers"
+        },                {
+            "fqsen": "\\App\\Controller\\AdminController\u003A\u003AeditProfileAsAdmin\u0028\u0029",
+            "name": "editProfileAsAdmin",
+            "summary": "",
+            "url": "classes/App-Controller-AdminController.html#method_editProfileAsAdmin"
+        },                {
+            "fqsen": "\\App\\Controller\\AdminController\u003A\u003AeraseProfileAsAdmin\u0028\u0029",
+            "name": "eraseProfileAsAdmin",
+            "summary": "",
+            "url": "classes/App-Controller-AdminController.html#method_eraseProfileAsAdmin"
+        },                {
+            "fqsen": "\\App\\Controller\\AdminController\u003A\u003AeditProfileAsAdminProcess\u0028\u0029",
+            "name": "editProfileAsAdminProcess",
+            "summary": "",
+            "url": "classes/App-Controller-AdminController.html#method_editProfileAsAdminProcess"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator",
+            "name": "LoginFormAuthenticator",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003Asupports\u0028\u0029",
+            "name": "supports",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#method_supports"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003Aauthenticate\u0028\u0029",
+            "name": "authenticate",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#method_authenticate"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003AonAuthenticationSuccess\u0028\u0029",
+            "name": "onAuthenticationSuccess",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#method_onAuthenticationSuccess"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003AonAuthenticationFailure\u0028\u0029",
+            "name": "onAuthenticationFailure",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#method_onAuthenticationFailure"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003A\u0024userRepository",
+            "name": "userRepository",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#property_userRepository"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003A\u0024router",
+            "name": "router",
+            "summary": "",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#property_router"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -1445,6 +1575,11 @@ Search.appendIndex(
             "name": "Dice",
             "summary": "",
             "url": "namespaces/app-classes-dice.html"
+        },                {
+            "fqsen": "\\App\\Classes\\Exceptions",
+            "name": "Exceptions",
+            "summary": "",
+            "url": "namespaces/app-classes-exceptions.html"
         },                {
             "fqsen": "\\App\\Classes\\Game",
             "name": "Game",
@@ -1480,5 +1615,10 @@ Search.appendIndex(
             "name": "Repository",
             "summary": "",
             "url": "namespaces/app-repository.html"
+        },                {
+            "fqsen": "\\App\\Security",
+            "name": "Security",
+            "summary": "",
+            "url": "namespaces/app-security.html"
         }            ]
 );

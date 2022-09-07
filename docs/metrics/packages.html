@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-08-14 12:53:35        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-09-07 17:05:57        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -76,14 +76,25 @@
                     </thead>
                                             <tr>
                             <td><span class="path">App\Repository</span></td>
-                            <td>2</td>
+                            <td>7</td>
                             <td>0</td>
-                            <td>0.667</td>
-                            <td>0.333</td>
-                            <td>4</td>
+                            <td>0.6</td>
+                            <td>0.4</td>
+                            <td>9</td>
                             <td>3</td>
+                            <td>6</td>
                             <td>2</td>
+                        </tr>
+                                            <tr>
+                            <td><span class="path">App\Security</span></td>
                             <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>11</td>
+                            <td>9</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                                             <tr>
                             <td><span class="path">App\Classes\Card</span></td>
@@ -119,14 +130,25 @@
                             <td>1</td>
                         </tr>
                                             <tr>
-                            <td><span class="path">App\Entity</span></td>
-                            <td>2</td>
+                            <td><span class="path">App\Classes\Exceptions</span></td>
+                            <td>1</td>
                             <td>0</td>
                             <td>0</td>
                             <td>1</td>
                             <td>0</td>
                             <td>0</td>
-                            <td>5</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                                            <tr>
+                            <td><span class="path">App\Entity</span></td>
+                            <td>7</td>
+                            <td>0</td>
+                            <td>0.077</td>
+                            <td>0.923</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>12</td>
                             <td>3</td>
                         </tr>
                                             <tr>
@@ -142,12 +164,23 @@
                         </tr>
                                             <tr>
                             <td><span class="path">App\Controller</span></td>
-                            <td>14</td>
+                            <td>18</td>
                             <td>0</td>
                             <td>1</td>
                             <td>0</td>
-                            <td>17</td>
-                            <td>10</td>
+                            <td>26</td>
+                            <td>13</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                                            <tr>
+                            <td><span class="path">App\Factory</span></td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>
@@ -369,10 +402,18 @@
     {
         "name": "App\\Repository",
         "abstraction": 0,
-        "instability": 0.6666666666666666,
-        "distance": 0.23570226039551584,
-        "normalizedDistance": 0.33333333333333337,
-        "classCount": 2
+        "instability": 0.6,
+        "distance": 0.282842712474619,
+        "normalizedDistance": 0.4,
+        "classCount": 7
+    },
+    {
+        "name": "App\\Security",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 1
     },
     {
         "name": "App\\Classes\\Card",
@@ -399,12 +440,20 @@
         "classCount": 4
     },
     {
-        "name": "App\\Entity",
+        "name": "App\\Classes\\Exceptions",
         "abstraction": 0,
         "instability": 0,
         "distance": 0.7071067811865475,
         "normalizedDistance": 1,
-        "classCount": 2
+        "classCount": 1
+    },
+    {
+        "name": "App\\Entity",
+        "abstraction": 0,
+        "instability": 0.07692307692307693,
+        "distance": 0.6527139518645054,
+        "normalizedDistance": 0.9230769230769231,
+        "classCount": 7
     },
     {
         "name": "App\\DataFixtures",
@@ -420,7 +469,15 @@
         "instability": 1,
         "distance": 0,
         "normalizedDistance": 0,
-        "classCount": 14
+        "classCount": 18
+    },
+    {
+        "name": "App\\Factory",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 1
     },
     {
         "name": "App",
