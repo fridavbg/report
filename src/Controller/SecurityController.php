@@ -100,7 +100,7 @@ class SecurityController extends AbstractController
         string $username,
     ): Response {
         $entityManager = $doctrine->getManager();
-        $user = $entityManager->getRepository(User::class)->findOneBy(array('username' => $username));;
+        $user = $entityManager->getRepository(User::class)->findOneBy(array('username' => $username));
 
         if (!$username) {
             throw $this->createNotFoundException(
