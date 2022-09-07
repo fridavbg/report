@@ -75,7 +75,7 @@ class LibraryControllerTest extends WebTestCase
     {
         // $books = $this->bookRepository->findAll();
         // var_dump($books);
-        $bookId = rand(1, 9);
+        $bookId = 2;
 
         $this->client->request('GET', '/library/show/' . $bookId);
         $this->assertResponseIsSuccessful();
@@ -138,7 +138,7 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testUpdateBookForm()
     {
-        $bookId = rand(1, 9);
+        $bookId = 1;
 
         $this->client->request('GET', '/library/update/form/' . $bookId);
         $this->assertResponseIsSuccessful();

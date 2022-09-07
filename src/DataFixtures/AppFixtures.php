@@ -21,8 +21,5 @@ class AppFixtures extends Fixture
             $book->setImage('https://bit.ly/3ANU9Xb');
             $manager->persist($book);
         }
-
-        UserFactory::new()->create();
-        $manager->flush();
     }
 }

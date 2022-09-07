@@ -149,20 +149,33 @@ input {
 
 /* PROFILE */
 .userProfile {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
     border: 1px solid black;
-    margin-bottom: 1em;
+    margin-right: 1em;
     padding: 1em;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 2px black;
+    justify-content: center;
+    height: fit-content;
 }
 
 .userProfile img {
     height: 150px;
-    border: 1px solid black;
-    border-radius: 20%;
+    border-radius: 10%;
+    padding: 1em;
 }
+
+.userProfile .btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.userProfile .btn-container .btn {
+    padding: 12px
+}
+
 
 /* LINKS */
 .standard-link {
@@ -394,13 +407,13 @@ p {
     background-color: var(--mid-bkg);
     box-shadow: 2px 2px 2px 2px black;
     padding: 0.5em;
+    margin: 0.8em;
 }
 
 ul li {
     padding: 10px;
     margin-left: 15px;
     display: grid;
-    grid-template-columns: 8fr 1fr;
     font-size: 14px;
     cursor: pointer;
     font-family: "Shadows Into Light", cursive;
