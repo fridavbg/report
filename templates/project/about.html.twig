@@ -55,6 +55,13 @@
         <p>
           Detta för att varje ny funktionalitet som läggs till i projektet, ses över i mindre delar för att på så sätt undvika eventuella felsteg i min logik, och onödig komplexitet.
         </p>
+        <p>
+          Dem verktyg som jag använt mig utav är Scrutinizer och PHPMetrics samt php-codesniffer, phpstan, phpmd och phpdoc. Med hjälp utav fel meddelande ifrån dessa verktyg så känner jag att jag har kunnat ha en bra struktur, och lättare kunnat se över kodfunktionalitet som behövts förenklas.
+        </p>
+        <p>
+          Alla verktyg förutom phpmd går igenom utan några anmärkningar. Fyra varningar ifrån phpmd visas för LoginFormAuthenticator.php, som handlar om coupling och oanvända parametrar. Jag har valt att ej åtgärda detta för att filen har skapats med make, och därför ej är min egna kod. Detta kommer ifrån PHPs dokumentation angående hur man skapar ett inlogg, och jag fann att det fanns många olika funtionaliter.
+          Jag valde därför att lämna detta då mitt inlogg fungerar, men det finns en del att åtgärda angående säkerheten, som kan vara ett område för förbättring i framtiden.
+        </p>
       </article>
     </section>
   </div>
