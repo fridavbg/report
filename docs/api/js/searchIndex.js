@@ -1466,21 +1466,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Repository-UserRepository.html#property_flush"
         },                {
-            "fqsen": "\\App\\Classes\\Exceptions\\LogOutException",
-            "name": "LogOutException",
-            "summary": "",
-            "url": "classes/App-Classes-Exceptions-LogOutException.html"
-        },                {
-            "fqsen": "\\App\\Classes\\Exceptions\\LogOutException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Classes-Exceptions-LogOutException.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Classes\\Exceptions\\LogOutException\u003A\u003A\u0024details",
-            "name": "details",
-            "summary": "",
-            "url": "classes/App-Classes-Exceptions-LogOutException.html#property_details"
-        },                {
             "fqsen": "\\App\\Controller\\AdminController",
             "name": "AdminController",
             "summary": "",
@@ -1575,11 +1560,6 @@ Search.appendIndex(
             "name": "Dice",
             "summary": "",
             "url": "namespaces/app-classes-dice.html"
-        },                {
-            "fqsen": "\\App\\Classes\\Exceptions",
-            "name": "Exceptions",
-            "summary": "",
-            "url": "namespaces/app-classes-exceptions.html"
         },                {
             "fqsen": "\\App\\Classes\\Game",
             "name": "Game",
