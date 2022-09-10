@@ -1,0 +1,29 @@
+{% extends 'projectBase.html.twig' %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="form-wrapper">
+    <h1>Edit profile as
+      {{admin.getUserIdentifier()}}
+    </h1>
+    <form class="edit-form" action="{{path('project_admin_edit_process', {username: user.getUserIdentifier()})}}" method="POST">
+      <legend>Username:</legend>
+      <input type="text" id="username" name="username" value="{{user.getUsername()}}" rows="5" cols="8">
+      <legend>Password:</legend>
+      <input type="password" id="password" name="password" value="{{user.getPassword()}}" rows="5" cols="8">
+      <legend>Image:</legend>
+      <input type="text" id="image" name="image" value="{{user.getImage()}}" rows="5" cols="8">
+      <br/>
+      <br/>
+      <input type="submit" value="Spara" class="btn"/>
+    </form>
+    <div class="btn-container">
+      <a class="back-btn" href="{{path('project_users')}}">
+        Gå tillbaka
+      </a>
+    </div>
+  </div>
+{% endblock %}

@@ -12,7 +12,7 @@ class Sector
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column()]
-    private ?int $id = null;
+    private ?int $sId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
@@ -21,11 +21,11 @@ class Sector
     private ?int $year = null;
 
     #[ORM\Column(type: Types::BIGINT)]
-    private ?string $primary_plastic_production_million_tonnes = null;
+    private ?string $primaryPlasticProd = null;
 
     public function getId(): ?int
     {
-        return $this->id;
+        return $this->sId;
     }
 
     public function getName(): ?string
@@ -54,12 +54,12 @@ class Sector
 
     public function getPrimaryPlasticProductionMillionTonnes(): ?string
     {
-        return $this->primary_plastic_production_million_tonnes;
+        return $this->primaryPlasticProd;
     }
 
-    public function setPrimaryPlasticProductionMillionTonnes(string $primary_plastic_production_million_tonnes): self
+    public function setPrimaryPlasticProductionMillionTonnes(string $primaryPlasticProd): self
     {
-        $this->primary_plastic_production_million_tonnes = $primary_plastic_production_million_tonnes;
+        $this->primaryPlasticProd = $primaryPlasticProd;
 
         return $this;
     }

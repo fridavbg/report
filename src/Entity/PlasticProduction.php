@@ -12,39 +12,39 @@ class PlasticProduction
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column()]
-    private ?int $id = null;
+    private ?int $ppId = null;
 
     #[ORM\Column]
-    private ?int $Year = null;
+    private ?int $year = null;
 
     #[ORM\Column(type: Types::BIGINT)]
-    private ?string $plastics_production_million_tones = null;
+    private ?string $plasticProduction = null;
 
-    public function getId(): ?int
+    public function getppId(): ?int
     {
-        return $this->id;
+        return $this->ppId;
     }
 
     public function getYear(): ?int
     {
-        return $this->Year;
+        return $this->year;
     }
 
-    public function setYear(int $Year): self
+    public function setYear(int $year): self
     {
-        $this->Year = $Year;
+        $this->year = $year;
 
         return $this;
     }
 
     public function getPlasticsProductionMillionTones(): ?string
     {
-        return $this->plastics_production_million_tones;
+        return $this->plasticProduction;
     }
 
-    public function setPlasticsProductionMillionTones(string $plastics_production_million_tones): self
+    public function setPlasticsProductionMillionTones(string $plasticProduction): self
     {
-        $this->plastics_production_million_tones = $plastics_production_million_tones;
+        $this->plasticProduction = $plasticProduction;
 
         return $this;
     }

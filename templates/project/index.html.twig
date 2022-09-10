@@ -6,57 +6,77 @@
 
 {% block content %}
   <div class="project-wrapper">
-    <div>
+    <div class="text-container">
       <h1>
         Hav och marina resurser
       </h1>
       <p>
-        Bevara och nyttja haven och de marina resurserna på ett hållbart sätt för en hållbar utveckling
+        I detta projekt har jag valt att samla ihop och presentera mätvärden gällande föroreningar i haven.
+        <a class="standard-link" href="https://www.globalamalen.se/om-globala-malen/mal-14-hav-och-marina-resurser/">Mål 14</a>
+        handlar i helhet om hur hav och marina resurser kan bevara och nyttjas på ett hållbart sätt för en hålllbar utveckling. Man jag har valt att fokusera mer specifikt på delmål 14.1, minska föroreningar i haven, med störst fokus på plast. Mer om detta på
+        <a class="standard-link" href="{{path('project-about')}}">About</a>
       </p>
-      <img src="{{asset('img/project/tuna.jpg')}}" width="500" alt="Tuna stim" class="tuna-img"/>
       <p>
-        Världens hav – deras temperatur, kemi, strömmar och liv – driver globala system som gör jorden beboelig för mänskligheten. Haven täcker 70 procent av vår planet och över tre miljarder människor är beroende av den marina och kustnära biologiska mångfalden för sin försörjning. Hur vi hanterar våra hav är avgörande för mänskligheten som helhet och för att balansera effekterna av klimatförändringarna.
+        Enligt den statistik som jag har hittat så hamnar ungefär åtta miljoner ton plast i havet varje år. Åtta miljoner plast låter ju som en hel del, men frågan går ju då till hur mycket plast som det produceras årligen. Följande diagram visar en tabell över hur mycket plast som producerats ifrån 1950 fram till 2015. Plast produktionen har sedan 1950 bara ökat och 2015 så låg produktionen på 381 000 000 ton plast.
       </p>
-      <img src="{{asset('img/project/cod.jpg')}}" width="500" alt="Torsk stim" class="cod-img"/>
+      {{render(controller('App\\Controller\\ChartController::plasticProdChart'))}}
+      <h4>Hur mycket plast har producerats sedan 2015?
+      </h4>
       <p>
-        Överfiske, försurning, gifter och föroreningar är några av de problem som drabbar våra hav idag. Visste du till exempel att åtta miljoner ton plast hamnar i haven varje år? Fortsätter det i denna takt kommer haven att bestå av mer plast än fisk år 2050. Vi måste skydda våra hav och säkerställa hållbar användning av havsbaserade resurser och ekosystem. Vi har alltid behövt haven. Nu behöver haven oss.
+        Enligt Arabella Ruiz, senior researcher för
+        <a class="standard-link" href="https://theroundup.org/plastic-waste-statistics/" target="_blank">The RoundUp</a>
+        så kommer plastproduktionen att forsätta att öka. 2019 så producerades 368 miljoner ton, men 2020 så minskade det på grund utav Corona situationen. Enligt
+        <a class="standard-link" href="https://plasticseurope.org/">PlasticsEurope (PEMRG)</a>
+        så förväntas dock produktionen att fortsatt öka år för år. Då globalt efterfrågan för plast beräknas att öka med 4.1% till 2030, och återigen med 2.4% emellan 2030 och 2050.
+      </p>
+      <img src="{{asset('img/project/Total-Annual-Global-Plastic-Production-Graph.png')}}" alt="Graph showing total annual global plastic production" class="left-img"/>
+      <h4>
+        Finns det någon skillnad på plast och plast?
+      </h4>
+      <p>
+        Det finns hundratals olika sorters plast, även kallad polymerer. Ungefär 91% utav världens plast återvinns ej, vilket innebär att det går till deponier där det kan ta flera år till det bryts ner. Ofta så när det kommer till återvinning så fokuserar man på 6 olika klassifikationer utav plast PET, HDPE, PVC, LDPE, PP, PS samt en sista del som ofta ej klassifieras.
+      </p>
+      <img src="{{asset('img/project/tuna.jpg')}}" alt="Torsk stim" class="right-img"/>
+      <p>
+        Nedstående diagram visar vilka sektorer som producerade mest plast under år 2015. Där packningssektorn har den största andelen på 42 procent. Då det kan variera kraftigt i nedbrytningstid för olika plastsorter,så finns det en stor anledning att därför ha koll olika sektorers produktion samt plastens största användningsområde. Man kan ju då ställa sig frågan om det finns nått annat bättre mer miljövänligt material som kanske kan bytas ut i respektive sektor.
       </p>
 
-      <h4>AVSKAFFA SUBVENTIONER SOM BIDRAR TILL ÖVERFISKE</h4>
+      {{render(controller('App\\Controller\\ChartController::sectorChart'))}}
       <p>
-        Senast 2020 förbjuda vissa former av fiskesubventioner som bidrar till överkapacitet och överfiske, avskaffa subventioner som bidrar till olagligt, orapporterat och oreglerat fiske och avstå från att införa nya sådana subventioner, med erkännande av att en ändamålsenlig och effektiv särskild och differentierad behandling av utvecklingsländerna och de minst utvecklade länderna bör vara en integrerad del av förhandlingarna om fiskesubventioner i Världshandelsorganisationen.* *Med beaktande av pågående förhandlingar i Världshandelsorganisationen, utvecklingsagendan från Doha och mandatet från ministermötet i Hongkong.
+        Följande diagram visar nedbrytningstid utav plast ifrån dem olika industrisektorerna. Där plast ifrån byggindustri visar längst tid på 35 år. Medans pakteringsektorn har minsta värdet på ett halvt år. Pakteringsektorn tillverkar också mest med sina 146 000 000 ton medans byggindustrin tillverkar 65 000 000.
       </p>
-      <h4>MINSKA FÖRORENINGARNA I HAVEN</h4>
+      {{render(controller('App\\Controller\\ChartController::plasticLifeChart'))}}
+      <h4>Plasthantering världen över</h4>
       <p>
-        Till 2025 förebygga och avsevärt minska alla slags föroreningar i havet, i synnerhet från landbaserad verksamhet, inklusive marint skräp och tillförsel av näringsämnen.
+        Världen över så varieras avfallshantering, plast kommer endast till havet via floder som har dålig avfallshantering. Låg- till medelinkomstländer har en tendens att ha en sämre infrastruktur för att kunna hantera sitt avfall. I diagrammet nedan så visas ett diagram över sannolikhet att misskött avfall kommer till haven i olika länder. Vad som påverkar denna sannolikhet är klimat, terräng, markanvändning och avstånd inom avrinningsområden där vatten dränneras.
       </p>
+      {{ render(controller('App\\Controller\\ChartController::mismaPlasticChart'))}}
+      <h4>
+        Hur vill vi att framtiden skall se ut?
+      </h4>
+      <p>
+        Enligt
+        <a class="standard-link" href="https://theoceancleanup.com/updates/predicting-the-future-of-plastic-pollution-and-why-cleanup-is-part-of-the-solution/">The Ocean Clean Up</a>
+        ett internationellt team utav forskare och experter så finns det ingen enkel lösning till att lösa plast föroreningen i våra hav. Men tre lösningar förslås och det är att minska användning utav plast, bättre avfallshantering och en stor-skalig uppstädning.
+      </p>
+      <h4>
+        Mer information
+      </h4>
+      <ul class="list">
+        <li>
+          <a class="standard-link" href="https://www.worldcleanupday.org/">World CleanUp Day</a>
+        </li>
+        <li>
+          <a class="standard-link" href="https://www.globalamalen.se/om-globala-malen/">Globala målen</a>
+        </li>
+        <li>
+          <a class="standard-link" href="https://theoceancleanup.com/">The Ocean CleanUp</a>
+        </li>
+      </ul>
     </div>
-
-    <div class="login-container">
-      <center>
-        <h1>
-          Login / Register
-        </h1>
-      </center>
-      <form>
-        <div class="container">
-          <label>Username :
-          </label>
-          <input type="text" placeholder="Enter Username" name="username" required="required">
-          <label>Password :
-          </label>
-          <input type="password" placeholder="Enter Password" name="password" required="required">
-          <button type="submit">Login</button>
-          <input type="checkbox" checked="checked">
-          Remember me
-          <button type="button" class="cancelbtn">
-            Cancel</button>
-          Forgot
-          <a href="#">
-            password?
-          </a>
-        </div>
-      </form>
-    </div>
+    {{render(controller('App\\Controller\\SecurityController::login'))}}
   </div>
+</div>
+</div>
+</div>
 {% endblock %}

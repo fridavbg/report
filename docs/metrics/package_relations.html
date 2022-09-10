@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-08-14 12:53:35        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-09-07 17:05:57        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -283,6 +283,63 @@
     {
         "name": "App\\Entity",
         "size": 3000,
+        "relations": [
+            "Symfony\\Component\\Security\\Core\\User"
+        ]
+    },
+    {
+        "name": "App\\Security",
+        "size": 3000,
+        "relations": [
+            "Symfony\\Component\\Security\\Http\\Authenticator",
+            "App\\Repository",
+            "Symfony\\Component\\Routing",
+            "Symfony\\Component\\HttpFoundation",
+            "Symfony\\Component\\Security\\Http\\Authenticator\\Passport",
+            "Symfony\\Component\\Security\\Core\\Exception",
+            "Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Badge",
+            "Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Credentials",
+            "Symfony\\Component\\Security\\Core\\Authentication\\Token"
+        ]
+    },
+    {
+        "name": "Symfony\\Component\\Security\\Http\\Authenticator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Routing",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\HttpFoundation",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Security\\Http\\Authenticator\\Passport",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Security\\Core\\Exception",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Badge",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Security\\Http\\Authenticator\\Passport\\Credentials",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Security\\Core\\Authentication\\Token",
+        "size": 3000,
         "relations": []
     },
     {
@@ -301,6 +358,16 @@
         "relations": [
             "App\\Classes\\Card"
         ]
+    },
+    {
+        "name": "App\\Classes\\Exceptions",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Security\\Core\\User",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "App\\DataFixtures",
@@ -323,22 +390,20 @@
             "Symfony\\Bundle\\FrameworkBundle\\Controller",
             "Symfony\\Component\\HttpFoundation",
             "Symfony\\Component\\Routing\\Annotation",
+            "Doctrine\\Persistence",
+            "App\\Entity",
+            "App\\Repository",
+            "Symfony\\Component\\Security\\Http\\Authentication",
+            "App\\Classes\\Exceptions",
             "Symfony\\Component\\HttpFoundation\\Session",
             "App\\Classes\\Card",
             "App\\Classes\\Game",
             "App\\Classes\\Dice",
-            "Doctrine\\Persistence",
-            "App\\Entity",
-            "App\\Repository"
+            "Symfony\\UX\\Chartjs\\Builder"
         ]
     },
     {
         "name": "Symfony\\Bundle\\FrameworkBundle\\Controller",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "Symfony\\Component\\HttpFoundation",
         "size": 3000,
         "relations": []
     },
@@ -348,7 +413,29 @@
         "relations": []
     },
     {
+        "name": "Symfony\\Component\\Security\\Http\\Authentication",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "Symfony\\Component\\HttpFoundation\\Session",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\UX\\Chartjs\\Builder",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "App\\Factory",
+        "size": 3000,
+        "relations": [
+            "Zenstruck\\Foundry"
+        ]
+    },
+    {
+        "name": "Zenstruck\\Foundry",
         "size": 3000,
         "relations": []
     },

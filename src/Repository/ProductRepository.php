@@ -19,7 +19,7 @@ class ProductRepository extends ServiceEntityRepository
     /**
      * @var bool $flush
      */
-    public $flush = false; 
+    public $flush = false;
 
     public function __construct(ManagerRegistry $registry)
     {

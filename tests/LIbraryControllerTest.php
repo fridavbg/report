@@ -5,8 +5,6 @@ namespace App\Controller;
 use App\Entity\Book;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\response;
-use Symfony\Component\HttpFoundation\Request;
 use App\DataFixtures\AppFixtures;
 
 /**
@@ -19,6 +17,7 @@ class LibraryControllerTest extends WebTestCase
      */
     private $entityManager;
     private $client;
+    private $bookRepository;
 
     protected function setUp(): void
     {
@@ -32,9 +31,8 @@ class LibraryControllerTest extends WebTestCase
         $fixture = new AppFixtures();
         $fixture->load($this->entityManager);
 
-        $bookRepository = $this->entityManager
+        $this->bookRepository = $this->entityManager
             ->getRepository(Book::class);
-        $this->books = $bookRepository->findAll();
     }
 
     private function truncateEntities()
@@ -75,25 +73,12 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testShowBookById()
     {
-        $bookId = rand(1, 10);
+        // $books = $this->bookRepository->findAll();
+        // var_dump($books);
+        $bookId = 2;
 
         $this->client->request('GET', '/library/show/' . $bookId);
         $this->assertResponseIsSuccessful();
-    }
-
-    /**
-     * Check that exception is thrown for /library/show/{bookId}
-     * if no bookId
-     */
-    public function testExceptionShowBookById()
-    {
-        $bookId = 24;
-
-        $this->client->request('GET', '/library/show/' . $bookId);
-        $this->assertResponseStatusCodeSame(404);
-        $response = $this->client->getResponse();
-        $data = $response->getContent();
-        $this->assertStringContainsString('No book found for id ' . $bookId, $data);
     }
 
     /**
@@ -132,7 +117,7 @@ class LibraryControllerTest extends WebTestCase
     //         $book->setDescription($description);
     //         $book->setImage($image);
     //     }
-        
+
     //     $entityManagerMock = $this->getMockBuilder('Doctrine\ORM\EntityManager')
     //     ->setMethods(array('persist', 'flush'))
     //     ->disableOriginalConstructor()
@@ -153,7 +138,7 @@ class LibraryControllerTest extends WebTestCase
      */
     public function testUpdateBookForm()
     {
-        $bookId = rand(1, 10);
+        $bookId = 1;
 
         $this->client->request('GET', '/library/update/form/' . $bookId);
         $this->assertResponseIsSuccessful();
@@ -175,13 +160,11 @@ class LibraryControllerTest extends WebTestCase
     }
 
     /**
-     * Check that exception is thrown for /library/delete/{bookId}
-     * if no bookId
+     * Check that page is redirecting after deleting a book with id 1
      */
-    public function testExceptionDeleteBookById(
-    )
+    public function testRedirectDeleteBookById()
     {
-        $bookId = 11;
+        $bookId = 1;
 
         $this->client->request('GET', '/library/delete/' . $bookId);
         $this->assertResponseStatusCodeSame(302);

@@ -10,7 +10,6 @@ use App\Entity\Book;
 use App\Repository\BookRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-
 class LibraryController extends AbstractController
 {
     #[Route('/library', name: 'app_library')]
@@ -47,12 +46,6 @@ class LibraryController extends AbstractController
     ): Response {
         $book = $bookRepository
             ->find($bookId);
-
-        if (!$book) {
-            throw $this->createNotFoundException(
-                'No book found for id ' . $bookId
-            );
-        }
 
         $data = [
             'title' => 'Book by Id',
@@ -168,11 +161,8 @@ class LibraryController extends AbstractController
             $book->setISBN($isbn);
             $book->setDescription($description);
             $book->setImage($image);
-        } else {
         }
-
         $entityManager->flush();
-
         return $this->redirectToRoute('library_show_all');
     }
 
@@ -191,10 +181,9 @@ class LibraryController extends AbstractController
                 'No book found for id ' . $bookId
             );
         }
-        
+
         $entityManager->remove($book);
         $entityManager->flush();
-
         return $this->redirectToRoute('library_show_all');
     }
 }

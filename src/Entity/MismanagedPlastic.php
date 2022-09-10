@@ -11,7 +11,7 @@ class MismanagedPlastic
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column()]
-    private ?int $id = null;
+    private ?int $mprId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $country = null;
@@ -20,11 +20,11 @@ class MismanagedPlastic
     private ?int $year = null;
 
     #[ORM\Column]
-    private ?float $probability_of_plastic_being_emitted_to_ocean = null;
+    private ?float $probPlasticOcean = null;
 
-    public function getId(): ?int
+    public function getMprId(): ?int
     {
-        return $this->id;
+        return $this->mprId;
     }
 
     public function getCountry(): ?string
@@ -53,12 +53,12 @@ class MismanagedPlastic
 
     public function getProbabilityOfPlasticBeingEmittedToOcean(): ?float
     {
-        return $this->probability_of_plastic_being_emitted_to_ocean;
+        return $this->probPlasticOcean;
     }
 
-    public function setProbabilityOfPlasticBeingEmittedToOcean(float $probability_of_plastic_being_emitted_to_ocean): self
+    public function setProbabilityOfPlasticBeingEmittedToOcean(float $probPlasticOcean): self
     {
-        $this->probability_of_plastic_being_emitted_to_ocean = $probability_of_plastic_being_emitted_to_ocean;
+        $this->probPlasticOcean = $probPlasticOcean;
 
         return $this;
     }

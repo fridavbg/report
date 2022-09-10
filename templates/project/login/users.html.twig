@@ -1,0 +1,64 @@
+{% extends 'projectBase.html.twig' %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  <div class="form-wrapper">
+    <div class="btn-container">
+      <a class="register-btn" href="{{path('project_admin_register_form')}}">
+        Registrera ny user
+      </a>
+    </div>
+    <h1>
+      Users viewed by
+      {{admin.getUserIdentifier()}}
+    </h1>
+    <table class="users-table">
+      {% if allUsers %}
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Image</th>
+            <th>Redigera</th>
+            <th>Ta bort</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for singleUser in allUsers %}
+            {% if singleUser.getRoles()[0] == "ROLE_USER" %}
+              <tr>
+                <td>
+                  {{singleUser.getId()}}
+                </td>
+                <td>
+                  {{singleUser.getUserIdentifier()}}
+                </td>
+                <td>
+                  <img src="{{singleUser.getImage()}} alt=" profil="Profil" bild"/>
+                </td>
+                <td>
+                    <a class=" edit-link" href=" {{path('project_admin_edit', {username: singleUser.getUserIdentifier()})}} ">
+                  Ändra
+                </a>
+              </td>
+              <td>
+                <a class="erase-link" href="{{path('project_admin_erase', {username: singleUser.getUserIdentifier()})}}">
+                  Radera
+                </a>
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      {% endfor %}
+    </table>
+  {% endif %}
+  <div class="btn-container">
+    <a class="back-btn" href="{{path('project')}}">
+      Gå tillbaka
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -5,16 +5,14 @@
 {% endblock %}
 
 {% block content %}
-  <div class="about-wrapper">
+  <div class="project-wrapper">
+    <p>
+      Databasen innehåller
+      {{userCount}}
+      användare.
+    </p>
     <h1>
-      Database has been reset
+      Databasen har blivit återställd.
     </h1>
-    <h4>Databas med ORM</h4>
-    <p>
-      - Din webbplats skall använda databas via ORM.
-    </p>
-    <p>
-      - Det skall finnas en route `/proj/reset` som återställer databasen till dess ursprungliga läge. Placera en länk till denna routen i din about-sida.
-    </p>
   </div>
 {% endblock %}

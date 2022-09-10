@@ -1,0 +1,71 @@
+{% if user %}
+  {% if userRole[0] == 'ROLE_ADMIN' %}
+    <div class="userProfile">
+      <img class="userImage" src="{{user.getImage()}}" alt="profile-picture"/>
+      <p>Logged in as
+        {{user.getUsername()}}
+        </p>
+          <div class="btn-container">
+            <a class="btn" href="{{path('project_logout')}}">
+              Logga ut
+            </a>
+            <a class="btn" href="{{path('project_edit_form', {
+        username : user.getUserIdentifier()
+      })}}">
+              Ändra profil
+            </a>
+            <a class="btn" href="{{path('project_users')}}">Användare</a>
+          </div>
+        </div>
+      {% elseif userRole[0] == 'ROLE_USER' %}
+        <div class="userProfile">
+          <img class="userImage" src="{{user.getImage()}}" alt="profile-picture"/>
+          <p>Logged in as
+            {{user.getUsername()}}
+            <p>
+              <div class="btn-container">
+                <a class="btn" href="{{path('project_logout')}}">
+                  Logga ut
+                </a>
+                <a class="btn" href="{{path('project_edit_form', {
+        username : user.getUserIdentifier()
+      })}}">
+                  Ändra profil
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        {% else %}
+          <!-- LOGIN -->
+          <div class="login-container">
+            <div class="login-row">
+              <div class="login-form">
+                <form method="post">
+                  <h2>Inlogging</h2>
+                </div>
+                {% if error %}
+                  <div class="error-msg">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                  </div>
+                {% endif %}
+                <div>
+                  <label for="inputUsername">Akronym</label>
+                  <input type="text" name="username" id="inputUsername" required="required" autofocus="autofocus">
+                </div>
+                <div>
+                  <label for="inputPassword">Lösenord</label>
+                  <input type="password" name="password" id="inputPassword" required="required">
+                </div>
+                <div>
+                  <button class="btn" type="submit">
+                    Logga in
+                  </button>
+                </div>
+              </form>
+              <div class="btn-container">
+                <a class="btn" href="{{path('project_register_form')}}">
+                  Register
+                </a>
+              </div>
+              <div>
+              {% endif %}
