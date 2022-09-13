@@ -5,14 +5,19 @@
 {% endblock %}
 
 {% block content %}
-  <div class="project-wrapper">
+  <div class="form-wrapper">
+    <h1>
+      Databasen har blivit återställd
+    </h1>
     <p>
       Databasen innehåller
       {{userCount}}
       användare.
     </p>
-    <h1>
-      Databasen har blivit återställd.
-    </h1>
+  </div>
+  <div class="btn-container">
+    <a class="back-btn" href="{{path('project')}}">
+      Gå tillbaka
+    </a>
   </div>
 {% endblock %}
