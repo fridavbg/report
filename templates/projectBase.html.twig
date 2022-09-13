@@ -3,21 +3,18 @@
   <head>
     <meta charset="UTF-8">
     {% block stylesheets %}
-    <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="favicon.ico">
       <link rel="stylesheet" href="{{ asset('css/project.css') }}"/>
       {{ encore_entry_link_tags('app')}}
     {% endblock %}
   </head>
   <body>
     <div>
-      <header>
-        <h1>14 HAV OCH MARINA RESURSER</h1>
-      </header>
       <nav class="nav-bar" id="nav-bar">
         <ul>
-          <li>
+          {# <li>
             <a href="{{path('home')}}">Report</a>
-          </li>
+          </li> #}
           <li>
             <a href="{{path('project')}}">Project</a>
           </li>
@@ -29,6 +26,9 @@
           </li> #}
         </ul>
       </nav>
+      <header>
+        <h1>14 HAV OCH MARINA RESURSER</h1>
+      </header>
     </div>
 
     {% block content %}
