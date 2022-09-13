@@ -12,8 +12,9 @@
         </p>
         <h4>Krav 3 - Utseende och användbarhet</h4>
         <p>
-          Min ide med att sidans utseende var att användare skall tänka på havet, men samtidigt att sidan skall vara lättläst. Allting skall även vara lätt att hitta så här även markerat många element med skuggor och linjer för att visa ögat att här kan det hända något. 
-          Även lagt lite energi för att anpassa för lite mindre skärmar.
+          Min ide med att sidans utseende var att användare skall tänka på havet, men samtidigt att sidan skall vara lättläst, då sidan innehåller en del text. Allting skall även vara lätt att hitta så här även markerat många element med skuggor och linjer för att visa ögat att här kan det hända något.
+          Rör användare på muspekare så skall alla knappar och länkar ge en visuell indikation på att man kan gå vidare med ett klick.  
+          Även lagt lite energi för att anpassa för lite mindre skärmar. Detta uppnådde jag genom att skapa en separate projectBase twig som också har en enskild css fil. 
         </p>
         <h4>Krav 5 - Inloggning</h4>
         <p>
