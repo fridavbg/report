@@ -41,6 +41,7 @@ class ProjectController extends AbstractController
                 $entityManager->flush();
             }
         }
+        $users = $userRepository->findAll();
 
         $data = [
             'title' => 'Reset DB MVC Kmom10',

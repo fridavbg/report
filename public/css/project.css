@@ -149,9 +149,6 @@ input {
 
 /* PROFILE */
 .userProfile {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
     border: 1px solid black;
     margin-right: 1em;
     padding: 1em;
@@ -235,7 +232,7 @@ input {
 
 /* BUTTONS */
 .btn-container {
-    margin: 1em;
+    margin: 2em;
 }
 .btn {
     margin: 1.3em;
@@ -249,8 +246,7 @@ input {
 
 .btn:hover {
     color: var(--text);
-    border: 3px solid var(--light-text);
-    border-radius: 50%;
+    border: 2px solid var(--light-text);
 }
 
 .back-btn {
@@ -482,8 +478,8 @@ td {
         margin-bottom: 1em;
     }
     .userProfile img {
-        width: 100px;
-        height: 150px;
+        width: 30%;
+        height: 20%;
         border: 1px solid black;
         border-radius: 20%;
     }

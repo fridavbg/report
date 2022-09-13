@@ -6,8 +6,7 @@
 
 {% block content %}
   <div class="form-wrapper">
-    <h1>Edit profile as
-      {{user.getUserIdentifier()}}</h1>
+    <h1>Edit profiles</h1>
     <form class="edit-form" action="{{path('project_edit_process', {username: user.getUserIdentifier()})}}" method="POST">
       <legend>Username:</legend>
       <input type="text" id="username" name="username" value="{{user.getUsername()}}" rows="5" cols="8">
@@ -20,4 +19,10 @@
       <input type="submit" value="Spara" class="btn"/>
     </form>
   </div>
+  <div class="btn-container">
+    <a class="back-btn" href="{{path('project')}}">
+      Gå tillbaka
+    </a>
+  </div>
+
 {% endblock %}
