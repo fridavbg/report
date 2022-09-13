@@ -128,7 +128,7 @@ class ChartController extends AbstractController
     }
 
     /***
-     * Function to render mismanaged plastic chart
+     * Function to render plastic life chart
      */
     public function plasticLifeChart(
         ChartBuilderInterface $chartBuilder,

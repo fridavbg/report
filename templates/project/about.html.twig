@@ -23,7 +23,7 @@
           <a href="https://github.com/fridavbg/report" target="_blank" class="standard-link">Github repo</a>
         </li>
         <li>
-          <a href="https://scrutinizer-ci.com/g/fridavbg/report/" target="_blank" class="standard-link">Scrutinizer</a>
+          <a href="https://scrutinizer-ci.com/g/fridavbg/report/inspections/a242c287-a8d3-4e65-b061-0f256dd344c4" target="_blank" class="standard-link">Scrutinizer</a>
         </li>
       </ul>
       <article class="summary">
@@ -53,14 +53,13 @@
           <li>Göra eventuella ändringar och förbättringar</li>
         </ol>
         <p>
-          Detta för att varje ny funktionalitet som läggs till i projektet, ses över i mindre delar för att på så sätt undvika eventuella felsteg i min logik, och onödig komplexitet.
+          Detta för att varje ny funktionalitet som läggs till i projektet, ses över i mindre delar för att på så sätt undvika eventuella felsteg i min logik, och onödig komplexitet. Även för min egen del så har det känns bäst att jobba med en rutin, då jag kände att det kunde lätt hända att jag missade att köra ett script.
         </p>
         <p>
           Dem verktyg som jag använt mig utav är Scrutinizer och PHPMetrics samt php-codesniffer, phpstan, phpmd och phpdoc. Med hjälp utav fel meddelande ifrån dessa verktyg så känner jag att jag har kunnat ha en bra struktur, och lättare kunnat se över kodfunktionalitet som behövts förenklas.
         </p>
         <p>
-          Alla verktyg förutom phpmd går igenom utan några anmärkningar. Fyra varningar ifrån phpmd visas för LoginFormAuthenticator.php, som handlar om coupling och oanvända parametrar. Jag har valt att ej åtgärda detta för att filen har skapats med make, och därför ej är min egna kod. Detta kommer ifrån PHPs dokumentation angående hur man skapar ett inlogg, och jag fann att det fanns många olika funtionaliter.
-          Jag valde därför att lämna detta då mitt inlogg fungerar, men det finns en del att åtgärda angående säkerheten, som kan vara ett område för förbättring i framtiden.
+          Alla verktyg förutom phpmd går igenom utan några anmärkningar. Fyra varningar ifrån phpmd visas för LoginFormAuthenticator.php, som handlar om coupling och oanvända parametrar. Jag har valt att ej åtgärda detta för att filen har skapats med make, och därför ej är min egna kod. Detta kommer ifrån PHPs dokumentation angående hur man skapar ett inlogg, och jag fann att det fanns många olika saker som kunde göras för att göra en starkare inloggning. Dock så valde jag att lämna detta då mitt inlogg fungerar, men det finns en del att åtgärda angående säkerheten, som kan vara ett område för förbättring i framtiden.
         </p>
       </article>
     </section>
